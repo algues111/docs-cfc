@@ -290,6 +290,7 @@ Les caractéristiques du codec G.711 sont les suivantes :
 - Délai de compression de 0,125 ms (sans aucun délai d’anticipation)
 
 MOS :
+
 - Mesure de qualité en conditions idéales : MOS 4,45 en G.711 Loi-µ et 4,45 en G.711 Loi-A
 - Mesure de qualité en condition dégradées : MOS 4,13 en G.711 Loi-µ et 4,11 en G.711 Loi-A
 
