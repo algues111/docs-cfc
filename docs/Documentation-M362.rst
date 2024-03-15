@@ -80,7 +80,7 @@ Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 
 Choisissez ce que vous préférez en fonction de vos habitudes d'installation de distributions Linux.
 
-:raw-html-m2r:`<img src=".\images\3cx-linux.png" style="display: block; margin: 0 auto;" height="470px"/>`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-linux.png" style="display: block; margin: 0 auto;" height="470px"/>`
 
 *Attendre que l'installation s'effectue et choisir les options correspondantes à vos besoins (FQDN...)*
 
