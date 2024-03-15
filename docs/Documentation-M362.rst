@@ -114,7 +114,7 @@ Nous utiliserons la 3ème option pour cette installation.
 
 :raw-html-m2r:`<br>`
 
-:raw-html-m2r:`<img src=".\images\conf-3cx2.png"/>`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/conf-3cx2.png"/>`
 
 :raw-html-m2r:`<br>`
 
@@ -152,7 +152,7 @@ Cette dernière permet, lorsque nous tapons l'URL en question dans notre navigat
 
 Attention, cela se produit seulement si ... config préalable dns non
 
-:raw-html-m2r:`<img src=".\images\3cx-hosts.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-hosts.png" />`
 
 ----
 
@@ -161,9 +161,9 @@ Interface
 
 Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL correspondante à l'installation de votre 3CX (\ *ici arthur.3cx.ch:5001*\ ), et ainsi vous logger avec les identifiants administrateur précédemment choisis.
 
-:raw-html-m2r:`<img src=".\images\3cx-login.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-login.png" />`
 
-:raw-html-m2r:`<img src=".\images\dashboard.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/dashboard.png" />`
 
 Après s'être identifiés, nous débarquons sur l'interface admin.
 
