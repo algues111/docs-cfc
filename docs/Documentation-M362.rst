@@ -2,7 +2,7 @@
    :format: html
 
 
-Module 365 : Mettre en service les systèmes vocaux et vidéo complexes t
+Module 365 : Mettre en service les systèmes vocaux et vidéo complexes
 =====================================================================
 
 
@@ -280,6 +280,17 @@ Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configur
 :raw-html-m2r:`<u> 3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 ) </u>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+G711
+~~~~~~~~
+
+G722
+~~~~~~~~
+
+G729
+~~~~~~~~
+
+
+Parler de la MOS pour la qualité audio
 
 *
   To toggle the **HTML Preview** press **F12** or click @icon-globe in the Window bar
