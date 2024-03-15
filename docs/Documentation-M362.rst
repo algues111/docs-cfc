@@ -88,7 +88,7 @@ Choisissez ce que vous préférez en fonction de vos habitudes d'installation de
 
 :raw-html-m2r:`<br>`
 
-.. image:: _static/3CX-CLI.png
+.. image:: images/3CX-CLI.png
 
 Lorsque votre VM aura redémarré et que vous aurez cette interface de disponible, je vous conseille d'installer 3CX avec votre navigateur web comme support visuel.
 
