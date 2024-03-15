@@ -283,6 +283,21 @@ Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configur
 G711
 ********
 
+Les caractéristiques du codec G.711 sont les suivantes :
+
+- Fréquence d’achantillonnage de 8 khz
+- Débit fixe de 64 kbits/s (échantillons de 8 bits x 8 kHz)
+- Délai de compression de 0,125 ms (sans aucun délai d’anticipation)
+
+MOS :
+- Mesure de qualité en conditions idéales : MOS 4,45 en G.711 Loi-µ et 4,45 en G.711 Loi-A
+- Mesure de qualité en condition dégradées : MOS 4,13 en G.711 Loi-µ et 4,11 en G.711 Loi-A
+
+
+Capture wireshark d'une conversation en G711 :
+
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png" />`
+
 G722
 ********
 
