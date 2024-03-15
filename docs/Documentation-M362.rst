@@ -281,13 +281,13 @@ Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 G711
-~~~~~~~~
+********
 
 G722
-~~~~~~~~
+********
 
 G729
-~~~~~~~~
+********
 
 
 Parler de la MOS pour la qualité audio
