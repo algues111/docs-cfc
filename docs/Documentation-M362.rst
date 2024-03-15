@@ -19,7 +19,7 @@ Qu'est-ce que 3CX ?
 
 12 millions d'utilisateurs l'utilisent chaque jour, le placant donc sans souci sur le podium des leaders mondiaux de la téléphonie !
 
-:raw-html-m2r:`<img src=".\images\3cx-paccueil.png" align="center"/>`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-paccueil.png" align="center"/>`
 
 ----
 
@@ -28,7 +28,7 @@ Licences
 
 Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l'entreprise du même nom.
 
-:raw-html-m2r:`<img src=".\images\3cx-licences.png" align="center"/>`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-licences.png" align="center"/>`
 
 ----
 
