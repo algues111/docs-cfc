@@ -223,7 +223,7 @@ La chose la plus importante à faire dans un exercice tel quel, est de dessiner 
 
 Cela permet de visualiser au mieux la demande et de pouvoir poser des questions au client si les indications ne sont pas claires !
 
-:raw-html-m2r:`<img src=".\images\schéma-ex1.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/sch%C3%A9ma-ex1.png" />`
 
 La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !
 
@@ -231,11 +231,11 @@ Commencons par les utilisateurs :
 
 :raw-html-m2r:`<u> Disclaimer : Pour l'exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101. </u>`
 
-:raw-html-m2r:`<img src=".\images\users1.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/users1.png" />`
 
 Configuration Janine :
 
-:raw-html-m2r:`<img src=".\images\janine.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/janine.png" />`
 
 Les champs obligatoires à remplir lors de la création de l'utilisateur sont les suivants :
 
@@ -269,7 +269,7 @@ Workflow de l'exercice :
 
 Dépannage 3CX
 
-:raw-html-m2r:`<img src=".\images\depannage-3cx.png" />`
+:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/depannage-3cx.png" />`
 
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch.
