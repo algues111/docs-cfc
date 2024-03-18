@@ -376,3 +376,4 @@ Tableau des normes PoE à voir ci-dessous :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/normes-poe.png
     :alt: normes-poe
+
