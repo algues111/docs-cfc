@@ -30,6 +30,7 @@ myst_enable_extensions = [
     "strikethrough",
     "substitution",
     "tasklist",
+    'sphinxemoji.sphinxemoji',
 ]
 
 templates_path = ['_templates']
