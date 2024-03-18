@@ -174,7 +174,116 @@ Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL co
 
 Après s'être identifiés, nous débarquons sur l'interface admin.
 
+
+
+G711
+********
+
+Les caractéristiques du codec G.711 sont les suivantes :
+
+- Bande de fréquences : 300-3400Hz
+- Fréquence d’achantillonnage de 8 khz
+- Débit fixe de 64 kbits/s (échantillons de 8 bits x 8 kHz)
+- Délai de compression de 0,125 ms (sans aucun délai d’anticipation)
+
+MOS :
+
+- Mesure de qualité en conditions idéales : MOS a revoir
+- Mesure de qualité en condition dégradées : MOS a revoir
+
+
+Capture wireshark d'une conversation en G711 :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png
+
+
+Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .
+
+La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.
+
+Étant donné que le trafic est d'interne à interne, il n'est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
+Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que Wireshark, d'écouter une conversation à partir de la conversation RTP !
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png 
+
+
+
+
+
+G722
+********
+
+Les caractéristiques du codec G.722 sont les suivantes :
+
+- Bande de fréquences : 50-7000Hz
+- Fréquence d'échantillonnage : 16 kHz
+- Débit fixe : 64 kbps
+- Délai de compression : Non spécifié
+
+MOS :
+
+- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+
+Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
+    :alt: graph-g711-g722
+
+G729
+********
+
+
+Parler de la MOS pour la qualité audio
+
 ----
+
+
+Généralités Réseau
+--------
+
+Exigences réseau
+^^^^^^^^^^^^^^^^^
+
+Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
+
+**Latence**
+
+La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
+
+**Perte de paquets**
+
+Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
+
+
+Fonctions de réseau
+^^^^^^^^^^^^^^^^^
+
+PoE (Power over Ethernet)
+~~~~
+
+La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
+Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
+
+Tableau des normes PoE à voir ci-dessous :   
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png
+    :alt: normes-poe
+
+
+
+
+----
+
+
+Exercices
+-----------
+
 
 Exercice 1
 ^^^^^^^^^^^^^^^^^
@@ -285,103 +394,3 @@ Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Po
 
 3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-G711
-********
-
-Les caractéristiques du codec G.711 sont les suivantes :
-
-- Bande de fréquences : 300-3400Hz
-- Fréquence d’achantillonnage de 8 khz
-- Débit fixe de 64 kbits/s (échantillons de 8 bits x 8 kHz)
-- Délai de compression de 0,125 ms (sans aucun délai d’anticipation)
-
-MOS :
-
-- Mesure de qualité en conditions idéales : MOS a revoir
-- Mesure de qualité en condition dégradées : MOS a revoir
-
-
-Capture wireshark d'une conversation en G711 :
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png
-
-
-Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .
-
-La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.
-
-Étant donné que le trafic est d'interne à interne, il n'est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
-Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que Wireshark, d'écouter une conversation à partir de la conversation RTP !
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png 
-
-
-
-
-
-G722
-********
-
-Les caractéristiques du codec G.722 sont les suivantes :
-
-- Bande de fréquences : 50-7000Hz
-- Fréquence d'échantillonnage : 16 kHz
-- Débit fixe : 64 kbps
-- Délai de compression : Non spécifié
-
-MOS :
-
-- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
-- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
-
-Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
-    :alt: graph-g711-g722
-
-G729
-********
-
-
-Parler de la MOS pour la qualité audio
-
-----
-
-
-Généralités Réseau
---------
-
-Exigences réseau
-^^^^^^^^^^^^^^^^^
-
-Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
-
-**Latence**
-
-La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
-
-**Perte de paquets**
-
-Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
-
-
-Fonctions de réseau
-^^^^^^^^^^^^^^^^^
-
-PoE (Power over Ethernet)
-~~~~
-
-La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
-Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
-
-Tableau des normes PoE à voir ci-dessous :   
-
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png
-    :alt: normes-poe
-
