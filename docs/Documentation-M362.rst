@@ -302,6 +302,18 @@ Capture wireshark d'une conversation en G711 :
 G722
 ********
 
+Les caractéristiques du codec G.722 sont les suivantes :
+
+- Fréquence d'échantillonnage : 16 kHz
+- Débit fixe : 64 kbps
+- Délai de compression : Non spécifié
+
+MOS :
+
+- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+
+
 G729
 ********
 
