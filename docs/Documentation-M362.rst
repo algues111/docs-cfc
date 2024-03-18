@@ -129,7 +129,10 @@ Cette étape nous permet de configurer les différents ports utilisés par les s
 
 ----
 
-:raw-html-m2r:`<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png" align="right" height="32px" />`
+.. image:: https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png
+    :align: right
+    :height: 32px
+
 
 Windows
 ~~~~~~~
@@ -249,11 +252,20 @@ Les champs obligatoires à remplir lors de la création de l'utilisateur sont le
 
 Exigences réseau
 ^^^^^^^^^^^^^^^^^
+
+Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
+
 **Latence**
 
 La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/jitter.png
 
+**Perte de paquets**
+
+Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/pertedepaquets.png
 
 
 ----
@@ -270,6 +282,7 @@ Workflow de l'exercice :
 Dépannage 3CX
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/depannage-3cx.png
+
 
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch.
