@@ -369,9 +369,9 @@ PoE (Power over Ethernet)
 ~~~~
 
 La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
-Aujourd'hui la norme initiale a évolué, permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
+Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
 
-Tableau des normes PoE à voir ci-dessous :
+Tableau des normes PoE à voir ci-dessous :   
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/normes-poe.png
