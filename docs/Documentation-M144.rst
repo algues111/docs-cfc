@@ -1,5 +1,5 @@
 ==============
-Semaine 1 (Warm up)
+Module 144 : Réseaux sans-fil
 ==============
 
 Introduction
@@ -22,6 +22,9 @@ Le Wi-Fi est donc une technologie qui ne nous est pas inconnue, bien que nous l�
 C’est ici que le module M144 intervient ; pour rentrer en profondeur dans cette technologie qui nous entoure quotidiennement.
 
 Ici, quelques QCM disponibles sur eitswiss.cockpitprofessionnel.ch concernant les technologies sans-fil
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/qcm-1.png
+   :align: center
 
 =================
 Semaine 2
@@ -57,6 +60,9 @@ f=  1/(t (en s))
 
 Un exemple concret et graphique :
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/sinus-1.png
+   :align: center
+
 Bande passante
 --------------
 
@@ -73,6 +79,9 @@ Débit binaire
 
 Le débit binaire, souvent simplement appelé "débit," est la mesure de la quantité d'informations numériques (bits) transmises ou traitées par unité de temps, généralement en bits par seconde (bps).
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/speedtest.jpg
+   :align: center
+
 Modulation
 ----------
 
@@ -85,6 +94,13 @@ Y a-t-il plusieurs types de modulation existants dans le monde des télécommuni
 Oui, les voici :
 
 - Modulation d’amplitude (AM)
+
+    La modulation d’amplitude consiste à moduler l’amplitude d’un signal porteur.
+    Exemple concret ci-dessous :
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/am.png
+        :align: center
+
 - Modulation de fréquence (FM)
 - Modulation de phase (PM)
 
