@@ -252,25 +252,6 @@ Les champs obligatoires à remplir lors de la création de l'utilisateur sont le
 * Nom
 * Adresse Mail
 
-----
-
-Exigences réseau
-^^^^^^^^^^^^^^^^^
-
-Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
-
-**Latence**
-
-La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
-
-**Perte de paquets**
-
-Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
-
 
 ----
 
@@ -364,6 +345,29 @@ G729
 
 
 Parler de la MOS pour la qualité audio
+
+----
+
+
+Réseau
+--------
+
+Exigences réseau
+^^^^^^^^^^^^^^^^^
+
+Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
+
+**Latence**
+
+La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
+
+**Perte de paquets**
+
+Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
 
 
 Fonctions de réseau
