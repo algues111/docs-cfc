@@ -285,7 +285,15 @@ Dépannage 3CX
 
 
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
-Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch.
+Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.
+
+La prochaine étape sera de créer la règle NAT/PAT dans le routeur / firewall du réseau (ici Centro Business 2.0 Swisscom)
+Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Port Forwarding> Create new rule)
+
+- Port TCP 5001 (HTTPS)
+- Port TCP/UDP 5090 (Tunnel 3CX)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/natpat-swisscom-ex2.png
 
 2. 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -305,13 +313,14 @@ Les caractéristiques du codec G.711 sont les suivantes :
 
 MOS :
 
-- Mesure de qualité en conditions idéales : MOS 4,45 en G.711 Loi-µ et 4,45 en G.711 Loi-A
-- Mesure de qualité en condition dégradées : MOS 4,13 en G.711 Loi-µ et 4,11 en G.711 Loi-A
+- Mesure de qualité en conditions idéales : MOS a revoir
+- Mesure de qualité en condition dégradées : MOS a revoir
 
 
 Capture wireshark d'une conversation en G711 :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png
+
 
 Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .
 
@@ -351,3 +360,19 @@ G729
 
 
 Parler de la MOS pour la qualité audio
+
+
+Fonctions de réseau
+^^^^^^^^^^^^^^^^^
+
+PoE (Power over Ethernet)
+~~~~
+
+La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
+Aujourd'hui la norme initiale a évolué, permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
+
+Tableau des normes PoE à voir ci-dessous :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/normes-poe.png
+    :alt: normes-poe
