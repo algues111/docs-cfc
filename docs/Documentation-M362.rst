@@ -7,7 +7,9 @@ Module 362 : Mettre en service les systèmes vocaux et vidéo complexes
 
 
 
-:raw-m2r:`<img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/3CX_Logo_-_Wiki.png" align="right" height="32px" />`
+.. image:: https://upload.wikimedia.org/wikipedia/commons/a/a2/3CX_Logo_-_Wiki.png
+   :align: right
+   :height: 32px
 
 3CX
 ----------
@@ -19,7 +21,8 @@ Qu'est-ce que 3CX ?
 
 12 millions d'utilisateurs l'utilisent chaque jour, le placant donc sans souci sur le podium des leaders mondiaux de la téléphonie !
 
-:raw-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png" align="center"/>`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png
+   :align: center
 
 ----
 
@@ -28,7 +31,8 @@ Licences
 
 Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l'entreprise du même nom.
 
-:raw-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png" align="center"/>`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png
+   :align: center
 
 ----
 
