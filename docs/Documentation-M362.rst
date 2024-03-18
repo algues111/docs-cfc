@@ -2,7 +2,7 @@
    :format: html
 
 
-Module 365 : Mettre en service les systèmes vocaux et vidéo complexes
+Module 362 : Mettre en service les systèmes vocaux et vidéo complexes
 =====================================================================
 
 
@@ -285,6 +285,7 @@ G711
 
 Les caractéristiques du codec G.711 sont les suivantes :
 
+- Bande de fréquences : 300-3400Hz
 - Fréquence d’achantillonnage de 8 khz
 - Débit fixe de 64 kbits/s (échantillons de 8 bits x 8 kHz)
 - Délai de compression de 0,125 ms (sans aucun délai d’anticipation)
@@ -299,11 +300,21 @@ Capture wireshark d'une conversation en G711 :
 
 :raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png" />`
 
+Comme escompté, nous remarquons que la discussion transite du téléphone _(192.168.1.122)_ en passant par le serveur 3CX _(192.168.1.120)HPN_AB_FeiertagFerien
+
+La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.
+
+
+
+
+
+
 G722
 ********
 
 Les caractéristiques du codec G.722 sont les suivantes :
 
+- Bande de fréquences : 50-7000Hz
 - Fréquence d'échantillonnage : 16 kHz
 - Débit fixe : 64 kbps
 - Délai de compression : Non spécifié
