@@ -274,7 +274,7 @@ Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond env
 Exercice 2
 ^^^^^^^^^^^^^^^^^
 
-:raw-html-m2r:`<u> 1. NAT / PAT avec installation app natel externe </u>`
+1. NAT / PAT avec installation app natel externe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Workflow de l'exercice :
@@ -287,10 +287,10 @@ Dépannage 3CX
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch.
 
-:raw-html-m2r:`<u> 2. 1 App + 1 Webclient en interne avec Wireshark </u>`
+2. 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:raw-html-m2r:`<u> 3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 ) </u>`
+3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 G711
