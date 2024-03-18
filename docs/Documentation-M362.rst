@@ -349,7 +349,7 @@ Parler de la MOS pour la qualité audio
 ----
 
 
-Réseau
+Généralités Réseau
 --------
 
 Exigences réseau
