@@ -143,6 +143,7 @@ Windows
 
 Il est aussi possible d'héberger votre PBX 3CX sous l'OS Windows.
 
+
 |:smile:|
 
 Cependant, cela nécessitera des connaissances avancées, car vous vous retrouverez face à des contraintes plus récurrentes que sur Linux.
