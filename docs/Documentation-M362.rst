@@ -304,6 +304,10 @@ Comme escompté, nous remarquons que la discussion transite du téléphone __192
 
 La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.
 
+Étant donné que le trafic est d'interne à interne, il n'est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
+Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que Wireshark, d'écouter une conversation à partir de la conversation RTP !
+
+:raw-html-m2r:`<https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/i2i-call-RTP-voice-recording.png" />`
 
 
 
@@ -324,6 +328,10 @@ MOS :
 - Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
 - Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
 
+Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
+
+.. image:: 
+    :alt: graph-g711-g722
 
 G729
 ********
