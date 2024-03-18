@@ -339,7 +339,7 @@ La chose la plus importante à faire dans un exercice tel quel, est de dessiner 
 
 Cela permet de visualiser au mieux la demande et de pouvoir poser des questions au client si les indications ne sont pas claires !
 
-.. image:: "https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sch%C3%A9ma-ex1.png
+.. image:: "https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png
 
 La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !
 
