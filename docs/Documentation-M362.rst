@@ -114,7 +114,7 @@ Nous utiliserons la 3ème option pour cette installation.
 
 :raw-html-m2r:`<br>`
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/conf-3cx2.png"/>`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/conf-3cx2.png
 
 :raw-html-m2r:`<br>`
 
@@ -152,7 +152,7 @@ Cette dernière permet, lorsque nous tapons l'URL en question dans notre navigat
 
 Attention, cela se produit seulement si ... config préalable dns non
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-hosts.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-hosts.png
 
 ----
 
@@ -161,9 +161,9 @@ Interface
 
 Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL correspondante à l'installation de votre 3CX (\ *ici arthur.3cx.ch:5001*\ ), et ainsi vous logger avec les identifiants administrateur précédemment choisis.
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-login.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/3cx-login.png
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/dashboard.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/dashboard.png
 
 Après s'être identifiés, nous débarquons sur l'interface admin.
 
@@ -223,7 +223,7 @@ La chose la plus importante à faire dans un exercice tel quel, est de dessiner 
 
 Cela permet de visualiser au mieux la demande et de pouvoir poser des questions au client si les indications ne sont pas claires !
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/sch%C3%A9ma-ex1.png" />`
+.. image:: "https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/sch%C3%A9ma-ex1.png
 
 La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !
 
@@ -231,11 +231,11 @@ Commencons par les utilisateurs :
 
 :raw-html-m2r:`<u> Disclaimer : Pour l'exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101. </u>`
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/users1.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/users1.png
 
 Configuration Janine :
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/janine.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/janine.png
 
 Les champs obligatoires à remplir lors de la création de l'utilisateur sont les suivants :
 
@@ -269,7 +269,7 @@ Workflow de l'exercice :
 
 Dépannage 3CX
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/depannage-3cx.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/depannage-3cx.png
 
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch.
@@ -298,7 +298,7 @@ MOS :
 
 Capture wireshark d'une conversation en G711 :
 
-:raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png
 
 Comme escompté, nous remarquons que la discussion transite du téléphone __192.168.1.122__ en passant par le serveur 3CX __192.168.1.120__ .
 
@@ -307,7 +307,7 @@ La première chose qui est importante à souligner, est que les paquets utilisen
 Étant donné que le trafic est d'interne à interne, il n'est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
 Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que Wireshark, d'écouter une conversation à partir de la conversation RTP !
 
-:raw-html-m2r:`<https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/i2i-call-RTP-voice-recording.png" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/i2i-call-RTP-voice-recording.png 
 
 
 
