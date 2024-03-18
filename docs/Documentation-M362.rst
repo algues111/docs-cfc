@@ -175,7 +175,18 @@ Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL co
 
 Après s'être identifiés, nous débarquons sur l'interface admin.
 
+Pour avoir une ligne entrante et sortante opérationnelle, il est nécessaire de configurer un trunk SIP.
+3CX prend en charge plusieurs opérateurs en Suisse, notamment sipcall...
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png
+
+
+Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png
 
 G711
 ********
@@ -231,8 +242,15 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
     :alt: graph-g711-g722
 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G722.png
+
+
 G729
 ********
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
+
 
 
 Parler de la MOS pour la qualité audio
