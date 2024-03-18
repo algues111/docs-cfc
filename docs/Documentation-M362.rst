@@ -300,7 +300,7 @@ Capture wireshark d'une conversation en G711 :
 
 :raw-html-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/html/images/rtp-conf-payload-G711.png" />`
 
-Comme escompté, nous remarquons que la discussion transite du téléphone _(192.168.1.122)_ en passant par le serveur 3CX _(192.168.1.120)HPN_AB_FeiertagFerien
+Comme escompté, nous remarquons que la discussion transite du téléphone __(192.168.1.122)__ en passant par le serveur 3CX __(192.168.1.120)__ .
 
 La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.
 
