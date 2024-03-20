@@ -188,6 +188,8 @@ Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png
 
+
+
 G711
 ********
 
@@ -221,9 +223,9 @@ Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que W
 
 
 
-
 G722
 ********
+
 
 Les caractéristiques du codec G.722 sont les suivantes :
 
@@ -248,9 +250,9 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 
 :raw-m2r:`<br>`
 
-
 G729
 ********
+
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
 
