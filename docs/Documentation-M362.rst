@@ -242,10 +242,12 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
     :alt: graph-g711-g722
 
+:raw-m2r:`<br>`
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G722.png
 
-|br|
+:raw-m2r:`<br>`
+
 
 G729
 ********
@@ -277,15 +279,11 @@ Exigences réseau
 
 Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
 
-`|br|`
-
 **Latence**
 
 La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
-
-`|br|`
 
 **Gigue (Jitter)**
 
@@ -294,8 +292,6 @@ Il s'agit en réalité d'une variation de lantence.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
 
-
-`|br|`
 
 **Perte de paquets**
 
