@@ -277,7 +277,7 @@ Exigences réseau
 
 Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
 
-|br|
+`|br|`
 
 **Latence**
 
@@ -285,7 +285,7 @@ La durée d’exécution des paquets vocaux est un critère essentiel pour la qu
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
 
-|br|
+`|br|`
 
 **Gigue (Jitter)**
 
@@ -295,7 +295,7 @@ Il s'agit en réalité d'une variation de lantence.
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
 
 
-|br|
+`|br|`
 
 **Perte de paquets**
 
