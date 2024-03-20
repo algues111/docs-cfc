@@ -270,7 +270,17 @@ Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
 
 La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
+   
+
+**Gigue (Jitter)**
+
+Il désigne la différence de délai de transmission de bout en bout entre différents paquets d'un même flux de paquets lors d'une transmission d'un système à l'autre.
+Il s'agit en réalité d'une variation de lantence.
+
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
+
+
 
 **Perte de paquets**
 
@@ -422,10 +432,12 @@ Rendez-vous dans votre gestionnaire de paquets / applications préféré > Tapez
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg
       :width: 240px
 
+
 Ensuite, lisez et acceptez les conditions d'utilisation de l'app.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png
       :width: 240px
+
 
 Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.
 
@@ -433,7 +445,7 @@ Pour finir, scannez le QR code que vous trouvez dans la configuration de votre u
       :width: 240px
 
 
-
+Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d'envoyer des messages dans le service de chat 3CX.
 
 
 2. 1 App + 1 Webclient en interne avec Wireshark
