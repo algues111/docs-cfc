@@ -213,7 +213,7 @@ Tout est accessible depuis le menu latérale de gauche :
 
 
 Chats
-----------
+^^^^^^^^
 
 L'interface des chats est assez rudimentaire mais efficace. 
 Elle permet de partager des fichiers, faire des listes à puces...
@@ -221,26 +221,26 @@ Elle permet de partager des fichiers, faire des listes à puces...
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png
 
 Chats de groupe
------------------
+^^^^^^^^^^^^^^^^
 
 Meetings
-----------
+^^^^^^^^^^^^^^^^
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png
 
-   
+
 Historique des appels
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cahier de contacts
---------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Boîte de messagerie vocale
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Généralités Réseau
---------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Exigences réseau
 ^^^^^^^^^^^^^^^^^
