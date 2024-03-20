@@ -189,9 +189,12 @@ Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png
 
 
+Codecs
+^^^^^^^^^^^^^^^^^^^^^^
+
 
 G711
-********
+~~~~~~~~~~~~~~
 
 Les caractéristiques du codec G.711 sont les suivantes :
 
@@ -224,7 +227,7 @@ Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que W
 
 
 G722
-********
+~~~~~~~~~~~~~~
 
 
 Les caractéristiques du codec G.722 sont les suivantes :
@@ -232,6 +235,7 @@ Les caractéristiques du codec G.722 sont les suivantes :
 - Bande de fréquences : 50-7000Hz
 - Fréquence d'échantillonnage : 16 kHz
 - Débit fixe : 64 kbps
+
 - Délai de compression : Non spécifié
 
 MOS :
@@ -251,7 +255,7 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 :raw-m2r:`<br>`
 
 G729
-********
+~~~~~~~~~~~~~~
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
