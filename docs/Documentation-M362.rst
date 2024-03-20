@@ -408,6 +408,34 @@ Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Po
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png
 
+A la suite de cette configuration, nous pouvons télécharger l'application 3CX sur notre téléphone.
+
+|:warning:| DISCLAIMER |:warning:|
+
+Sur Android, l'application **nécessite** le GSF afin d'afficher les notifications d'appels entrants.
+Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d'en passer (appels sortants).
+
+Précision faite, il est temps d'installer l'application sur notre appareil !
+
+Rendez-vous dans votre gestionnaire de paquets / applications préféré > Tapez 3CX dans la barre de recherche > Installez l'application 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg
+   
+
+Ensuite, lisez et acceptez les conditions d'utilisation de l'app.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.jpg
+
+
+Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.jpg
+
+
+
+
+
+
 2. 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
