@@ -167,6 +167,9 @@ Attention, cela se produit seulement si ... config préalable dns non
 Interface
 ^^^^^^^^^^^^^^^^^^^^^^
 
+Web interface (admin)
+~~~~~~~~~~~~~~
+
 Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL correspondante à l'installation de votre 3CX (\ *ici arthur.3cx.ch:5001*\ ), et ainsi vous logger avec les identifiants administrateur précédemment choisis.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-login.png
@@ -189,6 +192,52 @@ Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png
 
 
+Web Interface (client)
+~~~~~~~~~~~~~~
+
+Il est possible d'accéder à l'interface webclient et ainsi d'avoir des fonctionnalités UCC proposées par 3CX :
+
+Cela inclut :
+
+- Chats
+- Chats de groupe
+- Meetings (avec caméra, micro, partage d'écran/app...)
+- Historique des appels
+- Cahier de contacts
+- Boîte de messagerie vocale
+
+Tout est accessible depuis le menu latérale de gauche :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png
+
+
+
+Chats
+----------
+
+L'interface des chats est assez rudimentaire mais efficace. 
+Elle permet de partager des fichiers, faire des listes à puces...
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png
+
+Chats de groupe
+-----------------
+
+Meetings
+----------
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png
+
+   
+Historique des appels
+----------------------
+
+Cahier de contacts
+--------------------
+
+Boîte de messagerie vocale
+------------------------------
 
 Généralités Réseau
 --------
@@ -234,6 +283,8 @@ Tableau des normes PoE à voir ci-dessous :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png
     :alt: normes-poe
 
+
+----
 
 Codecs
 ^^^^^^^^^^^^^^^^^^^^^^
