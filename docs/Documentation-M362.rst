@@ -245,13 +245,24 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G722.png
 
+|br|
 
 G729
 ********
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
 
+Les caractéristiques du codec G.722 sont les suivantes :
 
+- Bande de fréquences : 50-7000Hz
+- Fréquence d'échantillonnage : 16 kHz
+- Débit fixe : 64 kbps
+- Délai de compression : Non spécifié
+
+MOS :
+
+- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
 
 Parler de la MOS pour la qualité audio
 
@@ -266,7 +277,7 @@ Exigences réseau
 
 Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
 
-
+|br|
 
 **Latence**
 
@@ -274,8 +285,7 @@ La durée d’exécution des paquets vocaux est un critère essentiel pour la qu
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
 
-
-
+|br|
 
 **Gigue (Jitter)**
 
@@ -285,7 +295,7 @@ Il s'agit en réalité d'une variation de lantence.
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
 
 
-
+|br|
 
 **Perte de paquets**
 
