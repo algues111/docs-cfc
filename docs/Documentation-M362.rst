@@ -266,12 +266,16 @@ Exigences réseau
 
 Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
 
+
+
 **Latence**
 
 La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
-   
+
+
+
 
 **Gigue (Jitter)**
 
@@ -279,6 +283,7 @@ Il désigne la différence de délai de transmission de bout en bout entre diff�
 Il s'agit en réalité d'une variation de lantence.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
+
 
 
 
