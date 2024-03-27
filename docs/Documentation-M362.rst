@@ -144,11 +144,11 @@ Windows
 Il est aussi possible d'héberger votre PBX 3CX sous l'OS Windows.
 
 
-|:warning:| **DISCLAIMER** |:warning:|
+.. warning::
 
-Cependant, cela nécessitera des connaissances avancées, car vous vous retrouverez face à des contraintes plus récurrentes que sur Linux.
+   Cependant, cela nécessitera des connaissances avancées, car vous vous retrouverez face à des contraintes plus récurrentes que sur Linux.
 
-Par exemple, lors des MàJ Windows, il est possible que l'état du Firewall Windows Defender se réinitialise et donc efface les règles de traffics entrants/sortants permettant au 3CX et aux téléphones liés de fonctionner correctement.
+   Par exemple, lors des MàJ Windows, il est possible que l'état du Firewall Windows Defender se réinitialise et donc efface les règles de traffics entrants/sortants permettant au 3CX et aux téléphones liés de fonctionner correctement.
 
 De plus, Windows est par défaut plus vulnérable que Linux, de par son architecture et car il est l'OS le plus répandu !
 
@@ -514,7 +514,7 @@ A la suite de cette configuration, nous pouvons télécharger l'application 3CX 
 
 .. warning::
 
-   
+
    Sur Android, l'application **nécessite** le GSF afin d'afficher les notifications d'appels entrants.
    Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d'en passer (appels sortants).
 
