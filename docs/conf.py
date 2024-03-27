@@ -16,7 +16,7 @@ release = '0.1'
 
 extensions = [
     'myst_parser',
-    'sphinxemoji.sphinxemoji',
+    
 ]
 myst_enable_extensions = [
     "amsmath",

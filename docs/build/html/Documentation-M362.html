@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 362 : Mettre en service les systèmes vocaux et vidéo complexes &#8212; Documentation Modules CFC IBM 0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=0dc8974b"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Documentation-M362';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Module 144 : Réseaux sans-fil (en travaux)" href="Documentation-M144.html" />
+    <link rel="prev" title="Documentation CFC-IBM" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Documentation Modules CFC IBM 0.1</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation-M144.html">Module 144 : Réseaux sans-fil (en travaux)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Documentation-M362.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cx">3CX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-que-3cx">Qu’est-ce que 3CX ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#licences">Licences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differents-types-d-installation">Différents types d’installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interface">Interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-admin">Web interface (admin)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exigences-reseau">Exigences réseau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-de-reseau">Fonctions de réseau</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-power-over-ethernet">PoE (Power over Ethernet)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs">Codecs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demande">Demande</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow :</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1. NAT / PAT avec installation app natel externe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2. 1 App + 1 Webclient en interne avec Wireshark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-362-mettre-en-service-les-systemes-vocaux-et-video-complexes">
+<h1>Module 362 : Mettre en service les systèmes vocaux et vidéo complexes<a class="headerlink" href="#module-362-mettre-en-service-les-systemes-vocaux-et-video-complexes" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/a/a2/3CX_Logo_-_Wiki.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/a/a2/3CX_Logo_-_Wiki.png" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/a/a2/3CX_Logo_-_Wiki.png" style="height: 32px;" /></a>
+<section id="cx">
+<h2>3CX<a class="headerlink" href="#cx" title="Link to this heading">#</a></h2>
+<section id="qu-est-ce-que-3cx">
+<h3>Qu’est-ce que 3CX ?<a class="headerlink" href="#qu-est-ce-que-3cx" title="Link to this heading">#</a></h3>
+<p>3CX est une <strong>solution de communications virtuelle</strong> qui permet aux entreprises de gérer leurs appels téléphoniques, leur messagerie instantanée, leur vidéoconférence ainsi que tous les services que pourrait proposer un PBX classique, grâce à différentes installations et forfaits.</p>
+<p>12 millions d’utilisateurs l’utilisent chaque jour, le placant donc sans souci sur le podium des leaders mondiaux de la téléphonie !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png" />
+</section>
+<hr class="docutils" />
+<section id="licences">
+<h3>Licences<a class="headerlink" href="#licences" title="Link to this heading">#</a></h3>
+<p>Pour avoir une vue d’ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l’entreprise du même nom.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png" />
+</section>
+<hr class="docutils" />
+<section id="differents-types-d-installation">
+<h3>Différents types d’installation<a class="headerlink" href="#differents-types-d-installation" title="Link to this heading">#</a></h3>
+<p></p>
+<p></p>
+<section id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h4>
+<p></p>
+<p>Chez 3CX, le principal avantage de leur système est leur <strong>OS basé sur Debian</strong> qui est <strong>optimisé pour leur PBX virtuel.</strong></p>
+<p>L’installation s’avère simple si l’on est familiarisé avec le milieu de la virtualisation sous linux.</p>
+<p></p>
+<p><strong>Votre machine a besoin d’au moins 1 cœur de processeur dédié et de 2Go de RAM. Si vous hébergez vous-même votre machine et que votre hébergeur utilise une unité centrale partagée, vous avez besoin de 2 cœurs !</strong></p>
+<p>Passez en revue les spécifications matérielles suggérées afin d’allouer du temps d’unité centrale et des ressources de mémoire vive supplémentaires en fonction des critères suivants :</p>
+<ul class="simple">
+<li><p>Nombre d’appels simultanés gérés par le système.</p></li>
+<li><p>Nombre d’utilisateurs actifs - 100 sessions actives du client Web sont plus exigeantes que 100 appels occasionnels via des téléphones IP.</p></li>
+<li><p>L’utilisation de l’enregistrement des appels - le système est sollicité pour le mixage audio et le stockage des fichiers.</p></li>
+</ul>
+<blockquote>
+<div><p>3CX peut être installé sur n’importe quel système fonctionnant sous Debian 12. Si vous souhaitez faire une installation barebone, assurez-vous que le matériel fonctionne avec Debian 12 et que le fournisseur du matériel vous aidera en cas de problème. Nous ne pouvons pas vous aider à résoudre les problèmes liés à l’installation de Debian 10 sur du matériel «  barebone « .</p>
+<p>Ne configurez pas de réseau virtuel, d’interface VPN ou d’option TeamViewer VPN sur l’hôte 3CX.</p>
+</div></blockquote>
+<p>Pour les autres prérequis liés à la virtualisation, au réseau etc… Je vous invite à vous référer à leur documentation complète disponible avec le lien ci-dessous :</p>
+<p><strong>https://www.3cx.fr/docs/manuel/installation-debian-linux-ipbx/</strong></p>
+<p>Voici aussi le lien pour le téléchargement de l’iso linux de 3CX :</p>
+<p><strong>https://downloads-global.3cx.com/downloads/debian10iso/debian-amd64-netinst-3cx.iso</strong></p>
+<p></p>
+<p><em>Premier lancement de l’iso de 3CX</em></p>
+<p>Choisissez ce que vous préférez en fonction de vos habitudes d’installation de distributions Linux.</p>
+<p></p>
+<p><em>Attendre que l’installation s’effectue et choisir les options correspondantes à vos besoins (FQDN…)</em></p>
+<hr class="docutils" />
+<p></p>
+<p></p>
+<p>Lorsque votre VM aura redémarré et que vous aurez cette interface de disponible, je vous conseille d’installer 3CX avec votre navigateur web comme support visuel.</p>
+<p></p>
+<blockquote>
+<div><p>L’installation en CLI étant réservée aux utilisateurs aguerris de 3CX, je ne le vous recommanderais seulement si vous nécessitez de paramètres spéciaux/avancés.</p>
+</div></blockquote>
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx1.png" />
+<p></p>
+<ul class="simple">
+<li><p><em>Upload a new configuration file create on 3CX</em></p></li>
+<li><p><em>Restore a backup</em></p></li>
+<li><p><em>Install without config file (legacy, not recommended)</em></p></li>
+</ul>
+<p>Nous utiliserons la 3ème option pour cette installation.</p>
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx2.png" />
+<p></p>
+<p>Cette étape nous permet de configurer les différents ports utilisés par les services de 3CX.</p>
+<blockquote>
+<div><p>Si seulement votre instance 3CX tourne sur votre VM, je vous conseille de laiser les ports par défaut proposer par le wizard d’installation.</p>
+<p>Dans le cas contraire, utilisez des ports qui ne sont pas utilisés par d’autres services!</p>
+</div></blockquote>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png" style="height: 32px;" /></a>
+</section>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h4>
+<p>Il est aussi possible d’héberger votre PBX 3CX sous l’OS Windows.</p>
+<p><a href="#id1"><span class="problematic" id="id2">|:warning:|</span></a> <strong>DISCLAIMER</strong> <a href="#id3"><span class="problematic" id="id4">|:warning:|</span></a></p>
+<p>Cependant, cela nécessitera des connaissances avancées, car vous vous retrouverez face à des contraintes plus récurrentes que sur Linux.</p>
+<p>Par exemple, lors des MàJ Windows, il est possible que l’état du Firewall Windows Defender se réinitialise et donc efface les règles de traffics entrants/sortants permettant au 3CX et aux téléphones liés de fonctionner correctement.</p>
+<p>De plus, Windows est par défaut plus vulnérable que Linux, de par son architecture et car il est l’OS le plus répandu !</p>
+<p>Lorsque l’installation est terminée, on peut remarquer dans le fichier hosts de notre OS Windows que 3CX a rajouté cette ligne :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span> <span class="pre">arthur.3cx.ch</span></code></p>
+</div></blockquote>
+<p>Cette dernière permet, lorsque nous tapons l’URL en question dans notre navigateur, que notre ordinateur pointe vers notre adresse loopback.</p>
+<p>Attention, cela se produit seulement si … config préalable dns non</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="interface">
+<h3>Interface<a class="headerlink" href="#interface" title="Link to this heading">#</a></h3>
+<section id="web-interface-admin">
+<h4>Web interface (admin)<a class="headerlink" href="#web-interface-admin" title="Link to this heading">#</a></h4>
+<p>Après avoir terminé la configuration du 3CX, vous pourrez accéder à l’URL correspondante à l’installation de votre 3CX (<em>ici arthur.3cx.ch:5001</em>), et ainsi vous logger avec les identifiants administrateur précédemment choisis.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-login.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-login.png" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dashboard.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dashboard.png" />
+<p>Après s’être identifiés, nous débarquons sur l’interface admin.</p>
+<p>Pour avoir une ligne entrante et sortante opérationnelle, il est nécessaire de configurer un trunk SIP.
+3CX prend en charge plusieurs opérateurs en Suisse, notamment sipcall…</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png" />
+<p>Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png" />
+</section>
+<section id="web-interface-client">
+<h4>Web Interface (client)<a class="headerlink" href="#web-interface-client" title="Link to this heading">#</a></h4>
+<p>Il est possible d’accéder à l’interface webclient et ainsi d’avoir des fonctionnalités UCC proposées par 3CX :</p>
+<p>Cela inclut :</p>
+<ul class="simple">
+<li><p>Chats</p></li>
+<li><p>Chats de groupe</p></li>
+<li><p>Meetings (avec caméra, micro, partage d’écran/app…)</p></li>
+<li><p>Historique des appels</p></li>
+<li><p>Cahier de contacts</p></li>
+<li><p>Boîte de messagerie vocale</p></li>
+</ul>
+<p>Tout est accessible depuis le menu latérale de gauche :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png" />
+<p>Chats :</p>
+<p>L’interface des chats est assez rudimentaire mais efficace.
+Elle permet de partager des fichiers, faire des listes à puces…</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png" />
+<p>Chats de groupe :</p>
+<p></p>
+<p>3CX permet notamment de faire des conférences en ligne, grâce à une interface intuitive et pratique.
+Pour pouvoir profiter pleinement de toutes ces fonctionnalités, il est nécessaire d’accorder l’accès au micro et webcam à votre navigateur web.</p>
+<p>Durant ces conférences, il est possible de partager son écran et de donner la main à un des collaborateurs présents dans la réunion.
+Partager des fichiers et écrire dans un chat dédié est aussi possible !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png" />
+<p>Historique des appels :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png" />
+<p>Cahier de contacts :</p>
+<p>Un cahier des contacts existe, donnant la possibilité d’enregistrer des fiches contacts.
+Pour aller plus loin, une intégration LDAP est même possible pour télécharger l’annuaire depuis un serveur LDAP. (disponible pour la licence 3CX Pro)</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/phonebook.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/phonebook.png" />
+<p>Boîte de messagerie vocale :</p>
+</section>
+</section>
+<section id="generalites-reseau">
+<h3>Généralités Réseau<a class="headerlink" href="#generalites-reseau" title="Link to this heading">#</a></h3>
+</section>
+<hr class="docutils" />
+<section id="exigences-reseau">
+<h3>Exigences réseau<a class="headerlink" href="#exigences-reseau" title="Link to this heading">#</a></h3>
+<p>Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch</p>
+<p><strong>Latence</strong></p>
+<p>La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png" />
+<p></p>
+<p><strong>Gigue (Jitter)</strong></p>
+<p>Il désigne la différence de délai de transmission de bout en bout entre différents paquets d’un même flux de paquets lors d’une transmission d’un système à l’autre.
+Il s’agit en réalité d’une variation de lantence.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png" />
+<p></p>
+<p><strong>Perte de paquets</strong></p>
+<p>Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png" />
+</section>
+<section id="fonctions-de-reseau">
+<h3>Fonctions de réseau<a class="headerlink" href="#fonctions-de-reseau" title="Link to this heading">#</a></h3>
+<section id="poe-power-over-ethernet">
+<h4>PoE (Power over Ethernet)<a class="headerlink" href="#poe-power-over-ethernet" title="Link to this heading">#</a></h4>
+<p>La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d’une puissance de max. 15,4W avec une tension d’environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
+Aujourd’hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d’alimenter des appareils de plus en plus gourmands en énergie !</p>
+<p>Tableau des normes PoE à voir ci-dessous :</p>
+<img alt="normes-poe" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="codecs">
+<h3>Codecs<a class="headerlink" href="#codecs" title="Link to this heading">#</a></h3>
+<section id="g711">
+<h4>G711<a class="headerlink" href="#g711" title="Link to this heading">#</a></h4>
+<p>Les caractéristiques du codec G.711 sont les suivantes :</p>
+<ul class="simple">
+<li><p>Bande de fréquences : 300-3400Hz</p></li>
+<li><p>Fréquence d’achantillonnage de 8 khz</p></li>
+<li><p>Débit fixe de 64 kbits/s (échantillons de 8 bits x 8 kHz)</p></li>
+<li><p>Délai de compression de 0,125 ms (sans aucun délai d’anticipation)</p></li>
+</ul>
+<p>MOS :</p>
+<ul class="simple">
+<li><p>Mesure de qualité en conditions idéales : MOS a revoir</p></li>
+<li><p>Mesure de qualité en condition dégradées : MOS a revoir</p></li>
+</ul>
+<p>Pour tout appel passant par IP, une initiation de communications est procédé par le protocole SIP.
+Ce dernier pourrait être comparable au fonctionnement du TCP, mais à la couche 7 du modèle OSI.</p>
+<p>Capture wireshark d’une conversation en G711 (flux RTP):</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png" />
+<p>Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .</p>
+<p>La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.</p>
+<p>Étant donné que le trafic est d’interne à interne, il n’est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
+Il est donc tout à fait possible à partir d’un fichier d’un logiciel tel que Wireshark, d’écouter une conversation à partir de la conversation RTP !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png" />
+</section>
+<section id="g722">
+<h4>G722<a class="headerlink" href="#g722" title="Link to this heading">#</a></h4>
+<p>Les caractéristiques du codec G.722 sont les suivantes :</p>
+<ul class="simple">
+<li><p>Bande de fréquences : 50-7000Hz</p></li>
+<li><p>Fréquence d’échantillonnage : 16 kHz</p></li>
+<li><p>Débit fixe : 64 kbps</p></li>
+<li><p>Délai de compression : Non spécifié</p></li>
+</ul>
+<p>MOS :</p>
+<ul class="simple">
+<li><p>Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
+<li><p>Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
+</ul>
+<p>Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :</p>
+<img alt="graph-g711-g722" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg" />
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G722.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G722.png" />
+<p></p>
+</section>
+<section id="g729">
+<h4>G729<a class="headerlink" href="#g729" title="Link to this heading">#</a></h4>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png" />
+<p>Les caractéristiques du codec G.722 sont les suivantes :</p>
+<ul class="simple">
+<li><p>Bande de fréquences : 50-7000Hz</p></li>
+<li><p>Fréquence d’échantillonnage : 16 kHz</p></li>
+<li><p>Débit fixe : 64 kbps</p></li>
+<li><p>Délai de compression : Non spécifié</p></li>
+</ul>
+<p>MOS :</p>
+<ul class="simple">
+<li><p>Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
+<li><p>Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
+</ul>
+<p>Parler de la MOS pour la qualité audio</p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Link to this heading">#</a></h2>
+<section id="exercice-1">
+<h3>Exercice 1<a class="headerlink" href="#exercice-1" title="Link to this heading">#</a></h3>
+<section id="demande">
+<h4>Demande<a class="headerlink" href="#demande" title="Link to this heading">#</a></h4>
+<p><strong>Exercice 1: Création d’un numéro d’assistance</strong></p>
+<p>L’accessibilité téléphonique du service clientèle de Cardinal Bier Import AG doit être améliorée. À l’heure actuelle, le numéro principal n’est desservi que par une seule personne. Récemment, une application de Customer Releationship Management a été installée. Désormais, les commandes, réclamations ou autres demandes des clients sont enregistrées électroniquement. Une équipe de 4 collaboratrices a été formée. La répartition des appels au sein de cette équipe doit être définie. Créez une solution de téléphonie pour le service clientèle de Cardinal Bier Import AG. Vous disposez d’une instance vPBX de Peoplefone ou d’autres installations. Lisez les exigences de l’entreprise et établissez une configuration.</p>
+<p><strong>Besoins en téléphonie du service clientèle</strong></p>
+<p></p>
+<ul class="simple">
+<li><p>Horaires d’ouverture du lundi au vendredi de 8h00 à 18h00 et le samedi de 8h00 à 17h00</p></li>
+<li><p>Saisie de tous les jours fériés catholiques légaux pour le site de Fribourg, pour les 12 prochains mois.</p></li>
+<li><p>IVR pour allemand, français et anglais en amont</p></li>
+</ul>
+<p>Formez des groupes pertinents. Les appels doivent être répartis de manière séquentielle au sein du groupe. Il doit y avoir passage d’un groupe à un autre, si personne ne répond ou si la ligne est occupée. L’appel passera sur messagerie et signalera qu’aucun collaborateur n’est libre, seulement aucune personne ne répond. Les équipes parlant les langues officielles du canton reçoivent un numéro d’appel externe et les collaboratrices peuvent passer des appels externes sur lle téléphone IP avec ce numéro ou avec le numéro principal.</p>
+<p>Les textes de message suivants peuvent être repris dans le fichier ZIP ou vous pouvez en enregistrer vous-même:</p>
+<ul class="simple">
+<li><p>HPN_AB_FeiertagFerien.wav</p></li>
+<li><p>HPN_AB_keinMitarbeiterFrei.wav</p></li>
+<li><p>HPN_AB_Oefffnungszeiten.wav</p></li>
+<li><p>IVR_Ansage.wav</p></li>
+</ul>
+<p>Fichiers WAV
+Le texte parlé des fichiers WAV ne doit pas correspondre à 100% à la problématique de cet exercice.
+Les utilisateurs suivants doivent être enregistrés:</p>
+<ul class="simple">
+<li><p>Meier Anna, parle allemand, français</p></li>
+<li><p>Müller Janine, parle allemand, anglais</p></li>
+<li><p>Angeloz Marie, parle français</p></li>
+<li><p>Ducrest Sophie, parle français, anglais</p></li>
+</ul>
+<p>Mission par groupe de 2 ou 4:</p>
+<ul class="simple">
+<li><p>Tracez le Call Flow pour le numéro principal (modèles disponibles dans le chapitre 10 du module 361)</p></li>
+<li><p>Configurez l’installation en fonction des exigences</p></li>
+</ul>
+<p>Testez l’installation et consignez les tests dans un protocole</p>
+</section>
+<section id="workflow">
+<h4>Workflow :<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h4>
+<p>La chose la plus importante à faire dans un exercice tel quel, est de dessiner un schéma de principe très simple, à la main de préférence.</p>
+<p>Cela permet de visualiser au mieux la demande et de pouvoir poser des questions au client si les indications ne sont pas claires !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png" />
+<p>La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !</p>
+<p>Commencons par les utilisateurs :</p>
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" />
+<p>Configuration Janine :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png" />
+<p>Les champs obligatoires à remplir lors de la création de l’utilisateur sont les suivants :</p>
+<ul class="simple">
+<li><p>Extension</p></li>
+<li><p>Prénom</p></li>
+<li><p>Nom</p></li>
+<li><p>Adresse Mail</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercice-2">
+<h3>Exercice 2<a class="headerlink" href="#exercice-2" title="Link to this heading">#</a></h3>
+<section id="nat-pat-avec-installation-app-natel-externe">
+<h4>1. NAT / PAT avec installation app natel externe<a class="headerlink" href="#nat-pat-avec-installation-app-natel-externe" title="Link to this heading">#</a></h4>
+<p>Workflow de l’exercice :</p>
+<p>Dépannage 3CX</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png" />
+<p>Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu’intermédiaire pour les appels.
+Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.</p>
+<p>La prochaine étape sera de créer la règle NAT/PAT dans le routeur / firewall du réseau (ici Centro Business 2.0 Swisscom)
+Nous accédons donc à la web interface administrateur de ce dernier (Réseau&gt;Port Forwarding&gt; Create new rule)</p>
+<ul class="simple">
+<li><p>Port TCP 5001 (HTTPS)</p></li>
+<li><p>Port TCP/UDP 5090 (Tunnel 3CX)</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png" />
+<p>A la suite de cette configuration, nous pouvons télécharger l’application 3CX sur notre téléphone.</p>
+<p><a href="#id5"><span class="problematic" id="id6">|:warning:|</span></a> DISCLAIMER <a href="#id7"><span class="problematic" id="id8">|:warning:|</span></a></p>
+<p>Sur Android, l’application <strong>nécessite</strong> le GSF afin d’afficher les notifications d’appels entrants.
+Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d’en passer (appels sortants).</p>
+<p>Précision faite, il est temps d’installer l’application sur notre appareil !</p>
+<p>Rendez-vous dans votre gestionnaire de paquets / applications préféré &gt; Tapez 3CX dans la barre de recherche &gt; Installez l’application</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg" style="width: 240px;" /></a>
+<p>Ensuite, lisez et acceptez les conditions d’utilisation de l’app.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png" style="width: 240px;" /></a>
+<p>Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png" style="width: 240px;" /></a>
+<p>Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d’envoyer des messages dans le service de chat 3CX.</p>
+</section>
+<section id="app-1-webclient-en-interne-avec-wireshark">
+<h4>2. 1 App + 1 Webclient en interne avec Wireshark<a class="headerlink" href="#app-1-webclient-en-interne-avec-wireshark" title="Link to this heading">#</a></h4>
+</section>
+<section id="telephones-sip-avec-wireshark-comparaison-g711-g722-g729">
+<h4>3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )<a class="headerlink" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729" title="Link to this heading">#</a></h4>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Documentation CFC-IBM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Documentation-M144.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Module 144 : Réseaux sans-fil (en travaux)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cx">3CX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-que-3cx">Qu’est-ce que 3CX ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#licences">Licences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differents-types-d-installation">Différents types d’installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interface">Interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-admin">Web interface (admin)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exigences-reseau">Exigences réseau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-de-reseau">Fonctions de réseau</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-power-over-ethernet">PoE (Power over Ethernet)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs">Codecs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demande">Demande</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow :</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1. NAT / PAT avec installation app natel externe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2. 1 App + 1 Webclient en interne avec Wireshark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Arthur LE GUENNEC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Arthur LE GUENNEC.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

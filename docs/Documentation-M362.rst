@@ -253,6 +253,10 @@ Boîte de messagerie vocale :
 Généralités Réseau
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+
+
+----
+
 Exigences réseau
 ^^^^^^^^^^^^^^^^^
 
@@ -264,6 +268,8 @@ La durée d’exécution des paquets vocaux est un critère essentiel pour la qu
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
 
+:raw-m2r:`<br>`
+
 **Gigue (Jitter)**
 
 Il désigne la différence de délai de transmission de bout en bout entre différents paquets d'un même flux de paquets lors d'une transmission d'un système à l'autre.
@@ -271,6 +277,7 @@ Il s'agit en réalité d'une variation de lantence.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
 
+:raw-m2r:`<br>`
 
 **Perte de paquets**
 
@@ -317,7 +324,13 @@ MOS :
 - Mesure de qualité en condition dégradées : MOS a revoir
 
 
-Capture wireshark d'une conversation en G711 :
+Pour tout appel passant par IP, une initiation de communications est procédé par le protocole SIP.
+Ce dernier pourrait être comparable au fonctionnement du TCP, mais à la couche 7 du modèle OSI.
+
+
+
+
+Capture wireshark d'une conversation en G711 (flux RTP):
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png
 
@@ -499,10 +512,10 @@ Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Po
 
 A la suite de cette configuration, nous pouvons télécharger l'application 3CX sur notre téléphone.
 
-|:warning:| DISCLAIMER |:warning:|
+.. warning::
 
-Sur Android, l'application **nécessite** le GSF afin d'afficher les notifications d'appels entrants.
-Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d'en passer (appels sortants).
+   Sur Android, l'application **nécessite** le GSF afin d'afficher les notifications d'appels entrants.
+   Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d'en passer (appels sortants).
 
 Précision faite, il est temps d'installer l'application sur notre appareil !
 

@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 144 : Réseaux sans-fil (en travaux) &#8212; Documentation Modules CFC IBM 0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=0dc8974b"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Documentation-M144';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Module 362 : Mettre en service les systèmes vocaux et vidéo complexes" href="Documentation-M362.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Documentation Modules CFC IBM 0.1</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Documentation-M362.html">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 144 : Réseaux sans-fil (en travaux)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Documentation-M144.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 144 : Réseaux sans-fil (en travaux)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaine-2">Semaine 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequence">Fréquence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bande-passante">Bande passante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debit-binaire">Débit binaire</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulation">Modulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normes-802-11">Normes 802.11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaine-3">Semaine 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-roaming">Le roaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trame-802-11">Trame 802.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topologies-environnement">Topologies &amp; Environnement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandat-pratique-30-3-5">Mandat pratique 30.3.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandat-pratique-ibss">Mandat pratique IBSS</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-144-reseaux-sans-fil-en-travaux">
+<h1>Module 144 : Réseaux sans-fil (en travaux)<a class="headerlink" href="#module-144-reseaux-sans-fil-en-travaux" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>La première leçon du module était une introduction à ce dernier. Elle nous a permis de tester nos connaissances sur diverses technologies sans-fil afin de nous mettre en bouche les prochaines leçons qui suivront.</p>
+<p>Durant la première année, lors du module M145, nous avions déjà eu la chance d’étudier les différentes caractéristiques du Wi-Fi, notamment :</p>
+<ul class="simple">
+<li><p>Ses topologies</p></li>
+<li><p>Ses normes</p></li>
+<li><p>Son évolution dans le temps</p></li>
+<li><p>Les mécanismes d’association et de transfert des données</p></li>
+<li><p>Sa sécurité</p></li>
+<li><p>Ses avantages</p></li>
+<li><p>Ses inconvénients</p></li>
+</ul>
+<p>Le Wi-Fi est donc une technologie qui ne nous est pas inconnue, bien que nous l’ayons plus ou moins survolée.</p>
+<p>C’est ici que le module M144 intervient ; pour rentrer en profondeur dans cette technologie qui nous entoure quotidiennement.</p>
+<p>Ici, quelques QCM disponibles sur eitswiss.cockpitprofessionnel.ch concernant les technologies sans-fil</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/qcm-1.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/qcm-1.png" />
+</section>
+<section id="semaine-2">
+<h2>Semaine 2<a class="headerlink" href="#semaine-2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Voici la liste des sujets abordés durant la semaine 2 :</p>
+<ul>
+<li><p>La fréquence</p></li>
+<li><p>La bande passante</p></li>
+<li><p>Le débit binaire</p></li>
+<li><p>Les différents types de modulations ( 5 )</p></li>
+<li><p>Étalement de spectre ( 6 )</p></li>
+<li><p>Multiplexage ( 7 )</p>
+<blockquote>
+<div><p>OFDM
+FHSS
+DSSS
+Les normes 802.11</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="frequence">
+<h3>Fréquence<a class="headerlink" href="#frequence" title="Link to this heading">#</a></h3>
+<p>Qu’est-ce que la fréquence (Hz) ?</p>
+<ul class="simple">
+<li><p>La fréquence (Hz) est le nombre de périodes (oscillations) qui se répète en une période de temps t.</p></li>
+</ul>
+<p>Comment la calcule-t-on ?</p>
+<p>f=  1/(t (en s))</p>
+<p>Un exemple concret et graphique :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/sinus-1.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/sinus-1.png" />
+</section>
+<section id="bande-passante">
+<h3>Bande passante<a class="headerlink" href="#bande-passante" title="Link to this heading">#</a></h3>
+<p>La bande passante représente la bande de fréquence dans laquelle peuvent passer les données.</p>
+<p>Nous pouvons faire une analogie avec une autoroute qui a tant de voies pour faire passer tant de voitures.</p>
+<p>Attention : La bande passante est à ne pas confondre avec le débit, bien que les deux aient un lien :</p>
+<ul class="simple">
+<li><p>Une bande passante élevée ne garantit pas nécessairement un débit élevé, tandis qu’un débit élevé est toujours le résultat d’une bande passante élevée.</p></li>
+</ul>
+</section>
+<section id="debit-binaire">
+<h3>Débit binaire<a class="headerlink" href="#debit-binaire" title="Link to this heading">#</a></h3>
+<p>Le débit binaire, souvent simplement appelé « débit, » est la mesure de la quantité d’informations numériques (bits) transmises ou traitées par unité de temps, généralement en bits par seconde (bps).</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/speedtest.jpg" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/speedtest.jpg" />
+</section>
+<section id="modulation">
+<h3>Modulation<a class="headerlink" href="#modulation" title="Link to this heading">#</a></h3>
+<p>Qu’est-ce que la modulation ?</p>
+<p>La modulation est le processus de modification d’une onde porteuse afin qu’elle puisse porter des informations (data, voix…), sur un canal de communication.</p>
+<p>Y a-t-il plusieurs types de modulation existants dans le monde des télécommunications ?</p>
+<p>Oui, les voici :</p>
+<ul>
+<li><p>Modulation d’amplitude (AM)</p>
+<blockquote>
+<div><p>La modulation d’amplitude consiste à moduler l’amplitude d’un signal porteur.
+Exemple concret ci-dessous :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/am.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/am.png" />
+</div></blockquote>
+</li>
+<li><p>Modulation de fréquence (FM)</p></li>
+<li><p>Modulation de phase (PM)</p></li>
+</ul>
+</section>
+<section id="normes-802-11">
+<h3>Normes 802.11<a class="headerlink" href="#normes-802-11" title="Link to this heading">#</a></h3>
+<p>La norme 802.11 est une série de normes qui spécifient les protocoles de communication sans fil pour les réseaux locaux (Wi-Fi). Ces normes ont été développées par l’IEEE, un organisme de normalisation international. La famille de normes 802.11 définit les spécifications techniques pour les réseaux sans fil, notamment les fréquences, les débits de données, les protocoles de sécurité, etc.</p>
+<p>Les normes 802.11 ont évolué au fil du temps pour s’améliorer et permettre :
+- Des débits plus élevés
+- Plus de fiabilité
+- Plus de sécurité
+- Plus de bande de fréquences</p>
+<p>Certaines des versions les plus couramment connues de la norme 802.11 incluent :
+- 802.11a
+- 802.11b
+- 802.11g
+- 802.11n
+- 802.11ac
+- 802.11ax
+- 802.11ay</p>
+</section>
+</section>
+<section id="semaine-3">
+<h2>Semaine 3<a class="headerlink" href="#semaine-3" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Introduction<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Voici les différents sujets abordés lors de la 3ème semaine de cours sur le module M144 :</p>
+<ul class="simple">
+<li><p>Tableau comparatif des technologies sans fil (suite)</p></li>
+<li><p>Le roaming</p></li>
+<li><p>Organismes de normalisation</p></li>
+<li><p>La trame 802.11</p></li>
+<li><p>Les topologies</p></li>
+<li><p>Étalement de spectre ( 6 )</p></li>
+<li><p>Multiplexage ( 7 )</p></li>
+</ul>
+</section>
+<section id="le-roaming">
+<h3>Le roaming<a class="headerlink" href="#le-roaming" title="Link to this heading">#</a></h3>
+<p>Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN. Ces deux AP sont câblés avec le même switch. Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie. Le terminal se connecte désormais presque de manière ininterrompue à AP2. Ce procédé est appelé roaming. L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche. La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.</p>
+</section>
+<section id="trame-802-11">
+<h3>Trame 802.11<a class="headerlink" href="#trame-802-11" title="Link to this heading">#</a></h3>
+<p>Afin de pouvoir comprendre de quoi est composé une trame 802.11, il est intéressant de se pencher sur la trame Ethernet II (802.3), ces dernières ayant, non seulement, beaucoup de similitudes, mais aussi, plusieurs différences conséquentes telles que :</p>
+<ul class="simple">
+<li><p>La différence de taille :
+- 802.3 : 1542 octets
+- 802.11 : 2312 octets</p></li>
+<li><p>La méthode d’accès au média :
+- 802.3 : CSMA-CD
+- 802.11 : CSMA-CA</p></li>
+</ul>
+</section>
+<section id="topologies-environnement">
+<h3>Topologies &amp; Environnement<a class="headerlink" href="#topologies-environnement" title="Link to this heading">#</a></h3>
+<p>Différentes topologies existent pour les réseaux sans-fil, ces dernières permettant une flexibilité dans l’adaptation des besoins des clients.</p>
+<p>IBSS :</p>
+<p>BSS :</p>
+<p>ESS :</p>
+<p>SOHO :</p>
+<p>Il s’agit ici d’un routeur W-LAN usuel. C’est un appareil très performant, qui intègre certains niveaux de fonction et qui se trouve dans pratiquement tous les foyers et/ou petits bureau (small office). Ce routeur W-LAN intègre un switch, un modem Internet (DSL, câble, 4G, 5G), un serveur DHCP, un pare-feu et un point d’accès pour la connexion sans fil. L’un des représentants les plus populaires de cette catégorie est la « Fritzbox ». Le routeur W-LAN est un ESS en lui-même.</p>
+<p>Cependant, il est important de notifier que l’usage de répéteur afin d’augmenter la couverture de votre W-LAN est possible.</p>
+<p>Mais attention car l’usage d’un seul répéteur permet de garder un débit élevé car il dirige le signal vers un autre canal, mais tout autre répéteur ajouté divisera le débit par 2.</p>
+<p>C’est donc une solution de dernier recours si rien d’autre est possible.</p>
+<p>Nous allons maintenant nous intéressons à l’environnement entourant notre AP et pouvant éventuellement causer des perturbations ou des atténuations sur nos signaux.</p>
+<p>Avant toute chose, il est important de comparer les fréquences utilisées pour la technologie 802.11.</p>
+</section>
+<section id="mandat-pratique-30-3-5">
+<h3>Mandat pratique 30.3.5<a class="headerlink" href="#mandat-pratique-30-3-5" title="Link to this heading">#</a></h3>
+<p>Quelques questions du cockpit :</p>
+</section>
+<section id="mandat-pratique-ibss">
+<h3>Mandat pratique IBSS<a class="headerlink" href="#mandat-pratique-ibss" title="Link to this heading">#</a></h3>
+<p>Afin de comprendre dans quels domaines d’applications nous pouvons utiliser la topologie IBSS, il nous a été demandé de réaliser un partage de fichier soit :</p>
+<ul class="simple">
+<li><p>Par AirDrop (technologie Apple)</p></li>
+<li><p>Par Wifi Direct (disponible sur les smartphones sous Android)</p></li>
+</ul>
+<p>Ayant un iPhone, j’ai décidé de compléter le mandat en utilisant AirDrop :</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Documentation-M362.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaine-2">Semaine 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequence">Fréquence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bande-passante">Bande passante</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debit-binaire">Débit binaire</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulation">Modulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normes-802-11">Normes 802.11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semaine-3">Semaine 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-roaming">Le roaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trame-802-11">Trame 802.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topologies-environnement">Topologies &amp; Environnement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandat-pratique-30-3-5">Mandat pratique 30.3.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mandat-pratique-ibss">Mandat pratique IBSS</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Arthur LE GUENNEC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Arthur LE GUENNEC.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
