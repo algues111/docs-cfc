@@ -514,6 +514,7 @@ A la suite de cette configuration, nous pouvons télécharger l'application 3CX 
 
 .. warning::
 
+   
    Sur Android, l'application **nécessite** le GSF afin d'afficher les notifications d'appels entrants.
    Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d'en passer (appels sortants).
 
