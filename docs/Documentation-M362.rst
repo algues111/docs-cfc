@@ -256,6 +256,9 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 Boîte de messagerie vocale :
 
 
+Réseau
+--------
+
 Généralités Réseau
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
