@@ -41,8 +41,10 @@ Différents types d'installation
 
 :raw-m2r:`<br>`
 
-:raw-m2r:`<img src="https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc" align="right" height="32px" />`
-
+.. image:: https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc
+   :align: right
+   :height: 32px
+   
 Linux
 ~~~~~~~~~~~~~~
 
@@ -78,13 +80,16 @@ Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 
 **https://downloads-global.3cx.com/downloads/debian10iso/debian-amd64-netinst-3cx.iso**
 
-:raw-m2r:`<img src="https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug" style="display: block; margin: 0 auto;" />`
+.. image:: https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
+   :align: center
 
 *Premier lancement de l'iso de 3CX*
 
 Choisissez ce que vous préférez en fonction de vos habitudes d'installation de distributions Linux.
 
-:raw-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png" style="display: block; margin: 0 auto;" height="470px"/>`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png
+    :align: center
+    :height: 470px
 
 *Attendre que l'installation s'effectue et choisir les options correspondantes à vos besoins (FQDN...)*
 
@@ -92,7 +97,8 @@ Choisissez ce que vous préférez en fonction de vos habitudes d'installation de
 
 :raw-m2r:`<br>`
 
-:raw-m2r:`<img src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png" style="display: block; margin: 0 auto;" />`
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png
+    :align: center
 
 Lorsque votre VM aura redémarré et que vous aurez cette interface de disponible, je vous conseille d'installer 3CX avec votre navigateur web comme support visuel.
 
@@ -168,7 +174,7 @@ Interface
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Web interface (admin)
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL correspondante à l'installation de votre 3CX (\ *ici arthur.3cx.ch:5001*\ ), et ainsi vous logger avec les identifiants administrateur précédemment choisis.
 
@@ -193,7 +199,7 @@ Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger 
 
 
 Web Interface (client)
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Il est possible d'accéder à l'interface webclient et ainsi d'avoir des fonctionnalités UCC proposées par 3CX :
 
@@ -287,10 +293,10 @@ Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond env
 
 
 Fonctions de réseau
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 PoE (Power over Ethernet)
-~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
 Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
@@ -399,7 +405,7 @@ Parler de la MOS pour la qualité audio
 
 
 
-----
+
 
 
 Exercices
