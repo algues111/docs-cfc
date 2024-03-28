@@ -275,6 +275,8 @@ DECT : Digital Enhanced Cordless Telecommunications
 
 - TDM dans chaque canal permettant 10 personnes par canal, ce qui revient à 80 communications en simultanées maximum.
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/bande-dect.png
+
 **Différence DECT VS SIP-DECT**
 
 
