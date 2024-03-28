@@ -590,10 +590,16 @@ Précision faite, il est temps d'installer l'application sur notre appareil !
       
 Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d'envoyer des messages dans le service de chat 3CX.
 
+Schéma réseau de la connexion :
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png
 
 2. 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
 
 3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
