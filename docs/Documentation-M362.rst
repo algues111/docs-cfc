@@ -44,7 +44,7 @@ Différents types d'installation
 .. image:: https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc
    :align: right
    :height: 32px
-   
+
 Linux
 ~~~~~~~~~~~~~~
 
@@ -326,9 +326,11 @@ Les caractéristiques du codec G.711 sont les suivantes :
 
 MOS :
 
-- Mesure de qualité en conditions idéales : MOS a revoir
-- Mesure de qualité en condition dégradées : MOS a revoir
+- Mesure de qualité en conditions idéales : 4,45 en G.711 Loi-µ
+- Mesure de qualité en condition dégradées :  4,13 en G.711 Loi-µ
 
+.. note::
+   Les MOS ci-dessus sont basés sur le site https://w3tel.com/documentation-voip/codecs/g-711/ 
 
 Pour tout appel passant par IP, une initiation de communications est procédé par le protocole SIP.
 Ce dernier pourrait être comparable au fonctionnement du TCP, mais à la couche 7 du modèle OSI.
@@ -387,7 +389,7 @@ G729
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
 
-Les caractéristiques du codec G.722 sont les suivantes :
+Les caractéristiques du codec G.729 sont les suivantes :
 
 - Bande de fréquences : 50-7000Hz
 - Fréquence d'échantillonnage : 16 kHz
@@ -396,8 +398,8 @@ Les caractéristiques du codec G.722 sont les suivantes :
 
 MOS :
 
-- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711
-- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711
+- Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) 4,04 en G.729a
+- Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) 3,51 en G.729a
 
 Parler de la MOS pour la qualité audio
 
