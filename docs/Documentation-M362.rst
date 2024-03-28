@@ -597,8 +597,12 @@ Schéma réseau de la connexion :
 2. 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Après avoir vu comment fonctionnaientt les communications SIP / RTP, il est nécessaire de comprendre comment se passent les communications passant à travers des applications ou par WebRTC.
+
+Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un petit schéma réseau.
 
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png
 
 
 3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
