@@ -310,7 +310,7 @@ Attention aux recommandations des fournisseurs
 ----
 
 Codecs
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~
 
 
 G711
