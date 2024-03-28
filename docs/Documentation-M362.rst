@@ -259,7 +259,51 @@ Boîte de messagerie vocale :
 Généralités Réseau
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+DECT : Digital Enhanced Cordless Telecommunications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+**Bande de fréquence :** de 1880 à 1920MHz
+
+- Divisé en 2 plages distinctes :
+   - 1880-1900 : émission
+   - 1900-1920 : réception
+
+- Chaque plage contient 12 canaux
+- 8 canaux pour la communication
+- 4 canaux pour la signalisation
+
+- TDM dans chaque canal permettant 10 personnes par canal, ce qui revient à 80 communications en simultanées maximum.
+
+**Différence DECT VS SIP-DECT**
+
+
+Gestion des canaux : 
+
+DECT : OMM (Office manager mobile) qui gère la partie sans fil dans le central téléphonique (protocole propriétaire)
+
+SIP DECT : Antennes liées au switch, avec une antenne master (OMM), autres antennes slave, protocole LLDP (broadcast)
+
+.. warning::
+   Le broadcast est désactivé par défaut sur les switchs CISCO et sur d' autres marques, bloquant donc le broadcast du LLDP. 
+   Ceci crée des problèmes de connexions des terminaux aux antennes SIP DECT.
+   Il est alors vivement recommandé d'autoriser les trames broadcast sur le swich.
+
+Connection DECT :
+
+2 fils, DSI (mitel), propriétaire...
+
+Connexion SIP DECT :
+
+Connexion au PBX via SIP puis configuration XML envoyée par le serveur
+
+
+ATA (Analogique terminal adapter)
+
+   Convertir analogique IP et IP Analogique via PCM30 / MIC
+   Méthode de conversion différente pour FAX (protocole T.38)
+
+Attention aux recommandations des fournisseurs
 
 ----
 
@@ -326,8 +370,8 @@ Les caractéristiques du codec G.711 sont les suivantes :
 
 MOS :
 
-- Mesure de qualité en conditions idéales : 4,45 en G.711 Loi-µ
-- Mesure de qualité en condition dégradées :  4,13 en G.711 Loi-µ
+- Mesure de qualité en conditions idéales : 4,45 en G.711 Loi-A
+- Mesure de qualité en condition dégradées :  4,11 en G.711 Loi-A
 
 .. note::
    Les MOS ci-dessus sont basés sur le site https://w3tel.com/documentation-voip/codecs/g-711/ 
@@ -391,10 +435,10 @@ G729
 
 Les caractéristiques du codec G.729 sont les suivantes :
 
-- Bande de fréquences : 50-7000Hz
-- Fréquence d'échantillonnage : 16 kHz
-- Débit fixe : 64 kbps
-- Délai de compression : Non spécifié
+- Bande de fréquences : 300-3400Hz
+- Fréquence d'échantillonnage : 8 kHz
+- Débit fixe : 8Kbps
+- Délai de compression : 15ms
 
 MOS :
 
