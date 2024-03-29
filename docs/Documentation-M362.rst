@@ -550,7 +550,7 @@ Les champs obligatoires à remplir lors de la création de l'utilisateur sont le
 Exercice 2
 ^^^^^^^^^^^^^^^^^
 
-1. NAT / PAT avec installation app natel externe
+1 - NAT / PAT avec installation app natel externe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Workflow de l'exercice :
@@ -593,8 +593,9 @@ Vous êtes désormais connecté à votre compte, vous permettant donc de passer 
 Schéma réseau de la connexion :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png
+   
 
-2. 1 App + 1 Webclient en interne avec Wireshark
+2 - 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -609,8 +610,6 @@ Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un pe
 
 
 
-3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
+3 - 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
-dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
-dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
+
