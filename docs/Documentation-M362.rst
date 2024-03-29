@@ -283,7 +283,7 @@ Ses caractéristiques sont les suivantes :
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dect-yealink.png
-   :height: 120px
+   :height: 300px
 
 **Bande de fréquence :** de 1880 à 1920MHz
 
