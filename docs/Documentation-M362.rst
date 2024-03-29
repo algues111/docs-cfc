@@ -265,6 +265,25 @@ Généralités Réseau
 DECT : Digital Enhanced Cordless Telecommunications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+La tehnologie DECT est un standard de communication téléphonique sans-fil.
+
+Ses caractéristiques sont les suivantes :
+
+   - Longue portée (jusqu'à 50 m à l'intérieur, jusqu'à 300 m à l'extérieur)
+   - Haut niveau de sécurité contre les interceptions
+   - Très bon rendement énergétique
+   - Gamme de fréquences distincte qui ne dépend pas du WiFi
+   - Meilleure qualité sonore qu'avec les normes précédentes
+   - Application polyvalente
+   - Possibilité d'utiliser plusieurs combinés en même temps
+   - Appels internes gratuits
+   - Les combinés peuvent être utilisés sur plusieurs stations de base
+   - Les combinés multi-fournisseurs peuvent être utilisés sur les stations de base
+   - Changement automatique de station de base (handover)
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dect-yealink.png
+   :height: 120px
 
 **Bande de fréquence :** de 1880 à 1920MHz
 
@@ -319,7 +338,7 @@ Connexion SIP DECT :
 Connexion au PBX via SIP puis configuration XML envoyée par le serveur
 
 
-ATA (Analogic terminal adapter) 
+ATA : Analogic terminal adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Le principe de l'ATA est en réalité très simple ; il permet de convertir un signal analogique en un signal numérique et inversement.
