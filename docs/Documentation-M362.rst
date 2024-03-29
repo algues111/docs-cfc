@@ -325,15 +325,17 @@ ATA (Analogic terminal adapter)
 Le principe de l'ATA est en réalité très simple ; il permet de convertir un signal analogique en un signal numérique et inversement.
 Cela permet donc de connecter un ancien téléphone analogique ou un FAX à un réseau numérique (souvent IP).
 
-Cependant la méthode de conversion est différente pour le FAX (protocole T.38), il est donc important de choisir minutieusement l'ATA que nous installons.
+Cependant la méthode de conversion est différente pour le FAX (protocole T.38), il est alors simportant de choisir minutieusement l'ATA que nous installons.
 
 Un ATA comporte en général minimum 2 ports RJ11 pour les appareils analogiques ainsi qu'un port RJ45 pour le connecter au réseau IP.
-Les plus sophistiqués d'entre eux peuvent aussi être dotés de la capacité d'être alimenté en PoE et d'avoir un port RJ45 pour le WAN directement.
+Les plus sophistiqués d'entre eux peuvent aussi être dotés de la capacité d'être alimenté en PoE et d'avoir un port RJ45 pour le WAN directement par exemple.
 
 Voici une photo d'un ATA relativement classique :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.jpg
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png
+   :height: 230px
 
+   
 .. seealso::
 
    Ce sujet est abordé dans le module M114 de 1ère année, je vous invite donc à vous référer à ces liens pour plus d'informations au sujet du PCM30 / MIC !
