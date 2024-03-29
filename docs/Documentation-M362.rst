@@ -535,6 +535,9 @@ Configuration Janine :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png
 
+
+
+
 Les champs obligatoires à remplir lors de la création de l'utilisateur sont les suivants :
 
 
@@ -560,6 +563,8 @@ Dépannage 3CX
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png
 
 
+
+
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.
 
@@ -570,6 +575,9 @@ Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Po
 - Port TCP/UDP 5090 (Tunnel 3CX)
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png
+
+
+
 
 A la suite de cette configuration, nous pouvons télécharger l'application 3CX sur notre téléphone.
 
@@ -588,6 +596,9 @@ Précision faite, il est temps d'installer l'application sur notre appareil !
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/install-android.png
       
+
+
+
 Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d'envoyer des messages dans le service de chat 3CX.
 
 Schéma réseau de la connexion :
@@ -607,6 +618,7 @@ Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un pe
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png
 
 
+
 Avant que la communication commence entre les appareils, un handshake TLS1.2 est initié afin d'échanger les clés nécessaires au chiffrement de la communication.
 Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
 
@@ -618,7 +630,7 @@ Voici comment se passe un handshake TLS :
 
 .. admonition:: Lien utile
 
-   TLS Handshake protocole : https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/
+   TLS / SSL protocols  : https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/
 
 
 
