@@ -616,7 +616,7 @@ Voici comment se passe un handshake TLS :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tls-ssl-handshake.png
 
 
-.. note:: Lien utile
+.. admonition:: Lien utile
    TLS Handshake protocole : https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/
 
 
