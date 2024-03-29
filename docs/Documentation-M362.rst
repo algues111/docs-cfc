@@ -302,6 +302,8 @@ Schéma réseau d'une installation DECT incluant à la fois une base numérique 
    https://ipofficekb.avaya.com/businesspartner/ipoffice11_1fr/mergedProjects/manuals/install/IP%20Office%20DECT%20R4%20Installation%20Guide_fr.pdf
 
 
+
+
 .. warning::
 
    Le broadcast est désactivé par défaut sur les switchs CISCO et sur d'autres marques, **bloquant donc le broadcast du LLDP**. 
