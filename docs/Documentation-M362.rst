@@ -285,14 +285,28 @@ DECT : Digital Enhanced Cordless Telecommunications
 
 Gestion des canaux : 
 
-DECT : OMM (Office manager mobile) qui gère la partie sans fil dans le central téléphonique (protocole propriétaire)
+DECT : Central téléphonique agissant en tant qu'OMM (Office manager mobile) et gèrant la partie sans-fil via un protocole propriétaire.
 
 SIP DECT : Antennes liées au switch, avec une antenne master (OMM), autres antennes slave, protocole LLDP (broadcast)
 
+
+Schéma réseau d'une installation DECT incluant à la fois une base numérique et une base IP :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-dect-digital-ip.png
+
+
+.. seealso::
+   
+   Ce dernier provient du document pdf suivant, étant la propriété intellectuelle d'Avaya :
+
+   https://ipofficekb.avaya.com/businesspartner/ipoffice11_1fr/mergedProjects/manuals/install/IP%20Office%20DECT%20R4%20Installation%20Guide_fr.pdf
+
+
 .. warning::
-   Le broadcast est désactivé par défaut sur les switchs CISCO et sur d' autres marques, bloquant donc le broadcast du LLDP. 
-   Ceci crée des problèmes de connexions des terminaux aux antennes SIP DECT.
-   Il est alors vivement recommandé d'autoriser les trames broadcast sur le swich.
+
+   Le broadcast est désactivé par défaut sur les switchs CISCO et sur d'autres marques, **bloquant donc le broadcast du LLDP**. 
+   Ceci crée des **problèmes de connexions** des terminaux aux antennes SIP DECT.
+   Il est alors vivement recommandé **d'autoriser les trames broadcast** sur le swich.
 
 Connection DECT :
 
@@ -303,10 +317,18 @@ Connexion SIP DECT :
 Connexion au PBX via SIP puis configuration XML envoyée par le serveur
 
 
-ATA (Analogique terminal adapter)
+ATA (Analogique terminal adapter) :
 
    Convertir analogique IP et IP Analogique via PCM30 / MIC
    Méthode de conversion différente pour FAX (protocole T.38)
+
+Schéma réseau d'une installation IP / SIP intégrant des appareils analogiques :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-sip-ata.png
+
+
+
+
 
 Attention aux recommandations des fournisseurs
 
@@ -529,7 +551,10 @@ La demande est désormais plus compréhensible, nous allons donc maintenant proc
 
 Commencons par les utilisateurs :
 
-:raw-m2r:`<u> Disclaimer : Pour l'exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101. </u>`
+
+.. note::
+
+   Pour l'exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png
 
@@ -601,7 +626,7 @@ Précision faite, il est temps d'installer l'application sur notre appareil !
 
 Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d'envoyer des messages dans le service de chat 3CX.
 
-Schéma réseau de la connexion :
+:raw-m2r:`<u>Schéma réseau de la connexion : </u>`
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png
 
@@ -623,7 +648,7 @@ Avant que la communication commence entre les appareils, un handshake TLS1.2 est
 
 .. danger::
 
-   Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
+   Il est important de noter qu'un chiffrement **TLS 1.2 min.** est recommandé pour **garantir l'intégrité et la confidentialité** de la communication.
 
 
 Voici comment se passe un handshake TLS :
@@ -641,3 +666,4 @@ Voici comment se passe un handshake TLS :
 3 - 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Concernant cet exercice, je vous invite à vous rediriger vers la section discutant des codecs audio, car les captures Wireshark ont été prises lors de cet exercice.
