@@ -593,7 +593,7 @@ Vous êtes désormais connecté à votre compte, vous permettant donc de passer 
 Schéma réseau de la connexion :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png
-   
+
 
 2 - 1 App + 1 Webclient en interne avec Wireshark
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -606,6 +606,18 @@ Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un pe
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png
 
+
+Avant que la communication commence entre les appareils, un handshake TLS1.2 est initié afin d'échanger les clés nécessaires au chiffrement de la communication.
+Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
+
+Voici comment se passe un handshake TLS :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tls-ssl-handshake.png
+
+
+.. note:: Lien utile
+   TLS Handshake protocole : https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/
 
 
 
