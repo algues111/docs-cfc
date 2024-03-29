@@ -320,9 +320,17 @@ Connexion au PBX via SIP puis configuration XML envoyée par le serveur
 ATA (Analogic terminal adapter) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Le principe de l'ATA est en réalité très simple ; il permet de convertir un signal analogique en un signal numérique et inversement.
+Cela permet donc de connecter un ancien téléphone analogique ou un FAX à un réseau numérique (souvent IP).
 
-   Convertir analogique -> IP et IP -> Analogique via PCM30 / MIC
-   Méthode de conversion différente pour FAX (protocole T.38)
+Cependant la méthode de conversion est différente pour le FAX (protocole T.38), il est donc important de choisir minutieusement l'ATA que nous installons.
+
+Un ATA comporte en général minimum 2 ports RJ11 pour les appareils analogiques ainsi qu'un port RJ45 pour le connecter au réseau IP.
+Les plus sophistiqués d'entre eux peuvent aussi être dotés de la capacité d'être alimenté en PoE et d'avoir un port RJ45 pour le WAN directement.
+
+Voici une photo d'un ATA relativement classique :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.jpg
 
 .. seealso::
 
