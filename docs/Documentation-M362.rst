@@ -296,7 +296,7 @@ Schéma réseau d'une installation DECT incluant à la fois une base numérique 
 
 
 .. seealso::
-   
+
    Ce dernier provient du document pdf suivant, étant la propriété intellectuelle d'Avaya :
 
    https://ipofficekb.avaya.com/businesspartner/ipoffice11_1fr/mergedProjects/manuals/install/IP%20Office%20DECT%20R4%20Installation%20Guide_fr.pdf
@@ -317,10 +317,21 @@ Connexion SIP DECT :
 Connexion au PBX via SIP puis configuration XML envoyée par le serveur
 
 
-ATA (Analogique terminal adapter) :
+ATA (Analogic terminal adapter) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Convertir analogique IP et IP Analogique via PCM30 / MIC
+
+   Convertir analogique -> IP et IP -> Analogique via PCM30 / MIC
    Méthode de conversion différente pour FAX (protocole T.38)
+
+.. seealso::
+
+   Ce sujet est abordé dans le module M114 de 1ère année, je vous invite donc à vous référer à ces liens pour plus d'informations au sujet du PCM30 / MIC !
+
+   - https://fr.wikipedia.org/wiki/Modulation_par_impulsions_et_codage
+   - https://www.chireux.fr/mp/TIPE/ADS/Modulation_telephonie.pdf
+   - https://www.universalis.fr/media/principe-de-la-modulation-par-impulsions-et-codage-v22n0038/
+
 
 Schéma réseau d'une installation IP / SIP intégrant des appareils analogiques :
 
