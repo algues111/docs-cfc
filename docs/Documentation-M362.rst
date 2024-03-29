@@ -523,6 +523,8 @@ Cela permet de visualiser au mieux la demande et de pouvoir poser des questions 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png
 
+:raw-m2r:`<br>`
+
 La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !
 
 Commencons par les utilisateurs :
@@ -535,8 +537,7 @@ Configuration Janine :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png
 
-
-
+:raw-m2r:`<br>`
 
 Les champs obligatoires à remplir lors de la création de l'utilisateur sont les suivants :
 
@@ -563,7 +564,7 @@ Dépannage 3CX
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png
 
 
-
+:raw-m2r:`<br>`
 
 Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu'intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.
@@ -576,8 +577,7 @@ Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Po
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png
 
-
-
+:raw-m2r:`<br>`
 
 A la suite de cette configuration, nous pouvons télécharger l'application 3CX sur notre téléphone.
 
@@ -617,7 +617,7 @@ Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un pe
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png
 
-
+:raw-m2r:`<br>`
 
 Avant que la communication commence entre les appareils, un handshake TLS1.2 est initié afin d'échanger les clés nécessaires au chiffrement de la communication.
 Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
