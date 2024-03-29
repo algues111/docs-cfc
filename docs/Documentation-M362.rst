@@ -335,7 +335,7 @@ Voici une photo d'un ATA relativement classique :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png
    :height: 230px
 
-   
+
 .. seealso::
 
    Ce sujet est abordé dans le module M114 de 1ère année, je vous invite donc à vous référer à ces liens pour plus d'informations au sujet du PCM30 / MIC !
@@ -362,7 +362,7 @@ Codecs
 
 
 G711
-~~~~~~~~~~~~~~
+***********
 
 Les caractéristiques du codec G.711 sont les suivantes :
 
@@ -403,7 +403,7 @@ Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que W
 
 
 G722
-~~~~~~~~~~~~~~
+*******
 
 
 Les caractéristiques du codec G.722 sont les suivantes :
@@ -431,7 +431,7 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 :raw-m2r:`<br>`
 
 G729
-~~~~~~~~~~~~~~
+*********
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
@@ -618,7 +618,7 @@ Vous avez la possibilité à travers ce menu de définir si oui ou non le serveu
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.
 
 La prochaine étape sera de créer la règle NAT/PAT dans le routeur / firewall du réseau (ici Centro Business 2.0 Swisscom)
-Nous accédons donc à la web interface administrateur de ce dernier (Réseau>Port Forwarding> Create new rule)
+Nous accédons donc à la web interface administrateur de ce dernier :menuselection:`Réseau --> Port Forwarding --> Create new rule`.
 
 - Port TCP 5001 (HTTPS)
 - Port TCP/UDP 5090 (Tunnel 3CX)
@@ -637,7 +637,7 @@ A la suite de cette configuration, nous pouvons télécharger l'application 3CX 
 
 Précision faite, il est temps d'installer l'application sur notre appareil !
 
-- Rendez-vous dans votre gestionnaire de paquets / applications préféré > Tapez 3CX dans la barre de recherche > Installez l'application 
+- Rendez-vous dans votre :menuselection:`gestionnaire de paquets / applications préféré --> Tapez "3CX" dans la barre de recherche --> Installez l'application`. 
 - Ensuite, lisez et acceptez les conditions d'utilisation de l'app.
 - Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.
 
