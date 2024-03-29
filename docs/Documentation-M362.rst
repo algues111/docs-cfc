@@ -620,7 +620,11 @@ Pour illustrer cela, rien de mieux qu'une capture wireshark accompagnée d'un pe
 :raw-m2r:`<br>`
 
 Avant que la communication commence entre les appareils, un handshake TLS1.2 est initié afin d'échanger les clés nécessaires au chiffrement de la communication.
-Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
+
+.. danger::
+
+   Il est important de noter qu'un chiffrement TLS 1.2 min. est recommandé pour garantir l'intégrité et la confidentialité de la communication.
+
 
 Voici comment se passe un handshake TLS :
 
