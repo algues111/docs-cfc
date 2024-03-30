@@ -219,12 +219,12 @@ Il est possible d'accéder à l'interface webclient et ainsi d'avoir des fonctio
 
 Cela inclut :
 
-- Chats
-- Chats de groupe
-- Meetings (avec caméra, micro, partage d'écran/app...)
-- Historique des appels
-- Cahier de contacts
-- Boîte de messagerie vocale
+   - Chats
+   - Chats de groupe
+   - Meetings (avec caméra, micro, partage d'écran/app...)
+   - Historique des appels
+   - Cahier de contacts
+   - Boîte de messagerie vocale
 
 Tout est accessible depuis le menu latérale de gauche :
 
@@ -233,7 +233,7 @@ Tout est accessible depuis le menu latérale de gauche :
 :raw-m2r:`<br>`
 
 Chats :
-
+**********
 
 L'interface des chats est assez rudimentaire mais efficace. 
 Elle permet de partager des fichiers, faire des listes à puces...
@@ -244,9 +244,10 @@ Elle permet de partager des fichiers, faire des listes à puces...
 :raw-m2r:`<br>`
 
 Chats de groupe :
+********************
 
-
-:raw-m2r:`<u>Meetings : </u>`
+Meetings :
+********************
 
 3CX permet notamment de faire des conférences en ligne, grâce à une interface intuitive et pratique.
 Pour pouvoir profiter pleinement de toutes ces fonctionnalités, il est nécessaire d'accorder l'accès au micro et webcam à votre navigateur web.
@@ -259,6 +260,7 @@ Partager des fichiers et écrire dans un chat dédié est aussi possible !
 :raw-m2r:`<br>`
 
 Historique des appels :
+******************************
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png
 
@@ -266,6 +268,8 @@ Historique des appels :
 :raw-m2r:`<br>`
 
 Cahier de contacts :
+******************************
+
 
 Un cahier des contacts existe, donnant la possibilité d'enregistrer des fiches contacts.
 Pour aller plus loin, une intégration LDAP est même possible pour télécharger l'annuaire depuis un serveur LDAP. (disponible pour la licence 3CX Pro)
@@ -276,7 +280,7 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 :raw-m2r:`<br>`
 
 Boîte de messagerie vocale :
-
+******************************
 
 Réseau
 --------
