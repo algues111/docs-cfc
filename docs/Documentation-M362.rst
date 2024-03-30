@@ -83,6 +83,9 @@ Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 .. image:: https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
    :align: center
 
+
+:raw-m2r:`<br>`
+
 *Premier lancement de l'iso de 3CX*
 
 Choisissez ce que vous préférez en fonction de vos habitudes d'installation de distributions Linux.
@@ -90,6 +93,9 @@ Choisissez ce que vous préférez en fonction de vos habitudes d'installation de
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png
     :align: center
     :height: 470px
+
+
+:raw-m2r:`<br>`
 
 *Attendre que l'installation s'effectue et choisir les options correspondantes à vos besoins (FQDN...)*
 
@@ -100,6 +106,8 @@ Choisissez ce que vous préférez en fonction de vos habitudes d'installation de
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png
     :align: center
 
+:raw-m2r:`<br>`
+
 Lorsque votre VM aura redémarré et que vous aurez cette interface de disponible, je vous conseille d'installer 3CX avec votre navigateur web comme support visuel.
 
 :raw-m2r:`<br>`
@@ -109,6 +117,7 @@ Lorsque votre VM aura redémarré et que vous aurez cette interface de disponibl
    L'installation en CLI étant réservée aux utilisateurs aguerris de 3CX, je ne le vous recommanderais seulement si vous nécessitez de paramètres spéciaux/avancés.
 
 
+:raw-m2r:`<br>`
 :raw-m2r:`<br>`
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx1.png
@@ -182,12 +191,17 @@ Après avoir terminé la configuration du 3CX, vous pourrez accéder à l'URL co
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dashboard.png
 
+
+:raw-m2r:`<br>`
+
 Après s'être identifiés, nous débarquons sur l'interface admin.
 
 Pour avoir une ligne entrante et sortante opérationnelle, il est nécessaire de configurer un trunk SIP.
 3CX prend en charge plusieurs opérateurs en Suisse, notamment sipcall...
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png
+
+:raw-m2r:`<br>`
 
 
 Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables.
@@ -216,7 +230,7 @@ Tout est accessible depuis le menu latérale de gauche :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png
 
-
+:raw-m2r:`<br>`
 
 Chats :
 
@@ -225,6 +239,9 @@ L'interface des chats est assez rudimentaire mais efficace.
 Elle permet de partager des fichiers, faire des listes à puces...
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png
+
+
+:raw-m2r:`<br>`
 
 Chats de groupe :
 
@@ -239,11 +256,14 @@ Partager des fichiers et écrire dans un chat dédié est aussi possible !
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png
 
+:raw-m2r:`<br>`
 
 Historique des appels :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png
 
+
+:raw-m2r:`<br>`
 
 Cahier de contacts :
 
@@ -252,6 +272,8 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/phonebook.png
 
+
+:raw-m2r:`<br>`
 
 Boîte de messagerie vocale :
 
@@ -298,6 +320,9 @@ Ses caractéristiques sont les suivantes :
 - TDM dans chaque canal permettant 10 personnes par canal, ce qui revient à 80 communications en simultanées maximum.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/bande-dect.png
+
+
+:raw-m2r:`<br>`
 
 **Différence DECT VS SIP-DECT**
 
@@ -355,6 +380,8 @@ Voici une photo d'un ATA relativement classique :
    :height: 230px
 
 
+:raw-m2r:`<br>`
+
 .. seealso::
 
    Ce sujet est abordé dans le module M114 de 1ère année, je vous invite donc à vous référer à ces liens pour plus d'informations au sujet du PCM30 / MIC !
@@ -408,6 +435,8 @@ Capture wireshark d'une conversation en G711 (flux RTP):
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png
 
+:raw-m2r:`<br>`
+
 
 Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .
 
@@ -454,6 +483,8 @@ G729
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
+
+:raw-m2r:`<br>`
 
 Les caractéristiques du codec G.729 sont les suivantes :
 
@@ -593,12 +624,15 @@ La demande est désormais plus compréhensible, nous allons donc maintenant proc
 
 Commencons par les utilisateurs :
 
+:raw-m2r:`<br>`
 
 .. note::
 
    Pour l'exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png
+
+:raw-m2r:`<br>`
 
 Configuration Janine :
 
