@@ -232,7 +232,7 @@ Tout est accessible depuis le menu latérale de gauche :
 
 :raw-m2r:`<br>`
 
-Chats :
+Chats
 **********
 
 L'interface des chats est assez rudimentaire mais efficace. 
@@ -243,10 +243,10 @@ Elle permet de partager des fichiers, faire des listes à puces...
 
 :raw-m2r:`<br>`
 
-Chats de groupe :
+Chats de groupe
 ********************
 
-Meetings :
+Meetings
 ********************
 
 3CX permet notamment de faire des conférences en ligne, grâce à une interface intuitive et pratique.
@@ -259,7 +259,7 @@ Partager des fichiers et écrire dans un chat dédié est aussi possible !
 
 :raw-m2r:`<br>`
 
-Historique des appels :
+Historique des appels
 ******************************
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png
@@ -267,7 +267,7 @@ Historique des appels :
 
 :raw-m2r:`<br>`
 
-Cahier de contacts :
+Cahier de contacts
 ******************************
 
 
@@ -279,7 +279,7 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 
 :raw-m2r:`<br>`
 
-Boîte de messagerie vocale :
+Boîte de messagerie vocale
 ******************************
 
 Réseau
@@ -613,7 +613,7 @@ Mission par groupe de 2 ou 4:
 
 Testez l’installation et consignez les tests dans un protocole
 
-Workflow :
+Workflow 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 La chose la plus importante à faire dans un exercice tel quel, est de dessiner un schéma de principe très simple, à la main de préférence.
@@ -702,7 +702,7 @@ Précision faite, il est temps d'installer l'application sur notre appareil !
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/install-android.png
       
 
-
+:raw-m2r:`<br>`
 
 Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d'envoyer des messages dans le service de chat 3CX.
 
@@ -736,6 +736,7 @@ Voici comment se passe un handshake TLS :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tls-ssl-handshake.png
 
+:raw-m2r:`<br>`
 
 .. admonition:: Lien utile
 
