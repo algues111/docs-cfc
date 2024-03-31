@@ -560,8 +560,14 @@ Schéma de principe du fonctionnement d'un SBC :
 Généralités Téléphonie
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Codecs
-~~~~~~
+Codecs audio
+~~~~~~~~~~~~~~~~
+
+Le choix du codec dépend des paramètres suivants:
+
+   - Qualité vocale souhaitée
+   - Bande passante disponible et taux de perte de paquets
+   - Prise en charge par les appareils terminaux, PBX et le fournisseur SIP
 
 
 G711
