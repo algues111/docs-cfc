@@ -564,6 +564,7 @@ Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à 
 Cette solution est en générale **non recommandée** par les opérateurs.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
+   :author: nexcom.fr
 
 .. seealso::
    Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
@@ -584,7 +585,7 @@ Il permet notamment de :
 Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
-   :alt: https://wp.napsis.fr/wp-content/uploads/2022/10/SBC-reseau-telephonique-1.jpg
+   :author: Napsis.fr
 
 
 
@@ -596,12 +597,17 @@ SIP trunk
 ~~~~~~~~~~
 
 Un SIP trunk permet une liaison entre le réseau privé et le réseau public de téléphonie. 
-| Plus concrètement, cette liaison permet d'émettre et recevoir des appels vers/depuis l'extérieur.
+|Plus concrètement, cette liaison permet d'émettre et recevoir des appels vers/depuis l'extérieur.
 
 Un SIP trunk peut se louer par mois ou à l'utilisation à la minute par exemple.
-| Il se présente souvent comme un compte, avec un nom d'utilisateur, un mot de passe ainsi que l'IP du registrar.
+|Il se présente souvent comme un compte, avec un nom d'utilisateur, un mot de passe ainsi que l'IP du registrar.
 
-| Ce dernier est un serveur d'authentification, vérifiant les credentials des clients.
+|Ce dernier est un serveur d'authentification, vérifiant les credentials des clients.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png
+   :author: ringcentral.com
+
 
 
 Ligne
@@ -618,12 +624,15 @@ dual-tone multi-frequency
 IVR 
 ~~~~~
 
-L'IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des menus vocaux et des messages préenregistrés
-Il est donc possible d'orienter ces personnes vers les services dont ils ont besoin automatiquement.
+L'IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des **menus vocaux** et des ****messages préenregistrés
+Il est donc possible **d'orienter ces personnes** vers les services dont ils ont besoin **automatiquement.**
 
 Chez 3CX, le menu de configuration se présente de la sorte :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr.png
+
+:raw-m2r:`<br>`
+
 
 Pour une entreprise, cet outil est très précieux car il permet d'optimiser au préalable le temps des collaborateurs et ainsi d'économiser de l'argent.
 Configurer un IVR est donc une tâche à ne pas négliger !
