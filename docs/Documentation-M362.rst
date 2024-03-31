@@ -912,7 +912,11 @@ Le plus simple est d'accéder à la web interface de chaque terminal IP et de sa
 
 :raw-m2r:`<br>`
 
-Après avoir redémarré nos terminau, notre installation est fin prête à être testée et déployée pour l'exercice !!
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/T46-3cx.png
+
+:raw-m2r:`<br>`
+
+Après avoir redémarré nos terminaux, notre installation est fin prête à être testée et déployée pour l'exercice !!
 
 
 ----
