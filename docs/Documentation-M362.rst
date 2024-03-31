@@ -847,6 +847,7 @@ Voici la configuration de l'utilisateur 299 "occupé" :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/occupé.png
 
+:raw-m2r:`<br>`
 
 Maintenant, créons les règles lorsque le bureau est fermé ou lorsque le jour en question est férié / chômé :
 
@@ -856,10 +857,13 @@ Ici, nous avons choisi la 3ème option.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/férié.png
 
+:raw-m2r:`<br>`
+
 Désormais, il ne manque plus que définir le routage dans le SIP Trunk pour définir où seront redirigés les utilisateurs en fonction des 2 cas précédemment cités.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/trunk-routage.png
 
+:raw-m2r:`<br>`
 
 Notre installation est maintenant prête à être testée et déployée pour l'exercice !!
 
