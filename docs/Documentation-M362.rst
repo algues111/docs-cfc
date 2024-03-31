@@ -223,12 +223,24 @@ Pour avoir une ligne entrante et sortante opérationnelle, il est nécessaire de
 :raw-m2r:`<br>`
 
 
-Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables.
+Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables :
+
+   - Nom du trunk
+   - Nom ou IP du registrar
+   - Proxy sortant
+   - Nombre d'appels simultanés
+   - Type d'authentification
+   - ID d'authentification (user ID)
+   - Mot de passe
+   - Routage (que l'on verra plus loin dans la documentation)
+
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png
+
+
 
 
 Web Interface (client)
