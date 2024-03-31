@@ -518,6 +518,7 @@ Voici quelques-unes des informations qui peuvent être recueillies par LLDP (seu
 En téléphonie IP, ce sont principalement les classes PoE nécessaires, l’ID VLAN et les paramètres QoS qui sont transmis. 
 Cette option **devrait être activée sur les terminaux et sur les switchs Ethernet.**
 
+
  .. seealso::
    Ce protocole étant complexe et n'étant pas l'objet central de cette documentation, je vous invite à vous renseigner sur ce site :
    https://www.noction.com/blog-francais/decouverte-peers-bgp-lldp
