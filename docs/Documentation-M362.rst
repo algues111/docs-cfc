@@ -306,6 +306,8 @@ Comme son nom l'indique, la boîte de messagerie vocale permet d'écouter les me
 Réseau & Téléphonie
 ----------------------
 
+Généralités Réseau
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 DECT : Digital Enhanced Cordless Telecommunications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -474,6 +476,40 @@ Tableau des normes PoE à voir ci-dessous :
 
 
 ----
+
+LLDP (Link Layer Discovery Protocol)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Le protocole LLDP (Link Layer Discovery Protocol) est un protocole de découverte des voisins de couche 2 qui permet aux périphériques d'annoncer des informations sur eux-mêmes à leurs voisins directement connectés au même réseau.
+Ces informations sont également enregistrées dans des banques de données d’informations de gestion (MIB) locales.
+Sur les appareils compatibles LLDP, un agent LLDP est installé, ce dernier émettant des annonces de toutes les interfaces physiques, à intervalles réguliers ou lors de modifications.
+
+Voici quelques-unes des informations qui peuvent être recueillies par LLDP (seules des informations minimales sont obligatoires) :
+
+   - Nom et description du système
+
+   - Nom et description du port
+
+   - Nom et identifiant du VLAN
+
+   - Adresse de gestion du réseau IP
+
+   - Capacités de l’appareil (par exemple, commutateur, routeur ou serveur)
+
+   - Informations sur l’adresse MAC et la couche physique
+
+   - Informations sur l’alimentation
+
+   - Informations d’agrégation de liens
+
+En téléphonie IP, ce sont principalement les classes PoE nécessaires, l’ID VLAN et les paramètres QoS qui sont transmis. 
+Cette option **devrait être activée sur les terminaux et sur les switchs Ethernet.**
+
+ .. seealso::
+   Ce protocole étant complexe et n'étant pas l'objet central de cette documentation, je vous invite à vous renseigner sur ce site :
+   https://www.noction.com/blog-francais/decouverte-peers-bgp-lldp
+
 
 STUN (Simple Traversal of UDP over NAT)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -657,7 +693,7 @@ Elles sont normalisées et spécifiées par la recommandation Q.23 de :abbr:`l'U
 IVR 
 ~~~~~
 
-L'IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des **menus vocaux** et des ****messages préenregistrés
+L'IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des **menus vocaux** et des **messages préenregistrés.**
 Il est donc possible **d'orienter ces personnes** vers les services dont ils ont besoin **automatiquement.**
 
 Chez 3CX, le menu de configuration se présente de la sorte :
@@ -767,6 +803,65 @@ Les champs obligatoires à remplir lors de la création de l'utilisateur sont le
 * Prénom
 * Nom
 * Adresse Mail
+
+Par la suite, il est nécessaire de configurer les groupes d'appels en fonction des langues parlées par les collaborateurs :
+Nous allons donc ici configurer 3 groupes :
+
+   - Groupe allemand (810)
+   - Groupe francais (820)
+   - Groupe anglais (830)
+
+Dans les paramètres de chacun des groupes, il est **important** de sélectionner la **sonnerie en parallèle (sonne tous)** dane le but d'éviter le cas suivant :
+
+Imaginons que nous configurions la sonnerie à la suite 1 à 1 (Janine puis Anna dans l'ordre)
+Un client appelle le groupe allemand, mais Janine est absente ou alors cette dernière a juste pris une pause café de 5 minutes.
+Dans ce cas-là, le client tombera directement sur la messagerie de Janine sans passer par Anna, qui elle, est bien présente.
+
+Cela pourrait présenter un inconvénient majeur pour les collaborateurs et créer une frustration côté client.
+
+Voici pour exemple la configuration du groupe allemand :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/groupe-appel-810.png
+
+
+Tout de suite après, nous pouvons créer un IVR :
+
+En premier temps, nous choisissons le nom de l'IVR, son n° d'extension, son type, le message pré-enregistré ainsi que la langue des directives vocales.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config1.png
+
+:raw-m2r:`<br>`
+
+Après cela, nous définissons comment chaque touche agit :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config2.png
+
+:raw-m2r:`<br>`
+
+Ici, nous voulons que la touche n°1 appelle le groupe allemand, que la n°2 appelle le groupe francais et que la n°3 appelle le groupe anglais.
+En cas de non réponse, l'appelant se verra redirigé vers la messagerie vocale de l'extension n°299 "occupé".
+
+Il est nécessaire de répéter cette configuration pour chaque groupe d'appel.
+
+Voici la configuration de l'utilisateur 299 "occupé" :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/occupé.png
+
+
+Maintenant, créons les règles lorsque le bureau est fermé ou lorsque le jour en question est férié / chômé :
+
+Il est possible de le faire pour un SIP trunk, une règle entrante ou encore dans les paramètres généraux de 3CX.
+Ici, nous avons choisi la 3ème option.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/férié.png
+
+Désormais, il ne manque plus que définir le routage dans le SIP Trunk pour définir où seront redirigés les utilisateurs en fonction des 2 cas précédemment cités.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/trunk-routage.png
+
+
+Notre installation est maintenant prête à être testée et déployée pour l'exercice !!
 
 
 ----
