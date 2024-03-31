@@ -804,7 +804,7 @@ Les champs obligatoires à remplir lors de la création de l'utilisateur sont le
 * Nom
 * Adresse Mail
 
-Par la suite, il est nécessaire de configurer les groupes d'appels en fonction des langues parlées par les collaborateurs :
+Par la suite, il est nécessaire de **configurer les groupes d'appels** en fonction des **langues parlées** par les collaborateurs :
 Nous allons donc ici configurer 3 groupes :
 
    - Groupe allemand (810)
@@ -813,7 +813,7 @@ Nous allons donc ici configurer 3 groupes :
 
 Dans les paramètres de chacun des groupes, il est **important** de sélectionner la **sonnerie en parallèle (sonne tous)** dane le but d'éviter le cas suivant :
 
-Imaginons que nous configurions la sonnerie à la suite 1 à 1 (Janine puis Anna dans l'ordre)
+Imaginons que nous configurions la sonnerie à la suite 1 à 1 (Janine puis Anna dans l'ordre).
 Un client appelle le groupe allemand, mais Janine est absente ou alors cette dernière a juste pris une pause café de 5 minutes.
 Dans ce cas-là, le client tombera directement sur la messagerie de Janine sans passer par Anna, qui elle, est bien présente.
 
@@ -823,6 +823,7 @@ Voici pour exemple la configuration du groupe allemand :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/groupe-appel-810.png
 
+:raw-m2r:`<br>`
 
 Tout de suite après, nous pouvons créer un IVR :
 
@@ -841,7 +842,7 @@ Après cela, nous définissons comment chaque touche agit :
 Ici, nous voulons que la touche n°1 appelle le groupe allemand, que la n°2 appelle le groupe francais et que la n°3 appelle le groupe anglais.
 En cas de non réponse, l'appelant se verra redirigé vers la messagerie vocale de l'extension n°299 "occupé".
 
-Il est nécessaire de répéter cette configuration pour chaque groupe d'appel.
+Il est nécessaire de **répéter cette configuration pour chaque groupe d'appel.**
 
 Voici la configuration de l'utilisateur 299 "occupé" :
 
@@ -851,7 +852,7 @@ Voici la configuration de l'utilisateur 299 "occupé" :
 
 Maintenant, créons les règles lorsque le bureau est fermé ou lorsque le jour en question est férié / chômé :
 
-Il est possible de le faire pour un SIP trunk, une règle entrante ou encore dans les paramètres généraux de 3CX.
+Il est possible de le faire pour un **SIP trunk**, une **règle entrante** ou encore dans les **paramètres généraux de 3CX.**
 Ici, nous avons choisi la 3ème option.
 
 
