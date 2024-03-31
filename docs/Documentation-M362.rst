@@ -199,6 +199,12 @@ Attention, cela se produit seulement si vous précisez que vous n'avez pas votre
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png
 
+
+.. seealso::
+   Un manuel complet du PBX 3CX est disponible sur ce lien :
+   https://www.3cx.fr/docs/manuel/avance/
+
+
 ----
 
 Interface
@@ -804,6 +810,9 @@ En supposant que le SIP trunk et que les règles entrantes / sortantes sont déj
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png
 
+:raw-m2r:`<br>`
+
+*Cependant, pour avoir une idée de comment se configure une règle sortante, je vous invite à accéder au lien suivant : https://www.3cx.fr/docs/manuel/avance/#h.y5la85hz60l*
 
 :raw-m2r:`<br>`
 
