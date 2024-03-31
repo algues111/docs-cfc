@@ -617,6 +617,8 @@ Le choix du codec dépend des paramètres suivants:
 G711
 ***********
 
+Le G711 ou encore PCM30 / MIC, est le codec audio par défaut utilisé dans la téléphonie classique.
+
 Les caractéristiques du codec G.711 sont les suivantes :
 
 - Bande de fréquences : 300-3400Hz
@@ -660,6 +662,8 @@ Il est donc tout à fait possible à partir d'un fichier d'un logiciel tel que W
 G722
 *******
 
+Aussi désigné comme la HD de l'audio, le G722 (ADPCM) est un codec avec une large bande fréquence. Il est donc beaucoup plus agréable de téléphoner avec celui-ci car le timbre de voix est bien moins altéré.
+
 
 Les caractéristiques du codec G.722 sont les suivantes :
 
@@ -687,6 +691,9 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 G729
 *********
 
+Ce codec (CS-ACELP), permet de téléphoner avec un débit réduit et dans des conditions réseau défavorables.
+Sa qualité est donc moindre car son délai de compression est élevé.
+Les discussions ont un timbre "métallique" voire "robotique".
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
 
