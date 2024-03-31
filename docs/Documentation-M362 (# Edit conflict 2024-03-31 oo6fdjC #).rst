@@ -23,6 +23,8 @@ Qu'est-ce que 3CX ?
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png
    :align: center
+*Source : 3cx.com*
+
 
 ----
 
@@ -33,6 +35,7 @@ Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que s
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png
    :align: center
+*Source : 3cx.com*
 
 ----
 
@@ -339,7 +342,7 @@ SIP DECT : Antennes liées au switch, avec une antenne master (OMM), autres ante
 Schéma réseau d'une installation DECT incluant à la fois une base numérique et une base IP :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-dect-digital-ip.png
-*Source : avaya.com*
+
 
 .. seealso::
 
@@ -354,7 +357,7 @@ Schéma réseau d'une installation DECT incluant à la fois une base numérique 
 
    Le broadcast est désactivé par défaut sur les switchs CISCO et sur d'autres marques, **bloquant donc le broadcast du LLDP**. 
    Ceci crée des **problèmes de connexions** des terminaux aux antennes SIP DECT.
-   Il est alors vivement recommandé **d'autoriser les trames broadcast** sur le switch.
+   Il est alors vivement recommandé **d'autoriser les trames broadcast** sur le swich.
 
 Connection DECT :
 
@@ -380,7 +383,7 @@ Voici une photo d'un ATA relativement classique :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png
    :height: 230px
-
+*Source : grandstream.com*
 
 :raw-m2r:`<br>`
 
@@ -472,6 +475,8 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
     :alt: graph-g711-g722
+*Source : gl.com*
+
 
 :raw-m2r:`<br>`
 
@@ -564,7 +569,7 @@ Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à 
 Cette solution est en générale **non recommandée** par les opérateurs.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
-   :author: nexcom.fr
+*Source : nexcom.fr*
 
 .. seealso::
    Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
@@ -585,7 +590,7 @@ Il permet notamment de :
 Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
-   :author: Napsis.fr
+*Source : Napsis.fr*
 
 
 
@@ -597,17 +602,20 @@ SIP trunk
 ~~~~~~~~~~
 
 Un SIP trunk permet une liaison entre le réseau privé et le réseau public de téléphonie. 
-Plus concrètement, cette liaison permet d'émettre et recevoir des appels vers/depuis l'extérieur.
+|Plus concrètement, cette liaison permet d'émettre et recevoir des appels vers/depuis l'extérieur.
 
 Un SIP trunk peut se louer par mois ou à l'utilisation à la minute par exemple.
-Il se présente souvent comme un compte, avec un nom d'utilisateur, un mot de passe ainsi que l'IP du registrar.
+|Il se présente souvent comme un compte, avec un nom d'utilisateur, un mot de passe ainsi que l'IP du registrar.
 
-Ce dernier est un serveur d'authentification, vérifiant les credentials des clients.
+|Ce dernier est un serveur d'authentification, vérifiant les credentials des clients.
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png
-   :author: ringcentral.com
+*Source : ringcentral.com*
 
+
+
+Ligne
 
 
 
@@ -615,14 +623,7 @@ Ce dernier est un serveur d'authentification, vérifiant les credentials des cli
 DTMF
 ~~~~
 
-Les touches DTMF (Dual-tone multi-frequency) usent d'une combinaison de fréquences pour composer un numéro de téléphone et interagir avec des serveurs vocaux interactifs.
-Les fréquences utilisées sont situées entre 770Hz et 1633MHz.
-
-Elles sont normalisées et spécifiées par la recommandation Q.23 de :abbr:`l'UIT (Union internationnale des Télécommunications)`. 
-
-.. seealso::
-   Un tableau interactif des touches DTMF est disponible sur la page suivante : https://fr.wikipedia.org/wiki/Code_DTMF
-
+dual-tone multi-frequency
 
 
 IVR 
