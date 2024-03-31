@@ -695,6 +695,8 @@ Ce codec (CS-ACELP), permet de téléphoner avec un débit réduit et dans des c
 Sa qualité est donc moindre car son délai de compression est élevé.
 Les discussions ont un timbre "métallique" voire "robotique".
 
+Nous remarquerons d'ailleurs que sur la capture wireshark ci-dessous, le volume du payload contenu dans le paquet RTP est bien inférieur à celui des 2 précédents codecs.
+
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png
 
 :raw-m2r:`<br>`
