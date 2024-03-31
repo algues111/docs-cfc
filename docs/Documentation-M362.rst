@@ -502,7 +502,6 @@ MOS :
 - Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) 4,04 en G.729a
 - Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) 3,51 en G.729a
 
-Parler de la MOS pour la qualité audio
 
 
 ----
@@ -554,12 +553,41 @@ Tableau des normes PoE à voir ci-dessous :
 
 ----
 
+STUN (Simple Traversal of UDP over NAT)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ce système permet la connexion d'appareils à distance à travers du NAT.
+Pour de la VoIP, cela inclut PAR appareil :
+
+   - 1 port SIP 
+   - 10 ports RTP
+
+Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à mettre en place à grande échelle
+
+Cette solution est en générale **non recommandée** par les opérateurs.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
+
+.. seealso::
+   Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
+   https://www.nexcom.fr/stun-la-base/
 
 
+SBC (Session Board Controller)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Le SBC permet de garantir le fonctionnement et la qualité du service de l'opérateur jusqu'à leur SBC qui se situe à l'intérieur de notre réseau.
 
+Il permet notamment de :
 
+   - Sécuriser les communications
+   - Gérer la QoS (différencier les appels d'urgences par exemple)
+   - D'agir en tant qu'intermédiaire entre les réseaux et ainsi garantir l'interopérabilité des protocoles de communication
 
+Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
+   :alt: https://wp.napsis.fr/wp-content/uploads/2022/10/SBC-reseau-telephonique-1.jpg
 
 
 Exercices
