@@ -232,8 +232,8 @@ Tout est accessible depuis le menu latérale de gauche :
 
 :raw-m2r:`<br>`
 
-Chats
-**********
+Chats & Chats de groupe
+**************************
 
 L'interface des chats est assez rudimentaire mais efficace. 
 Elle permet de partager des fichiers, faire des listes à puces...
@@ -243,8 +243,6 @@ Elle permet de partager des fichiers, faire des listes à puces...
 
 :raw-m2r:`<br>`
 
-Chats de groupe
-********************
 
 Meetings
 ********************
@@ -282,8 +280,8 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 Boîte de messagerie vocale
 ******************************
 
-Réseau
---------
+Réseau & Téléphonie
+----------------------
 
 Généralités Réseau
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -463,7 +461,6 @@ Les caractéristiques du codec G.722 sont les suivantes :
 - Bande de fréquences : 50-7000Hz
 - Fréquence d'échantillonnage : 16 kHz
 - Débit fixe : 64 kbps
-
 - Délai de compression : Non spécifié
 
 MOS :
@@ -588,6 +585,55 @@ Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma r
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
    :alt: https://wp.napsis.fr/wp-content/uploads/2022/10/SBC-reseau-telephonique-1.jpg
+
+
+
+Généralités Téléphonie
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+SIP trunk
+~~~~~~~~~~
+
+Un SIP trunk permet une liaison entre le réseau privé et le réseau public de téléphonie. 
+| Plus concrètement, cette liaison permet d'émettre et recevoir des appels vers/depuis l'extérieur.
+
+Un SIP trunk peut se louer par mois ou à l'utilisation à la minute par exemple.
+| Il se présente souvent comme un compte, avec un nom d'utilisateur, un mot de passe ainsi que l'IP du registrar.
+
+| Ce dernier est un serveur d'authentification, vérifiant les credentials des clients.
+
+
+Ligne
+
+
+
+
+DTMF
+~~~~
+
+dual-tone multi-frequency
+
+
+IVR 
+~~~~~
+
+L'IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des menus vocaux et des messages préenregistrés
+Il est donc possible d'orienter ces personnes vers les services dont ils ont besoin automatiquement.
+
+Chez 3CX, le menu de configuration se présente de la sorte :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr.png
+
+Pour une entreprise, cet outil est très précieux car il permet d'optimiser au préalable le temps des collaborateurs et ainsi d'économiser de l'argent.
+Configurer un IVR est donc une tâche à ne pas négliger !
+
+
+
+
+
+
+----
 
 
 Exercices
