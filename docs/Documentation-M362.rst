@@ -23,6 +23,8 @@ Qu'est-ce que 3CX ?
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-paccueil.png
    :align: center
+*Source : 3cx.com*
+
 
 ----
 
@@ -33,6 +35,7 @@ Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que s
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png
    :align: center
+*Source : 3cx.com*
 
 ----
 
@@ -472,6 +475,8 @@ Voici un graphique comparatif pour les bandes de fréquence du G711 et du G722 :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/g711-g722-frequency-response.jpg
     :alt: graph-g711-g722
+*Source : gl.com*
+
 
 :raw-m2r:`<br>`
 
