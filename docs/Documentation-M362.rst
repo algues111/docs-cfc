@@ -34,6 +34,17 @@ Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que s
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png
    :align: center
 
+
+.. warning:: 
+   Le principal défaut de la licence FREE réside dans le fait que les MàJ ne sont pas possibles sauf si vous payez pour une upgrade après 5-6 versions env.
+
+
+*Remarque : nombre de canaux int. / ext. réunis*
+
+
+
+
+
 ----
 
 Différents types d'installation
@@ -173,7 +184,7 @@ Lorsque l'installation est terminée, on peut remarquer dans le fichier hosts de
 
 Cette dernière permet, lorsque nous tapons l'URL en question dans notre navigateur, que notre ordinateur pointe vers notre adresse loopback.
 
-Attention, cela se produit seulement si ... config préalable dns non
+Attention, cela se produit seulement si vous précisez que vous n'avez pas votre propre configuration DNS pour le serveur 3CX.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png
 
