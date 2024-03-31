@@ -909,7 +909,7 @@ Le plus simple est d'accéder à la web interface de chaque terminal IP et de sa
 
 :raw-m2r:`<br>`
 
-Notre installation est maintenant prête à être testée et déployée pour l'exercice !!
+Après avoir redémarré nos terminau, notre installation est fin prête à être testée et déployée pour l'exercice !!
 
 
 ----
