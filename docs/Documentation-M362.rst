@@ -800,7 +800,10 @@ Cela permet de visualiser au mieux la demande et de pouvoir poser des questions 
 
 La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !
 
-Commencons par les utilisateurs :
+En supposant que le SIP trunk et que les règles entrantes / sortantes sont déjà configurées, je vous propose de commencer par les utilisateurs :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png
+
 
 :raw-m2r:`<br>`
 
