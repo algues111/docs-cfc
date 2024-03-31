@@ -380,7 +380,7 @@ Voici une photo d'un ATA relativement classique :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png
    :height: 230px
-
+*Source : grandstream.com*
 
 :raw-m2r:`<br>`
 
@@ -564,7 +564,7 @@ Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à 
 Cette solution est en générale **non recommandée** par les opérateurs.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
-   :author: nexcom.fr
+*Source : nexcom.fr*
 
 .. seealso::
    Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
@@ -585,7 +585,7 @@ Il permet notamment de :
 Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
-   :author: Napsis.fr
+*Source : Napsis.fr*
 
 
 
@@ -606,7 +606,7 @@ Un SIP trunk peut se louer par mois ou à l'utilisation à la minute par exemple
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png
-   :author: ringcentral.com
+*Source : ringcentral.com*
 
 
 
