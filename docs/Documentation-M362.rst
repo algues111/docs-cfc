@@ -30,6 +30,9 @@ Licences
 ^^^^^^^^^^^^^^^^^^^^
 
 Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l'entreprise du même nom.
+Le choix de la licence est une décision importante dans la solution que vous proposerez à votre client, car certaines fonctionnalités ne seront pas disponibles selon la licence choisie.
+
+Il est donc recommandé de suivre les formations 3CX et de passer la certification gratuite disponible avec ce lien : https://portal.3cx.com/customer/certification
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png
    :align: center
@@ -882,6 +885,27 @@ Ici, nous avons choisi la 3ème option.
 Désormais, il ne manque plus que définir le routage dans le SIP Trunk pour définir où seront redirigés les utilisateurs en fonction des 2 cas précédemment cités.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/trunk-routage.png
+
+:raw-m2r:`<br>`
+
+
+Il ne manque plus que la configuration des terminaux pour que l'installation soit opérationnelle.
+
+Tout d'abord, il est nécessaire d'accéder au menu de téléconfiguration de l'utilisateur et de rentrer le modèle de l'appareil ainsi que son adresse MAC.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tel-config.png
+
+:raw-m2r:`<br>`
+
+Après cela, il faut enregistrer le nom d'utilisateur et le mot de passe que vous rentrerez dans le menu d'auto-provisioning du poste IP fixe.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/id-tel.png
+
+:raw-m2r:`<br>`
+
+Le plus simple est d'accéder à la web interface de chaque terminal IP et de saisir le lien de provisionning dans le menu correspondant afin que le PBX s'occupe seul de la configuration.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/provision.png
 
 :raw-m2r:`<br>`
 
