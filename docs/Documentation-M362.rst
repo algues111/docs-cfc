@@ -44,7 +44,6 @@ Pour avoir une vue d'ensemble plus concrète de ce que propose 3CX en tant que s
 
 
 
-
 ----
 
 Différents types d'installation
@@ -162,6 +161,13 @@ Cette étape nous permet de configurer les différents ports utilisés par les s
 .. image:: https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png
     :align: right
     :height: 32px
+
+.. tip::
+   Pour manager vos systèmes ainsi que vos licences 3CX, vous pouvez accéder à l'url ci-dessous : https://portal.3cx.com/customer/systems/
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/licence.png
+
+:raw-m2r:`<br>`
 
 
 Windows
