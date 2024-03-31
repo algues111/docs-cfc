@@ -158,9 +158,6 @@ Cette étape nous permet de configurer les différents ports utilisés par les s
 
 ----
 
-.. image:: https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png
-    :align: right
-    :height: 32px
 
 .. tip::
    Pour manager vos systèmes ainsi que vos licences 3CX, vous pouvez accéder à l'url ci-dessous : https://portal.3cx.com/customer/systems/
@@ -168,6 +165,11 @@ Cette étape nous permet de configurer les différents ports utilisés par les s
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/licence.png
 
 :raw-m2r:`<br>`
+
+
+.. image:: https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png
+    :align: right
+    :height: 32px
 
 
 Windows
@@ -277,6 +279,8 @@ Partager des fichiers et écrire dans un chat dédié est aussi possible !
 Historique des appels
 ******************************
 
+Affichage de l'historique des appels entrants et sortants passés.
+
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png
 
 
@@ -297,11 +301,11 @@ Pour aller plus loin, une intégration LDAP est même possible pour télécharge
 Boîte de messagerie vocale
 ******************************
 
+Comme son nom l'indique, la boîte de messagerie vocale permet d'écouter les messages vocaux laisser par les appelants.
+
 Réseau & Téléphonie
 ----------------------
 
-Généralités Réseau
-^^^^^^^^^^^^^^^^^^^^^^^^
 
 DECT : Digital Enhanced Cordless Telecommunications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -422,6 +426,104 @@ Attention aux recommandations des fournisseurs
 
 ----
 
+
+
+Exigences réseau
+^^^^^^^^^^^^^^^^^
+
+Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
+
+**Latence**
+
+La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
+
+:raw-m2r:`<br>`
+
+**Gigue (Jitter)**
+
+Il désigne la différence de délai de transmission de bout en bout entre différents paquets d'un même flux de paquets lors d'une transmission d'un système à l'autre.
+Il s'agit en réalité d'une variation de lantence.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
+
+:raw-m2r:`<br>`
+
+**Perte de paquets**
+
+Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
+
+
+Fonctions de réseau
+^^^^^^^^^^^^^^^^^^^^^
+
+PoE (Power over Ethernet)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
+Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
+
+Tableau des normes PoE à voir ci-dessous :   
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png
+    :alt: normes-poe
+
+
+----
+
+STUN (Simple Traversal of UDP over NAT)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ce système permet la connexion d'appareils à distance à travers du NAT.
+Pour de la VoIP, cela inclut PAR appareil :
+
+   - 1 port SIP 
+   - 10 ports RTP
+
+Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à mettre en place à grande échelle
+
+Cette solution est en générale **non recommandée** par les opérateurs.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
+*Source : nexcom.fr*
+
+.. seealso::
+   Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
+   https://www.nexcom.fr/stun-la-base/
+
+
+SBC (Session Board Controller)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Le SBC permet de garantir le fonctionnement et la qualité du service de l'opérateur jusqu'à leur SBC qui se situe à l'intérieur de notre réseau.
+
+Il permet notamment de :
+
+   - Sécuriser les communications
+   - Gérer la QoS (différencier les appels d'urgences par exemple)
+   - D'agir en tant qu'intermédiaire entre les réseaux et ainsi garantir l'interopérabilité des protocoles de communication
+
+Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
+*Source : Napsis.fr*
+
+:raw-m2r:`<br>`
+
+
+Schéma de principe du fonctionnement d'un SBC :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/large.png
+
+:raw-m2r:`<br>`
+
+Généralités Téléphonie
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 Codecs
 ~~~~~~
 
@@ -518,96 +620,6 @@ MOS :
 
 
 
-----
-
-Exigences réseau
-^^^^^^^^^^^^^^^^^
-
-Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch
-
-**Latence**
-
-La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png
-
-:raw-m2r:`<br>`
-
-**Gigue (Jitter)**
-
-Il désigne la différence de délai de transmission de bout en bout entre différents paquets d'un même flux de paquets lors d'une transmission d'un système à l'autre.
-Il s'agit en réalité d'une variation de lantence.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png
-
-:raw-m2r:`<br>`
-
-**Perte de paquets**
-
-Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png
-
-
-Fonctions de réseau
-^^^^^^^^^^^^^^^^^^^^^
-
-PoE (Power over Ethernet)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-La norme IEEE 802.3af, aussi appelée PoE, permet, initialement, de faire passer une alimentation en courant continu d'une puissance de max. 15,4W avec une tension d'environ 48V, en plus des données avec un débit de 100Mbit/s à 1Gbit/s.
-Aujourd'hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant de faire passer plus de courant, et donc d'alimenter des appareils de plus en plus gourmands en énergie !
-
-Tableau des normes PoE à voir ci-dessous :   
-
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png
-    :alt: normes-poe
-
-
-----
-
-STUN (Simple Traversal of UDP over NAT)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Ce système permet la connexion d'appareils à distance à travers du NAT.
-Pour de la VoIP, cela inclut PAR appareil :
-
-   - 1 port SIP 
-   - 10 ports RTP
-
-Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à mettre en place à grande échelle
-
-Cette solution est en générale **non recommandée** par les opérateurs.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
-*Source : nexcom.fr*
-
-.. seealso::
-   Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
-   https://www.nexcom.fr/stun-la-base/
-
-
-SBC (Session Board Controller)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Le SBC permet de garantir le fonctionnement et la qualité du service de l'opérateur jusqu'à leur SBC qui se situe à l'intérieur de notre réseau.
-
-Il permet notamment de :
-
-   - Sécuriser les communications
-   - Gérer la QoS (différencier les appels d'urgences par exemple)
-   - D'agir en tant qu'intermédiaire entre les réseaux et ainsi garantir l'interopérabilité des protocoles de communication
-
-Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
-*Source : Napsis.fr*
-
-
-
-Généralités Téléphonie
-^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 SIP trunk
