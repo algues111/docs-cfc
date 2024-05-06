@@ -132,7 +132,7 @@ On distingue 3 types de VPN :
 
 - Client-to-Site VPN
 
-.. tabs::
+.. tab::
 
    .. tab:: Client-to-Site VPN
 
