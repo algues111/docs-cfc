@@ -73,6 +73,83 @@ Pare-feu sans état (Stateless Firewall)
 Configuration
 ----------------
 
+L'établissement d'une procédure peut aider grandement à la configuration d'un équipement réseau.
+Que ce soit un switch, un pare-feu, une antenne wi-fi, un NAS etc..., vous gagnerez du temps et vous éviterez de vous perdre.
+
+
+
+
+Paramètres Système
+^^^^^^^^^^^^^^^^^^^^^
+
+La première chose à faire lors de la configuration d'un nouvel équipement réseau, est de régler ses paramètres système.
+
+Pourquoi cela ? 
+Car ces paramètres vont définir comment nous allons nous connecter à cet apareil et avec quels protocoles, la date et le temps, la langue, son nom etc...
+
+.. tabs::
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Site-to-Site VPN (Extranet)
+
+      Third version for On-premise users.
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Site-to-Site VPN (Extranet)
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Site-to-Site VPN (Extranet)
+
+      Third version for On-premise users.
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Site-to-Site VPN (Extranet)
+
+      Third version for On-premise users.
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+
 PPP (Point-to-Point Protocol)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -130,7 +207,6 @@ Sa définition est simple :"Relier entre eux des systèmes informatiques de mani
 
 On distingue 3 types de VPN :
 
-- Client-to-Site VPN
 
 .. tabs::
 
@@ -145,3 +221,60 @@ On distingue 3 types de VPN :
    .. tab:: Site-to-Site VPN (Extranet)
 
       Third version for On-premise users.
+
+
+Phases
+---------
+
+
+
+Objets
+--------------
+
+Les objets permettent de classer la majorité des éléments utilisés par le pare-feu.
+Les objets possèdent des attributs, des valeurs, et sont rangés dans différentes catégories, sous catégories ou des groupes.
+
+La rigueur dans le maintien de l'arborscence des objets est absolument nécessaire.
+Il est imporant d'être précis dans le nom qu'on leur donne.
+
+.. admonition:: Exemple
+   Nous avons un subnet avec cette adresse réseau : 172.18.12.0/24
+   Son nom est VLAN_300
+
+   Son objet pourrait être : 
+      - Nom : SUBNET_VLAN_300
+      - Adresse : 172.18.12.0
+      - Masque : 255.255.255.0
+
+Fonctionnalités UTM
+----------------------
+
+APP PATROL
+^^^^^^^^^^^^^^
+
+
+
+
+Client-to-Site VPN
+----------------------
+
+Site-to-Site VPN (Intranet)
+--------------------------------
+
+.. warning:: 
+   Pour cet exemple, nous utiliserons un **VPN de type IPSec**.
+
+Pour configurer un VPN site-à-site sur l'ATP200 de Zyxell, il faut configurer dans l'ordre la phase 1 et la phase 2 d'une connexion VPN.
+
+Dirigeons nous donc vers l'onglet VPN Gateway.
+En premier temps, cliquer sur "ADD"
+Donner un nom reconnaissable et pertinent à notre connection site à site.
+Choisir la version 2 d'IKE (IKEv2) car IKEv1 est désormais obsolète.
+Définir l'interface sur laquelle le site distant doit se connecter.
+
+
+
+
+
+Site-to-Site VPN (Extranet)
+-------------------------------
