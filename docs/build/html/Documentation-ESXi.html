@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Documentation Modules CFC IBM 0.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Documentation ESXi &#8212; Documentation Modules CFC IBM 0.1</title>
   
   
   
@@ -40,8 +41,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script src="_static/translations.js?v=d99ca74e"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Documentation-ESXi';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
@@ -194,6 +195,54 @@
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Documentation-ESXi.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Mode plein écran"
@@ -227,7 +276,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -238,11 +289,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Documentation ESXi</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-6-7-8-0-2b-sur-dl380-gen9">Upgrade 6.7 -&gt; 8.0.2B (sur DL380 Gen9)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-preparation">Phase 1 : Préparation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -252,12 +314,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
+  <section id="documentation-esxi">
+<h1>Documentation ESXi<a class="headerlink" href="#documentation-esxi" title="Link to this heading">#</a></h1>
+<section id="upgrade-6-7-8-0-2b-sur-dl380-gen9">
+<h2>Upgrade 6.7 -&gt; 8.0.2B (sur DL380 Gen9)<a class="headerlink" href="#upgrade-6-7-8-0-2b-sur-dl380-gen9" title="Link to this heading">#</a></h2>
+<section id="phase-1-preparation">
+<h3>Phase 1 : Préparation<a class="headerlink" href="#phase-1-preparation" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.stephenwagner.com/2023/07/24/esxi-8-0-hpe-proliant-dl360p-gen8/">https://www.stephenwagner.com/2023/07/24/esxi-8-0-hpe-proliant-dl360p-gen8/</a></p>
+<p>Préparer des backups des différentes VMs tournant sur l’esxi au préalable.
+(Stockage &gt; Datastore &gt; Télécharger les dossiers de chaque VM ou via VEEAM)</p>
+<p>Accéder à l’ESXi, activer le mode maintenance et SSH</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/ESXi/1-entrer-en-mode-maintenance.webp" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/ESXi/1-entrer-en-mode-maintenance.webp" />
+<p>Télécharger dans le datastore votre nouveau bundle de VIBs pour ESXi 8.0.2B (ici HPE)
+Telecharger l’iso complet de esxi 8.0.2 via le lien donné (soit le ALL soit custom, ici HPE)</p>
+<p>Créer une clé bootable de l’iso
+Insérer la clé dans l’esxi
+F11 au boot
+Selectionner Generic USB
+Attendre le boot
+Accepter l’installation d’ESXi 8
+Choisir le bon support de stockage
+Selectionner Upgrade OU installer ESXI8 si vous voulez réinstaller le tout</p>
+<p>Erreur : conflits de VIBs ou checksum invalide etc…
+Désinstaller les VIBs conflicutels et invalides de la manière suivante :</p>
+<ul class="simple">
+<li><p>rebooter l’esxi normalement</p></li>
+<li><p>y accéder via ssh</p></li>
+</ul>
+<p>liste des commandes :</p>
+<p>esxcli software vib list
+esxcli software remove -n &lt;vib-name&gt;</p>
+<p>then install the new bundle</p>
+<p>esxcli software vib install -d /vmfs/volumes/datastore-name/folder-name/HPE-801.0.0.11.3.1.1-Jun2023-Addon-depot.zip -f</p>
+<p>The parameter -f is not always necessary, but it does when you dont have the AcceptanceLevel « Community »</p>
+<p><a class="github reference external" href="https://github.com/lamw/ghettoVCB/issues/64">lamw/ghettoVCB#64</a></p>
+<p>esxcli software acceptance set –level=CommunitySupported</p>
+<p><a class="reference external" href="https://www.vladan.fr/how-to-understand-vmware-acceptance-levels-for-hosts-and-vibs/">https://www.vladan.fr/how-to-understand-vmware-acceptance-levels-for-hosts-and-vibs/</a></p>
+<p>Reessayer commande install</p>
+<p>Desormais, un retour de commande expliquant que les paquets VIBs ont été installé avec succès apparaitra.</p>
+<p>Reboot la machine</p>
+<p>certificat openssl defaillant ;</p>
+<p>recréer un :</p>
+<p><a class="reference external" href="https://blogs.vmware.com/cloud-foundation/2020/04/14/replacing-vmware-esxi-ssl-certificate-in-vmware-cloud-foundation/">https://blogs.vmware.com/cloud-foundation/2020/04/14/replacing-vmware-esxi-ssl-certificate-in-vmware-cloud-foundation/</a></p>
+<p>Licences :</p>
+<p><a class="reference external" href="https://gist.github.com/ayebrian/646775424393c9a35fb8257f44df1c8b">https://gist.github.com/ayebrian/646775424393c9a35fb8257f44df1c8b</a></p>
+<p>Installation VCenter Server</p>
+<p>Télécharger iso correspondant à la version de l’ESXi (ici 8)</p>
+<p>Vérifier le checksum.
+Si ce dernier n’est pas bon, votre installation plantera à 19% en indiquant une erreur de connection réseau.</p>
+</section>
+</section>
+</section>
 
 
                 </article>
@@ -277,7 +384,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-6-7-8-0-2b-sur-dl380-gen9">Upgrade 6.7 -&gt; 8.0.2B (sur DL380 Gen9)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1-preparation">Phase 1 : Préparation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

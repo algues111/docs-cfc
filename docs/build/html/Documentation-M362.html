@@ -150,6 +150,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Documentation-M144.html">Module 144 : Réseaux sans-fil (en travaux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation-M233.html">Module 233 : Protéger et assurer la maintenance d’un réseau</a></li>
 </ul>
 
     </div>
@@ -308,19 +309,42 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interface">Interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-admin">Web interface (admin)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#chats-chats-de-groupe">Chats &amp; Chats de groupe</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#meetings">Meetings</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#historique-des-appels">Historique des appels</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#cahier-de-contacts">Cahier de contacts</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boite-de-messagerie-vocale">Boîte de messagerie vocale</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reseau-telephonie">Réseau &amp; Téléphonie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dect-digital-enhanced-cordless-telecommunications">DECT : Digital Enhanced Cordless Telecommunications</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ata-analogic-terminal-adapter">ATA : Analogic terminal adapter</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exigences-reseau">Exigences réseau</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-de-reseau">Fonctions de réseau</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-power-over-ethernet">PoE (Power over Ethernet)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lldp-link-layer-discovery-protocol">LLDP (Link Layer Discovery Protocol)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stun-simple-traversal-of-udp-over-nat">STUN (Simple Traversal of UDP over NAT)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sbc-session-board-controller">SBC (Session Board Controller)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs">Codecs</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-telephonie">Généralités Téléphonie</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs-audio">Codecs audio</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sip-trunk">SIP trunk</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dtmf">DTMF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ivr">IVR</a></li>
 </ul>
 </li>
 </ul>
@@ -328,13 +352,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demande">Demande</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1. NAT / PAT avec installation app natel externe</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2. 1 App + 1 Webclient en interne avec Wireshark</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1 - NAT / PAT avec installation app natel externe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2 - 1 App + 1 Webclient en interne avec Wireshark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3 - 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
 </ul>
 </li>
 </ul>
@@ -364,14 +388,21 @@ document.write(`
 <hr class="docutils" />
 <section id="licences">
 <h3>Licences<a class="headerlink" href="#licences" title="Link to this heading">#</a></h3>
-<p>Pour avoir une vue d’ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l’entreprise du même nom.</p>
+<p>Pour avoir une vue d’ensemble plus concrète de ce que propose 3CX en tant que service ou système, il est important de connaître les différentes licences proposées par l’entreprise du même nom.
+Le choix de la licence est une décision importante dans la solution que vous proposerez à votre client, car certaines fonctionnalités ne seront pas disponibles selon la licence choisie.</p>
+<p>Il est donc recommandé de suivre les formations 3CX et de passer la certification gratuite disponible avec ce lien : <a class="reference external" href="https://portal.3cx.com/customer/certification">https://portal.3cx.com/customer/certification</a></p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-licences.png" />
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Le principal défaut de la licence FREE réside dans le fait que les MàJ ne sont pas possibles sauf si vous payez pour une upgrade après 5-6 versions env.</p>
+</div>
+<p><em>Remarque : nombre de canaux int. / ext. réunis</em></p>
 </section>
 <hr class="docutils" />
 <section id="differents-types-d-installation">
 <h3>Différents types d’installation<a class="headerlink" href="#differents-types-d-installation" title="Link to this heading">#</a></h3>
 <p></p>
-<p></p>
+<a class="reference internal image-reference" href="https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc"><img alt="https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc" class="align-right" src="https://imgs.search.brave.com/t5Gh4h12EKJUKsBYlQEidsH_O2SyxBPQABqSv3rnPxU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9icmFu/ZHNsb2dvcy5jb20v/d3AtY29udGVudC91/cGxvYWRzL2ltYWdl/cy9kZWJpYW4tbG9n/by5wbmc" style="height: 32px;" /></a>
 <section id="linux">
 <h4>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h4>
 <p></p>
@@ -393,20 +424,24 @@ document.write(`
 <p><strong>https://www.3cx.fr/docs/manuel/installation-debian-linux-ipbx/</strong></p>
 <p>Voici aussi le lien pour le téléchargement de l’iso linux de 3CX :</p>
 <p><strong>https://downloads-global.3cx.com/downloads/debian10iso/debian-amd64-netinst-3cx.iso</strong></p>
+<img alt="https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug" class="align-center" src="https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug" />
 <p></p>
 <p><em>Premier lancement de l’iso de 3CX</em></p>
 <p>Choisissez ce que vous préférez en fonction de vos habitudes d’installation de distributions Linux.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png" style="height: 470px;" /></a>
 <p></p>
 <p><em>Attendre que l’installation s’effectue et choisir les options correspondantes à vos besoins (FQDN…)</em></p>
 <hr class="docutils" />
 <p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png" class="align-center" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png" />
 <p></p>
 <p>Lorsque votre VM aura redémarré et que vous aurez cette interface de disponible, je vous conseille d’installer 3CX avec votre navigateur web comme support visuel.</p>
 <p></p>
 <blockquote>
 <div><p>L’installation en CLI étant réservée aux utilisateurs aguerris de 3CX, je ne le vous recommanderais seulement si vous nécessitez de paramètres spéciaux/avancés.</p>
 </div></blockquote>
-<p></p>
+<p>
+</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/conf-3cx1.png" />
 <p></p>
 <ul class="simple">
@@ -423,23 +458,37 @@ document.write(`
 <div><p>Si seulement votre instance 3CX tourne sur votre VM, je vous conseille de laiser les ports par défaut proposer par le wizard d’installation.</p>
 <p>Dans le cas contraire, utilisez des ports qui ne sont pas utilisés par d’autres services!</p>
 </div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour manager vos systèmes ainsi que vos licences 3CX, vous pouvez accéder à l’url ci-dessous : <a class="reference external" href="https://portal.3cx.com/customer/systems/">https://portal.3cx.com/customer/systems/</a></p>
+</div>
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/licence.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/licence.png" />
+<p></p>
 <hr class="docutils" />
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Windows_Logo_2012-2015.png" style="height: 32px;" /></a>
 </section>
 <section id="windows">
 <h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h4>
 <p>Il est aussi possible d’héberger votre PBX 3CX sous l’OS Windows.</p>
-<p><a href="#id1"><span class="problematic" id="id2">|:warning:|</span></a> <strong>DISCLAIMER</strong> <a href="#id3"><span class="problematic" id="id4">|:warning:|</span></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
 <p>Cependant, cela nécessitera des connaissances avancées, car vous vous retrouverez face à des contraintes plus récurrentes que sur Linux.</p>
 <p>Par exemple, lors des MàJ Windows, il est possible que l’état du Firewall Windows Defender se réinitialise et donc efface les règles de traffics entrants/sortants permettant au 3CX et aux téléphones liés de fonctionner correctement.</p>
+</div>
 <p>De plus, Windows est par défaut plus vulnérable que Linux, de par son architecture et car il est l’OS le plus répandu !</p>
 <p>Lorsque l’installation est terminée, on peut remarquer dans le fichier hosts de notre OS Windows que 3CX a rajouté cette ligne :</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span> <span class="pre">arthur.3cx.ch</span></code></p>
 </div></blockquote>
 <p>Cette dernière permet, lorsque nous tapons l’URL en question dans notre navigateur, que notre ordinateur pointe vers notre adresse loopback.</p>
-<p>Attention, cela se produit seulement si … config préalable dns non</p>
+<p>Attention, cela se produit seulement si vous précisez que vous n’avez pas votre propre configuration DNS pour le serveur 3CX.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-hosts.png" />
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Un manuel complet du PBX 3CX est disponible sur ce lien :
+<a class="reference external" href="https://www.3cx.fr/docs/manuel/avance/">https://www.3cx.fr/docs/manuel/avance/</a></p>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -450,11 +499,25 @@ document.write(`
 <p>Après avoir terminé la configuration du 3CX, vous pourrez accéder à l’URL correspondante à l’installation de votre 3CX (<em>ici arthur.3cx.ch:5001</em>), et ainsi vous logger avec les identifiants administrateur précédemment choisis.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-login.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-login.png" />
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dashboard.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dashboard.png" />
+<p></p>
 <p>Après s’être identifiés, nous débarquons sur l’interface admin.</p>
 <p>Pour avoir une ligne entrante et sortante opérationnelle, il est nécessaire de configurer un trunk SIP.
 3CX prend en charge plusieurs opérateurs en Suisse, notamment sipcall…</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk.png" />
-<p>Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables.</p>
+<p></p>
+<p>Ci-dessus, nos 2 trunks sont déjà configurés. Nous pouvons cependant plonger dans leur configuration afin de comprendre les paramètres incontournables :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nom du trunk</p></li>
+<li><p>Nom ou IP du registrar</p></li>
+<li><p>Proxy sortant</p></li>
+<li><p>Nombre d’appels simultanés</p></li>
+<li><p>Type d’authentification</p></li>
+<li><p>ID d’authentification (user ID)</p></li>
+<li><p>Mot de passe</p></li>
+<li><p>Routage (que l’on verra plus loin dans la documentation)</p></li>
+</ul>
+</div></blockquote>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1a.png" />
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/telco1b.png" />
 </section>
@@ -462,7 +525,8 @@ document.write(`
 <h4>Web Interface (client)<a class="headerlink" href="#web-interface-client" title="Link to this heading">#</a></h4>
 <p>Il est possible d’accéder à l’interface webclient et ainsi d’avoir des fonctionnalités UCC proposées par 3CX :</p>
 <p>Cela inclut :</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>Chats</p></li>
 <li><p>Chats de groupe</p></li>
 <li><p>Meetings (avec caméra, micro, partage d’écran/app…)</p></li>
@@ -470,47 +534,157 @@ document.write(`
 <li><p>Cahier de contacts</p></li>
 <li><p>Boîte de messagerie vocale</p></li>
 </ul>
+</div></blockquote>
 <p>Tout est accessible depuis le menu latérale de gauche :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient.png" />
-<p>Chats :</p>
+<p></p>
+<section id="chats-chats-de-groupe">
+<h5>Chats &amp; Chats de groupe<a class="headerlink" href="#chats-chats-de-groupe" title="Link to this heading">#</a></h5>
 <p>L’interface des chats est assez rudimentaire mais efficace.
 Elle permet de partager des fichiers, faire des listes à puces…</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-chat.png" />
-<p>Chats de groupe :</p>
 <p></p>
+</section>
+<section id="meetings">
+<h5>Meetings<a class="headerlink" href="#meetings" title="Link to this heading">#</a></h5>
 <p>3CX permet notamment de faire des conférences en ligne, grâce à une interface intuitive et pratique.
 Pour pouvoir profiter pleinement de toutes ces fonctionnalités, il est nécessaire d’accorder l’accès au micro et webcam à votre navigateur web.</p>
 <p>Durant ces conférences, il est possible de partager son écran et de donner la main à un des collaborateurs présents dans la réunion.
 Partager des fichiers et écrire dans un chat dédié est aussi possible !</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/webclient-meeting.png" />
-<p>Historique des appels :</p>
+<p></p>
+</section>
+<section id="historique-des-appels">
+<h5>Historique des appels<a class="headerlink" href="#historique-des-appels" title="Link to this heading">#</a></h5>
+<p>Affichage de l’historique des appels entrants et sortants passés.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/callhistory.png" />
-<p>Cahier de contacts :</p>
+<p></p>
+</section>
+<section id="cahier-de-contacts">
+<h5>Cahier de contacts<a class="headerlink" href="#cahier-de-contacts" title="Link to this heading">#</a></h5>
 <p>Un cahier des contacts existe, donnant la possibilité d’enregistrer des fiches contacts.
 Pour aller plus loin, une intégration LDAP est même possible pour télécharger l’annuaire depuis un serveur LDAP. (disponible pour la licence 3CX Pro)</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/phonebook.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/phonebook.png" />
-<p>Boîte de messagerie vocale :</p>
+<p></p>
+</section>
+<section id="boite-de-messagerie-vocale">
+<h5>Boîte de messagerie vocale<a class="headerlink" href="#boite-de-messagerie-vocale" title="Link to this heading">#</a></h5>
+<p>Comme son nom l’indique, la boîte de messagerie vocale permet d’écouter les messages vocaux laisser par les appelants.</p>
 </section>
 </section>
+</section>
+</section>
+<section id="reseau-telephonie">
+<h2>Réseau &amp; Téléphonie<a class="headerlink" href="#reseau-telephonie" title="Link to this heading">#</a></h2>
 <section id="generalites-reseau">
 <h3>Généralités Réseau<a class="headerlink" href="#generalites-reseau" title="Link to this heading">#</a></h3>
+<section id="dect-digital-enhanced-cordless-telecommunications">
+<h4>DECT : Digital Enhanced Cordless Telecommunications<a class="headerlink" href="#dect-digital-enhanced-cordless-telecommunications" title="Link to this heading">#</a></h4>
+<p>La tehnologie DECT est un standard de communication téléphonique sans-fil.</p>
+<p>Ses caractéristiques sont les suivantes :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Longue portée (jusqu’à 50 m à l’intérieur, jusqu’à 300 m à l’extérieur)</p></li>
+<li><p>Haut niveau de sécurité contre les interceptions</p></li>
+<li><p>Très bon rendement énergétique</p></li>
+<li><p>Gamme de fréquences distincte qui ne dépend pas du WiFi</p></li>
+<li><p>Meilleure qualité sonore qu’avec les normes précédentes</p></li>
+<li><p>Application polyvalente</p></li>
+<li><p>Possibilité d’utiliser plusieurs combinés en même temps</p></li>
+<li><p>Appels internes gratuits</p></li>
+<li><p>Les combinés peuvent être utilisés sur plusieurs stations de base</p></li>
+<li><p>Les combinés multi-fournisseurs peuvent être utilisés sur les stations de base</p></li>
+<li><p>Changement automatique de station de base (handover)</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dect-yealink.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dect-yealink.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dect-yealink.png" style="height: 300px;" /></a>
+<p></p>
+<p><strong>Bande de fréquence :</strong> de 1880 à 1920MHz</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Divisé en 2 plages distinctes :</dt><dd><ul>
+<li><p>1880-1900 : émission</p></li>
+<li><p>1900-1920 : réception</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Chaque plage contient 12 canaux</p></li>
+<li><p>8 canaux pour la communication</p></li>
+<li><p>4 canaux pour la signalisation</p></li>
+<li><p>TDM dans chaque canal permettant 10 personnes par canal, ce qui revient à 80 communications en simultanées maximum.</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/bande-dect.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/bande-dect.png" />
+<p></p>
+<p><strong>Différence DECT VS SIP-DECT</strong></p>
+<p>Gestion des canaux :</p>
+<p>DECT : Central téléphonique agissant en tant qu’OMM (Office manager mobile) et gèrant la partie sans-fil via un protocole propriétaire.</p>
+<p>SIP DECT : Antennes liées au switch, avec une antenne master (OMM), autres antennes slave, protocole LLDP (broadcast)</p>
+<p>Schéma réseau d’une installation DECT incluant à la fois une base numérique et une base IP :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-dect-digital-ip.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-dect-digital-ip.png" />
+<p><em>Source : avaya.com</em></p>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Ce dernier provient du document pdf suivant, étant la propriété intellectuelle d’Avaya :</p>
+<p><a class="reference external" href="https://ipofficekb.avaya.com/businesspartner/ipoffice11_1fr/mergedProjects/manuals/install/IP%20Office%20DECT%20R4%20Installation%20Guide_fr.pdf">https://ipofficekb.avaya.com/businesspartner/ipoffice11_1fr/mergedProjects/manuals/install/IP%20Office%20DECT%20R4%20Installation%20Guide_fr.pdf</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Le broadcast est désactivé par défaut sur les switchs CISCO et sur d’autres marques, <strong>bloquant donc le broadcast du LLDP</strong>.
+Ceci crée des <strong>problèmes de connexions</strong> des terminaux aux antennes SIP DECT.
+Il est alors vivement recommandé <strong>d’autoriser les trames broadcast</strong> sur le switch.</p>
+</div>
+<p>Connection DECT :</p>
+<p>2 fils, DSI (mitel), propriétaire…</p>
+<p>Connexion SIP DECT :</p>
+<p>Connexion au PBX via SIP puis configuration XML envoyée par le serveur</p>
+</section>
+<section id="ata-analogic-terminal-adapter">
+<h4>ATA : Analogic terminal adapter<a class="headerlink" href="#ata-analogic-terminal-adapter" title="Link to this heading">#</a></h4>
+<p>Le principe de l’ATA est en réalité très simple ; il permet de convertir un signal analogique en un signal numérique et inversement.
+Cela permet donc de connecter un ancien téléphone analogique ou un FAX à un réseau numérique (souvent IP).</p>
+<p>Cependant la méthode de conversion est différente pour le FAX (protocole T.38), il est alors simportant de choisir minutieusement l’ATA que nous installons.</p>
+<p>Un ATA comporte en général minimum 2 ports RJ11 pour les appareils analogiques ainsi qu’un port RJ45 pour le connecter au réseau IP.
+Les plus sophistiqués d’entre eux peuvent aussi être dotés de la capacité d’être alimenté en PoE et d’avoir un port RJ45 pour le WAN directement par exemple.</p>
+<p>Voici une photo d’un ATA relativement classique :</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ata.png" style="height: 230px;" /></a>
+<p></p>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Ce sujet est abordé dans le module M114 de 1ère année, je vous invite donc à vous référer à ces liens pour plus d’informations au sujet du PCM30 / MIC !</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Modulation_par_impulsions_et_codage">https://fr.wikipedia.org/wiki/Modulation_par_impulsions_et_codage</a></p></li>
+<li><p><a class="reference external" href="https://www.chireux.fr/mp/TIPE/ADS/Modulation_telephonie.pdf">https://www.chireux.fr/mp/TIPE/ADS/Modulation_telephonie.pdf</a></p></li>
+<li><p><a class="reference external" href="https://www.universalis.fr/media/principe-de-la-modulation-par-impulsions-et-codage-v22n0038/">https://www.universalis.fr/media/principe-de-la-modulation-par-impulsions-et-codage-v22n0038/</a></p></li>
+</ul>
+</div>
+<p>Schéma réseau d’une installation IP / SIP intégrant des appareils analogiques :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-sip-ata.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-sip-ata.png" />
+<p>Attention aux recommandations des fournisseurs</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="exigences-reseau">
 <h3>Exigences réseau<a class="headerlink" href="#exigences-reseau" title="Link to this heading">#</a></h3>
 <p>Ce chapitre se base sur le cours 07-Exigences Réseau du cockpitprofessionnel.ch</p>
-<p><strong>Latence</strong></p>
 <p>La durée d’exécution des paquets vocaux est un critère essentiel pour la qualité vocale. On s’intéresse ici au délai total entre la parole de l’émetteur et l’écoute du récepteur (délai de bout en bout).</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/latence.png" />
 <p></p>
-<p><strong>Gigue (Jitter)</strong></p>
 <p>Il désigne la différence de délai de transmission de bout en bout entre différents paquets d’un même flux de paquets lors d’une transmission d’un système à l’autre.
 Il s’agit en réalité d’une variation de lantence.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/jitter.png" />
 <p></p>
-<p><strong>Perte de paquets</strong></p>
 <p>Un paquet vocal contient seulement 20 à 30 ms de paroles, ce qui correspond environ à une syllabe. Un codec doit pouvoir compenser jusqu’à 5% de perte de données, ce qui n’est pas entendu lors d’une conversation téléphonique.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/pertedepaquets.png" />
+<p>Si ces exigences de réseau ne sont pas tenues, les erreurs suivantes peuvent apparaître:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Conversation entrecoupées</p></li>
+<li><p>Retards de paroles</p></li>
+<li><p>Durée prolongée de l’établissement de la connexion</p></li>
+<li><p>Volume de la conversation trop faible</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="fonctions-de-reseau">
 <h3>Fonctions de réseau<a class="headerlink" href="#fonctions-de-reseau" title="Link to this heading">#</a></h3>
@@ -521,12 +695,90 @@ Aujourd’hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant 
 <p>Tableau des normes PoE à voir ci-dessous :</p>
 <img alt="normes-poe" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/normes-poe.png" />
 </section>
-</section>
 <hr class="docutils" />
-<section id="codecs">
-<h3>Codecs<a class="headerlink" href="#codecs" title="Link to this heading">#</a></h3>
+<section id="lldp-link-layer-discovery-protocol">
+<h4>LLDP (Link Layer Discovery Protocol)<a class="headerlink" href="#lldp-link-layer-discovery-protocol" title="Link to this heading">#</a></h4>
+<p>Le protocole LLDP (Link Layer Discovery Protocol) est un protocole de découverte des voisins de couche 2 qui permet aux périphériques d’annoncer des informations sur eux-mêmes à leurs voisins directement connectés au même réseau.
+Ces informations sont également enregistrées dans des banques de données d’informations de gestion (MIB) locales.
+Sur les appareils compatibles LLDP, un agent LLDP est installé, ce dernier émettant des annonces de toutes les interfaces physiques, à intervalles réguliers ou lors de modifications.</p>
+<p>Voici quelques-unes des informations qui peuvent être recueillies par LLDP (seules des informations minimales sont obligatoires) :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nom et description du système</p></li>
+<li><p>Nom et description du port</p></li>
+<li><p>Nom et identifiant du VLAN</p></li>
+<li><p>Adresse de gestion du réseau IP</p></li>
+<li><p>Capacités de l’appareil (par exemple, commutateur, routeur ou serveur)</p></li>
+<li><p>Informations sur l’adresse MAC et la couche physique</p></li>
+<li><p>Informations sur l’alimentation</p></li>
+<li><p>Informations d’agrégation de liens</p></li>
+</ul>
+</div></blockquote>
+<p>En téléphonie IP, ce sont principalement les classes PoE nécessaires, l’ID VLAN et les paramètres QoS qui sont transmis.
+Cette option <strong>devrait être activée sur les terminaux et sur les switchs Ethernet.</strong></p>
+<blockquote>
+<div><div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Ce protocole étant complexe et n’étant pas l’objet central de cette documentation, je vous invite à vous renseigner sur ce site :
+<a class="reference external" href="https://www.noction.com/blog-francais/decouverte-peers-bgp-lldp">https://www.noction.com/blog-francais/decouverte-peers-bgp-lldp</a></p>
+</div>
+</div></blockquote>
+</section>
+<section id="stun-simple-traversal-of-udp-over-nat">
+<h4>STUN (Simple Traversal of UDP over NAT)<a class="headerlink" href="#stun-simple-traversal-of-udp-over-nat" title="Link to this heading">#</a></h4>
+<p>Ce système permet la connexion d’appareils à distance à travers du NAT.
+Pour de la VoIP, cela inclut PAR appareil :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1 port SIP</p></li>
+<li><p>10 ports RTP</p></li>
+</ul>
+</div></blockquote>
+<p>Cela fonctionne mais demande <strong>beaucoup de temps</strong> et est <strong>très complexe</strong> à mettre en place à grande échelle</p>
+<p>Cette solution est en générale <strong>non recommandée</strong> par les opérateurs.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png" />
+<p><em>Source : nexcom.fr</em></p>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
+<a class="reference external" href="https://www.nexcom.fr/stun-la-base/">https://www.nexcom.fr/stun-la-base/</a></p>
+</div>
+</section>
+<section id="sbc-session-board-controller">
+<h4>SBC (Session Board Controller)<a class="headerlink" href="#sbc-session-board-controller" title="Link to this heading">#</a></h4>
+<p>Le SBC permet de garantir le fonctionnement et la qualité du service de l’opérateur jusqu’à leur SBC qui se situe à l’intérieur de notre réseau.</p>
+<p>Il permet notamment de :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sécuriser les communications</p></li>
+<li><p>Gérer la QoS (différencier les appels d’urgences par exemple)</p></li>
+<li><p>D’agir en tant qu’intermédiaire entre les réseaux et ainsi garantir l’interopérabilité des protocoles de communication</p></li>
+</ul>
+</div></blockquote>
+<p>Puisqu’une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg" />
+<p><em>Source : Napsis.fr</em></p>
+<p></p>
+<p>Schéma de principe du fonctionnement d’un SBC :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/large.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/large.png" />
+<p></p>
+</section>
+</section>
+<section id="generalites-telephonie">
+<h3>Généralités Téléphonie<a class="headerlink" href="#generalites-telephonie" title="Link to this heading">#</a></h3>
+<section id="codecs-audio">
+<h4>Codecs audio<a class="headerlink" href="#codecs-audio" title="Link to this heading">#</a></h4>
+<p>Le choix du codec dépend des paramètres suivants:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Qualité vocale souhaitée</p></li>
+<li><p>Bande passante disponible et taux de perte de paquets</p></li>
+<li><p>Prise en charge par les appareils terminaux, PBX et le fournisseur SIP</p></li>
+</ul>
+</div></blockquote>
 <section id="g711">
-<h4>G711<a class="headerlink" href="#g711" title="Link to this heading">#</a></h4>
+<h5>G711<a class="headerlink" href="#g711" title="Link to this heading">#</a></h5>
+<p>Le G711 ou encore PCM30 / MIC, est le codec audio par défaut utilisé dans la téléphonie classique.</p>
 <p>Les caractéristiques du codec G.711 sont les suivantes :</p>
 <ul class="simple">
 <li><p>Bande de fréquences : 300-3400Hz</p></li>
@@ -536,13 +788,18 @@ Aujourd’hui la norme initiale a évolué (avec le PoE+, et PoE++), permettant 
 </ul>
 <p>MOS :</p>
 <ul class="simple">
-<li><p>Mesure de qualité en conditions idéales : MOS a revoir</p></li>
-<li><p>Mesure de qualité en condition dégradées : MOS a revoir</p></li>
+<li><p>Mesure de qualité en conditions idéales : 4,45 en G.711 Loi-A</p></li>
+<li><p>Mesure de qualité en condition dégradées :  4,11 en G.711 Loi-A</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les MOS ci-dessus sont basés sur le site <a class="reference external" href="https://w3tel.com/documentation-voip/codecs/g-711/">https://w3tel.com/documentation-voip/codecs/g-711/</a></p>
+</div>
 <p>Pour tout appel passant par IP, une initiation de communications est procédé par le protocole SIP.
 Ce dernier pourrait être comparable au fonctionnement du TCP, mais à la couche 7 du modèle OSI.</p>
 <p>Capture wireshark d’une conversation en G711 (flux RTP):</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G711.png" />
+<p></p>
 <p>Comme escompté, nous remarquons que la discussion transite du téléphone 192.168.1.122 en passant par le serveur 3CX 192.168.1.120 .</p>
 <p>La première chose qui est importante à souligner, est que les paquets utilisent le protocole de transport UDP (couche OSI 4) pour naviguer à travers le réseau, réduisant donc la latence potentielle de la conversation.</p>
 <p>Étant donné que le trafic est d’interne à interne, il n’est par défaut pas chiffré, laissant le payload contenu dans le RTP visible en clair.
@@ -550,7 +807,8 @@ Il est donc tout à fait possible à partir d’un fichier d’un logiciel tel q
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/i2i-call-RTP-voice-recording.png" />
 </section>
 <section id="g722">
-<h4>G722<a class="headerlink" href="#g722" title="Link to this heading">#</a></h4>
+<h5>G722<a class="headerlink" href="#g722" title="Link to this heading">#</a></h5>
+<p>Aussi désigné comme la HD de l’audio, le G722 (ADPCM) est un codec avec une large bande fréquence. Il est donc beaucoup plus agréable de téléphoner avec celui-ci car le timbre de voix est bien moins altéré.</p>
 <p>Les caractéristiques du codec G.722 sont les suivantes :</p>
 <ul class="simple">
 <li><p>Bande de fréquences : 50-7000Hz</p></li>
@@ -570,22 +828,56 @@ Il est donc tout à fait possible à partir d’un fichier d’un logiciel tel q
 <p></p>
 </section>
 <section id="g729">
-<h4>G729<a class="headerlink" href="#g729" title="Link to this heading">#</a></h4>
+<h5>G729<a class="headerlink" href="#g729" title="Link to this heading">#</a></h5>
+<p>Ce codec (CS-ACELP), permet de téléphoner avec un débit réduit et dans des conditions réseau défavorables.
+Sa qualité est donc moindre car son délai de compression est élevé.
+Les discussions ont un timbre « métallique » voire « robotique ».</p>
+<p>Nous remarquerons d’ailleurs que sur la capture wireshark ci-dessous, le volume du payload contenu dans le paquet RTP est bien inférieur à celui des 2 précédents codecs.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/rtp-conf-payload-G729.png" />
-<p>Les caractéristiques du codec G.722 sont les suivantes :</p>
+<p></p>
+<p>Les caractéristiques du codec G.729 sont les suivantes :</p>
 <ul class="simple">
-<li><p>Bande de fréquences : 50-7000Hz</p></li>
-<li><p>Fréquence d’échantillonnage : 16 kHz</p></li>
-<li><p>Débit fixe : 64 kbps</p></li>
-<li><p>Délai de compression : Non spécifié</p></li>
+<li><p>Bande de fréquences : 300-3400Hz</p></li>
+<li><p>Fréquence d’échantillonnage : 8 kHz</p></li>
+<li><p>Débit fixe : 8Kbps</p></li>
+<li><p>Délai de compression : 15ms</p></li>
 </ul>
 <p>MOS :</p>
 <ul class="simple">
-<li><p>Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
-<li><p>Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) similaire pour G.722 et G.711</p></li>
+<li><p>Mesure de qualité en conditions idéales : MOS (Mean Opinion Score) 4,04 en G.729a</p></li>
+<li><p>Mesure de qualité en conditions dégradées : MOS (Mean Opinion Score) 3,51 en G.729a</p></li>
 </ul>
-<p>Parler de la MOS pour la qualité audio</p>
-<hr class="docutils" />
+</section>
+</section>
+<section id="sip-trunk">
+<h4>SIP trunk<a class="headerlink" href="#sip-trunk" title="Link to this heading">#</a></h4>
+<p>Un SIP trunk permet une liaison entre le réseau privé et le réseau public de téléphonie.
+Plus concrètement, cette liaison permet d’émettre et recevoir des appels vers/depuis l’extérieur.</p>
+<p>Un SIP trunk peut se louer par mois ou à l’utilisation à la minute par exemple.
+Il se présente souvent comme un compte, avec un nom d’utilisateur, un mot de passe ainsi que l’IP du registrar.</p>
+<p>Ce dernier est un serveur d’authentification, vérifiant les credentials des clients.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png" />
+<p><em>Source : ringcentral.com</em></p>
+</section>
+<section id="dtmf">
+<h4>DTMF<a class="headerlink" href="#dtmf" title="Link to this heading">#</a></h4>
+<p>Les touches DTMF (Dual-tone multi-frequency) usent d’une combinaison de fréquences pour composer un numéro de téléphone et interagir avec des serveurs vocaux interactifs.
+Les fréquences utilisées sont situées entre 770Hz et 1633MHz.</p>
+<p>Elles sont normalisées et spécifiées par la recommandation Q.23 de <abbr title="Union internationnale des Télécommunications">l’UIT</abbr>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p>Un tableau interactif des touches DTMF est disponible sur la page suivante : <a class="reference external" href="https://fr.wikipedia.org/wiki/Code_DTMF">https://fr.wikipedia.org/wiki/Code_DTMF</a></p>
+</div>
+</section>
+<section id="ivr">
+<h4>IVR<a class="headerlink" href="#ivr" title="Link to this heading">#</a></h4>
+<p>L’IVR (Interactive Voice Responder) est un répondeur interagissant avec les appelants via des <strong>menus vocaux</strong> et des <strong>messages préenregistrés.</strong>
+Il est donc possible <strong>d’orienter ces personnes</strong> vers les services dont ils ont besoin <strong>automatiquement.</strong></p>
+<p>Chez 3CX, le menu de configuration se présente de la sorte :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr.png" />
+<p></p>
+<p>Pour une entreprise, cet outil est très précieux car il permet d’optimiser au préalable le temps des collaborateurs et ainsi d’économiser de l’argent.
+Configurer un IVR est donc une tâche à ne pas négliger !</p>
 </section>
 </section>
 </section>
@@ -630,16 +922,26 @@ Les utilisateurs suivants doivent être enregistrés:</p>
 <p>Testez l’installation et consignez les tests dans un protocole</p>
 </section>
 <section id="workflow">
-<h4>Workflow :<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h4>
+<h4>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h4>
 <p>La chose la plus importante à faire dans un exercice tel quel, est de dessiner un schéma de principe très simple, à la main de préférence.</p>
 <p>Cela permet de visualiser au mieux la demande et de pouvoir poser des questions au client si les indications ne sont pas claires !</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-ex1.png" />
-<p>La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !</p>
-<p>Commencons par les utilisateurs :</p>
 <p></p>
+<p>La demande est désormais plus compréhensible, nous allons donc maintenant procéder à la configuration de notre PBX virtuel !</p>
+<p>En supposant que le SIP trunk et que les règles entrantes / sortantes sont déjà configurées, je vous propose de commencer par les utilisateurs :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" />
+<p></p>
+<p><em>Cependant, pour avoir une idée de comment se configure une règle sortante, je vous invite à accéder au lien suivant : https://www.3cx.fr/docs/manuel/avance/#h.y5la85hz60l</em></p>
+<p></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour l’exercice, seuls 2 téléphones IP Yealink étaient à disposition ; ils seront configurés pour les utilisateurs 100 et 101.</p>
+</div>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/users1.png" />
+<p></p>
 <p>Configuration Janine :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/janine.png" />
+<p></p>
 <p>Les champs obligatoires à remplir lors de la création de l’utilisateur sont les suivants :</p>
 <ul class="simple">
 <li><p>Extension</p></li>
@@ -647,43 +949,118 @@ Les utilisateurs suivants doivent être enregistrés:</p>
 <li><p>Nom</p></li>
 <li><p>Adresse Mail</p></li>
 </ul>
+<p>Par la suite, il est nécessaire de <strong>configurer les groupes d’appels</strong> en fonction des <strong>langues parlées</strong> par les collaborateurs :
+Nous allons donc ici configurer 3 groupes :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Groupe allemand (810)</p></li>
+<li><p>Groupe francais (820)</p></li>
+<li><p>Groupe anglais (830)</p></li>
+</ul>
+</div></blockquote>
+<p>Dans les paramètres de chacun des groupes, il est <strong>important</strong> de sélectionner la <strong>sonnerie en parallèle (sonne tous)</strong> dane le but d’éviter le cas suivant :</p>
+<p>Imaginons que nous configurions la sonnerie à la suite 1 à 1 (Janine puis Anna dans l’ordre).
+Un client appelle le groupe allemand, mais Janine est absente ou alors cette dernière a juste pris une pause café de 5 minutes.
+Dans ce cas-là, le client tombera directement sur la messagerie de Janine sans passer par Anna, qui elle, est bien présente.</p>
+<p>Cela pourrait présenter un inconvénient majeur pour les collaborateurs et créer une frustration côté client.</p>
+<p>Voici pour exemple la configuration du groupe allemand :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/groupe-appel-810.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/groupe-appel-810.png" />
+<p></p>
+<p>Tout de suite après, nous pouvons créer un IVR :</p>
+<p>En premier temps, nous choisissons le nom de l’IVR, son n° d’extension, son type, le message pré-enregistré ainsi que la langue des directives vocales.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config1.png" />
+<p></p>
+<p>Après cela, nous définissons comment chaque touche agit :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/ivr-config2.png" />
+<p></p>
+<p>Ici, nous voulons que la touche n°1 appelle le groupe allemand, que la n°2 appelle le groupe francais et que la n°3 appelle le groupe anglais.
+En cas de non réponse, l’appelant se verra redirigé vers la messagerie vocale de l’extension n°299 « occupé ».</p>
+<p>Il est nécessaire de <strong>répéter cette configuration pour chaque groupe d’appel.</strong></p>
+<p>Voici la configuration de l’utilisateur 299 « occupé » :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/occupé.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/occupé.png" />
+<p></p>
+<p>Maintenant, créons les règles lorsque le bureau est fermé ou lorsque le jour en question est férié / chômé :</p>
+<p>Il est possible de le faire pour un <strong>SIP trunk</strong>, une <strong>règle entrante</strong> ou encore dans les <strong>paramètres généraux de 3CX.</strong>
+Ici, nous avons choisi la 3ème option.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/férié.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/férié.png" />
+<p></p>
+<p>Désormais, il ne manque plus que définir le routage dans le SIP Trunk pour définir où seront redirigés les utilisateurs en fonction des 2 cas précédemment cités.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/trunk-routage.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/trunk-routage.png" />
+<p></p>
+<p>Il ne manque plus que la configuration des terminaux pour que l’installation soit opérationnelle.</p>
+<p>Tout d’abord, il est nécessaire d’accéder au menu de téléconfiguration de l’utilisateur et de rentrer le modèle de l’appareil ainsi que son adresse MAC.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tel-config.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tel-config.png" />
+<p></p>
+<p>Après cela, il faut enregistrer le nom d’utilisateur et le mot de passe que vous rentrerez dans le menu d’auto-provisioning du poste IP fixe.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/id-tel.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/id-tel.png" />
+<p></p>
+<p>Le plus simple est d’accéder à la web interface de chaque terminal IP et de saisir le lien de provisionning dans le menu correspondant afin que le PBX s’occupe seul de la configuration.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/provision.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/provision.png" />
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/T46-3cx.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/T46-3cx.png" />
+<p></p>
+<p>Après avoir redémarré nos terminaux, notre installation est fin prête à être testée et déployée pour l’exercice !!</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="exercice-2">
 <h3>Exercice 2<a class="headerlink" href="#exercice-2" title="Link to this heading">#</a></h3>
 <section id="nat-pat-avec-installation-app-natel-externe">
-<h4>1. NAT / PAT avec installation app natel externe<a class="headerlink" href="#nat-pat-avec-installation-app-natel-externe" title="Link to this heading">#</a></h4>
+<h4>1 - NAT / PAT avec installation app natel externe<a class="headerlink" href="#nat-pat-avec-installation-app-natel-externe" title="Link to this heading">#</a></h4>
 <p>Workflow de l’exercice :</p>
 <p>Dépannage 3CX</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/depannage-3cx.png" />
+<p></p>
 <p>Vous avez la possibilité à travers ce menu de définir si oui ou non le serveur 3CX agit en tant qu’intermédiaire pour les appels.
 Ici, cela nous sera utile afin de nous simplifier la tâche, au lieu de configurer un port de mirroring sur le switch par exmple.</p>
 <p>La prochaine étape sera de créer la règle NAT/PAT dans le routeur / firewall du réseau (ici Centro Business 2.0 Swisscom)
-Nous accédons donc à la web interface administrateur de ce dernier (Réseau&gt;Port Forwarding&gt; Create new rule)</p>
+Nous accédons donc à la web interface administrateur de ce dernier <span class="menuselection">Réseau ‣ Port Forwarding ‣ Create new rule</span>.</p>
 <ul class="simple">
 <li><p>Port TCP 5001 (HTTPS)</p></li>
 <li><p>Port TCP/UDP 5090 (Tunnel 3CX)</p></li>
 </ul>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/natpat-swisscom-ex2.png" />
+<p></p>
 <p>A la suite de cette configuration, nous pouvons télécharger l’application 3CX sur notre téléphone.</p>
-<p><a href="#id5"><span class="problematic" id="id6">|:warning:|</span></a> DISCLAIMER <a href="#id7"><span class="problematic" id="id8">|:warning:|</span></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
 <p>Sur Android, l’application <strong>nécessite</strong> le GSF afin d’afficher les notifications d’appels entrants.
 Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en mesure d’en passer (appels sortants).</p>
+</div>
 <p>Précision faite, il est temps d’installer l’application sur notre appareil !</p>
-<p>Rendez-vous dans votre gestionnaire de paquets / applications préféré &gt; Tapez 3CX dans la barre de recherche &gt; Installez l’application</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/dwn-3cx.jpg" style="width: 240px;" /></a>
-<p>Ensuite, lisez et acceptez les conditions d’utilisation de l’app.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-1.png" style="width: 240px;" /></a>
-<p>Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/open3cx-2.png" style="width: 240px;" /></a>
+<ul class="simple">
+<li><p>Rendez-vous dans votre <span class="menuselection">gestionnaire de paquets / applications préféré ‣ Tapez « 3CX » dans la barre de recherche ‣ Installez l’application</span>.</p></li>
+<li><p>Ensuite, lisez et acceptez les conditions d’utilisation de l’app.</p></li>
+<li><p>Pour finir, scannez le QR code que vous trouvez dans la configuration de votre utilisateur 3CX.</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/install-android.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/install-android.png" />
+<p></p>
 <p>Vous êtes désormais connecté à votre compte, vous permettant donc de passer des appels et d’envoyer des messages dans le service de chat 3CX.</p>
+<p></p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-app-qr.png" />
 </section>
 <section id="app-1-webclient-en-interne-avec-wireshark">
-<h4>2. 1 App + 1 Webclient en interne avec Wireshark<a class="headerlink" href="#app-1-webclient-en-interne-avec-wireshark" title="Link to this heading">#</a></h4>
+<h4>2 - 1 App + 1 Webclient en interne avec Wireshark<a class="headerlink" href="#app-1-webclient-en-interne-avec-wireshark" title="Link to this heading">#</a></h4>
+<p>Après avoir vu comment fonctionnaientt les communications SIP / RTP, il est nécessaire de comprendre comment se passent les communications passant à travers des applications ou par WebRTC.</p>
+<p>Pour illustrer cela, rien de mieux qu’une capture wireshark accompagnée d’un petit schéma réseau.d</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/udp-stream.png" />
+<p></p>
+<p>Avant que la communication commence entre les appareils, un handshake TLS1.2 est initié afin d’échanger les clés nécessaires au chiffrement de la communication.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Il est important de noter qu’un chiffrement <strong>TLS 1.2 min.</strong> est recommandé pour <strong>garantir l’intégrité et la confidentialité</strong> de la communication.</p>
+</div>
+<p>Voici comment se passe un handshake TLS :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tls-ssl-handshake.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/tls-ssl-handshake.png" />
+<p></p>
+<div class="admonition-lien-utile admonition">
+<p class="admonition-title">Lien utile</p>
+<p>TLS / SSL protocols  : <a class="reference external" href="https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/">https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/</a></p>
+</div>
 </section>
 <section id="telephones-sip-avec-wireshark-comparaison-g711-g722-g729">
-<h4>3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )<a class="headerlink" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729" title="Link to this heading">#</a></h4>
+<h4>3 - 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )<a class="headerlink" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729" title="Link to this heading">#</a></h4>
+<p>Concernant cet exercice, je vous invite à vous rediriger vers la section discutant des codecs audio, car les captures Wireshark ont été prises lors de cet exercice.</p>
 </section>
 </section>
 </section>
@@ -744,19 +1121,42 @@ Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en m
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interface">Interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-admin">Web interface (admin)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-interface-client">Web Interface (client)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#chats-chats-de-groupe">Chats &amp; Chats de groupe</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#meetings">Meetings</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#historique-des-appels">Historique des appels</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#cahier-de-contacts">Cahier de contacts</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boite-de-messagerie-vocale">Boîte de messagerie vocale</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reseau-telephonie">Réseau &amp; Téléphonie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-reseau">Généralités Réseau</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dect-digital-enhanced-cordless-telecommunications">DECT : Digital Enhanced Cordless Telecommunications</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ata-analogic-terminal-adapter">ATA : Analogic terminal adapter</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exigences-reseau">Exigences réseau</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-de-reseau">Fonctions de réseau</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-power-over-ethernet">PoE (Power over Ethernet)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lldp-link-layer-discovery-protocol">LLDP (Link Layer Discovery Protocol)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stun-simple-traversal-of-udp-over-nat">STUN (Simple Traversal of UDP over NAT)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sbc-session-board-controller">SBC (Session Board Controller)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs">Codecs</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites-telephonie">Généralités Téléphonie</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codecs-audio">Codecs audio</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g711">G711</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g722">G722</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#g729">G729</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sip-trunk">SIP trunk</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dtmf">DTMF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ivr">IVR</a></li>
 </ul>
 </li>
 </ul>
@@ -764,13 +1164,13 @@ Dans le cas contraire, vous ne pourrez pas répondre aux appels, mais serez en m
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercices">Exercices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demande">Demande</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1. NAT / PAT avec installation app natel externe</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2. 1 App + 1 Webclient en interne avec Wireshark</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3. 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-pat-avec-installation-app-natel-externe">1 - NAT / PAT avec installation app natel externe</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#app-1-webclient-en-interne-avec-wireshark">2 - 1 App + 1 Webclient en interne avec Wireshark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#telephones-sip-avec-wireshark-comparaison-g711-g722-g729">3 - 2 Téléphones SIP avec Wireshark (comparaison G711/G722/G729 )</a></li>
 </ul>
 </li>
 </ul>
