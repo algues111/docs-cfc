@@ -88,6 +88,8 @@ Pourquoi cela ?
 Car ces paramètres vont définir comment nous allons nous connecter à cet apareil et avec quels protocoles, la date et le temps, la langue, son nom etc...
 
 Voici les paramètres disponibles dans un ATP200 chez Zyxell
+
+
 .. tabs::
 
    .. tab:: Host Name
