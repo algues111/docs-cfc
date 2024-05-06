@@ -49,3 +49,6 @@ language = 'fr'
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
+html_css_files = [
+    'docs\build\html\_static\tabs.css',
+]
