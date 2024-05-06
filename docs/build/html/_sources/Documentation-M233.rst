@@ -119,3 +119,29 @@ Activons la si ce n'est pas déjà fait et définissons la en tant que bridge !
     Il se peut que votre opérateur définisse des VLANs pour chaque service qu'il propose (data, voip, tv...)
     Si c'est le cas, il faut configurer le bon ID !
 
+VPN (Virtual Private Network)
+================================
+
+Qu'est-ce qu'un VPN  ?
+---------------------------
+
+La notion de VPN avait déjà été abordée lors du module M145 de 1ère année.
+Sa définition est simple :"Relier entre eux des systèmes informatiques de manière **sûre** en s’appuyant sur un réseau existant."
+
+On distingue 3 types de VPN :
+
+- Client-to-Site VPN
+
+.. tabs::
+
+   .. tab:: Client-to-Site VPN
+
+      Content dedicated to Odoo Online users.
+
+   .. tab:: Site-to-Site VPN (Intranet)
+
+      Alternative for Odoo.sh users.
+
+   .. tab:: Site-to-Site VPN (Extranet)
+
+      Third version for On-premise users.
