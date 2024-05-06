@@ -87,67 +87,92 @@ La première chose à faire lors de la configuration d'un nouvel équipement ré
 Pourquoi cela ? 
 Car ces paramètres vont définir comment nous allons nous connecter à cet apareil et avec quels protocoles, la date et le temps, la langue, son nom etc...
 
+Voici les paramètres disponibles dans un ATP200 chez Zyxell
 .. tabs::
 
-   .. tab:: Client-to-Site VPN
+   .. tab:: Host Name
 
       Content dedicated to Odoo Online users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/system-hostname.png
 
-   .. tab:: Site-to-Site VPN (Intranet)
+
+   .. tab:: USB Storage
 
       Alternative for Odoo.sh users.
 
-   .. tab:: Site-to-Site VPN (Extranet)
+   .. tab:: Date/Time
+
+      Third version for On-premise users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png
+
+      
+   .. tab:: Console Speed
+
+      Content dedicated to Odoo Online users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png
+
+
+   .. tab:: DNS
+
+      Alternative for Odoo.sh users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png
+
+   .. tab:: WWW
+
+      Content dedicated to Odoo Online users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png
+
+
+   .. tab:: SSH
+
+      Alternative for Odoo.sh users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png
+
+
+   .. tab:: Telnet
+
+      Third version for On-premise users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png
+
+
+   .. tab:: FTP
+
+      Content dedicated to Odoo Online users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ftp.png
+
+
+   .. tab:: SNMP
+
+      Alternative for Odoo.sh users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png
+
+
+   .. tab:: Auth. Server
+
+      Content dedicated to Odoo Online users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png
+
+   .. tab:: Notification
+      .. tabs::
+         .. tab::
+            Alternative for Odoo.sh users.
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png
+         .. tab::           
+            Alternative blablabla 
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png
+
+   .. tab:: Language
 
       Third version for On-premise users.
 
-   .. tab:: Client-to-Site VPN
+   .. tab:: IPv6 
 
       Content dedicated to Odoo Online users.
 
-   .. tab:: Site-to-Site VPN (Intranet)
+   .. tab:: ZON
 
       Alternative for Odoo.sh users.
-
-   .. tab:: Site-to-Site VPN (Extranet)
-
-      Content dedicated to Odoo Online users.
-
-   .. tab:: Site-to-Site VPN (Intranet)
-
-      Alternative for Odoo.sh users.
-
-   .. tab:: Site-to-Site VPN (Extranet)
-
-      Third version for On-premise users.
-
-   .. tab:: Client-to-Site VPN
-
-      Content dedicated to Odoo Online users.
-
-   .. tab:: Site-to-Site VPN (Intranet)
-
-      Alternative for Odoo.sh users.
-
-   .. tab:: Client-to-Site VPN
-
-      Content dedicated to Odoo Online users.
-
-   .. tab:: Site-to-Site VPN (Intranet)
-
-      Alternative for Odoo.sh users.
-
-   .. tab:: Site-to-Site VPN (Extranet)
-
-      Third version for On-premise users.
-
-   .. tab:: Client-to-Site VPN
-
-      Content dedicated to Odoo Online users.
-
-   .. tab:: Site-to-Site VPN (Intranet)
-
-      Alternative for Odoo.sh users.
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png
 
 
 PPP (Point-to-Point Protocol)
