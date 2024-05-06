@@ -95,6 +95,7 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
    .. tab:: Host Name
 
       Content dedicated to Odoo Online users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/system-hostname.png
 
 
@@ -105,62 +106,73 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
    .. tab:: Date/Time
 
       Third version for On-premise users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png
 
       
    .. tab:: Console Speed
 
       Content dedicated to Odoo Online users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png
 
 
    .. tab:: DNS
 
       Alternative for Odoo.sh users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png
 
    .. tab:: WWW
 
       Content dedicated to Odoo Online users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png
 
 
    .. tab:: SSH
 
       Alternative for Odoo.sh users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png
 
 
    .. tab:: Telnet
 
       Third version for On-premise users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png
 
 
    .. tab:: FTP
 
       Content dedicated to Odoo Online users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ftp.png
 
 
    .. tab:: SNMP
 
       Alternative for Odoo.sh users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png
 
 
    .. tab:: Auth. Server
 
       Content dedicated to Odoo Online users.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png
 
    .. tab:: Notification
       .. tabs::
          .. tab::
             Alternative for Odoo.sh users.
+
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png
          .. tab::           
             Alternative blablabla 
+
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png
 
    .. tab:: Language
@@ -174,6 +186,7 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
    .. tab:: ZON
 
       Alternative for Odoo.sh users.
+      
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png
 
 
