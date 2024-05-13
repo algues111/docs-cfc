@@ -120,6 +120,9 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: Host Name
 
+      Comme son nom l'indique, l'onglet Host Name permet de définir le nom que nous voulons donner à notre appareil.
+      Si vous voulez lier ce dernier à votre domaine, vous pouvez aussi indiquer son nom auprès du domaine.
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/system-hostname.png
 
 
@@ -301,7 +304,7 @@ Objets
 Les objets permettent de classer la majorité des éléments utilisés par le pare-feu.
 Les objets possèdent des attributs, des valeurs, et sont rangés dans différentes catégories, sous catégories ou des groupes.
 
-La rigueur dans le maintien de l'arborscence des objets est absolument nécessaire.
+La **rigueur dans le maintien de l'arborscence** des objets est **absolument nécessaire.**
 Il est imporant d'être précis dans le nom qu'on leur donne.
 
 .. admonition:: Exemple
@@ -322,8 +325,8 @@ Fonctionnalités UTM
 
    .. tab:: APP PATROL
 
-      L'App Patrol est un pare-feu applicatif.
-      Il permet de filtrer et bloquer des applications définies par l'administrateur.
+      L'App Patrol est un **pare-feu applicatif.**
+      Il permet de **filtrer et bloquer des applications définies** par l'administrateur.
       Ces dernières vont des réseaux sociaux jusqu'à l'accès au réseau Tor (onion routing) par exemple...
 
       Ici, nous établissons une règle nommée "NO_TO_WHATSAPP".
@@ -345,19 +348,56 @@ Fonctionnalités UTM
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/no-to-whatsapp-vlan100.png
 
+      
+      Il est important de désormais la tester ! 
+      Si nous essayons d'accèder au site web de whatsapp, le navigateur n'y arrivera pas, et un log apparaîtra sur le firewall !
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/log-access-block-AP.png
 
 
 
 
    .. tab:: Content Filter
 
-     
+      DNS :
+
+      .. warning:: 
+         Si votre pare-feu est configuré en tant que DNS, il est nécessaire d'ajouter le content filter sur la règle "LANx_TO_DEVICE" car les requêtes DNS passent par le pare-feu.
+         
+      
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
+
+
+      .. tabs::
+         .. tab:: BPP
+            
+            
+
+            La Business Productivity Protection est un profil créé par défaut dans le Content Filtering de Zyxell.
+            Lorsque nous cliquons dessus, nous voyons apparaître plusieurs paramètres intéressants, tels que :
+
+            - Enable SafeSearch : permet l'activation forcée du SafeSearch dans les navigateurs.
+            - Managed Categories : permet de choisir les catégories bloquées par le profil en question
+         
+
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/bpp-web-content-filter.png
+
+            Lorsque nous essayons d'accéder à un site-web catégorisé dans le profil, nous avons une jolie page d'accès bloqué qui apparaît !
+
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/access-blocked.png
+            
 
       
    .. tab:: Anti-Malware
 
-      
+      L'anti-malware vérifie les hashs / checksums des fichiers transitant en son sein, et les met en quarataine / les supprimes si ces derniers correspondent à un hash / checksum malveillant connu.
+      Vous pouvez choisir les types de fichiers à analyser.
+
+      .. note::
+         Ici, les .exe, .swf, .doc, .pdf, .rtf, .zip sont analysés (car majoritairement enclin à contenir des malwares).
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/malware.png
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
 
@@ -369,24 +409,24 @@ Fonctionnalités UTM
       Des white lists et block lists peuvent être ajoutées en fonction des besoins.
 
       .. tabs::
-         .. tab::
+         .. tab:: IP Reputation
             
-            IP Reputation
+            
 
             Cette catégorie est spécifique aux adresses IP.
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation.png
 
 
-         .. tab::           
+         .. tab:: DNS Threat Filter
             
-            DNS Threat Filter
+            
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png
 
-         .. tab::           
+         .. tab:: URL Threat Filter           
             
-            URL Threat Filter
+            
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png
 
