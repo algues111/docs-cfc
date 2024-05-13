@@ -64,9 +64,36 @@ Cybersafe, ISO27001...
 Pare-feu
 ===========
 
-Pare-feu à état (Stateful Firewall)
+Tout d'abord, qu'est-ce qu'un pare-feu ?
+
+Un pare-feu est un appareil ou un logiciel permettant de filtrer et bloquer de connections réseaux en fonction de règles définies.
+Aujourd'hui, les pare-feux vont beaucoup plus loin car ils intègrent des fonctionnalités avancées d'analyse de traffics.
+
 
 Pare-feu sans état (Stateless Firewall)
+----------------------------------------
+
+Ce sont les firewalls les plus anciens mais surtout les plus basiques qui existent. Ils font un contrôle
+de chaque paquet indépendamment des autres en se basant sur les règles prédéfinies par
+l'administrateur (généralement appelées ACL, Access Control Lists)
+
+Pare-feu à état (Stateful Firewall)
+-------------------------------------
+
+Ils sont une évolution des pares-feu sans état.
+Ils intègrent la fonctionnalité de stateful inspection permettant d'inspecter l'état des paquets qui transitent en son sein.
+
+En complément de l'ACL rédigé par l'administrateur (IP, port, protocole...), il sera donc en mesure de détecter les anomalies des connexions TCP 
+
+- NEW : Un client envoie sa première requête.
+- ESTABLISHED : Connexion déjà initiée. Elle suit une connexion NEW.
+- RELATED : Peut éventuellement être une nouvelle connexion, mais elle présente un rapport
+direct avec une connexion déjà connue.
+- INVALID : Correspond à un paquet qui n'est pas valide.
+
+Pare-feu applicatif
+----------------------
+
 
 
 Configuration
@@ -260,7 +287,13 @@ On distingue 3 types de VPN :
 Phases
 ---------
 
+Phase 1
 
+L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
+
+Phase 2
+
+L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur un ensemble de paramètres qui définissent le type de trafic pouvant passer par le VPN et sur la manière de chiffrer et d'authentifier le trafic. Cet accord s'appelle une association de sécurité.
 
 Objets
 --------------
@@ -280,13 +313,130 @@ Il est imporant d'être précis dans le nom qu'on leur donne.
       - Adresse : 172.18.12.0
       - Masque : 255.255.255.0
 
+
+
 Fonctionnalités UTM
 ----------------------
 
-APP PATROL
-^^^^^^^^^^^^^^
+.. tabs::
+
+   .. tab:: APP PATROL
+
+      L'App Patrol est un pare-feu applicatif.
+      Il permet de filtrer et bloquer des applications définies par l'administrateur.
+      Ces dernières vont des réseaux sociaux jusqu'à l'accès au réseau Tor (onion routing) par exemple...
+
+      Ici, nous établissons une règle nommée "NO_TO_WHATSAPP".
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/no-to-whatsapp.png
+
+      Dans celle-ci, nous retrouvons les éléments suivants :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/no-to-whatsapp-conf.png
+
+      Ces "Application Rules" sont des services spécifiques de Whatsapp (Chat, Audio, Video...)
+      Elles nous permettent d'avoir de la granularité dans la configuration de nos règles.
+
+      Nous pouvons par exemple bloquer seulement les appels (vocaux et vidéos), mais laisser la possibilité d'envoyer des messages.
+
+      Afin que cette règle soit fonctionnelle, il faut l'appliquer à une "Policy Control".
+
+      Ici, nous avons donc créé la policy "VLAN100_Outgoing_WAN", afin que seuls les appareils du réseau VLAN100 soient affectés par cette règle. 
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/no-to-whatsapp-vlan100.png
 
 
+
+
+
+   .. tab:: Content Filter
+
+     
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
+
+      
+   .. tab:: Anti-Malware
+
+      
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
+
+
+   .. tab:: Reputation Filter
+
+      A partir d'une base de données, le Reputation Filter peut bloquer des requêtes DNS, des connexions à des IP et URL spécifiques.
+      Les possibilités sont très larges. 
+      Des white lists et block lists peuvent être ajoutées en fonction des besoins.
+
+      .. tabs::
+         .. tab::
+            
+            IP Reputation
+
+            Cette catégorie est spécifique aux adresses IP.
+
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation.png
+
+
+         .. tab::           
+            
+            DNS Threat Filter
+
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png
+
+         .. tab::           
+            
+            URL Threat Filter
+
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png
+
+         
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png
+
+
+
+   .. tab:: IPS
+
+      
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+
+   .. tab:: Sandboxing
+
+
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+
+   .. tab:: Email Security
+
+     
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+
+   .. tab:: CDR
+
+      
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+
+   .. tab:: SSL Inspection
+
+
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+
+   .. tab:: IP Exception
+
+      
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+
+   .. tab:: Astra Cloud Security
+     
 
 
 Client-to-Site VPN
