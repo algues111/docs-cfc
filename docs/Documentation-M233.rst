@@ -28,7 +28,7 @@ Kaspersky ASAP est une solution d'apprentissage et de formation à la vigilence 
 Cet aspect de la cybersécurité est absolument primordial, car un seul lien malveillant pourrait mettre à mal toute une infrastructure.
 Le danger se trouve d'ailleurs souvent **entre la chaise et le clavier !**
 
-
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/user-meme.png
 
 End-user
 ^^^^^^^^^
@@ -59,6 +59,17 @@ Certifications
 ------------------
 
 Cybersafe, ISO27001...
+
+
+Confidentialité
+-----------------
+
+La confidentialité est de nos jours aseez complexe.
+Entre les Big Tech mettant à jour tous les mois leurs politiques et les gouvernements pondant de nouvelles lois pour règlementer le tout, les utilisateurs sont très souvent perdus.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.png
+
+Il est donc essentiel de d'alerter les collaborateurs et clients concernant le traitement de leurs données, et qui y a **réellement accès.**
 
 
 Pare-feu
@@ -287,16 +298,6 @@ On distingue 3 types de VPN :
 
      
 
-Phases
----------
-
-Phase 1
-
-L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
-
-Phase 2
-
-L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur un ensemble de paramètres qui définissent le type de trafic pouvant passer par le VPN et sur la manière de chiffrer et d'authentifier le trafic. Cet accord s'appelle une association de sécurité.
 
 Objets
 --------------
@@ -435,7 +436,9 @@ Fonctionnalités UTM
 
 
 
-   .. tab:: IPS
+   .. tab:: IPS / IDS
+      
+      
 
       
 
@@ -477,10 +480,21 @@ Fonctionnalités UTM
 
    .. tab:: Astra Cloud Security
      
+VPN
+======
 
+Intro VPN blablabla
 
 Client-to-Site VPN
 ----------------------
+
+Avec l'essort du télé-travail ces 5 dernières années, de plus en plus de personnes travaillent depuis leur domicile voire depuis l'étranger.
+Les entreprises autorisant cela ont donc besoin d'un système permettant la connexion d'utilisateurs depuis Internet.
+
+Le VPN client-to-site répond à cela. 
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/client-to-site-schema.png
 
 Site-to-Site VPN (Intranet)
 --------------------------------
@@ -497,8 +511,160 @@ Choisir la version 2 d'IKE (IKEv2) car IKEv1 est désormais obsolète.
 Définir l'interface sur laquelle le site distant doit se connecter.
 
 
-
-
-
 Site-to-Site VPN (Extranet)
 -------------------------------
+
+Le VPN site-à-site extranet fonctionne globalement de la même facon que le site-à-site intranet.
+La différence réside dans le fait qu'il sera établi pour permettre l'accès au réseau d'entreprise à une société externe.
+
+La configuration des utilisateurs sera donc plus restrictive selon les exigences et les besoins de collaboration !
+
+Protocoles VPN
+----------------
+
+
+IPSec
+^^^^^^^^
+
+C'est l'un des protocoles les plus utilisés pour les VPN actuels, il permet l'intégrité et la confidentialité des données.
+Comme son nom l'indique, il fonctionne sur la couche réseau du modèle OSI (couche 3)
+
+VOIR https://www.frameip.com/ipsec/
+
+Modes de fonctionnement
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Le protocole IPSec peut fonctionner de 2 manières différentes ; en mode tunnel ou en mode transport.
+Quelle est la différence entre les deux ?
+
+Mode Tunnel :
+
+Ce mode est le plus sécurisé car il encapsule l'entièreté du paquet IP, c'est à dire son header, payload etc...
+Il est largement utilisé pour les VPN "anonymes" car les IP source / destination des en-têtes sont chiffrées !
+
+Mode Transport :
+
+Le mode transport quant à lui va seulement encapsuler le payload du paquet IP ce qui rend ce mode plus léger que le mode tunnel.
+
+Le fonctionnement du protocole IPSec peut être décomposé en 5 étapes principales :
+• Etape 1 : Initiation du processus IPSec
+• Etape 2 : Phase 1 avec le protocole IKE (Internet Key Exchange)
+• Etape 3 : Phase 2 avec le protocole IKE
+• Etape 4 : Transfert de données
+• Etape 5 : Terminaison du tunnel IPSec
+
+
+ 
+IKE
+^^^^
+
+Après avori compris le fonctionnement d'IPSec, il est légitime de se demander comment est initié le VPN !
+IKE est la réponse.
+
+Ce protocole permet l'initiation de la connexion et l'association des systèmes ; les fameuses SA (security association).
+Comment fon
+
+
+Phases
+^^^^^^^^^^^^
+
+Phase 1
+
+L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
+
+Phase 2
+
+L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur un ensemble de paramètres qui définissent le type de trafic pouvant passer par le VPN et sur la manière de chiffrer et d'authentifier le trafic. Cet accord s'appelle une association de sécurité.
+
+
+
+
+
+Wi-Fi Management (a mettre dans section parefeu)
+-------------------
+
+Avec l'ATP200, il est tout à fait possible de gérer des réseaux wi-fi ainsi que les points d'accès.
+La première chose à faire est de définir les différents objets et profils qu'on utilisera pour notre AP / groupe d'APs.
+
+Rendons nous donc dans les profils radio !
+
+Radio
+^^^^^^^^
+
+Nous avons ici configuré le "default" et le "default2".
+Ces derniers utilisent respectivement la bande des 2,4GHz et des 5GHz.
+
+.. tabs::
+   .. tab:: default (2,4GHz) 
+      
+      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
+      - il utilise la norme 802.11ax (Wifi6)
+      - il utilise les canaux en 80MHz (4 canaux aggrégés)
+      - il utilise les canaux 36, 52, 100 et 116
+      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
+      - la dissociation du client s'effectue à partir de -88dBm
+      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
+
+   .. tab:: default2 (5GHz)
+
+      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
+      - il utilise la norme 802.11ax (Wifi6)
+      - il utilise les canaux en 20MHz
+      - il utilise les canaux 1,6 et 11
+      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
+      - la dissociation du client s'effectue à partir de -88dBm
+      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
+    
+
+.. note::
+   De nouveau, nous ferons ces tests sur notre environnement de lab.
+
+
+SSID
+^^^^^^^^
+
+Par la suite, nous devons définir les SSID que nous voulons diffuser !
+Pour ce faire, il suffit de les créer dans le menu "SSID LIST".
+
+Cela se présente comme suit :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
+
+Pour appliquer des profils de sécurité spécifiques, il est possible d'en créer dans l'onglet Security List.
+Dans celui-ci, nous choisissons :
+
+- Le nom du profil
+- Le mode de sécurité (WEP, WPA2, WPA3 etc...)
+- La méthode d'authentiication (Enterprise/RADIUS ou Personnel/PSK)
+- L'activation ou pas du fast-roaming (802.11r)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-sec-list-vlan100.png
+
+
+Ici, nous créons un profil RADIUS, que nous configurons dans le RADIUS Server intégré au NAS Synology.
+
+N'étant pas installé nativement, il est nécessaire de le faire via le gestionnaire de paquets Synology.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-syno.png
+
+Après cela, nous pouvons le démarrer et le configurer.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-home.png
+
+La configuration ne sera pas très complexe étant donné que nous n'avons pas de serveur LDAP à proprement parler sur notre réseau, donc nous utiliserons les utilisateurs locaux du NAS.
+
+Il est désormais temps d'ajouter le client RADIUS sur le serveur :
+
+.. warning:: 
+   Puisque c'est notre pare-feu qui fait office de contrôleur d'APs, il est nécessaire de mettre son IP à lui, et non celle des APs ! 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
+
+.. note::
+   Les ports par défaut utilisés par le RADIUS sont :
+   - 1812 : authentication et authorization
+   - 1813 : accounting
+
+Lorsque cela est fait, il faut retourner dans la configuration du SSID afin d'ajouter l'IP du serveur RADIUS ainsi que les ports utilisés pour l'authentification et l'autorisation.
+
+
