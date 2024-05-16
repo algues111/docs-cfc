@@ -28,7 +28,7 @@ Kaspersky ASAP est une solution d'apprentissage et de formation à la vigilence 
 Cet aspect de la cybersécurité est absolument primordial, car un seul lien malveillant pourrait mettre à mal toute une infrastructure.
 Le danger se trouve d'ailleurs souvent **entre la chaise et le clavier !**
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/user-meme.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/user-meme.jpg
 
 End-user
 ^^^^^^^^^
@@ -67,7 +67,7 @@ Confidentialité
 La confidentialité est de nos jours aseez complexe.
 Entre les Big Tech mettant à jour tous les mois leurs politiques et les gouvernements pondant de nouvelles lois pour règlementer le tout, les utilisateurs sont très souvent perdus.
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg
 
 Il est donc essentiel de d'alerter les collaborateurs et clients concernant le traitement de leurs données, et qui y a **réellement accès.**
 
@@ -431,7 +431,12 @@ Fonctionnalités UTM
 
    .. tab:: Email Security
 
-     
+     Grâce à l'option email security disponible dans l'ATP200, il est possible de mettre en place un scan des emails entrants.
+     Si cette fonctionnalité est activée, les emails répondant aux critères de suspition du système se verront soit mis en quarantaine, soit ajouté un tag au début de leur objet.
+
+     Cela permettant la plus grande attention des collaborateurs sur la possible origine malveillante de l'email en question.
+
+
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
 
@@ -611,6 +616,16 @@ Site-to-Site VPN (Intranet)
 
 Exercice pratique
 ^^^^^^^^^^^^^^^^^^
+
+.. warning::
+
+   Avant de commencer l'exercice, je vous invite à prendre connaissance de l'environnement lab mis en place. Vous trouverez les ressources ci-dessous :
+
+   :::{admonition} Cliquez pour dérouler le schéma réseau
+   :class: dropdown
+
+   .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/schema.png
+   :::
 
 
 Afin de donner un exemple concret de conception et paramètrage d'un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.
