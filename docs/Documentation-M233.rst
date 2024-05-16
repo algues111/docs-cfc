@@ -272,29 +272,6 @@ Activons la si ce n'est pas déjà fait et définissons la en tant que bridge !
     Il se peut que votre opérateur définisse des VLANs pour chaque service qu'il propose (data, voip, tv...)
     Si c'est le cas, il faut configurer le bon ID !
 
-VPN (Virtual Private Network)
-================================
-
-Qu'est-ce qu'un VPN  ?
----------------------------
-
-La notion de VPN avait déjà été abordée lors du module M145 de 1ère année.
-Sa définition est simple :"Relier entre eux des systèmes informatiques de manière **sûre** en s’appuyant sur un réseau existant."
-
-On distingue 3 types de VPN :
-
-
-.. tabs::
-
-   .. tab:: Client-to-Site VPN
-
-      
-
-   .. tab:: Site-to-Site VPN (Intranet)
-
-
-
-   .. tab:: Site-to-Site VPN (Extranet)
 
      
 
@@ -479,9 +456,138 @@ Fonctionnalités UTM
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
    .. tab:: Astra Cloud Security
-     
+
+
+
+
+Wi-Fi Management (a mettre dans section parefeu)
+--------------------------------------------------
+
+Avec l'ATP200, il est tout à fait possible de gérer des réseaux wi-fi ainsi que les points d'accès.
+La première chose à faire est de définir les différents objets et profils qu'on utilisera pour notre AP / groupe d'APs.
+
+Rendons nous donc dans les profils radio !
+
+Radio
+^^^^^^^^
+
+Nous avons ici configuré le "default" et le "default2".
+Ces derniers utilisent respectivement la bande des 2,4GHz et des 5GHz.
+
+.. tabs::
+   .. tab:: default (2,4GHz) 
+      
+      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
+
+
+      - il utilise la norme 802.11ax (Wifi6)
+      - il utilise les canaux en 80MHz (4 canaux aggrégés)
+      - il utilise les canaux 36, 52, 100 et 116
+      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
+      - la dissociation du client s'effectue à partir de -88dBm
+      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
+
+   .. tab:: default2 (5GHz)
+
+      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
+
+
+      - il utilise la norme 802.11ax (Wifi6)
+      - il utilise les canaux en 20MHz
+      - il utilise les canaux 1,6 et 11
+      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
+      - la dissociation du client s'effectue à partir de -88dBm
+      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
+    
+
+.. note::
+   De nouveau, nous ferons ces tests sur notre environnement de lab.
+
+
+
+SSID
+^^^^^^^^
+
+Par la suite, nous devons définir les SSID que nous voulons diffuser !
+Pour ce faire, il suffit de les créer dans le menu "SSID LIST".
+
+Cela se présente comme suit :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
+
+Dans cet exemple nous possédons 3 SSID diffusant 3 réseaux distincts :
+
+- WLAN_P12_CORP : VLAN100 -> 172.18.12.0/24
+- WLAN_P12_PUBLIC : VLAN300 -> 172.18.212.0/24
+- WLAN_P12_VoIP : VLAN200 -> 172.18.112.0/24
+
+Pour appliquer des profils de sécurité spécifiques, il est possible d'en créer dans l'onglet Security List.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-sec-list.png
+
+Dans celui-ci, nous choisissons :
+
+- Le nom du profil
+- Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3 etc...)
+- La méthode d'authentiication (Enterprise/RADIUS ou Personnel/PSK)
+- L'activation ou pas du fast-roaming (802.11r)
+
+Un objet supplémentaire sera nécessaire si nous utilisons un serveur RADIUS pour l'authentification et l'autorisation :
+
+.. note::
+   
+   Dans ma documentation d'administration système, une section sera dédié au serveur RADIUS. De sa théorie jusqu'à son application.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-conf-atp.png
+
+Voici les paramètres essentiels à rentrer pour que la configuration fonctionne :
+
+- L'adresse du/des serveur/s
+- Les ports utilisés par ce dernier
+- La clé partagée
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-sec-list-vlan100.png
+
+
+Ici, nous créons un profil RADIUS, que nous configurons dans le RADIUS Server intégré au NAS Synology.
+
+N'étant pas installé nativement, il est nécessaire de le faire via le gestionnaire de paquets Synology.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-syno.png
+
+Après cela, nous pouvons le démarrer et le configurer.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-home.png
+
+La configuration ne sera pas très complexe étant donné que nous n'avons pas de serveur LDAP à proprement parler sur notre réseau, donc nous utiliserons les utilisateurs locaux du NAS.
+
+Il est désormais temps d'ajouter le client RADIUS sur le serveur :
+
+.. warning:: 
+   Puisque c'est notre pare-feu qui fait office de contrôleur d'APs, il est nécessaire de mettre son IP à lui, et non celle des APs ! 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
+
+.. note::
+   Les ports par défaut utilisés par le RADIUS sont :
+   - 1812 : authentication et authorization
+   - 1813 : accounting
+
+Lorsque cela est fait, il faut retourner dans la configuration du SSID afin d'ajouter l'IP du serveur RADIUS ainsi que les ports utilisés pour l'authentification et l'autorisation.
+
+
+
+
+
 VPN
 ======
+
+Qu'est-ce qu'un VPN  ?
+---------------------------
+
+La notion de VPN avait déjà été abordée lors du module M145 de 1ère année.
+Sa définition est simple :"Relier entre eux des systèmes informatiques de manière **sûre** en s’appuyant sur un réseau existant."
 
 Intro VPN blablabla
 
@@ -529,7 +635,12 @@ IPSec
 C'est l'un des protocoles les plus utilisés pour les VPN actuels, il permet l'intégrité et la confidentialité des données.
 Comme son nom l'indique, il fonctionne sur la couche réseau du modèle OSI (couche 3)
 
-VOIR https://www.frameip.com/ipsec/
+
+
+.. _IPSEC: https://www.frameip.com/ipsec/
+
+.. seealso::
+   IPSEC_
 
 Modes de fonctionnement
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -547,6 +658,8 @@ Mode Transport :
 Le mode transport quant à lui va seulement encapsuler le payload du paquet IP ce qui rend ce mode plus léger que le mode tunnel.
 
 Le fonctionnement du protocole IPSec peut être décomposé en 5 étapes principales :
+
+
 • Etape 1 : Initiation du processus IPSec
 • Etape 2 : Phase 1 avec le protocole IKE (Internet Key Exchange)
 • Etape 3 : Phase 2 avec le protocole IKE
@@ -565,12 +678,43 @@ Ce protocole permet l'initiation de la connexion et l'association des systèmes 
 Comment fon
 
 
+IKEv1
+~~~~~~~~~~~~~~
+
+IKEv1 est la première version du protocole IKE.
+
+
+IKEv2
+~~~~~~~~~~~~~~
+
+IKEv2 est la version succédant à IKEv2 avec plus d'interopérabilité ainsi qu'une résistance plus forte aux attaques de type DOS.
+
+.. _RFC-5996: https://datatracker.ietf.org/doc/html/rfc5996
+
+
+
+.. seealso::
+   RFC-5996_
+
+
 Phases
 ^^^^^^^^^^^^
 
 Phase 1
 
 L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
+
+La construction de la phase 1 s’établi selon le processus suivant :
+
+
+• Négociation d’une politique IKE SA correspondante entre pairs pour protéger l’échange IKE
+• Echange authentifié de clé Diffie-Hellman afin d’obtenir une correspondance des clés
+secrètes partagées
+• Authentification et protection de l’identité des pairs avec IPSec
+• Construction du tunnel sécurisé pour négocier ensuite les paramètres de la phase 2 de IKE
+
+
+Deux modes existent pour cette première phase :
 
 Phase 2
 
@@ -580,91 +724,5 @@ L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur u
 
 
 
-Wi-Fi Management (a mettre dans section parefeu)
--------------------
-
-Avec l'ATP200, il est tout à fait possible de gérer des réseaux wi-fi ainsi que les points d'accès.
-La première chose à faire est de définir les différents objets et profils qu'on utilisera pour notre AP / groupe d'APs.
-
-Rendons nous donc dans les profils radio !
-
-Radio
-^^^^^^^^
-
-Nous avons ici configuré le "default" et le "default2".
-Ces derniers utilisent respectivement la bande des 2,4GHz et des 5GHz.
-
-.. tabs::
-   .. tab:: default (2,4GHz) 
-      
-      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
-      - il utilise la norme 802.11ax (Wifi6)
-      - il utilise les canaux en 80MHz (4 canaux aggrégés)
-      - il utilise les canaux 36, 52, 100 et 116
-      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
-      - la dissociation du client s'effectue à partir de -88dBm
-      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
-
-   .. tab:: default2 (5GHz)
-
-      En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
-      - il utilise la norme 802.11ax (Wifi6)
-      - il utilise les canaux en 20MHz
-      - il utilise les canaux 1,6 et 11
-      - le DCS vérifie tous les jours à 3h du matin si le canal en question est libre
-      - la dissociation du client s'effectue à partir de -88dBm
-      - la norme 802.11b soit inutilisable (car débit min. de 12Mbps)
-    
-
-.. note::
-   De nouveau, nous ferons ces tests sur notre environnement de lab.
-
-
-SSID
-^^^^^^^^
-
-Par la suite, nous devons définir les SSID que nous voulons diffuser !
-Pour ce faire, il suffit de les créer dans le menu "SSID LIST".
-
-Cela se présente comme suit :
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
-
-Pour appliquer des profils de sécurité spécifiques, il est possible d'en créer dans l'onglet Security List.
-Dans celui-ci, nous choisissons :
-
-- Le nom du profil
-- Le mode de sécurité (WEP, WPA2, WPA3 etc...)
-- La méthode d'authentiication (Enterprise/RADIUS ou Personnel/PSK)
-- L'activation ou pas du fast-roaming (802.11r)
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-sec-list-vlan100.png
-
-
-Ici, nous créons un profil RADIUS, que nous configurons dans le RADIUS Server intégré au NAS Synology.
-
-N'étant pas installé nativement, il est nécessaire de le faire via le gestionnaire de paquets Synology.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-syno.png
-
-Après cela, nous pouvons le démarrer et le configurer.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/radius-home.png
-
-La configuration ne sera pas très complexe étant donné que nous n'avons pas de serveur LDAP à proprement parler sur notre réseau, donc nous utiliserons les utilisateurs locaux du NAS.
-
-Il est désormais temps d'ajouter le client RADIUS sur le serveur :
-
-.. warning:: 
-   Puisque c'est notre pare-feu qui fait office de contrôleur d'APs, il est nécessaire de mettre son IP à lui, et non celle des APs ! 
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/ap-profile-ssid-list-wlancorp.png
-
-.. note::
-   Les ports par défaut utilisés par le RADIUS sont :
-   - 1812 : authentication et authorization
-   - 1813 : accounting
-
-Lorsque cela est fait, il faut retourner dans la configuration du SSID afin d'ajouter l'IP du serveur RADIUS ainsi que les ports utilisés pour l'authentification et l'autorisation.
 
 
