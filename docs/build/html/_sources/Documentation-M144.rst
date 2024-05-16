@@ -64,7 +64,7 @@ Un exemple concret et graphique :
    :align: center
 
 Bande passante
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 La bande passante représente la bande de fréquence dans laquelle peuvent passer les données.
 
@@ -75,7 +75,7 @@ Attention : La bande passante est à ne pas confondre avec le débit, bien que l
 - Une bande passante élevée ne garantit pas nécessairement un débit élevé, tandis qu'un débit élevé est toujours le résultat d'une bande passante élevée.
 
 Débit binaire
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 Le débit binaire, souvent simplement appelé "débit," est la mesure de la quantité d'informations numériques (bits) transmises ou traitées par unité de temps, généralement en bits par seconde (bps).
 
@@ -105,7 +105,7 @@ Oui, les voici :
 - Modulation de phase (PM)
 
 Normes 802.11
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 La norme 802.11 est une série de normes qui spécifient les protocoles de communication sans fil pour les réseaux locaux (Wi-Fi). Ces normes ont été développées par l’IEEE, un organisme de normalisation international. La famille de normes 802.11 définit les spécifications techniques pour les réseaux sans fil, notamment les fréquences, les débits de données, les protocoles de sécurité, etc.
 

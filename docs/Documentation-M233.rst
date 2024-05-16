@@ -621,11 +621,10 @@ Exercice pratique
 
    Avant de commencer l'exercice, je vous invite à prendre connaissance de l'environnement lab mis en place. Vous trouverez les ressources ci-dessous :
 
-   :::{admonition} Cliquez pour dérouler le schéma réseau
-   :class: dropdown
 
-   .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/schema.png
-   :::
+.. toggle::
+
+   Here is my toggle-able content!
 
 
 Afin de donner un exemple concret de conception et paramètrage d'un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.
