@@ -608,13 +608,61 @@ Site-to-Site VPN (Intranet)
 .. warning:: 
    Pour cet exemple, nous utiliserons un **VPN de type IPSec**.
 
+
+Exercice pratique
+^^^^^^^^^^^^^^^^^^
+
+
+Afin de donner un exemple concret de conception et paramètrage d'un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.
+
+
+Phase 1
+~~~~~~~~~~
+
 Pour configurer un VPN site-à-site sur l'ATP200 de Zyxell, il faut configurer dans l'ordre la phase 1 et la phase 2 d'une connexion VPN.
 
-Dirigeons nous donc vers l'onglet VPN Gateway.
-En premier temps, cliquer sur "ADD"
+Dirigeons nous donc vers l'onglet **VPN Gateway.**
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf.png
+
+En premier temps, cliquer sur **"ADD"**
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase1-s2s.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase1-s2s-2.png
+
+
 Donner un nom reconnaissable et pertinent à notre connection site à site.
+
+
 Choisir la version 2 d'IKE (IKEv2) car IKEv1 est désormais obsolète.
-Définir l'interface sur laquelle le site distant doit se connecter.
+Définir l'interface sur laquelle le site distant doit se connecter (ici, ce sera wan1_ppp).
+
+Définir l'adresse IP de l'autre pare-feu / serveur VPN, avec lequel nous allons nous interconnecter.
+
+Entrer une clé pré-partagée forte (recommandation de 32 caractères aléatoires A-a-0-*).
+
+Choisir les types d'ID que vous vous partagerez communément des 2 côtés du tunnel. 
+
+Définir la durée de la Security Association en secondes.
+
+Configurer les types de chiffrement pour l'authentification ainsi que le groupe de clés Diffie-Hellman.
+
+
+.. admonition:: Conseil
+   Avant de passer au paramétrage de la phase 2, je vous conseille de vérifier avec votre collaborateur la bonne configuration des 2 gateways (chaque côté du tunnel).
+
+
+Phase 2
+^^^^^^^^^^
+
+Nous pouvons désormais passer à l'onglet VPN Connection, correspondant à la phase 2.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-menu.png
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-s2s.png
+
 
 
 Site-to-Site VPN (Extranet)
