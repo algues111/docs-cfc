@@ -571,6 +571,7 @@ Cette solution est en générale **non recommandée** par les opérateurs.
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
 *Source : nexcom.fr*
 
+
 .. seealso::
    Le site ci-dessous explique bien et de manière précise le STUN, je vous invite donc à vous y référer si intéressé !
    https://www.nexcom.fr/stun-la-base/

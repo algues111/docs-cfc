@@ -1,6 +1,6 @@
-==============
+========================================================================================================
 Module 144 : Réseaux sans-fil (en travaux)
-==============
+========================================================================================================
 
 Introduction
 ------------
@@ -31,7 +31,7 @@ Semaine 2
 -----------
 
 Introduction
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Voici la liste des sujets abordés durant la semaine 2 :
 
@@ -129,7 +129,7 @@ Semaine 3
 ------------
 
 Introduction
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Voici les différents sujets abordés lors de la 3ème semaine de cours sur le module M144 :
 
@@ -147,7 +147,7 @@ Le roaming
 Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN. Ces deux AP sont câblés avec le même switch. Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie. Le terminal se connecte désormais presque de manière ininterrompue à AP2. Ce procédé est appelé roaming. L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche. La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.
 
 Trame 802.11
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 Afin de pouvoir comprendre de quoi est composé une trame 802.11, il est intéressant de se pencher sur la trame Ethernet II (802.3), ces dernières ayant, non seulement, beaucoup de similitudes, mais aussi, plusieurs différences conséquentes telles que :
 
 - La différence de taille :
@@ -159,7 +159,7 @@ Afin de pouvoir comprendre de quoi est composé une trame 802.11, il est intére
   - 802.11 : CSMA-CA   
 
 Topologies & Environnement
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Différentes topologies existent pour les réseaux sans-fil, ces dernières permettant une flexibilité dans l’adaptation des besoins des clients.
 
@@ -184,12 +184,12 @@ Nous allons maintenant nous intéressons à l’environnement entourant notre AP
 Avant toute chose, il est important de comparer les fréquences utilisées pour la technologie 802.11.
 
 Mandat pratique 30.3.5
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quelques questions du cockpit :
 
 Mandat pratique IBSS
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Afin de comprendre dans quels domaines d’applications nous pouvons utiliser la topologie IBSS, il nous a été demandé de réaliser un partage de fichier soit :
 

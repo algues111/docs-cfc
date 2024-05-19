@@ -4,7 +4,7 @@ Module 233 : Protéger et assurer la maintenance d'un réseau
 
 
 Formation des collaborateurs
-=============================
+================================
 
 De nos jours, la formation des collaborateurs d'une entreprise à la sécurité informatique est primordiale.
 Au premier trimestre 2023, le nombre de cyberattaques a augmenté de 20% par rapport à la même période de l'année précédentes.
@@ -98,8 +98,7 @@ En complément de l'ACL rédigé par l'administrateur (IP, port, protocole...), 
 
 - NEW : Un client envoie sa première requête.
 - ESTABLISHED : Connexion déjà initiée. Elle suit une connexion NEW.
-- RELATED : Peut éventuellement être une nouvelle connexion, mais elle présente un rapport
-direct avec une connexion déjà connue.
+- RELATED : Peut éventuellement être une nouvelle connexion, mais elle présente un rapport direct avec une connexion déjà connue.
 - INVALID : Correspond à un paquet qui n'est pas valide.
 
 Pare-feu applicatif
@@ -227,7 +226,7 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
 
 PPP (Point-to-Point Protocol)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pour configurer un accès à des services d'ISP, 2 choix s'offrent à nous :
 
@@ -273,7 +272,24 @@ Activons la si ce n'est pas déjà fait et définissons la en tant que bridge !
     Si c'est le cas, il faut configurer le bon ID !
 
 
-     
+La dernière étape sur le modem est de désactiver son firewall intégré :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/parefeu.png
+
+
+
+Pour utiliser le compte PPP sur le firewall Zyxell ATP200, il est tout d'abord nécessaire de créer un objet !
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ppp-conf.png
+
+
+Rentrez les informations d'identification.
+
+.. warning:: 
+   Ne pas remplir le champ "service" si vitre opérateur ne le spécifie pas explicitement !
+   Cela empêchera l'authentification aurpès du RADIUS du DSLAM.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png
 
 
 Objets
@@ -293,6 +309,15 @@ Il est imporant d'être précis dans le nom qu'on leur donne.
       - Nom : SUBNET_VLAN_300
       - Adresse : 172.18.12.0
       - Masque : 255.255.255.0
+
+
+Zones de sécurité
+^^^^^^^^^^^^^^^^^^^^
+
+Les zones de sécurité sont importantes car elles permettent de regrouper plusieurs interfaces dans un seul et même groupe.
+Ile st donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple. test
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png
 
 
 
@@ -462,6 +487,15 @@ Fonctionnalités UTM
 
    .. tab:: Astra Cloud Security
 
+
+
+Configuration réseau
+------------------------------
+
+Avant de s'attaquer à la configuration complète de réseaux, il est plus judicieux de commencer par les notions de ports, d'interfaces, de zones de sécurité etc...
+
+Nous avons dans la section "Objets", que ces derniers sont très utilisés pour configurer n'importe quel aspect du pare-feu.
+Cela comprend donc les zones de sécurité.
 
 
 

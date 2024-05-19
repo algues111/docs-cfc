@@ -433,10 +433,9 @@ Ils intègrent la fonctionnalité de stateful inspection permettant d’inspecte
 <ul class="simple">
 <li><p>NEW : Un client envoie sa première requête.</p></li>
 <li><p>ESTABLISHED : Connexion déjà initiée. Elle suit une connexion NEW.</p></li>
-<li><p>RELATED : Peut éventuellement être une nouvelle connexion, mais elle présente un rapport</p></li>
+<li><p>RELATED : Peut éventuellement être une nouvelle connexion, mais elle présente un rapport direct avec une connexion déjà connue.</p></li>
+<li><p>INVALID : Correspond à un paquet qui n’est pas valide.</p></li>
 </ul>
-<p>direct avec une connexion déjà connue.
-- INVALID : Correspond à un paquet qui n’est pas valide.</p>
 </section>
 <section id="pare-feu-applicatif">
 <h3>Pare-feu applicatif<a class="headerlink" href="#pare-feu-applicatif" title="Link to this heading">#</a></h3>
@@ -503,6 +502,17 @@ Après avoir saisi les informations d’identification valides, nous débarquons
 <p>Il se peut que votre opérateur définisse des VLANs pour chaque service qu’il propose (data, voip, tv…)
 Si c’est le cas, il faut configurer le bon ID !</p>
 </div>
+<p>La dernière étape sur le modem est de désactiver son firewall intégré :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/parefeu.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/parefeu.png" />
+<p>Pour utiliser le compte PPP sur le firewall Zyxell ATP200, il est tout d’abord nécessaire de créer un objet !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ppp-conf.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ppp-conf.png" />
+<p>Rentrez les informations d’identification.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Ne pas remplir le champ « service » si vitre opérateur ne le spécifie pas explicitement !
+Cela empêchera l’authentification aurpès du RADIUS du DSLAM.</p>
+</div>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png" />
 </section>
 </section>
 <section id="objets">
