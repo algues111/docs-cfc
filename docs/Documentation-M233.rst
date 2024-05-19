@@ -48,6 +48,21 @@ Pour se protéger d'avantage, des extensions, sites web, logiciels gratuits sont
 
    .. tab:: VirusTotal
 
+      VirusTotal est un outil 100% gratuit permettant de scanner des URL, des fichiers, des hashs/checksums, des domaines et adresses IP.
+      Ses analyses sont basés sur plus de 70 anti-virus connus du marché de la cybersécurité et vous offre en plus de cela un score de communauté.
+
+      Accueil du site :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal.png
+
+      Regroupant toutes ces informations, il est bien plus facile de savoir si tel site ou tel fichier est malveillant.
+
+      L'entreprise offre aussi des applications de bureau pour Mac, Linux et Windows ainsi que des services payant pour du threat hunting et des graphs !
+
+      Ci-dessous une démonstration d'un scan de site malveillant (ici phishing).
+
+       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal-malurl.png
+     
 
 
    .. tab:: iBarry
@@ -500,6 +515,8 @@ Cela comprend donc les zones de sécurité.
 
 Règles NAT-PAT
 ------------------
+
+
 
 
 Wi-Fi Management (a mettre dans section parefeu)
