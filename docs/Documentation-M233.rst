@@ -498,6 +498,9 @@ Nous avons dans la section "Objets", que ces derniers sont très utilisés pour 
 Cela comprend donc les zones de sécurité.
 
 
+Règles NAT-PAT
+------------------
+
 
 Wi-Fi Management (a mettre dans section parefeu)
 --------------------------------------------------
