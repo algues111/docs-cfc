@@ -48,11 +48,64 @@ Pour se protéger d'avantage, des extensions, sites web, logiciels gratuits sont
 
    .. tab:: VirusTotal
 
+      `VirusTotal <https://www.virustotal.com/gui/home/upload>`_ est un outil 100% gratuit permettant de scanner des URL, des fichiers, des hashs/checksums, des domaines et adresses IP.
+      Ses analyses sont basés sur plus de 70 anti-virus connus du marché de la cybersécurité et vous offre en plus de cela un score de communauté.
+
+      Accueil du site :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal.png
+
+      Regroupant toutes ces informations, il est bien plus facile de savoir si tel site ou tel fichier est malveillant.
+
+      L'entreprise offre aussi des applications de bureau pour Mac, Linux et Windows ainsi que des services payant pour du threat hunting et des graphs !
+
+      Ci-dessous une démonstration d'un scan de site malveillant (ici phishing).
+
+       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal-malurl.png
+     
 
 
    .. tab:: iBarry
 
+     `iBarry <https://www.ibarry.ch/fr/controles-de-securite/>`_ centralise des fonctionnalités similaires et complémentaires à VirusTotal, il permet de :
+
+         - Vérifier un site web
+         - Vérifier si une adresse mail a été compromis via des fuites de données (vérification faite par Have I Been Powned)
+         - Vérifier si son IP publique est potentiellement sujette à des attaques (iBarry effectue des tests de ports)
+
+     Le site propose aussi dvers logiciels de sécurité dont l'antivirus de Sophos ainsi que Qualys pour la veille des logiciels.
+
      
+     
+Bases légales et juridiques
+===============================
+
+Au delà de la sécurité informatique en elle même, de plus en plus de lois et d'ordonnances sont publiées chaque année afin d'encadrer la protection des systèmes et des données.
+
+En Suisse, voici les documents valables :
+
+   - La constitution fédérale (Cst ; RS 101)
+   - Le code civil (CC ; RS 210)
+   - Le code des obligations (CO ; RS 220)
+   - L’ordonnance concernant la tenue et la conservation des livres de comptes (Olico ; RS 221.431)
+   - La loi sur le droit d’auteur et les droits voisins (loi sur le droit d’auteur, LDA, RS 231.1)
+   - La loi sur les brevets d’invention (LBI ; RS 232.14)
+   - La loi fédérale sur la protection des données (LPD ; RS 235.1), en particulier l’article 7 et l’ordonnance relative à la loi fédérale sur la protection des données (OLPD ; RS 235.11), en particulier les articles 8 à 11 et 20 à 21
+   - La loi fédérale contre la concurrence déloyale (LCD ; RS 241)
+   - Le code de procédure civile (CPC ; RS 272)
+   - Le code pénal (CP ; RS 311.0)
+   - La loi sur le travail dans l’industrie, l’artisanat et le commerce (LTr ; RS 822.11)
+   - L’ordonnance relative à la loi sur le travail (Hygiène) (OLT 3 ; RS 822.113)
+   - La loi fédérale sur les services de certification dans le domaine de la signature électronique (Loi sur la signature électronique ; SCSE : RS 943.03)
+   - L’ordonnance sur les services de certification dans le domaine de la signature électronique (Ordonnance sur la signature électronique ; OSCSE)
+   - Le manuel de droit européen en matière de protection des données (la Suisse est également concernée du fait de son adhésion au conseil de l’Europe en 1963, ainsi que par d’autres aspects)
+   - L’ordonnance du 15 novembre 2017 sur la surveillance de la correspondance par poste et télécommunication (OSPT : RS 780.11), y compris notice explicative du 4 juillet 2018
+   - Guide relatif au traitement des données personnelles dans le domaine médical, traitement des données personnelles par des personnes privées et organes fédéraux de juillet 2002
+   - Etc.
+
+A moins d'être un expert en conformité des systèmes de sécurité informatique, il n'est pas très pertinent de lire ces ressources dans leur intégralité.
+Il est néanmoins important de savoir qu'elles existent et qu'elles ne sont pas à prendre à la légère.
+
 
 
 Certifications 
@@ -104,10 +157,27 @@ En complément de l'ACL rédigé par l'administrateur (IP, port, protocole...), 
 Pare-feu applicatif
 ----------------------
 
+Le pare-feu applicatif agit sur la couche 7 du modèle OSI.
+Ce dernier nous permet donc d'être beaucoup plus granuleux sur la manière dont nous allons filtrer le traffic.
+
+.. example::
+   Nous pouvons donc créer une règle interdisant le protocole ssh pour le traffic sortant, que ce dernier fonctionne sur le port 22 ou autre !
 
 
-Configuration
-----------------
+Pare-feu personnel
+----------------------
+
+Les pares-feu personnels sont ceux que nous retrouvons installés directement sur notre ordinateur.
+Ces derniers sont surtout utilisés pour bloquer l'ouverture de ports critiquent.
+
+Mais ce terme est presque devenu un abus de langage car nous parlons désormais d'EDR (Endpoint Detection & Response) ou XDR (Extended Detection & Response) selon les protections configurées.
+Ces derniers préviennent aussi l'éxecution de malwares, spywares, trojans, worms etc... sur les postes de travail.
+
+Cet **élément** est **essentiel** à toute **infrastructure informatique sécurisée**.
+
+
+Configuration de pare-feu physique
+------------------------------------
 
 L'établissement d'une procédure peut aider grandement à la configuration d'un équipement réseau.
 Que ce soit un switch, un pare-feu, une antenne wi-fi, un NAS etc..., vous gagnerez du temps et vous éviterez de vous perdre.
@@ -148,7 +218,9 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
       
    .. tab:: Console Speed
 
-      
+      Permet de définir le Baud Rate utilisé par l'interface console de l'ATP.
+
+      Par défaut fixé à 115200 bauds.
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png
 
@@ -161,7 +233,10 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: WWW
 
-      
+      Configuration de l'accès à la web GUI administrative du pare-feu.
+      Il est **préférable de désactiver complètement le protocole HTTP**, ce dernier n'étant **pas chiffré**.
+
+      Il est aussi tout à fait possible de changer le port HTTPS et HTTP par défaut, ce qui peut s'avérer utile si d'autres services utilisent ces protocoles. 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png
 
@@ -175,19 +250,25 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: Telnet
 
+      **Protocole déconseillé*
+
+      Le telnet est disponible sur l'ATP200.
+      Attention, ce protocole est vulnérable et obsolète, utilisez plutôt SSH si besoin.
      
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png
 
 
    .. tab:: FTP
 
-      
+      Paramétrage du protocole FTP possible, désactivé par défaut.
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ftp.png
 
 
    .. tab:: SNMP
 
+      Cette section permet de configurer la gestion du pare-feu via SNMP.
+      Ce dernier est désactivé par défaut.
 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png
@@ -200,26 +281,31 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png
 
    .. tab:: Notification
+
       .. tabs::
-         .. tab::
-      
+         .. tab:: Mail Notification
+            
+            Si vous êtes désireux de configurer des alertes ou bien d'activer la MFA par envoi de mails, il est possible de le faire via cette section.
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png
-         .. tab::           
+
+         .. tab:: SMS Notification          
             
+            Il est aussi possible de faire la même chose via SMS.
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png
 
    .. tab:: Language
 
-     
+      Possibilité de changer de langue pour l'interface système de Zyxell.
+
    .. tab:: IPv6 
 
-      
+      Possibilité dâctiver le protocole IPv6 sur l'ATP200.     
 
    .. tab:: ZON
 
-
+     `ZON  <https://www.zyxel.com/fr/fr/products/management-and-reporting/zyxel-devices-installation-tool-zon-utility/>`_ est un protocole propriétaire à Zyxell facilitant la découverte et la configuration dans le réseau des équipements de cette marque.
 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png
@@ -542,6 +628,14 @@ Les fonctionnalités suivantes sont en général supportées :
 
 Règles NAT-PAT
 ------------------
+
+Qu'est-ce que le NAT ? Qu'est-ce que le PAT ?
+
+Le NAT permet la traduction d'une adresse IP de classe publique, à une adresse de classe privée.
+
+Le PAT, quant à lui, permet la transition d'un port externe *x* vers un port interne *y*.
+
+La combinaison des deux devient...... du NAT-PAT !
 
 
 
