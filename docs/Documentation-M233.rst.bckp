@@ -29,7 +29,6 @@ Cet aspect de la cybersécurité est absolument primordial, car un seul lien mal
 Le danger se trouve d'ailleurs souvent **entre la chaise et le clavier !**
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/user-meme.jpg
-   :width: 300
 
 End-user
 ^^^^^^^^^
@@ -77,18 +76,6 @@ Pour se protéger d'avantage, des extensions, sites web, logiciels gratuits sont
      Le site propose aussi dvers logiciels de sécurité dont l'antivirus de Sophos ainsi que Qualys pour la veille des logiciels.
 
      
-
-MFA
-^^^^^^^^
-
-La MFA (multi-factor authentication) permet une authentification plus complète et sécurisée des utilisateurs.
-
-Elle se base sur au moins 2 méthodes comprenant :
-
-   - Quelque chose que je suis
-   - Quelque chose que j'ai
-   - Quelque chose que je connais
-
      
 Bases légales et juridiques
 ===============================
@@ -124,12 +111,6 @@ Il est néanmoins important de savoir qu'elles existent et qu'elles ne sont pas 
 Certifications 
 ------------------
 
-Plusieurs entreprises et institutions proposent des services d'audits de sécurité informatique.
-
-Ces audits se basent sur des normes. sont en conformité avec les exigences de la certification en question, un label est distribué.
-
-Très souvent, ces audits sont à effectuer environ tous les 2 ans afin de garantir la mise à niveau des normes de sécurité.
-
 Cybersafe, ISO27001...
 
 
@@ -140,7 +121,6 @@ La confidentialité est de nos jours aseez complexe.
 Entre les Big Tech mettant à jour tous les mois leurs politiques et les gouvernements pondant de nouvelles lois pour règlementer le tout, les utilisateurs sont très souvent perdus.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg
-   :width: 300
 
 Il est donc essentiel de d'alerter les collaborateurs et clients concernant le traitement de leurs données, et qui y a **réellement accès.**
 
@@ -180,7 +160,7 @@ Pare-feu applicatif
 Le pare-feu applicatif agit sur la couche 7 du modèle OSI.
 Ce dernier nous permet donc d'être beaucoup plus granuleux sur la manière dont nous allons filtrer le traffic.
 
-.. tip::
+.. example::
    Nous pouvons donc créer une règle interdisant le protocole ssh pour le traffic sortant, que ce dernier fonctionne sur le port 22 ou autre !
 
 
@@ -228,12 +208,11 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: USB Storage
 
-      Si un périphérique de stockage USB est connecté au pare-feu, il est possible de le configurer via cette interface.
+
 
    .. tab:: Date/Time
 
-      Réglages de la date et de l'heure.
-
+     
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png
 
       
@@ -264,16 +243,14 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: SSH
 
-      Configuration du protocole SSH pour accéder au pare-feu via le réseau.
 
-      Si vous n'avez pas besoin de paramétrer des fichiers spéciaux dans l'arborescence même du pare-feu, il est déconseillé d'utiliser ce protocole car il peut être vulnérable si mal configuré !
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png
 
 
    .. tab:: Telnet
 
-      **Protocole déconseillé**
+      **Protocole déconseillé*
 
       Le telnet est disponible sur l'ATP200.
       Attention, ce protocole est vulnérable et obsolète, utilisez plutôt SSH si besoin.
@@ -333,53 +310,6 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png
 
-
-
-Sauvegardes
-^^^^^^^^^^^^^^^^^^
-
-Les sauvegardes sont un élément essetiel de la configuration de n'importe quel équipement réseau.
-Il est donc indispensable d'en effectuer périodiquement, avec une nomanclature pertinente !
-
-Voici un exemple :
-
-EVO-FW001_20220525_0832 : Trigramme client – nom du pare-feu – date – heure
-
-
-Documentation
-^^^^^^^^^^^^^^^^
-
-Cet aspect du métier a déjà été abordé lors du module M145, mais un rappel ne fait jamais de mal !
-
-Une bonne documentation devrait contenir au moins les éléments suivants :
-
-  • Photos de l’installation, des connexions et des équipements
-  • Fichier sécurisé avec les mots de passes et comptes utilisateurs
-  • Matrice des droits d’accès (infrastructure et/ou données)
-  • Journaux des modifications et configurations listant toutes les interventions effectuées
-  • Schémas de l’installation, plans d’étages
-  • Listing des licences actuelles et dates de renouvellement
-  • Backup du système avant et après l’intervention, éventuellement la gestion de backups
-  automatisés
-  • Etiquetage des équipements avec une nomenclature propre à chaque client
-  • Procédures particulières en lien avec l’infrastructure du client final
-  • Plan d’adressage complet avec tous les réseaux (LAN, VLAN, …)
-
-
-Il est évident que d’autres documents devraient encore faire partie d’une documentation complète
-d’un client. Voici un listing non-exhaustif qui peut être complété selon les besoins :
-
-
-  - Clauses de confidentialité en lien avec le client final
-  - Offres, devis, bulletins de livraison, offres complémentaires / plus-value, factures du
-  matériel, demandes d’acomptes, facture finale
-  - Listing des intervenants dans le projet (chef de projet, technicien, référant du client, autres
-  personnes impactées, …)
-  - PV de mise en service et de rendu de l’installation au client final
-  - Décharge de responsabilité
-  - Correspondances, mails importants
-  - Automatismes (GPO, …)
-  - Procédures de traitement des données (suppression, élimination, …)
 
 PPP (Point-to-Point Protocol)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -615,36 +545,26 @@ Voici un petit schéma de principe d'un filtrage via UTM :
 
          .. tab:: DNS Threat Filter
             
-            Filtre de menaces basés sur des noms de domaines.
-            L'ATP inclut des catégories prédéfinies telles que : phishing, spam, spyware...
-
-            Il est possible d'établir des blacklists et whitelists de domaines précis.
+            
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png
 
          .. tab:: URL Threat Filter           
             
-            Filtre de menaces basés sur des URLs.
-            Aussi bien que pour le DNS Threat Filter, l'ATP inclut des catégories prédéfinies telles que : phishing, spam, spyware...
-
-            Il est possible d'établir des blacklists et whitelists de domaines précis.
+            
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png
 
          
-      
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png
 
 
 
    .. tab:: IPS / IDS
       
       
-      L’IPS (Intrusion Prevention System) est un outil de cybersécurité qui examine le trafic réseau pour détecter les menaces potentielles et prendre des mesures pour les contrer. 
-      Il peut reconnaître et bloquer les logiciels malveillants (malware) ou les exploits avant qu’ils ne puissent pénétrer dans le réseau et causer des dommages.
 
-      L'IDS quant à lui se contente seulement de détecter les intrusions et les menaces sur le réseau
-
-      Sur l'ATP200, la fonctionnalité IPS est disponible et se présente sous la forme suivante :
+      
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
@@ -676,19 +596,9 @@ Voici un petit schéma de principe d'un filtrage via UTM :
 
    .. tab:: SSL Inspection
 
-      Aujourd'hui, la plupart des trafics sur Internet (notamment sur le web) sont chiffrés par SSL pour les plus anciens et TLS pour les plus récents.
-      Cela permet de garder une confidentialité et une intégrité des données qui transitent, néanmoins, ce chiffrement peut être un obstacle pour la protection des collaborateurs.
-
-      En effet, des fichiers malveillants pourraient atteindre le LAN sans qu'on puisse les détecter grâce (ou à cause) du chiffrement SSL/TLS.
 
 
-      Pour l'SSL Inspection, le pare-feu agira donc comme un MITM (Man In The Middle), c'est à dire qu'il déchiffrera le certificat SSL/TLS pour inspecter le contenu du paquet, avant de le chiffrer de nouveau et l'envoyer au destinataire.
-
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ssl-inspection.png
-
-      .. warning:: 
-         Il est important de vérifier les protocoles de chiffrement ainsi que les versions SSL/TLS supportés par le pare-feu.
-         Les plus anciens pourraient ne pas supporter certains, amenant donc à des erreurs et disfonctionnements potentiels. 
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
 
    .. tab:: IP Exception
@@ -745,6 +655,13 @@ Les fonctionnalités suivantes sont en général supportées :
 
 
 
+
+
+
+
+
+
+
 Règles NAT-PAT
 ------------------
 
@@ -752,12 +669,7 @@ Qu'est-ce que le NAT ? Qu'est-ce que le PAT ?
 
 Le NAT permet la traduction d'une adresse IP de classe publique, à une adresse de classe privée.
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/nat.png
-
-
 Le PAT, quant à lui, permet la transition d'un port externe *x* vers un port interne *y*.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dnat-pat.png
 
 La combinaison des deux devient...... du NAT-PAT !
 
@@ -821,9 +733,9 @@ Cela se présente comme suit :
 
 Dans cet exemple nous possédons 3 SSID diffusant 3 réseaux distincts :
 
-- WLAN_P12_CORP   : VLAN100 -> 172.18.12.0/24
+- WLAN_P12_CORP : VLAN100 -> 172.18.12.0/24
 - WLAN_P12_PUBLIC : VLAN300 -> 172.18.212.0/24
-- WLAN_P12_VoIP   : VLAN200 -> 172.18.112.0/24
+- WLAN_P12_VoIP : VLAN200 -> 172.18.112.0/24
 
 Pour appliquer des profils de sécurité spécifiques, il est possible d'en créer dans l'onglet Security List.
 
@@ -832,17 +744,11 @@ Pour appliquer des profils de sécurité spécifiques, il est possible d'en cré
 Dans celui-ci, nous choisissons :
 
 - Le nom du profil
-- Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3... ) Voir tableau ci-dessous pour le détail des protocoles
-   .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/wpa.png
-
+- Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3 etc...)
 - La méthode d'authentiication (Enterprise/RADIUS ou Personnel/PSK)
 - L'activation ou pas du fast-roaming (802.11r)
 
 Un objet supplémentaire sera nécessaire si nous utilisons un serveur RADIUS pour l'authentification et l'autorisation :
-
-.. note::
-   Voir https://datatracker.ietf.org/doc/html/rfc2865
-
 
 .. note::
    
@@ -887,7 +793,7 @@ Il est désormais temps d'ajouter le client RADIUS sur le serveur :
 Lorsque cela est fait, il faut retourner dans la configuration du SSID afin d'ajouter l'IP du serveur RADIUS ainsi que les ports utilisés pour l'authentification et l'autorisation.
 
 
-----------
+
 
 
 VPN
@@ -908,9 +814,6 @@ The CIA triad est en général ce que nous utilisons pour déterminer si un syst
    - "A" : Availibitlity   -> La ressource est stockée et accessible en tout temps de manière sécurisé. 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png
-   :width: 250
-
-
 
 Intro VPN blablabla
 
@@ -928,69 +831,21 @@ Le VPN client-to-site répond à cela.
 Site-to-Site VPN (Intranet)
 --------------------------------
 
-Un VPN site à site basé sur l'Intranet permet une interconnection sécurisé de 2 réseaux d'une même entreprise. 
-
 .. warning:: 
    Pour cet exemple, nous utiliserons un **VPN de type IPSec**.
 
 
-Exercices pratiques
-^^^^^^^^^^^^^^^^^^^^^^
-
-VPN client-to-site SSL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Sur l'ATP200, nous pouvons configurer un serveur VPN SSL.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-menu.png
-
-Voici les paramètres d'une connexion basique :
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png
-
-- Nom de la connexion
-- Zone de sécurité (ici SSL_VPN)
-- Description (optionnel)
-- Utilisateurs ou groupes autorisés (ici localadmin)
-- Le pool d'adresses IP octroyé aux clients (10.1.1.0/24)
-- Le serveur DNS utilisé par les clients (ici 10.1.1.1)
-- Les réseaux auxquels ils ont accès (ici VLAN_DATAS)
-
-L'onglet "Global settings" permet de définir le port utilisé par le service ainsi que l'interface VPN SSL.
-
-.. warning::
-   Ne pas choisir une IP présente dans le pool d'adresses octroyé aux clients.
-   Cela pourrait créer des problèmes de routage.
-
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png
-
-
-Côté client, il est possible de télécharger le client SecuExtender pour se connecter au serveur VPN.
-
-Ici, nous voyons très clairement que ce sont l'IP publique du pare-feu ainsi que le port 10443 qui sont utilisés.
-
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client.png
-
-
-Après avoir cliqué sur le bouton "Connect", la connexion s'établit rapidement et nous demande si nous voulons faire confiance au certiifcat auto-signé de l'ATP200 : 
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connection.png
-
-A la suite de cela, on nous amène sur un nouvel onglet "Status" nous donnant les détails de la connexion, dont l'IP du client et du serveur, l'IP du DNS et les routes autorisées vers d'autres réseaux.
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connected.png
-
-
-
+Exercice pratique
+^^^^^^^^^^^^^^^^^^
 
 .. warning::
 
    Avant de commencer l'exercice, je vous invite à prendre connaissance de l'environnement lab mis en place. Vous trouverez les ressources ci-dessous :
 
 
+.. toggle::
 
+   Here is my toggle-able content!
 
 
 Afin de donner un exemple concret de conception et paramètrage d'un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.
@@ -1020,7 +875,7 @@ Définir l'interface sur laquelle le site distant doit se connecter (ici, ce ser
 
 Définir l'adresse IP de l'autre pare-feu / serveur VPN, avec lequel nous allons nous interconnecter.
 
-Entrer une clé pré-partagée forte (recommandation de 32 caractères aléatoires A-a-0-$).
+Entrer une clé pré-partagée forte (recommandation de 32 caractères aléatoires A-a-0-*).
 
 Choisir les types d'ID que vous vous partagerez communément des 2 côtés du tunnel. 
 
@@ -1063,9 +918,7 @@ IPSec
 C'est l'un des protocoles les plus utilisés pour les VPN actuels, il permet l'intégrité et la confidentialité des données.
 Comme son nom l'indique, il fonctionne sur la couche réseau du modèle OSI (couche 3)
 
-Schéma de principe :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.webp
 
 .. _IPSEC: https://www.frameip.com/ipsec/
 
@@ -1102,11 +955,10 @@ IKE
 ^^^^
 
 Après avori compris le fonctionnement d'IPSec, il est légitime de se demander comment est initié le VPN !
-IKE (Internet Key Exchange) est la réponse.
+IKE est la réponse.
 
 Ce protocole permet l'initiation de la connexion et l'association des systèmes ; les fameuses SA (security association).
-
-IKE utilise l'échange de clés Diffie-Hellman pour mettre en place un secret partagé d'où les clefs de chiffrement sont dérivées.
+Comment fon
 
 
 IKEv1
@@ -1122,7 +974,7 @@ IKEv2 est la version succédant à IKEv2 avec plus d'interopérabilité ainsi qu
 
 .. _RFC-5996: https://datatracker.ietf.org/doc/html/rfc5996
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.webp
+
 
 .. seealso::
    RFC-5996_
@@ -1135,27 +987,17 @@ Phase 1
 
 L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
 
+La construction de la phase 1 s’établi selon le processus suivant :
+
+
+• Négociation d’une politique IKE SA correspondante entre pairs pour protéger l’échange IKE
+• Echange authentifié de clé Diffie-Hellman afin d’obtenir une correspondance des clés
+secrètes partagées
+• Authentification et protection de l’identité des pairs avec IPSec
+• Construction du tunnel sécurisé pour négocier ensuite les paramètres de la phase 2 de IKE
+
+
 Deux modes existent pour cette première phase :
-
-• Mode principal
-• Mode Agressif
-
-Le mode principal comporte 6 étapes d’échange entre l’initiateur et le récepteur :
-
-• Echange de propositions (algorithme d’authentification, algorithme de chiffrement, groupe de clés Diffie-Hellmann)
-• Echange de clés Diffie-Hellmann
-• Echange d’identité (crypté avec la clé Diffie-Hellmann)
-
-
-Le mode agressif comporte 3 étapes d’échange entre l’initiateur et le récepteur. 
-Il y aura donc **moins d’échanges** et **moins de paquets.**
-
-
-• Envoi d’une proposition IKE locale, d’informations relatives à la clé et d’informations d’identité
-• Recherche d’une proposition IKE correspondante. Envoi de la proposition IKE correspondante avec les informations relatives à la clé, les informations d’identification et les informations d’authentification locale
-• Réponse avec les informations d’authentification locale pour implémenter l’authentification.
-
-
 
 Phase 2
 
@@ -1163,18 +1005,7 @@ L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur u
 
 
 
-Sources et liens
-==================
 
-https://www.cisco.com/c/fr_ca/support/docs/security-vpn/ipsec-negotiation-ike-protocols/217432-understand-ipsec-ikev1-protocol.html
 
-https://www.juniper.net/documentation/fr/fr/software/junos/vpn-ipsec/topics/topic-map/security-ike-basics.html
 
-https://www.frameip.com/ipsec/
 
-https://datatracker.ietf.org/doc/html/rfc5996
-
-Remerciements
-====================================
-
-Merci à N. Borowy d'avoir dispensé ce cours à la classe des 2IBM !
