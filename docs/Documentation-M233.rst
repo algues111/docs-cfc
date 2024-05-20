@@ -76,7 +76,7 @@ Pour se protéger d'avantage, des extensions, sites web, logiciels gratuits sont
 
      Le site propose aussi dvers logiciels de sécurité dont l'antivirus de Sophos ainsi que Qualys pour la veille des logiciels.
 
-     
+     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ibarry.png
 
 MFA
 ^^^^^^^^
@@ -85,11 +85,21 @@ La MFA (multi-factor authentication) permet une authentification plus complète 
 
 Elle se base sur au moins 2 méthodes comprenant :
 
-   - Quelque chose que je suis
-   - Quelque chose que j'ai
-   - Quelque chose que je connais
+   - Quelque chose que je suis (ex : biométrie)
+   - Quelque chose que j'ai (clé FIDO2, token physique, badge d'authentification...)
+   - Quelque chose que je connais (mot de passe, phrase de passe, PIN...)
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/MFA.png
+
+La MFA fait aujourd'hui partie intégrante de l'authentification moderne des utilisateurs.
+Elle est un frein aux attaques les plus communes et au social engineering de base.
+
+Il est donc de plus en plus recommandé de mettre en place de la MFA, qu'elle soit au niveau personnel ou professionnel pour protéger nos comptes en ligne de tentatives de connexion non autorisées.
+
+Cependant, la sécurité est souvent bien loin d'être agréable ou confortable pour les collaborateurs qui font face à des contraintes de plus en plus rudes.
+Il est alors préférable, voire indispensable de planifier les méthodes MFA que nous voulons appliquer, afin que la productivité et le confort des employés soient le moins touchés possible.
+
+
 
 Bases légales et juridiques
 ===============================
@@ -127,11 +137,18 @@ Certifications
 
 Plusieurs entreprises et institutions proposent des services d'audits de sécurité informatique.
 
-Ces audits se basent sur des normes. sont en conformité avec les exigences de la certification en question, un label est distribué.
+Ces audits se basent sur des normes et vérifient la conformité de l'infrastructure et des sytèmes informatiques d'autrui.
+Si les entreprises réussissent l'audit, elles se voient alors attribuées un label indiquant leur conformité à la certification en question !
 
 Très souvent, ces audits sont à effectuer environ tous les 2 ans afin de garantir la mise à niveau des normes de sécurité.
 
-Cybersafe, ISO27001...
+En Suisse, les labels CyberSafe et CyberSeal sont mis en avant par la confédération et les hautes autorités publiques.
+Cependant, d'autres certifications plus globales existent, telles que l'ISO27001.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/certifs.png
+
+
 
 
 Confidentialité
@@ -142,6 +159,8 @@ Entre les Big Tech mettant à jour tous les mois leurs politiques et les gouvern
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg
    :width: 300
+
+
 
 Il est donc essentiel de d'alerter les collaborateurs et clients concernant le traitement de leurs données, et qui y a **réellement accès.**
 
@@ -551,6 +570,8 @@ Voici quelques-uns des services couramment proposés par les solutions UTM :
 Voici un petit schéma de principe d'un filtrage via UTM :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-utm.png
+
+
 
 
 .. tabs::
