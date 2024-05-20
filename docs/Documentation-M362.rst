@@ -388,6 +388,7 @@ SIP DECT : Antennes liées au switch, avec une antenne master (OMM), autres ante
 Schéma réseau d'une installation DECT incluant à la fois une base numérique et une base IP :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/schema-dect-digital-ip.png
+
 *Source : avaya.com*
 
 .. seealso::
@@ -569,6 +570,7 @@ Cela fonctionne mais demande **beaucoup de temps** et est **très complexe** à 
 Cette solution est en générale **non recommandée** par les opérateurs.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/stun_binding.png
+
 *Source : nexcom.fr*
 
 
@@ -591,6 +593,7 @@ Il permet notamment de :
 Puisqu'une image vaut plus que 1000 mots, vous trouverez ci-dessous un schéma réseau intégrant un SBC :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/SBC.jpg
+
 *Source : Napsis.fr*
 
 :raw-m2r:`<br>`
@@ -731,6 +734,7 @@ Ce dernier est un serveur d'authentification, vérifiant les credentials des cli
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/sip-trunk-schema.png
+
 *Source : ringcentral.com*
 
 

@@ -6,6 +6,9 @@
 Documentation CFC-IBM
 ================================
 
+Bienvenue sur la documentation en ligne des modules dispensés lors du CFC d'Informaticien du Bâtiment option Communication et Multimédia.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -22,3 +25,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+
+Formation
+============
+
+Toutes les données concernant le CFC d'IBM sont diponibles sur `EIT-SWISS <https://www.eit.swiss/fr/formation/formation-initiale/informaticienne-du-batiment>`_

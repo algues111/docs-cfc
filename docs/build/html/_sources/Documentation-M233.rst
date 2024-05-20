@@ -29,6 +29,7 @@ Cet aspect de la cybersécurité est absolument primordial, car un seul lien mal
 Le danger se trouve d'ailleurs souvent **entre la chaise et le clavier !**
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/user-meme.jpg
+   :width: 300
 
 End-user
 ^^^^^^^^^
@@ -48,15 +49,86 @@ Pour se protéger d'avantage, des extensions, sites web, logiciels gratuits sont
 
    .. tab:: VirusTotal
 
+      `VirusTotal <https://www.virustotal.com/gui/home/upload>`_ est un outil 100% gratuit permettant de scanner des URL, des fichiers, des hashs/checksums, des domaines et adresses IP.
+      Ses analyses sont basés sur plus de 70 anti-virus connus du marché de la cybersécurité et vous offre en plus de cela un score de communauté.
+
+      Accueil du site :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal.png
+
+      Regroupant toutes ces informations, il est bien plus facile de savoir si tel site ou tel fichier est malveillant.
+
+      L'entreprise offre aussi des applications de bureau pour Mac, Linux et Windows ainsi que des services payant pour du threat hunting et des graphs !
+
+      Ci-dessous une démonstration d'un scan de site malveillant (ici phishing).
+
+       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/virustotal-malurl.png
+     
 
 
    .. tab:: iBarry
 
+     `iBarry <https://www.ibarry.ch/fr/controles-de-securite/>`_ centralise des fonctionnalités similaires et complémentaires à VirusTotal, il permet de :
+
+         - Vérifier un site web
+         - Vérifier si une adresse mail a été compromis via des fuites de données (vérification faite par Have I Been Powned)
+         - Vérifier si son IP publique est potentiellement sujette à des attaques (iBarry effectue des tests de ports)
+
+     Le site propose aussi dvers logiciels de sécurité dont l'antivirus de Sophos ainsi que Qualys pour la veille des logiciels.
+
      
+
+MFA
+^^^^^^^^
+
+La MFA (multi-factor authentication) permet une authentification plus complète et sécurisée des utilisateurs.
+
+Elle se base sur au moins 2 méthodes comprenant :
+
+   - Quelque chose que je suis
+   - Quelque chose que j'ai
+   - Quelque chose que je connais
+
+     
+Bases légales et juridiques
+===============================
+
+Au delà de la sécurité informatique en elle même, de plus en plus de lois et d'ordonnances sont publiées chaque année afin d'encadrer la protection des systèmes et des données.
+
+En Suisse, voici les documents valables :
+
+   - La constitution fédérale (Cst ; RS 101)
+   - Le code civil (CC ; RS 210)
+   - Le code des obligations (CO ; RS 220)
+   - L’ordonnance concernant la tenue et la conservation des livres de comptes (Olico ; RS 221.431)
+   - La loi sur le droit d’auteur et les droits voisins (loi sur le droit d’auteur, LDA, RS 231.1)
+   - La loi sur les brevets d’invention (LBI ; RS 232.14)
+   - La loi fédérale sur la protection des données (LPD ; RS 235.1), en particulier l’article 7 et l’ordonnance relative à la loi fédérale sur la protection des données (OLPD ; RS 235.11), en particulier les articles 8 à 11 et 20 à 21
+   - La loi fédérale contre la concurrence déloyale (LCD ; RS 241)
+   - Le code de procédure civile (CPC ; RS 272)
+   - Le code pénal (CP ; RS 311.0)
+   - La loi sur le travail dans l’industrie, l’artisanat et le commerce (LTr ; RS 822.11)
+   - L’ordonnance relative à la loi sur le travail (Hygiène) (OLT 3 ; RS 822.113)
+   - La loi fédérale sur les services de certification dans le domaine de la signature électronique (Loi sur la signature électronique ; SCSE : RS 943.03)
+   - L’ordonnance sur les services de certification dans le domaine de la signature électronique (Ordonnance sur la signature électronique ; OSCSE)
+   - Le manuel de droit européen en matière de protection des données (la Suisse est également concernée du fait de son adhésion au conseil de l’Europe en 1963, ainsi que par d’autres aspects)
+   - L’ordonnance du 15 novembre 2017 sur la surveillance de la correspondance par poste et télécommunication (OSPT : RS 780.11), y compris notice explicative du 4 juillet 2018
+   - Guide relatif au traitement des données personnelles dans le domaine médical, traitement des données personnelles par des personnes privées et organes fédéraux de juillet 2002
+   - Etc.
+
+A moins d'être un expert en conformité des systèmes de sécurité informatique, il n'est pas très pertinent de lire ces ressources dans leur intégralité.
+Il est néanmoins important de savoir qu'elles existent et qu'elles ne sont pas à prendre à la légère.
+
 
 
 Certifications 
 ------------------
+
+Plusieurs entreprises et institutions proposent des services d'audits de sécurité informatique.
+
+Ces audits se basent sur des normes. sont en conformité avec les exigences de la certification en question, un label est distribué.
+
+Très souvent, ces audits sont à effectuer environ tous les 2 ans afin de garantir la mise à niveau des normes de sécurité.
 
 Cybersafe, ISO27001...
 
@@ -104,10 +176,27 @@ En complément de l'ACL rédigé par l'administrateur (IP, port, protocole...), 
 Pare-feu applicatif
 ----------------------
 
+Le pare-feu applicatif agit sur la couche 7 du modèle OSI.
+Ce dernier nous permet donc d'être beaucoup plus granuleux sur la manière dont nous allons filtrer le traffic.
+
+.. example::
+   Nous pouvons donc créer une règle interdisant le protocole ssh pour le traffic sortant, que ce dernier fonctionne sur le port 22 ou autre !
 
 
-Configuration
-----------------
+Pare-feu personnel
+----------------------
+
+Les pares-feu personnels sont ceux que nous retrouvons installés directement sur notre ordinateur.
+Ces derniers sont surtout utilisés pour bloquer l'ouverture de ports critiquent.
+
+Mais ce terme est presque devenu un abus de langage car nous parlons désormais d'EDR (Endpoint Detection & Response) ou XDR (Extended Detection & Response) selon les protections configurées.
+Ces derniers préviennent aussi l'éxecution de malwares, spywares, trojans, worms etc... sur les postes de travail.
+
+Cet **élément** est **essentiel** à toute **infrastructure informatique sécurisée**.
+
+
+Configuration de pare-feu physique
+------------------------------------
 
 L'établissement d'une procédure peut aider grandement à la configuration d'un équipement réseau.
 Que ce soit un switch, un pare-feu, une antenne wi-fi, un NAS etc..., vous gagnerez du temps et vous éviterez de vous perdre.
@@ -148,7 +237,9 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
       
    .. tab:: Console Speed
 
-      
+      Permet de définir le Baud Rate utilisé par l'interface console de l'ATP.
+
+      Par défaut fixé à 115200 bauds.
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png
 
@@ -161,7 +252,10 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: WWW
 
-      
+      Configuration de l'accès à la web GUI administrative du pare-feu.
+      Il est **préférable de désactiver complètement le protocole HTTP**, ce dernier n'étant **pas chiffré**.
+
+      Il est aussi tout à fait possible de changer le port HTTPS et HTTP par défaut, ce qui peut s'avérer utile si d'autres services utilisent ces protocoles. 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png
 
@@ -175,19 +269,25 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
 
    .. tab:: Telnet
 
+      **Protocole déconseillé*
+
+      Le telnet est disponible sur l'ATP200.
+      Attention, ce protocole est vulnérable et obsolète, utilisez plutôt SSH si besoin.
      
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png
 
 
    .. tab:: FTP
 
-      
+      Paramétrage du protocole FTP possible, désactivé par défaut.
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ftp.png
 
 
    .. tab:: SNMP
 
+      Cette section permet de configurer la gestion du pare-feu via SNMP.
+      Ce dernier est désactivé par défaut.
 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png
@@ -200,26 +300,31 @@ Voici les paramètres disponibles dans un ATP200 chez Zyxell
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png
 
    .. tab:: Notification
+
       .. tabs::
-         .. tab::
-      
+         .. tab:: Mail Notification
+            
+            Si vous êtes désireux de configurer des alertes ou bien d'activer la MFA par envoi de mails, il est possible de le faire via cette section.
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png
-         .. tab::           
+
+         .. tab:: SMS Notification          
             
+            Il est aussi possible de faire la même chose via SMS.
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png
 
    .. tab:: Language
 
-     
+      Possibilité de changer de langue pour l'interface système de Zyxell.
+
    .. tab:: IPv6 
 
-      
+      Possibilité dâctiver le protocole IPv6 sur l'ATP200.     
 
    .. tab:: ZON
 
-
+     `ZON  <https://www.zyxel.com/fr/fr/products/management-and-reporting/zyxel-devices-installation-tool-zon-utility/>`_ est un protocole propriétaire à Zyxell facilitant la découverte et la configuration dans le réseau des équipements de cette marque.
 
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png
@@ -311,9 +416,35 @@ Il est imporant d'être précis dans le nom qu'on leur donne.
       - Masque : 255.255.255.0
 
 
+Zones de sécurité
+^^^^^^^^^^^^^^^^^^^^
+
+Les zones de sécurité sont importantes car elles permettent de regrouper logiquement plusieurs interfaces dans un seul et même groupe.
+Il est donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple, ou bien qu'elles sont asujetties à une même policy control.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png
+
+
 
 Fonctionnalités UTM
 ----------------------
+
+Les services UTM (Unified Threat Management) est une solution de sécurité tout-en-un, généralement une appliance de sécurité unique, qui fournit plusieurs fonctions de sécurité en un seul point du réseau.
+
+Voici quelques-uns des services couramment proposés par les solutions UTM :
+
+- Logiciel antivirus : pour détecter et éliminer les logiciels malveillants et les virus.
+- Logiciel anti-espion : pour détecter et empêcher l’installation de logiciels espions sur les ordinateurs.
+- Protection antispam : pour filtrer les e-mails et les messages instantanés pour éviter les spam et les e-mails malveillants.
+- Pare-feu réseau : pour contrôler et filtrer le trafic réseau pour éviter les attaques et les intrusions.
+- Prévention et détection des intrusions : pour détecter et empêcher les tentatives d’intrusion dans le réseau.
+- Filtrage des contenus : pour filtrer les contenus en ligne pour éviter les sites web malveillants et les contenus dangereux (via DNS ou URL).
+
+
+Voici un petit schéma de principe d'un filtrage via UTM :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-utm.png
+
 
 .. tabs::
 
@@ -322,6 +453,11 @@ Fonctionnalités UTM
       L'App Patrol est un **pare-feu applicatif.**
       Il permet de **filtrer et bloquer des applications définies** par l'administrateur.
       Ces dernières vont des réseaux sociaux jusqu'à l'accès au réseau Tor (onion routing) par exemple...
+
+      Bloquer les services Facebook (aujourd'hui Meta), pourrait se schématiser ainsi :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-apppatrol.png
+
 
       Ici, nous établissons une règle nommée "NO_TO_WHATSAPP".
 
@@ -407,9 +543,23 @@ Fonctionnalités UTM
             
             
 
-            Cette catégorie est spécifique aux adresses IP.
+            Cette catégorie est spécifique aux adresses IP, et regroupe une grande base de données d'adresses IP reconnus comme malveillantes.
+            Vous pouvez cependant créer des whitelists et blocklists pour personnaliser cette fonctionnalité.
+         
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation-schema.png
+
+
+            Sur l'ATP200, le menu se présente comme suit :
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation.png
+            
+            
+            Il est même possible d'intégrer des blocklists externes, que le pare-feu ira chercher via un lien.
+
+            .. admonition:: Lien utile
+               Plusieurs IP blacklists sont disponibles sur GitHub notamment, en voici une relativement bien maintenue :
+
+               https://github.com/trskrbz/BlackIPforFirewall
 
 
          .. tab:: DNS Threat Filter
@@ -432,8 +582,12 @@ Fonctionnalités UTM
    .. tab:: IPS / IDS
       
       
+      L’IPS (Intrusion Prevention System) est un outil de cybersécurité qui examine le trafic réseau pour détecter les menaces potentielles et prendre des mesures pour les contrer. 
+      Il peut reconnaître et bloquer les logiciels malveillants (malware) ou les exploits avant qu’ils ne puissent pénétrer dans le réseau et causer des dommages.
 
-      
+      L'IDS quant à lui se contente seulement de détecter les intrusions et les menaces sur le réseau
+
+      Sur l'ATP200, la fonctionnalité IPS est disponible et se présente sous la forme suivante :
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
@@ -465,9 +619,19 @@ Fonctionnalités UTM
 
    .. tab:: SSL Inspection
 
+      Aujourd'hui, la plupart des trafics sur Internet (notamment sur le web) sont chiffrés par SSL pour les plus anciens et TLS pour les plus récents.
+      Cela permet de garder une confidentialité et une intégrité des données qui transitent, néanmoins, ce chiffrement peut être un obstacle pour la protection des collaborateurs.
+
+      En effet, des fichiers malveillants pourraient atteindre le LAN sans qu'on puisse les détecter grâce (ou à cause) du chiffrement SSL/TLS.
 
 
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
+      Pour l'SSL Inspection, le pare-feu agira donc comme un MITM (Man In The Middle), c'est à dire qu'il déchiffrera le certificat SSL/TLS pour inspecter le contenu du paquet, avant de le chiffrer de nouveau et l'envoyer au destinataire.
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ssl-inspection.png
+
+      .. warning:: 
+         Il est important de vérifier les protocoles de chiffrement ainsi que les versions SSL/TLS supportés par le pare-feu.
+         Les plus anciens pourraient ne pas supporter certains, amenant donc à des erreurs et disfonctionnements potentiels. 
 
 
    .. tab:: IP Exception
@@ -477,6 +641,68 @@ Fonctionnalités UTM
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
    .. tab:: Astra Cloud Security
+
+
+
+Configuration réseau
+------------------------------
+
+Avant de s'attaquer à la configuration complète de réseaux, il est plus judicieux de commencer par les notions de ports, d'interfaces, de zones de sécurité etc...
+
+Nous avons dans la section "Objets", que ces derniers sont très utilisés pour configurer n'importe quel aspect du pare-feu.
+Cela comprend donc les zones de sécurité.
+
+Interfaces
+^^^^^^^^^^^^^^^^^^
+
+Une interface est le point d’interaction logique entre le périphérique (port) et le logiciel du firewall.
+Dans la plupart des firewalls, il est possible d’attribuer une interface à un port disponible. Il peut y
+avoir plusieurs types d’interfaces :
+
+
+- Interface interne (lan, dmz, opt, …), connectée à un réseau local. Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut.
+
+- Interface externe (wan, ppp, …), connectée à un réseau externe (ISP). Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut
+
+- Interface générale, connectée à un réseau local ou externe. Les règles de routages ne sont pas créées automatiquement et doivent être configurées manuellement. 
+
+
+Les caractéristiques des interfaces sont les suivantes :
+
+
+- Entité logique qui effectue le routage L3 et se rapporte à toutes les interfaces
+  
+- Chaque interface a une et une seule adresse IP associée
+  
+- Les informations de routage sont automatiquement dérivées des paramètres IP de l’interface du firewall
+  
+Les fonctionnalités suivantes sont en général supportées :
+
+
+- Les paramètres généraux comprennent une adresse IP statique, un client/serveur DHCP, etc.
+- Un ou deux serveurs relais DHCP peuvent être pris en charge
+- La bande passante ascendante et descendante est généralement configurable ainsi que la valeur MTU (Unité de Transmission Maximale)
+- Une option de passerelle peut être disponible
+- Un proxy IGMP peut être disponible
+- Les options DHCP peuvent en général être configurées, incluant donc le DNS, bail, la passerelle, le serveur WINS et d'autres options spéicifiques (ex. code 150 TFTP)
+
+
+
+Règles NAT-PAT
+------------------
+
+Qu'est-ce que le NAT ? Qu'est-ce que le PAT ?
+
+Le NAT permet la traduction d'une adresse IP de classe publique, à une adresse de classe privée.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/nat.png
+
+
+Le PAT, quant à lui, permet la transition d'un port externe *x* vers un port interne *y*.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dnat-pat.png
+
+La combinaison des deux devient...... du NAT-PAT !
 
 
 
@@ -538,9 +764,9 @@ Cela se présente comme suit :
 
 Dans cet exemple nous possédons 3 SSID diffusant 3 réseaux distincts :
 
-- WLAN_P12_CORP : VLAN100 -> 172.18.12.0/24
+- WLAN_P12_CORP   : VLAN100 -> 172.18.12.0/24
 - WLAN_P12_PUBLIC : VLAN300 -> 172.18.212.0/24
-- WLAN_P12_VoIP : VLAN200 -> 172.18.112.0/24
+- WLAN_P12_VoIP   : VLAN200 -> 172.18.112.0/24
 
 Pour appliquer des profils de sécurité spécifiques, il est possible d'en créer dans l'onglet Security List.
 
@@ -549,11 +775,21 @@ Pour appliquer des profils de sécurité spécifiques, il est possible d'en cré
 Dans celui-ci, nous choisissons :
 
 - Le nom du profil
-- Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3 etc...)
+- Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3... )
+  
+
+   .. spoiler:: Voir tableau ci-dessous pour le détail des protocoles
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/wpa.png
+
+
 - La méthode d'authentiication (Enterprise/RADIUS ou Personnel/PSK)
 - L'activation ou pas du fast-roaming (802.11r)
 
 Un objet supplémentaire sera nécessaire si nous utilisons un serveur RADIUS pour l'authentification et l'autorisation :
+
+.. note::
+   Voir https://datatracker.ietf.org/doc/html/rfc2865
+
 
 .. note::
    
@@ -598,7 +834,7 @@ Il est désormais temps d'ajouter le client RADIUS sur le serveur :
 Lorsque cela est fait, il faut retourner dans la configuration du SSID afin d'ajouter l'IP du serveur RADIUS ainsi que les ports utilisés pour l'authentification et l'autorisation.
 
 
-
+----------
 
 
 VPN
@@ -609,6 +845,19 @@ Qu'est-ce qu'un VPN  ?
 
 La notion de VPN avait déjà été abordée lors du module M145 de 1ère année.
 Sa définition est simple :"Relier entre eux des systèmes informatiques de manière **sûre** en s’appuyant sur un réseau existant."
+
+Qu'est-ce que le mot *sûre* veut dire concrètement ?
+
+The CIA triad est en général ce que nous utilisons pour déterminer si un système est considéré comme *sûr* ou non.
+
+   - "C" : Confidentiality -> Seules les personnes autorisées ont accès à la ressource en question. (chiffrement des données)
+   - "I" : Integrity       -> La ressource n'a pas été modifié ou altéré sans autorisation. (CRC)
+   - "A" : Availibitlity   -> La ressource est stockée et accessible en tout temps de manière sécurisé. 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png
+   :width: 250
+
+
 
 Intro VPN blablabla
 
@@ -626,6 +875,8 @@ Le VPN client-to-site répond à cela.
 Site-to-Site VPN (Intranet)
 --------------------------------
 
+Un VPN site à site basé sur l'Intranet permet une interconnection sécurisé de 2 réseaux d'une même entreprise. 
+
 .. warning:: 
    Pour cet exemple, nous utiliserons un **VPN de type IPSec**.
 
@@ -638,9 +889,7 @@ Exercice pratique
    Avant de commencer l'exercice, je vous invite à prendre connaissance de l'environnement lab mis en place. Vous trouverez les ressources ci-dessous :
 
 
-.. toggle::
 
-   Here is my toggle-able content!
 
 
 Afin de donner un exemple concret de conception et paramètrage d'un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.
@@ -713,7 +962,9 @@ IPSec
 C'est l'un des protocoles les plus utilisés pour les VPN actuels, il permet l'intégrité et la confidentialité des données.
 Comme son nom l'indique, il fonctionne sur la couche réseau du modèle OSI (couche 3)
 
+Schéma de principe :
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.webp
 
 .. _IPSEC: https://www.frameip.com/ipsec/
 
@@ -750,10 +1001,11 @@ IKE
 ^^^^
 
 Après avori compris le fonctionnement d'IPSec, il est légitime de se demander comment est initié le VPN !
-IKE est la réponse.
+IKE (Internet Key Exchange) est la réponse.
 
 Ce protocole permet l'initiation de la connexion et l'association des systèmes ; les fameuses SA (security association).
-Comment fon
+
+IKE utilise l'échange de clés Diffie-Hellman pour mettre en place un secret partagé d'où les clefs de chiffrement sont dérivées.
 
 
 IKEv1
@@ -769,7 +1021,7 @@ IKEv2 est la version succédant à IKEv2 avec plus d'interopérabilité ainsi qu
 
 .. _RFC-5996: https://datatracker.ietf.org/doc/html/rfc5996
 
-
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.webp
 
 .. seealso::
    RFC-5996_
@@ -782,17 +1034,27 @@ Phase 1
 
 L'objectif principal de la phase 1 est la mise en place d'un canal chiffré sécurisé par l'intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.
 
-La construction de la phase 1 s’établi selon le processus suivant :
-
-
-• Négociation d’une politique IKE SA correspondante entre pairs pour protéger l’échange IKE
-• Echange authentifié de clé Diffie-Hellman afin d’obtenir une correspondance des clés
-secrètes partagées
-• Authentification et protection de l’identité des pairs avec IPSec
-• Construction du tunnel sécurisé pour négocier ensuite les paramètres de la phase 2 de IKE
-
-
 Deux modes existent pour cette première phase :
+
+• Mode principal
+• Mode Agressif
+
+Le mode principal comporte 6 étapes d’échange entre l’initiateur et le récepteur :
+
+• Echange de propositions (algorithme d’authentification, algorithme de chiffrement, groupe de clés Diffie-Hellmann)
+• Echange de clés Diffie-Hellmann
+• Echange d’identité (crypté avec la clé Diffie-Hellmann)
+
+
+Le mode agressif comporte 3 étapes d’échange entre l’initiateur et le récepteur. 
+Il y aura donc **moins d’échanges** et **moins de paquets.**
+
+
+• Envoi d’une proposition IKE locale, d’informations relatives à la clé et d’informations d’identité
+• Recherche d’une proposition IKE correspondante. Envoi de la proposition IKE correspondante avec les informations relatives à la clé, les informations d’identification et les informations d’authentification locale
+• Réponse avec les informations d’authentification locale pour implémenter l’authentification.
+
+
 
 Phase 2
 
@@ -800,7 +1062,18 @@ L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur u
 
 
 
+Sources et liens
+==================
 
+https://www.cisco.com/c/fr_ca/support/docs/security-vpn/ipsec-negotiation-ike-protocols/217432-understand-ipsec-ikev1-protocol.html
 
+https://www.juniper.net/documentation/fr/fr/software/junos/vpn-ipsec/topics/topic-map/security-ike-basics.html
 
+https://www.frameip.com/ipsec/
 
+https://datatracker.ietf.org/doc/html/rfc5996
+
+Remerciements
+====================================
+
+Merci à N. Borowy d'avoir dispensé ce cours à la classe des 2IBM !
