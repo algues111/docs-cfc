@@ -400,8 +400,8 @@ Il est imporant d'être précis dans le nom qu'on leur donne.
 Zones de sécurité
 ^^^^^^^^^^^^^^^^^^^^
 
-Les zones de sécurité sont importantes car elles permettent de regrouper plusieurs interfaces dans un seul et même groupe.
-Ile st donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple. test
+Les zones de sécurité sont importantes car elles permettent de regrouper logiquement plusieurs interfaces dans un seul et même groupe.
+Il est donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple, ou bien qu'elles sont asujetties à une même policy control.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png
 
@@ -410,6 +410,23 @@ Ile st donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 2
 Fonctionnalités UTM
 ----------------------
 
+Les services UTM (Unified Threat Management) est une solution de sécurité tout-en-un, généralement une appliance de sécurité unique, qui fournit plusieurs fonctions de sécurité en un seul point du réseau.
+
+Voici quelques-uns des services couramment proposés par les solutions UTM :
+
+- Logiciel antivirus : pour détecter et éliminer les logiciels malveillants et les virus.
+- Logiciel anti-espion : pour détecter et empêcher l’installation de logiciels espions sur les ordinateurs.
+- Protection antispam : pour filtrer les e-mails et les messages instantanés pour éviter les spam et les e-mails malveillants.
+- Pare-feu réseau : pour contrôler et filtrer le trafic réseau pour éviter les attaques et les intrusions.
+- Prévention et détection des intrusions : pour détecter et empêcher les tentatives d’intrusion dans le réseau.
+- Filtrage des contenus : pour filtrer les contenus en ligne pour éviter les sites web malveillants et les contenus dangereux (via DNS ou URL).
+
+
+Voici un petit schéma de principe d'un filtrage via UTM :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-utm.png
+
+
 .. tabs::
 
    .. tab:: APP PATROL
@@ -417,6 +434,11 @@ Fonctionnalités UTM
       L'App Patrol est un **pare-feu applicatif.**
       Il permet de **filtrer et bloquer des applications définies** par l'administrateur.
       Ces dernières vont des réseaux sociaux jusqu'à l'accès au réseau Tor (onion routing) par exemple...
+
+      Bloquer les services Facebook (aujourd'hui Meta), pourrait se schématiser ainsi :
+
+      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-apppatrol.png
+
 
       Ici, nous établissons une règle nommée "NO_TO_WHATSAPP".
 
@@ -502,9 +524,23 @@ Fonctionnalités UTM
             
             
 
-            Cette catégorie est spécifique aux adresses IP.
+            Cette catégorie est spécifique aux adresses IP, et regroupe une grande base de données d'adresses IP reconnus comme malveillantes.
+            Vous pouvez cependant créer des whitelists et blocklists pour personnaliser cette fonctionnalité.
+         
+            .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation-schema.png
+
+
+            Sur l'ATP200, le menu se présente comme suit :
 
             .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/ip-reputation.png
+            
+            
+            Il est même possible d'intégrer des blocklists externes, que le pare-feu ira chercher via un lien.
+
+            .. admonition:: Lien utile
+               Plusieurs IP blacklists sont disponibles sur GitHub notamment, en voici une relativement bien maintenue :
+
+               https://github.com/trskrbz/BlackIPforFirewall
 
 
          .. tab:: DNS Threat Filter
@@ -583,6 +619,48 @@ Avant de s'attaquer à la configuration complète de réseaux, il est plus judic
 Nous avons dans la section "Objets", que ces derniers sont très utilisés pour configurer n'importe quel aspect du pare-feu.
 Cela comprend donc les zones de sécurité.
 
+Interfaces
+^^^^^^^^^^^^^^^^^^
+
+Une interface est le point d’interaction logique entre le périphérique (port) et le logiciel du firewall.
+Dans la plupart des firewalls, il est possible d’attribuer une interface à un port disponible. Il peut y
+avoir plusieurs types d’interfaces :
+
+
+- Interface interne (lan, dmz, opt, …), connectée à un réseau local. Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut.
+
+- Interface externe (wan, ppp, …), connectée à un réseau externe (ISP). Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut
+
+- Interface générale, connectée à un réseau local ou externe. Les règles de routages ne sont pas créées automatiquement et doivent être configurées manuellement. 
+
+
+Les caractéristiques des interfaces sont les suivantes :
+
+
+- Entité logique qui effectue le routage L3 et se rapporte à toutes les interfaces
+  
+- Chaque interface a une et une seule adresse IP associée
+  
+- Les informations de routage sont automatiquement dérivées des paramètres IP de l’interface du firewall
+  
+Les fonctionnalités suivantes sont en général supportées :
+
+
+- Les paramètres généraux comprennent une adresse IP statique, un client/serveur DHCP, etc.
+- Un ou deux serveurs relais DHCP peuvent être pris en charge
+- La bande passante ascendante et descendante est généralement configurable ainsi que la valeur MTU (Unité de Transmission Maximale)
+- Une option de passerelle peut être disponible
+- Un proxy IGMP peut être disponible
+- Les options DHCP peuvent en général être configurées, incluant donc le DNS, bail, la passerelle, le serveur WINS et d'autres options spéicifiques (ex. code 150 TFTP)
+
+
+
+
+
+
+
+
+
 
 Règles NAT-PAT
 ------------------
@@ -594,6 +672,8 @@ Le NAT permet la traduction d'une adresse IP de classe publique, à une adresse 
 Le PAT, quant à lui, permet la transition d'un port externe *x* vers un port interne *y*.
 
 La combinaison des deux devient...... du NAT-PAT !
+
+
 
 
 Wi-Fi Management (a mettre dans section parefeu)
@@ -724,6 +804,16 @@ Qu'est-ce qu'un VPN  ?
 
 La notion de VPN avait déjà été abordée lors du module M145 de 1ère année.
 Sa définition est simple :"Relier entre eux des systèmes informatiques de manière **sûre** en s’appuyant sur un réseau existant."
+
+Qu'est-ce que le mot *sûre* veut dire concrètement ?
+
+The CIA triad est en général ce que nous utilisons pour déterminer si un système est considéré comme *sûr* ou non.
+
+   - "C" : Confidentiality -> Seules les personnes autorisées ont accès à la ressource en question. (chiffrement des données)
+   - "I" : Integrity       -> La ressource n'a pas été modifié ou altéré sans autorisation. (CRC)
+   - "A" : Availibitlity   -> La ressource est stockée et accessible en tout temps de manière sécurisé. 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png
 
 Intro VPN blablabla
 
