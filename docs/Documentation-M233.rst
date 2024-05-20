@@ -314,8 +314,8 @@ Il est imporant d'être précis dans le nom qu'on leur donne.
 Zones de sécurité
 ^^^^^^^^^^^^^^^^^^^^
 
-Les zones de sécurité sont importantes car elles permettent de regrouper plusieurs interfaces dans un seul et même groupe.
-Ile st donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple. test
+Les zones de sécurité sont importantes car elles permettent de regrouper logiquement plusieurs interfaces dans un seul et même groupe.
+Il est donc plus facile de créer une règle spécifiant que le VLAN avec l'ID 200 peut communiquer avec le VLAN 300 par exemple, ou bien qu'elles sont asujetties à une même policy control.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png
 
@@ -497,9 +497,53 @@ Avant de s'attaquer à la configuration complète de réseaux, il est plus judic
 Nous avons dans la section "Objets", que ces derniers sont très utilisés pour configurer n'importe quel aspect du pare-feu.
 Cela comprend donc les zones de sécurité.
 
+Interfaces
+^^^^^^^^^^^^^^^^^^
+
+Une interface est le point d’interaction logique entre le périphérique (port) et le logiciel du firewall.
+Dans la plupart des firewalls, il est possible d’attribuer une interface à un port disponible. Il peut y
+avoir plusieurs types d’interfaces :
+
+
+- Interface interne (lan, dmz, opt, …), connectée à un réseau local. Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut.
+
+- Interface externe (wan, ppp, …), connectée à un réseau externe (ISP). Le firewall ajoute les paramètres de routage et de NAT source correspondant par défaut
+
+- Interface générale, connectée à un réseau local ou externe. Les règles de routages ne sont pas créées automatiquement et doivent être configurées manuellement. 
+
+
+Les caractéristiques des interfaces sont les suivantes :
+
+
+- Entité logique qui effectue le routage L3 et se rapporte à toutes les interfaces
+  
+- Chaque interface a une et une seule adresse IP associée
+  
+- Les informations de routage sont automatiquement dérivées des paramètres IP de l’interface du firewall
+  
+Les fonctionnalités suivantes sont en général supportées :
+
+
+- Les paramètres généraux comprennent une adresse IP statique, un client/serveur DHCP, etc.
+- Un ou deux serveurs relais DHCP peuvent être pris en charge
+- La bande passante ascendante et descendante est généralement configurable ainsi que la valeur MTU (Unité de Transmission Maximale)
+- Une option de passerelle peut être disponible
+- Un proxy IGMP peut être disponible
+- Les options DHCP peuvent en général être configurées, incluant donc le DNS, bail, la passerelle, le serveur WINS et d'autres options spéicifiques (ex. code 150 TFTP)
+
+
+
+
+
+
+
+
+
 
 Règles NAT-PAT
 ------------------
+
+
 
 
 Wi-Fi Management (a mettre dans section parefeu)
