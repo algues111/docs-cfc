@@ -1272,9 +1272,47 @@ Voici son schéma :
 Phase 2
 ~~~~~~~~~~
 
-L'objectif des négociations de phase 2 est que les deux pairs s'accordent sur un ensemble de paramètres qui définissent le type de trafic pouvant passer par le VPN et sur la manière de chiffrer et d'authentifier le trafic. Cet accord s'appelle une association de sécurité.
+La construction de la phase 2 s’établi selon le processus suivant :
+
+• Négociation des paramètres SA IPSec par un SA IKE existant, comme, par exemple :
+   o AH ou ESP
+   o Mode d’encapsulation (Tunnel ou Transport)
+• Renégociation des SA IPSec pour assurer la sécurité
+• Etablissement des SA IPSec définitif
+• Périodicité du renouvellement des SA
 
 
+Authentification et chiffrement (cryptage)
+
+Ce processus utilise soit le protocole ESP soit le protocole AH.
+
+• ESP ou Encapsulation de la Charge Utile assure l’authentification et le chiffrement
+• AH ou Entête d’Authentification assure uniquement l’authentification
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/esp-ah.png
+
+Mode d’encapsulation :
+
+Il existe le mode tunnel ou le mode transport.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/tunnel-transport.png
+
+
+Finalisation
+~~~~~~~~~~~~~~~~
+
+La finalisation du tunnel IPSec intervient :
+
+
+• Lorsque les SA IPSec prennent fin par suppression ou par temporisation
+• Lors les SA IPSec sont terminées, les clés sont également supprimées
+• Lorsque des SA IPSec ultérieurs sont requis pour un flux, IKE effectue un nouveau processus de négociation
+• Une nouvelle négociation réussie aboutit à de nouvelles SA IPSec et à de nouvelles clés.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/finalisation.png
+
+
+Et voilà, la connexion est désormais établie et nous connaissons les grandes lignes, voire un peu plus, du fonctionnement d'un VPN IPSec !
 
 Sources et liens
 ==================
@@ -1287,7 +1325,25 @@ https://www.frameip.com/ipsec/
 
 https://datatracker.ietf.org/doc/html/rfc5996
 
+https://www.iso.org/fr/standard/27001
+
+https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-ipsec/
+
+https://itbusinessconnect.fr/domaines/securite/ficheExpert/l-UTM-Unified-Threat-management
+
+https://support.zyxel.eu/hc/fr/articles/4410547427218-Configuration-de-base-de-Zyxel-Firewall-Objets-zones-NAT-VPN-et-plus-encore-USG-FLEX-ATP
+
+https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/gun4
+
+https://github.com/algues111/docs-cfc/blob/main/docs/source/other/Module_233_FR.pdf
+
+https://www.lemagit.fr/conseil/MFA-quels-sont-les-principaux-produits-du-marche
+
+https://kb.synology.com/fr-fr/DSM/help/RadiusServer/rad_desc?version=7
+
+Et plus encore....
+
 Remerciements
 ====================================
 
-Merci à N. Borowy d'avoir dispensé ce cours à la classe des 2IBM !
+Merci à N. Borowy d'avoir dispensé ce cours passionant à la classe des 2IBM !
