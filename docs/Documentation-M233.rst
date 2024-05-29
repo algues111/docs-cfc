@@ -462,6 +462,8 @@ Rentrez les informations d'identification.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png
 
+Après cela, vous pouvez initier la connexion à partir de l'onglet "Interfaces" -> "PPP" et cliquer sur le bouton de connexion de l'interface PPP correspondante.
+
 
 Objets
 --------------
@@ -624,8 +626,6 @@ Voici un petit schéma de principe d'un filtrage via UTM :
          
       
 
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
-
 
       .. tabs::
          .. tab:: BPP
@@ -656,8 +656,6 @@ Voici un petit schéma de principe d'un filtrage via UTM :
          Ici, les .exe, .swf, .doc, .pdf, .rtf, .zip sont analysés (car majoritairement enclin à contenir des malwares).
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/malware.png
-
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/
 
 
    .. tab:: Reputation Filter
@@ -723,7 +721,6 @@ Voici un petit schéma de principe d'un filtrage via UTM :
 
       Sur l'ATP200, la fonctionnalité IPS est disponible et se présente sous la forme suivante :
 
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
 
    .. tab:: Sandboxing
@@ -746,7 +743,6 @@ Voici un petit schéma de principe d'un filtrage via UTM :
      Cela permettant la plus grande attention des collaborateurs sur la possible origine malveillante de l'email en question.
 
 
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/
 
 
    .. tab:: SSL Inspection
@@ -1310,6 +1306,7 @@ La finalisation du tunnel IPSec intervient :
 • Une nouvelle négociation réussie aboutit à de nouvelles SA IPSec et à de nouvelles clés.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/finalisation.png
+
 
 
 Et voilà, la connexion est désormais établie et nous connaissons les grandes lignes, voire un peu plus, du fonctionnement d'un VPN IPSec !
