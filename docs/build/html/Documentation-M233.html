@@ -53,6 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Documentation-M233';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Module 291 : PBX Virtualisé" href="Documentation-M291.html" />
     <link rel="prev" title="Module 144 : Réseaux sans-fil (en travaux)" href="Documentation-M144.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
@@ -159,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Documentation-M362.html">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Documentation-M144.html">Module 144 : Réseaux sans-fil (en travaux)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 233 : Protéger et assurer la maintenance d’un réseau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation-M291.html">Module 291 : PBX Virtualisé</a></li>
 </ul>
 
     </div>
@@ -328,11 +330,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pare-feu-personnel">Pare-feu personnel</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-de-pare-feu-physique">Configuration de pare-feu physique</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parametres-systeme">Paramètres Système</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegardes">Sauvegardes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ppp-point-to-point-protocol">PPP (Point-to-Point Protocol)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objets">Objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adresses">Adresses</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-securite">Zones de sécurité</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#services">Services</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ap-profiles">AP Profiles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aaa">AAA</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctionnalites-utm">Fonctionnalités UTM</a></li>
@@ -350,9 +358,15 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vpn">VPN</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-vpn">Qu’est-ce qu’un VPN  ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-to-site-vpn">Client-to-Site VPN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-to-site-vpn-intranet">Site-to-Site VPN (Intranet)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-to-site-vpn">Client-to-Site VPN</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-pratique">Exercice pratique</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#vpn-client-to-site-ssl">VPN client-to-site SSL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-to-site-vpn-intranet">Site-to-Site VPN (Intranet)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercice pratique</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1">Phase 1</a></li>
 </ul>
 </li>
@@ -370,7 +384,12 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ikev2">IKEv2</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phases">Phases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phases">Phases</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Phase 1</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Phase 2</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#finalisation">Finalisation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -433,6 +452,7 @@ Ses analyses sont basés sur plus de 70 anti-virus connus du marché de la cyber
 </ul>
 </div></blockquote>
 <p>Le site propose aussi dvers logiciels de sécurité dont l’antivirus de Sophos ainsi que Qualys pour la veille des logiciels.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ibarry.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ibarry.png" />
 </div></div>
 </section>
 <section id="mfa">
@@ -441,11 +461,17 @@ Ses analyses sont basés sur plus de 70 anti-virus connus du marché de la cyber
 <p>Elle se base sur au moins 2 méthodes comprenant :</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Quelque chose que je suis</p></li>
-<li><p>Quelque chose que j’ai</p></li>
-<li><p>Quelque chose que je connais</p></li>
+<li><p>Quelque chose que je suis (ex : biométrie)</p></li>
+<li><p>Quelque chose que j’ai (clé FIDO2, token physique, badge d’authentification…)</p></li>
+<li><p>Quelque chose que je connais (mot de passe, phrase de passe, PIN…)</p></li>
 </ul>
 </div></blockquote>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/MFA.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/MFA.png" />
+<p>La MFA fait aujourd’hui partie intégrante de l’authentification moderne des utilisateurs.
+Elle est un frein aux attaques les plus communes et au social engineering de base.</p>
+<p>Il est donc de plus en plus recommandé de mettre en place de la MFA, qu’elle soit au niveau personnel ou professionnel pour protéger nos comptes en ligne de tentatives de connexion non autorisées.</p>
+<p>Cependant, la sécurité est souvent bien loin d’être agréable ou confortable pour les collaborateurs qui font face à des contraintes de plus en plus rudes.
+Il est alors préférable, voire indispensable de planifier les méthodes MFA que nous voulons appliquer, afin que la productivité et le confort des employés soient le moins touchés possible.</p>
 </section>
 </section>
 </section>
@@ -480,15 +506,18 @@ Il est néanmoins important de savoir qu’elles existent et qu’elles ne sont 
 <section id="certifications">
 <h3>Certifications<a class="headerlink" href="#certifications" title="Link to this heading">#</a></h3>
 <p>Plusieurs entreprises et institutions proposent des services d’audits de sécurité informatique.</p>
-<p>Ces audits se basent sur des normes. sont en conformité avec les exigences de la certification en question, un label est distribué.</p>
+<p>Ces audits se basent sur des normes et vérifient la conformité de l’infrastructure et des sytèmes informatiques d’autrui.
+Si les entreprises réussissent l’audit, elles se voient alors attribuées un label indiquant leur conformité à la certification en question !</p>
 <p>Très souvent, ces audits sont à effectuer environ tous les 2 ans afin de garantir la mise à niveau des normes de sécurité.</p>
-<p>Cybersafe, ISO27001…</p>
+<p>En Suisse, les labels CyberSafe et CyberSeal sont mis en avant par la confédération et les hautes autorités publiques.
+Cependant, d’autres certifications plus globales existent, telles que l’ISO27001.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/certifs.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/certifs.png" />
 </section>
 <section id="confidentialite">
 <h3>Confidentialité<a class="headerlink" href="#confidentialite" title="Link to this heading">#</a></h3>
 <p>La confidentialité est de nos jours aseez complexe.
 Entre les Big Tech mettant à jour tous les mois leurs politiques et les gouvernements pondant de nouvelles lois pour règlementer le tout, les utilisateurs sont très souvent perdus.</p>
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg" />
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/privacy-meme.jpg" style="width: 300px;" /></a>
 <p>Il est donc essentiel de d’alerter les collaborateurs et clients concernant le traitement de leurs données, et qui y a <strong>réellement accès.</strong></p>
 </section>
 </section>
@@ -519,6 +548,10 @@ Ils intègrent la fonctionnalité de stateful inspection permettant d’inspecte
 <h3>Pare-feu applicatif<a class="headerlink" href="#pare-feu-applicatif" title="Link to this heading">#</a></h3>
 <p>Le pare-feu applicatif agit sur la couche 7 du modèle OSI.
 Ce dernier nous permet donc d’être beaucoup plus granuleux sur la manière dont nous allons filtrer le traffic.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Nous pouvons donc créer une règle interdisant le protocole ssh pour le traffic sortant, que ce dernier fonctionne sur le port 22 ou autre !</p>
+</div>
 </section>
 <section id="pare-feu-personnel">
 <h3>Pare-feu personnel<a class="headerlink" href="#pare-feu-personnel" title="Link to this heading">#</a></h3>
@@ -539,20 +572,25 @@ Que ce soit un switch, un pare-feu, une antenne wi-fi, un NAS etc…, vous gagne
 Car ces paramètres vont définir comment nous allons nous connecter à cet apareil et avec quels protocoles, la date et le temps, la langue, son nom etc…</p>
 <p>Voici les paramètres disponibles dans un ATP200 chez Zyxell</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Host Name</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">USB Storage</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Date/Time</button><button aria-controls="panel-1-1-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-3" name="1-3" role="tab" tabindex="-1">Console Speed</button><button aria-controls="panel-1-1-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-4" name="1-4" role="tab" tabindex="-1">DNS</button><button aria-controls="panel-1-1-5" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-5" name="1-5" role="tab" tabindex="-1">WWW</button><button aria-controls="panel-1-1-6" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-6" name="1-6" role="tab" tabindex="-1">SSH</button><button aria-controls="panel-1-1-7" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-7" name="1-7" role="tab" tabindex="-1">Telnet</button><button aria-controls="panel-1-1-8" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-8" name="1-8" role="tab" tabindex="-1">FTP</button><button aria-controls="panel-1-1-9" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-9" name="1-9" role="tab" tabindex="-1">SNMP</button><button aria-controls="panel-1-1-10" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-10" name="1-10" role="tab" tabindex="-1">Auth. Server</button><button aria-controls="panel-1-1-11" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-11" name="1-11" role="tab" tabindex="-1">Notification</button><button aria-controls="panel-1-1-12" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-12" name="1-12" role="tab" tabindex="-1">Language</button><button aria-controls="panel-1-1-13" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-13" name="1-13" role="tab" tabindex="-1">IPv6</button><button aria-controls="panel-1-1-14" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-14" name="1-14" role="tab" tabindex="-1">ZON</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><p>Comme son nom l’indique, l’onglet Host Name permet de définir le nom que nous voulons donner à notre appareil.
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Host Name</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">USB Storage</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Date/Time</button><button aria-controls="panel-1-1-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-3" name="1-3" role="tab" tabindex="-1">Console Speed</button><button aria-controls="panel-1-1-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-4" name="1-4" role="tab" tabindex="-1">DNS</button><button aria-controls="panel-1-1-5" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-5" name="1-5" role="tab" tabindex="-1">WWW</button><button aria-controls="panel-1-1-6" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-6" name="1-6" role="tab" tabindex="-1">SSH</button><button aria-controls="panel-1-1-7" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-7" name="1-7" role="tab" tabindex="-1">Telnet</button><button aria-controls="panel-1-1-8" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-8" name="1-8" role="tab" tabindex="-1">FTP</button><button aria-controls="panel-1-1-9" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-9" name="1-9" role="tab" tabindex="-1">SNMP</button><button aria-controls="panel-1-1-10" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-10" name="1-10" role="tab" tabindex="-1">Notification</button><button aria-controls="panel-1-1-11" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-11" name="1-11" role="tab" tabindex="-1">Language</button><button aria-controls="panel-1-1-12" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-12" name="1-12" role="tab" tabindex="-1">IPv6</button><button aria-controls="panel-1-1-13" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-13" name="1-13" role="tab" tabindex="-1">ZON</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><p>Comme son nom l’indique, l’onglet Host Name permet de définir le nom que nous voulons donner à notre appareil.
 Si vous voulez lier ce dernier à votre domaine, vous pouvez aussi indiquer son nom auprès du domaine.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/system-hostname.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/system-hostname.png" />
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"></div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png" />
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><p>Si un périphérique de stockage USB est connecté au pare-feu, il est possible de le configurer via cette interface.</p>
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><p>Réglages de la date et de l’heure.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/date-time.png" />
 </div><div aria-labelledby="tab-1-1-3" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-3" name="1-3" role="tabpanel" tabindex="0"><p>Permet de définir le Baud Rate utilisé par l’interface console de l’ATP.</p>
 <p>Par défaut fixé à 115200 bauds.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/console-speed.png" />
-</div><div aria-labelledby="tab-1-1-4" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-4" name="1-4" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png" />
+</div><div aria-labelledby="tab-1-1-4" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-4" name="1-4" role="tabpanel" tabindex="0"><p>Puisque le Zywall peut être utilisé en tant que serveur DNS, il est possible de définir plusieurs enregistrements DNS, tels que PTR, CNAME, zone forward, MX etc…</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/dns-settings.png" />
 </div><div aria-labelledby="tab-1-1-5" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-5" name="1-5" role="tabpanel" tabindex="0"><p>Configuration de l’accès à la web GUI administrative du pare-feu.
 Il est <strong>préférable de désactiver complètement le protocole HTTP</strong>, ce dernier n’étant <strong>pas chiffré</strong>.</p>
 <p>Il est aussi tout à fait possible de changer le port HTTPS et HTTP par défaut, ce qui peut s’avérer utile si d’autres services utilisent ces protocoles.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/www.png" />
-</div><div aria-labelledby="tab-1-1-6" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-6" name="1-6" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png" />
-</div><div aria-labelledby="tab-1-1-7" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-7" name="1-7" role="tabpanel" tabindex="0"><p><a href="#id1"><span class="problematic" id="id2">**</span></a>Protocole déconseillé*</p>
+</div><div aria-labelledby="tab-1-1-6" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-6" name="1-6" role="tabpanel" tabindex="0"><p>Configuration du protocole SSH pour accéder au pare-feu via le réseau.</p>
+<p>Si vous n’avez pas besoin de paramétrer des fichiers spéciaux dans l’arborescence même du pare-feu, il est déconseillé d’utiliser ce protocole car il peut être vulnérable si mal configuré !</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/ssh.png" />
+</div><div aria-labelledby="tab-1-1-7" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-7" name="1-7" role="tabpanel" tabindex="0"><p><strong>Protocole déconseillé</strong></p>
 <p>Le telnet est disponible sur l’ATP200.
 Attention, ce protocole est vulnérable et obsolète, utilisez plutôt SSH si besoin.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/telnet.png" />
@@ -561,20 +599,60 @@ Attention, ce protocole est vulnérable et obsolète, utilisez plutôt SSH si be
 </div><div aria-labelledby="tab-1-1-9" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-9" name="1-9" role="tabpanel" tabindex="0"><p>Cette section permet de configurer la gestion du pare-feu via SNMP.
 Ce dernier est désactivé par défaut.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/snmp.png" />
-</div><div aria-labelledby="tab-1-1-10" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-10" name="1-10" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/auth-server.png" />
-</div><div aria-labelledby="tab-1-1-11" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-11" name="1-11" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
+</div><div aria-labelledby="tab-1-1-10" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-10" name="1-10" role="tabpanel" tabindex="0"><div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Mail Notification</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">SMS Notification</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><p>Si vous êtes désireux de configurer des alertes ou bien d’activer la MFA par envoi de mails, il est possible de le faire via cette section.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-mail.png" />
 </div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><p>Il est aussi possible de faire la même chose via SMS.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/notifs-sms.png" />
 </div></div>
-</div><div aria-labelledby="tab-1-1-12" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-12" name="1-12" role="tabpanel" tabindex="0"><p>Possibilité de changer de langue pour l’interface système de Zyxell.</p>
-</div><div aria-labelledby="tab-1-1-13" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-13" name="1-13" role="tabpanel" tabindex="0"><p>Possibilité dâctiver le protocole IPv6 sur l’ATP200.</p>
-</div><div aria-labelledby="tab-1-1-14" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-14" name="1-14" role="tabpanel" tabindex="0"><p><a class="reference external" href="https://www.zyxel.com/fr/fr/products/management-and-reporting/zyxel-devices-installation-tool-zon-utility/">ZON</a> est un protocole propriétaire à Zyxell facilitant la découverte et la configuration dans le réseau des équipements de cette marque.</p>
+</div><div aria-labelledby="tab-1-1-11" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-11" name="1-11" role="tabpanel" tabindex="0"><p>Possibilité de changer de langue pour l’interface système de Zyxell.</p>
+</div><div aria-labelledby="tab-1-1-12" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-12" name="1-12" role="tabpanel" tabindex="0"><p>Possibilité dâctiver le protocole IPv6 sur l’ATP200.</p>
+</div><div aria-labelledby="tab-1-1-13" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-13" name="1-13" role="tabpanel" tabindex="0"><p><a class="reference external" href="https://www.zyxel.com/fr/fr/products/management-and-reporting/zyxel-devices-installation-tool-zon-utility/">ZON</a> est un protocole propriétaire à Zyxell facilitant la découverte et la configuration dans le réseau des équipements de cette marque.</p>
 <blockquote>
 <div><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zon.png" />
 </div></blockquote>
 </div></div>
+</section>
+<section id="sauvegardes">
+<h4>Sauvegardes<a class="headerlink" href="#sauvegardes" title="Link to this heading">#</a></h4>
+<p>Les sauvegardes sont un élément essetiel de la configuration de n’importe quel équipement réseau.
+Il est donc indispensable d’en effectuer périodiquement, avec une nomanclature pertinente !</p>
+<p>Voici un exemple :</p>
+<p>EVO-FW001_20220525_0832 : Trigramme client – nom du pare-feu – date – heure</p>
+<p>Aujourd’hui, beaucoup de méthodes sont possibles pour effectuer des backups de manière sécurisée (rclone, rsync, SFTP, FTPS etc…)</p>
+</section>
+<section id="documentation">
+<h4>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h4>
+<p>Cet aspect du métier a déjà été abordé lors du module M145, mais un rappel ne fait jamais de mal !</p>
+<p>Une bonne documentation devrait contenir au moins les éléments suivants :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Photos de l’installation, des connexions et des équipements</p></li>
+<li><p>Fichier sécurisé avec les mots de passes et comptes utilisateurs</p></li>
+<li><p>Matrice des droits d’accès (infrastructure et/ou données)</p></li>
+<li><p>Journaux des modifications et configurations listant toutes les interventions effectuées</p></li>
+<li><p>Schémas de l’installation, plans d’étages</p></li>
+<li><p>Listing des licences actuelles et dates de renouvellement</p></li>
+<li><p>Backup du système avant et après l’intervention, éventuellement la gestion de backups automatisés</p></li>
+<li><p>Etiquetage des équipements avec une nomenclature propre à chaque client</p></li>
+<li><p>Procédures particulières en lien avec l’infrastructure du client final</p></li>
+<li><p>Plan d’adressage complet avec tous les réseaux (LAN, VLAN, …)</p></li>
+</ul>
+</div></blockquote>
+<p>Il est évident que d’autres documents devraient encore faire partie d’une documentation complète
+d’un client. Voici un listing non-exhaustif qui peut être complété selon les besoins :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Clauses de confidentialité en lien avec le client final</p></li>
+<li><p>Offres, devis, bulletins de livraison, offres complémentaires / plus-value, factures du matériel, demandes d’acomptes, facture finale</p></li>
+<li><p>Listing des intervenants dans le projet (chef de projet, technicien, référant du client, autres personnes impactées, …)</p></li>
+<li><p>PV de mise en service et de rendu de l’installation au client final</p></li>
+<li><p>Décharge de responsabilité</p></li>
+<li><p>Correspondances, mails importants</p></li>
+<li><p>Automatismes (GPO, …)</p></li>
+<li><p>Procédures de traitement des données (suppression, élimination, …)</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="ppp-point-to-point-protocol">
 <h4>PPP (Point-to-Point Protocol)<a class="headerlink" href="#ppp-point-to-point-protocol" title="Link to this heading">#</a></h4>
@@ -621,6 +699,7 @@ Si c’est le cas, il faut configurer le bon ID !</p>
 Cela empêchera l’authentification aurpès du RADIUS du DSLAM.</p>
 </div>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/pppconf1.png" />
+<p>Après cela, vous pouvez initier la connexion à partir de l’onglet « Interfaces » -&gt; « PPP » et cliquer sur le bouton de connexion de l’interface PPP correspondante.</p>
 </section>
 </section>
 <section id="objets">
@@ -642,11 +721,47 @@ Son nom est VLAN_300</p>
 </dd>
 </dl>
 </div>
+<section id="adresses">
+<h4>Adresses<a class="headerlink" href="#adresses" title="Link to this heading">#</a></h4>
+<p>Les adresses sont des objets à part entière.
+Celles-ci peuvent être des subnets, une adresse hôte ou un subnet d’interface…</p>
+<p>Typiquement, dans l’image ci-dessous, nous constatons que les subnets de la RFC 1918 sont créés par défaut.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/adresses.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/adresses.png" />
+<p>Il sera donc tout à fait possible de créer des règles par la suite spécifiant que seule le subnet RFC1918_1 n’est autorisé à sortir sur le WAN…</p>
+<p>Mais cela ne s’arrête pas là, car Zyxell donne la possibilité de créer des filtres via GeoIP.</p>
+<p>Nous pourrons donc très bien exclure toutes les connexions entrantes ne provenant pas de la Suisse par exemple.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il est cependant important de prendre en considération les potentiels collaborateurs travaillant à l’étranger afin de ne pas les bloquer.</p>
+</div>
+</section>
 <section id="zones-de-securite">
 <h4>Zones de sécurité<a class="headerlink" href="#zones-de-securite" title="Link to this heading">#</a></h4>
 <p>Les zones de sécurité sont importantes car elles permettent de regrouper logiquement plusieurs interfaces dans un seul et même groupe.
 Il est donc plus facile de créer une règle spécifiant que le VLAN avec l’ID 200 peut communiquer avec le VLAN 300 par exemple, ou bien qu’elles sont asujetties à une même policy control.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/zones.png" />
+</section>
+<section id="services">
+<h4>Services<a class="headerlink" href="#services" title="Link to this heading">#</a></h4>
+<p>Les communications réseaux reposent sur des protocoles qui eux-mêmes reposent sur des ports.</p>
+<p>La notion de services est donc très importante car elle permet d’identifier les protocoles.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/services.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/services.png" />
+<p>Créer des groupes de services peut s’avérer très utile lorsque que nous voulons par exemple créer des règles interdisant ou autorisant un groupe de protocoles / ports spécifique.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/services-group.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/services-group.png" />
+</section>
+<section id="ap-profiles">
+<h4>AP Profiles<a class="headerlink" href="#ap-profiles" title="Link to this heading">#</a></h4>
+<p>Cette section concerne la configuration des WLAN et des APs correspondant.
+Il est donc possible de créer des SSID, des groupes d’APs, des modes de sécurité et plus encore…</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/aps.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/aps.png" />
+<p>Lors des exercices de ce module, nous reviendrons en profondeur sur les objets WLAN…</p>
+</section>
+<section id="aaa">
+<h4>AAA<a class="headerlink" href="#aaa" title="Link to this heading">#</a></h4>
+<p><strong>(Authentication, Authorization, Accounting)</strong></p>
+<p>C’est ici que nous retrouvons les différents serveurs permettant l’authentification, l’autorisation et la compatbilité.</p>
+<p>Nous pouvons donc y définir des serveurs LDAP, Microsoft AD et RADIUS.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/aaa.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/aaa.png" />
 </section>
 </section>
 <section id="fonctionnalites-utm">
@@ -664,7 +779,7 @@ Il est donc plus facile de créer une règle spécifiant que le VLAN avec l’ID
 <p>Voici un petit schéma de principe d’un filtrage via UTM :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-utm.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/schema-utm.png" />
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">APP PATROL</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Content Filter</button><button aria-controls="panel-3-3-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-2" name="3-2" role="tab" tabindex="-1">Anti-Malware</button><button aria-controls="panel-3-3-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-3" name="3-3" role="tab" tabindex="-1">Reputation Filter</button><button aria-controls="panel-3-3-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-4" name="3-4" role="tab" tabindex="-1">IPS / IDS</button><button aria-controls="panel-3-3-5" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-5" name="3-5" role="tab" tabindex="-1">Sandboxing</button><button aria-controls="panel-3-3-6" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-6" name="3-6" role="tab" tabindex="-1">Email Security</button><button aria-controls="panel-3-3-7" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-7" name="3-7" role="tab" tabindex="-1">CDR</button><button aria-controls="panel-3-3-8" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-8" name="3-8" role="tab" tabindex="-1">SSL Inspection</button><button aria-controls="panel-3-3-9" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-9" name="3-9" role="tab" tabindex="-1">IP Exception</button><button aria-controls="panel-3-3-10" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-10" name="3-10" role="tab" tabindex="-1">Astra Cloud Security</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><p>L’App Patrol est un <strong>pare-feu applicatif.</strong>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">APP PATROL</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Content Filter</button><button aria-controls="panel-3-3-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-2" name="3-2" role="tab" tabindex="-1">Anti-Malware</button><button aria-controls="panel-3-3-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-3" name="3-3" role="tab" tabindex="-1">Reputation Filter</button><button aria-controls="panel-3-3-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-4" name="3-4" role="tab" tabindex="-1">IPS / IDS</button><button aria-controls="panel-3-3-5" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-5" name="3-5" role="tab" tabindex="-1">Sandboxing</button><button aria-controls="panel-3-3-6" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-6" name="3-6" role="tab" tabindex="-1">Email Security</button><button aria-controls="panel-3-3-7" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-7" name="3-7" role="tab" tabindex="-1">SSL Inspection</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><p>L’App Patrol est un <strong>pare-feu applicatif.</strong>
 Il permet de <strong>filtrer et bloquer des applications définies</strong> par l’administrateur.
 Ces dernières vont des réseaux sociaux jusqu’à l’accès au réseau Tor (onion routing) par exemple…</p>
 <p>Bloquer les services Facebook (aujourd’hui Meta), pourrait se schématiser ainsi :</p>
@@ -687,7 +802,6 @@ Si nous essayons d’accèder au site web de whatsapp, le navigateur n’y arriv
 <p class="admonition-title">Avertissement</p>
 <p>Si votre pare-feu est configuré en tant que DNS, il est nécessaire d’ajouter le content filter sur la règle « LANx_TO_DEVICE » car les requêtes DNS passent par le pare-feu.</p>
 </div>
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/" />
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">BPP</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><p>La Business Productivity Protection est un profil créé par défaut dans le Content Filtering de Zyxell.
 Lorsque nous cliquons dessus, nous voyons apparaître plusieurs paramètres intéressants, tels que :</p>
@@ -706,7 +820,6 @@ Vous pouvez choisir les types de fichiers à analyser.</p>
 <p>Ici, les .exe, .swf, .doc, .pdf, .rtf, .zip sont analysés (car majoritairement enclin à contenir des malwares).</p>
 </div>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/malware.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/malware.png" />
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/" />
 </div><div aria-labelledby="tab-3-3-3" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-3" name="3-3" role="tabpanel" tabindex="0"><p>A partir d’une base de données, le Reputation Filter peut bloquer des requêtes DNS, des connexions à des IP et URL spécifiques.
 Les possibilités sont très larges.
 Des white lists et block lists peuvent être ajoutées en fonction des besoins.</p>
@@ -722,24 +835,27 @@ Vous pouvez cependant créer des whitelists et blocklists pour personnaliser cet
 Plusieurs IP blacklists sont disponibles sur GitHub notamment, en voici une relativement bien maintenue :</p>
 <p><a class="github reference external" href="https://github.com/trskrbz/BlackIPforFirewall">trskrbz/BlackIPforFirewall</a></p>
 </div>
-</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png" />
-</div><div aria-labelledby="tab-5-5-2" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-2" name="5-2" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png" />
-</div></div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><p>Filtre de menaces basés sur des noms de domaines.
+L’ATP inclut des catégories prédéfinies telles que : phishing, spam, spyware…</p>
+<p>Il est possible d’établir des blacklists et whitelists de domaines précis.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/dns-filter.png" />
+</div><div aria-labelledby="tab-5-5-2" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-2" name="5-2" role="tabpanel" tabindex="0"><p>Filtre de menaces basés sur des URLs.
+Aussi bien que pour le DNS Threat Filter, l’ATP inclut des catégories prédéfinies telles que : phishing, spam, spyware…</p>
+<p>Il est possible d’établir des blacklists et whitelists de domaines précis.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/url-filter.png" />
+</div></div>
 </div><div aria-labelledby="tab-3-3-4" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-4" name="3-4" role="tabpanel" tabindex="0"><p>L’IPS (Intrusion Prevention System) est un outil de cybersécurité qui examine le trafic réseau pour détecter les menaces potentielles et prendre des mesures pour les contrer.
 Il peut reconnaître et bloquer les logiciels malveillants (malware) ou les exploits avant qu’ils ne puissent pénétrer dans le réseau et causer des dommages.</p>
 <p>L’IDS quant à lui se contente seulement de détecter les intrusions et les menaces sur le réseau</p>
 <p>Sur l’ATP200, la fonctionnalité IPS est disponible et se présente sous la forme suivante :</p>
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" />
-</div><div aria-labelledby="tab-3-3-5" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-5" name="3-5" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" />
+</div><div aria-labelledby="tab-3-3-5" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-5" name="3-5" role="tabpanel" tabindex="0"><p>Le sandboxing permet de tester de potentiels logiciels ou pièces jointes malveillants dans un environnement clos situé dans le cloud de Zyxell.</p>
+<p>Après les tests, le cloud fait un retour à l’ATP, qui autorisera la pièce jointe / le logiciel ou le mettra en quarantaine.</p>
+<p>Évidemment, comme la plupart des fonctionnalités UTM, ce service est payant.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/sandboxing.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/utm/sandboxing.png" />
 </div><div aria-labelledby="tab-3-3-6" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-6" name="3-6" role="tabpanel" tabindex="0"><p>Grâce à l’option email security disponible dans l’ATP200, il est possible de mettre en place un scan des emails entrants.
 Si cette fonctionnalité est activée, les emails répondant aux critères de suspition du système se verront soit mis en quarantaine, soit ajouté un tag au début de leur objet.</p>
 <p>Cela permettant la plus grande attention des collaborateurs sur la possible origine malveillante de l’email en question.</p>
-<blockquote>
-<div><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" />
-</div></blockquote>
-</div><div aria-labelledby="tab-3-3-7" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-7" name="3-7" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" />
-</div><div aria-labelledby="tab-3-3-8" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-8" name="3-8" role="tabpanel" tabindex="0"><p>Aujourd’hui, la plupart des trafics sur Internet (notamment sur le web) sont chiffrés par SSL pour les plus anciens et TLS pour les plus récents.
+</div><div aria-labelledby="tab-3-3-7" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-7" name="3-7" role="tabpanel" tabindex="0"><p>Aujourd’hui, la plupart des trafics sur Internet (notamment sur le web) sont chiffrés par SSL pour les plus anciens et TLS pour les plus récents.
 Cela permet de garder une confidentialité et une intégrité des données qui transitent, néanmoins, ce chiffrement peut être un obstacle pour la protection des collaborateurs.</p>
 <p>En effet, des fichiers malveillants pourraient atteindre le LAN sans qu’on puisse les détecter grâce (ou à cause) du chiffrement SSL/TLS.</p>
 <p>Pour l’SSL Inspection, le pare-feu agira donc comme un MITM (Man In The Middle), c’est à dire qu’il déchiffrera le certificat SSL/TLS pour inspecter le contenu du paquet, avant de le chiffrer de nouveau et l’envoyer au destinataire.</p>
@@ -749,8 +865,7 @@ Cela permet de garder une confidentialité et une intégrité des données qui t
 <p>Il est important de vérifier les protocoles de chiffrement ainsi que les versions SSL/TLS supportés par le pare-feu.
 Les plus anciens pourraient ne pas supporter certains, amenant donc à des erreurs et disfonctionnements potentiels.</p>
 </div>
-</div><div aria-labelledby="tab-3-3-9" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-9" name="3-9" role="tabpanel" tabindex="0"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/" />
-</div><div aria-labelledby="tab-3-3-10" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-10" name="3-10" role="tabpanel" tabindex="0"></div></div>
+</div></div>
 </section>
 <section id="configuration-reseau">
 <h3>Configuration réseau<a class="headerlink" href="#configuration-reseau" title="Link to this heading">#</a></h3>
@@ -844,9 +959,10 @@ Pour ce faire, il suffit de les créer dans le menu « SSID LIST ».</p>
 <p>Dans celui-ci, nous choisissons :</p>
 <ul>
 <li><p>Le nom du profil</p></li>
-<li><p>Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3… )</p>
-<blockquote>
-<div></div></blockquote>
+<li><dl>
+<dt>Le mode de sécurité (WEP, WPA2, WPA2-ENT, WPA3… ) Voir tableau ci-dessous pour le détail des protocoles</dt><dd><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/wpa.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/wifi/wpa.png" />
+</dd>
+</dl>
 </li>
 <li><p>La méthode d’authentiication (Enterprise/RADIUS ou Personnel/PSK)</p></li>
 <li><p>L’activation ou pas du fast-roaming (802.11r)</p></li>
@@ -907,7 +1023,6 @@ Sa définition est simple : »Relier entre eux des systèmes informatiques de m
 </ul>
 </div></blockquote>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png"><img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/CIA-triad.png" style="width: 250px;" /></a>
-<p>Intro VPN blablabla</p>
 </section>
 <section id="client-to-site-vpn">
 <h3>Client-to-Site VPN<a class="headerlink" href="#client-to-site-vpn" title="Link to this heading">#</a></h3>
@@ -915,6 +1030,39 @@ Sa définition est simple : »Relier entre eux des systèmes informatiques de m
 Les entreprises autorisant cela ont donc besoin d’un système permettant la connexion d’utilisateurs depuis Internet.</p>
 <p>Le VPN client-to-site répond à cela.</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/client-to-site-schema.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/client-to-site-schema.png" />
+<section id="exercice-pratique">
+<h4>Exercice pratique<a class="headerlink" href="#exercice-pratique" title="Link to this heading">#</a></h4>
+<section id="vpn-client-to-site-ssl">
+<h5>VPN client-to-site SSL<a class="headerlink" href="#vpn-client-to-site-ssl" title="Link to this heading">#</a></h5>
+<p>Sur l’ATP200, nous pouvons configurer un serveur VPN SSL.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-menu.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-menu.png" />
+<p>Voici les paramètres d’une connexion basique :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png" />
+<ul class="simple">
+<li><p>Nom de la connexion</p></li>
+<li><p>Zone de sécurité (ici SSL_VPN)</p></li>
+<li><p>Description (optionnel)</p></li>
+<li><p>Utilisateurs ou groupes autorisés (ici localadmin)</p></li>
+<li><p>Le pool d’adresses IP octroyé aux clients (10.1.1.0/24)</p></li>
+<li><p>Le serveur DNS utilisé par les clients (ici 10.1.1.1)</p></li>
+<li><p>Les réseaux auxquels ils ont accès (ici VLAN_DATAS)</p></li>
+</ul>
+<p>L’onglet « Global settings » permet de définir le port utilisé par le service ainsi que l’interface VPN SSL.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Ne pas choisir une IP présente dans le pool d’adresses octroyé aux clients.
+Cela pourrait créer des problèmes de routage.</p>
+</div>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-serv-policy.png" />
+<p>Côté client, il est possible de télécharger le client SecuExtender pour se connecter au serveur VPN.</p>
+<p>Ici, nous voyons très clairement que ce sont l’IP publique du pare-feu ainsi que le port 10443 qui sont utilisés.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client.png" />
+<p>Après avoir cliqué sur le bouton « Connect », la connexion s’établit rapidement et nous demande si nous voulons faire confiance au certiifcat auto-signé de l’ATP200 :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connection.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connection.png" />
+<p>A la suite de cela, on nous amène sur un nouvel onglet « Status » nous donnant les détails de la connexion, dont l’IP du client et du serveur, l’IP du DNS et les routes autorisées vers d’autres réseaux.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connected.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ssl-vpn-client-connected.png" />
+</section>
+</section>
 </section>
 <section id="site-to-site-vpn-intranet">
 <h3>Site-to-Site VPN (Intranet)<a class="headerlink" href="#site-to-site-vpn-intranet" title="Link to this heading">#</a></h3>
@@ -923,13 +1071,8 @@ Les entreprises autorisant cela ont donc besoin d’un système permettant la co
 <p class="admonition-title">Avertissement</p>
 <p>Pour cet exemple, nous utiliserons un <strong>VPN de type IPSec</strong>.</p>
 </div>
-<section id="exercice-pratique">
-<h4>Exercice pratique<a class="headerlink" href="#exercice-pratique" title="Link to this heading">#</a></h4>
-<div class="admonition warning">
-<p class="admonition-title">Avertissement</p>
-<p>Avant de commencer l’exercice, je vous invite à prendre connaissance de l’environnement lab mis en place. Vous trouverez les ressources ci-dessous :</p>
-</div>
-<p>Afin de donner un exemple concret de conception et paramètrage d’un VPN site à site en intranet, nous allons le faire dans un environnement de lab ci-dessous.</p>
+<section id="id1">
+<h4>Exercice pratique<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <section id="phase-1">
 <h5>Phase 1<a class="headerlink" href="#phase-1" title="Link to this heading">#</a></h5>
 <p>Pour configurer un VPN site-à-site sur l’ATP200 de Zyxell, il faut configurer dans l’ordre la phase 1 et la phase 2 d’une connexion VPN.</p>
@@ -942,7 +1085,7 @@ Les entreprises autorisant cela ont donc besoin d’un système permettant la co
 <p>Choisir la version 2 d’IKE (IKEv2) car IKEv1 est désormais obsolète.
 Définir l’interface sur laquelle le site distant doit se connecter (ici, ce sera wan1_ppp).</p>
 <p>Définir l’adresse IP de l’autre pare-feu / serveur VPN, avec lequel nous allons nous interconnecter.</p>
-<p>Entrer une clé pré-partagée forte (recommandation de 32 caractères aléatoires A-a-0-<a href="#id3"><span class="problematic" id="id4">*</span></a>).</p>
+<p>Entrer une clé pré-partagée forte (recommandation de 32 caractères aléatoires A-a-0-$).</p>
 <p>Choisir les types d’ID que vous vous partagerez communément des 2 côtés du tunnel.</p>
 <p>Définir la durée de la Security Association en secondes.</p>
 <p>Configurer les types de chiffrement pour l’authentification ainsi que le groupe de clés Diffie-Hellman.</p>
@@ -951,8 +1094,34 @@ Définir l’interface sur laquelle le site distant doit se connecter (ici, ce s
 <section id="phase-2">
 <h4>Phase 2<a class="headerlink" href="#phase-2" title="Link to this heading">#</a></h4>
 <p>Nous pouvons désormais passer à l’onglet VPN Connection, correspondant à la phase 2.</p>
+<p>Le menu principal se présente comme suit :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-menu.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-menu.png" />
+<p>Lorsque nous cliquons sur « ADD », voici le menu de configuration :</p>
 <img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-s2s.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-s2s.png" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-s2s-2.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-conf-phase2-s2s-2.png" />
+<p>Dans celui-ci, nous devons rentrer :</p>
+<ul class="simple">
+<li><p>Nom de la connexion</p></li>
+<li><p>Si notre connexion est celle « nailed-up » (si un problème de connectivité survient entre les 2 réseaux, ce sera cette connexion qui initiera de nouveau la connectivité)</p></li>
+<li><p>Le type de passerelle (Site-to-Site, Site-to-Site with dynamic peer, remote access, tunnel interface…)</p></li>
+<li><p>La police locale (ce que nous octroyons à l’autre site)</p></li>
+<li><p>La police distante (ce que l’autre site nous octroie)</p></li>
+<li><p>Le temps de vie de la SA (par défaut 28800sec)</p></li>
+<li><p>Le procotole actif (ici ESP)</p></li>
+<li><p>La méthode d’encapsulation (ici mode tunnel)</p></li>
+<li><p>La paire de clés DH (ici DH14)</p></li>
+<li><p>La zone de sécurité</p></li>
+<li><p>D’autres options avancées si nécessaires.</p></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Il est absolument primordial que les paramètres concordent avec le site distant.
+Sans cela, vous risquez de rencontrer des erreurs lors de l’initiation de la connexion !</p>
+</div>
+<p>Après avoir configuré et vérifié les paramètres, nous pouvons initier la connexion.</p>
+<p>Il est intéressant d’aller jeter un oeil aux logs afin de déterminer de vérifier les phases IKE et si des warn apparaissent.</p>
+<p>Ici RAS, tout fonctionne comme prévu !!</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-log-success-s2s.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/vpn-log-success-s2s.png" />
 </section>
 </section>
 <section id="site-to-site-vpn-extranet">
@@ -963,12 +1132,20 @@ La différence réside dans le fait qu’il sera établi pour permettre l’acc�
 </section>
 <section id="protocoles-vpn">
 <h3>Protocoles VPN<a class="headerlink" href="#protocoles-vpn" title="Link to this heading">#</a></h3>
+<p>Différentes technologies et protocoles proposent des VPNs :</p>
+<ul class="simple">
+<li><p>IPSec</p></li>
+<li><p>L2TP (basé sur IPSec)</p></li>
+<li><p>SSL</p></li>
+<li><p>OpenVPN</p></li>
+<li><p>Wireguard</p></li>
+</ul>
 <section id="ipsec">
 <h4>IPSec<a class="headerlink" href="#ipsec" title="Link to this heading">#</a></h4>
 <p>C’est l’un des protocoles les plus utilisés pour les VPN actuels, il permet l’intégrité et la confidentialité des données.
 Comme son nom l’indique, il fonctionne sur la couche réseau du modèle OSI (couche 3)</p>
 <p>Schéma de principe :</p>
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.webp" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.webp" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ipsec-tunnel.png" />
 <div class="admonition seealso">
 <p class="admonition-title">Voir aussi</p>
 <p><a class="reference external" href="https://www.frameip.com/ipsec/">IPSEC</a></p>
@@ -1005,7 +1182,7 @@ IKE (Internet Key Exchange) est la réponse.</p>
 <section id="ikev2">
 <h5>IKEv2<a class="headerlink" href="#ikev2" title="Link to this heading">#</a></h5>
 <p>IKEv2 est la version succédant à IKEv2 avec plus d’interopérabilité ainsi qu’une résistance plus forte aux attaques de type DOS.</p>
-<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.webp" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.webp" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ikev1-protocol-12.png" />
 <div class="admonition seealso">
 <p class="admonition-title">Voir aussi</p>
 <p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc5996">RFC-5996</a></p>
@@ -1014,7 +1191,8 @@ IKE (Internet Key Exchange) est la réponse.</p>
 </section>
 <section id="phases">
 <h4>Phases<a class="headerlink" href="#phases" title="Link to this heading">#</a></h4>
-<p>Phase 1</p>
+<section id="id3">
+<h5>Phase 1<a class="headerlink" href="#id3" title="Link to this heading">#</a></h5>
 <p>L’objectif principal de la phase 1 est la mise en place d’un canal chiffré sécurisé par l’intermédiaire duquel deux pairs peuvent négocier la phase 2. Lorsque la phase 1 se termine avec succès, les pairs passent rapidement aux négociations de phase 2. Si la phase 1 échoue, les périphériques ne peuvent entamer la phase 2.</p>
 <p>Deux modes existent pour cette première phase :</p>
 <ul class="simple">
@@ -1027,6 +1205,8 @@ IKE (Internet Key Exchange) est la réponse.</p>
 <li><p>Echange de clés Diffie-Hellmann</p></li>
 <li><p>Echange d’identité (crypté avec la clé Diffie-Hellmann)</p></li>
 </ul>
+<p>Voici son schéma :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ike-pr.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ike-pr.png" />
 <p>Le mode agressif comporte 3 étapes d’échange entre l’initiateur et le récepteur.
 Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.</strong></p>
 <ul class="simple">
@@ -1034,8 +1214,46 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
 <li><p>Recherche d’une proposition IKE correspondante. Envoi de la proposition IKE correspondante avec les informations relatives à la clé, les informations d’identification et les informations d’authentification locale</p></li>
 <li><p>Réponse avec les informations d’authentification locale pour implémenter l’authentification.</p></li>
 </ul>
-<p>Phase 2</p>
-<p>L’objectif des négociations de phase 2 est que les deux pairs s’accordent sur un ensemble de paramètres qui définissent le type de trafic pouvant passer par le VPN et sur la manière de chiffrer et d’authentifier le trafic. Cet accord s’appelle une association de sécurité.</p>
+<p>Voici son schéma :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ike-ag.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/ike-ag.png" />
+</section>
+<section id="id4">
+<h5>Phase 2<a class="headerlink" href="#id4" title="Link to this heading">#</a></h5>
+<p>La construction de la phase 2 s’établi selon le processus suivant :</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Négociation des paramètres SA IPSec par un SA IKE existant, comme, par exemple :</dt><dd><p>o AH ou ESP
+o Mode d’encapsulation (Tunnel ou Transport)</p>
+</dd>
+</dl>
+</li>
+<li><p>Renégociation des SA IPSec pour assurer la sécurité</p></li>
+<li><p>Etablissement des SA IPSec définitif</p></li>
+<li><p>Périodicité du renouvellement des SA</p></li>
+</ul>
+<p>Authentification et chiffrement (cryptage)</p>
+<p>Ce processus utilise soit le protocole ESP soit le protocole AH.</p>
+<ul class="simple">
+<li><p>ESP ou Encapsulation de la Charge Utile assure l’authentification et le chiffrement</p></li>
+<li><p>AH ou Entête d’Authentification assure uniquement l’authentification</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/esp-ah.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/esp-ah.png" />
+<p>Mode d’encapsulation :</p>
+<p>Il existe le mode tunnel ou le mode transport.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/tunnel-transport.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/tunnel-transport.png" />
+</section>
+<section id="finalisation">
+<h5>Finalisation<a class="headerlink" href="#finalisation" title="Link to this heading">#</a></h5>
+<p>La finalisation du tunnel IPSec intervient :</p>
+<ul class="simple">
+<li><p>Lorsque les SA IPSec prennent fin par suppression ou par temporisation</p></li>
+<li><p>Lors les SA IPSec sont terminées, les clés sont également supprimées</p></li>
+<li><p>Lorsque des SA IPSec ultérieurs sont requis pour un flux, IKE effectue un nouveau processus de négociation</p></li>
+<li><p>Une nouvelle négociation réussie aboutit à de nouvelles SA IPSec et à de nouvelles clés.</p></li>
+</ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/finalisation.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M233/vpn/finalisation.png" />
+<p>Et voilà, la connexion est désormais établie et nous connaissons les grandes lignes, voire un peu plus, du fonctionnement d’un VPN IPSec !</p>
+</section>
 </section>
 </section>
 </section>
@@ -1045,10 +1263,19 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
 <p><a class="reference external" href="https://www.juniper.net/documentation/fr/fr/software/junos/vpn-ipsec/topics/topic-map/security-ike-basics.html">https://www.juniper.net/documentation/fr/fr/software/junos/vpn-ipsec/topics/topic-map/security-ike-basics.html</a></p>
 <p><a class="reference external" href="https://www.frameip.com/ipsec/">https://www.frameip.com/ipsec/</a></p>
 <p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc5996">https://datatracker.ietf.org/doc/html/rfc5996</a></p>
+<p><a class="reference external" href="https://www.iso.org/fr/standard/27001">https://www.iso.org/fr/standard/27001</a></p>
+<p><a class="reference external" href="https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-ipsec/">https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-ipsec/</a></p>
+<p><a class="reference external" href="https://itbusinessconnect.fr/domaines/securite/ficheExpert/l-UTM-Unified-Threat-management">https://itbusinessconnect.fr/domaines/securite/ficheExpert/l-UTM-Unified-Threat-management</a></p>
+<p><a class="reference external" href="https://support.zyxel.eu/hc/fr/articles/4410547427218-Configuration-de-base-de-Zyxel-Firewall-Objets-zones-NAT-VPN-et-plus-encore-USG-FLEX-ATP">https://support.zyxel.eu/hc/fr/articles/4410547427218-Configuration-de-base-de-Zyxel-Firewall-Objets-zones-NAT-VPN-et-plus-encore-USG-FLEX-ATP</a></p>
+<p><a class="reference external" href="https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/gun4">https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/gun4</a></p>
+<p><a class="github reference external" href="https://github.com/algues111/docs-cfc/blob/main/docs/source/other/Module_233_FR.pdf">algues111/docs-cfc</a></p>
+<p><a class="reference external" href="https://www.lemagit.fr/conseil/MFA-quels-sont-les-principaux-produits-du-marche">https://www.lemagit.fr/conseil/MFA-quels-sont-les-principaux-produits-du-marche</a></p>
+<p><a class="reference external" href="https://kb.synology.com/fr-fr/DSM/help/RadiusServer/rad_desc?version=7">https://kb.synology.com/fr-fr/DSM/help/RadiusServer/rad_desc?version=7</a></p>
+<p>Et plus encore….</p>
 </section>
 <section id="remerciements">
 <h2>Remerciements<a class="headerlink" href="#remerciements" title="Link to this heading">#</a></h2>
-<p>Merci à N. Borowy d’avoir dispensé ce cours à la classe des 2IBM !</p>
+<p>Merci à N. Borowy d’avoir dispensé ce cours passionant à la classe des 2IBM !</p>
 </section>
 </section>
 
@@ -1071,6 +1298,15 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
         <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Module 144 : Réseaux sans-fil (en travaux)</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Documentation-M291.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Module 291 : PBX Virtualisé</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1109,11 +1345,17 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pare-feu-personnel">Pare-feu personnel</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-de-pare-feu-physique">Configuration de pare-feu physique</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parametres-systeme">Paramètres Système</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegardes">Sauvegardes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ppp-point-to-point-protocol">PPP (Point-to-Point Protocol)</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objets">Objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adresses">Adresses</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zones-de-securite">Zones de sécurité</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#services">Services</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ap-profiles">AP Profiles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aaa">AAA</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctionnalites-utm">Fonctionnalités UTM</a></li>
@@ -1131,9 +1373,15 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vpn">VPN</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qu-est-ce-qu-un-vpn">Qu’est-ce qu’un VPN  ?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-to-site-vpn">Client-to-Site VPN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-to-site-vpn-intranet">Site-to-Site VPN (Intranet)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-to-site-vpn">Client-to-Site VPN</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-pratique">Exercice pratique</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#vpn-client-to-site-ssl">VPN client-to-site SSL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#site-to-site-vpn-intranet">Site-to-Site VPN (Intranet)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercice pratique</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-1">Phase 1</a></li>
 </ul>
 </li>
@@ -1151,7 +1399,12 @@ Il y aura donc <strong>moins d’échanges</strong> et <strong>moins de paquets.
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ikev2">IKEv2</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phases">Phases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phases">Phases</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Phase 1</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Phase 2</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#finalisation">Finalisation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

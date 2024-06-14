@@ -159,6 +159,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Documentation-M362.html">Module 362 : Mettre en service les systèmes vocaux et vidéo complexes</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 144 : Réseaux sans-fil (en travaux)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Documentation-M233.html">Module 233 : Protéger et assurer la maintenance d’un réseau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation-M291.html">Module 291 : PBX Virtualisé</a></li>
 </ul>
 
     </div>
@@ -456,7 +457,14 @@ Exemple concret ci-dessous :</p>
 </section>
 <section id="le-roaming">
 <h3>Le roaming<a class="headerlink" href="#le-roaming" title="Link to this heading">#</a></h3>
-<p>Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN. Ces deux AP sont câblés avec le même switch. Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie. Le terminal se connecte désormais presque de manière ininterrompue à AP2. Ce procédé est appelé roaming. L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche. La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.</p>
+<p>Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN.
+Ces deux AP sont câblés avec le même switch.
+Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie.
+Le terminal se connecte désormais presque de manière ininterrompue à AP2.</p>
+<p>Ce procédé est appelé roaming.</p>
+<p>L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche.
+La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/roaming.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/roaming.png" />
 </section>
 <section id="trame-802-11">
 <h3>Trame 802.11<a class="headerlink" href="#trame-802-11" title="Link to this heading">#</a></h3>
@@ -469,17 +477,36 @@ Exemple concret ci-dessous :</p>
 - 802.3 : CSMA-CD
 - 802.11 : CSMA-CA</p></li>
 </ul>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/8023trame.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/8023trame.png" />
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/80211trame.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/80211trame.png" />
+<p>Explication des différentes trames (non exhaustive):</p>
+<ul class="simple">
+<li><p>Frame Control (FC): Contient à son tour quelques champs de données tels que la version du protocole, les types de trames (déterminer s’il s’agit d’une trame de gestion, une trame de contrôle ou une trame de données. 10 signifie trame de données, 00 = trame de contrôle), détermination des trajets de transmission, bit de protection (p.ex. High-Bit, si seules les données utiles sont cryptées, mais pas le header, comme dans le cas de WEP) etc.</p></li>
+<li><p>Duration/ID-Field: Montre le temps nécessaire pour la transmission de données.</p></li>
+<li><p>Adressfields 1 - 4: Adresses MAC pour émetteur, récepteur, BSS.</p></li>
+<li><p>Sequence Control (SC): Numéros séquentiels des données utiles qui indiquent comment les blocs sont répartis (Interleaving) ou disposés.</p></li>
+<li><p>Champ de données avec les données utiles effectives (« payload »).</p></li>
+<li><p>Somme de contrôle CRC: il s’agit du contrôle de redondance cyclique (Cyclic Redundancy Checksum).</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">Voir aussi</p>
+<p><a class="reference external" href="https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/7mym/lag3">https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/7mym/lag3</a></p>
+</div>
 </section>
 <section id="topologies-environnement">
 <h3>Topologies &amp; Environnement<a class="headerlink" href="#topologies-environnement" title="Link to this heading">#</a></h3>
 <p>Différentes topologies existent pour les réseaux sans-fil, ces dernières permettant une flexibilité dans l’adaptation des besoins des clients.</p>
 <p>IBSS :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ibss.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ibss.png" />
 <p>BSS :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/bss.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/bss.png" />
 <p>ESS :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ess.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ess.png" />
 <p>SOHO :</p>
+<img alt="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/soho.png" src="https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/soho.png" />
 <p>Il s’agit ici d’un routeur W-LAN usuel. C’est un appareil très performant, qui intègre certains niveaux de fonction et qui se trouve dans pratiquement tous les foyers et/ou petits bureau (small office). Ce routeur W-LAN intègre un switch, un modem Internet (DSL, câble, 4G, 5G), un serveur DHCP, un pare-feu et un point d’accès pour la connexion sans fil. L’un des représentants les plus populaires de cette catégorie est la « Fritzbox ». Le routeur W-LAN est un ESS en lui-même.</p>
 <p>Cependant, il est important de notifier que l’usage de répéteur afin d’augmenter la couverture de votre W-LAN est possible.</p>
-<p>Mais attention car l’usage d’un seul répéteur permet de garder un débit élevé car il dirige le signal vers un autre canal, mais tout autre répéteur ajouté divisera le débit par 2.</p>
+<p>Mais <strong>attention</strong> car l’usage <strong>d’un seul répéteur</strong> permet de garder un <strong>débit élevé</strong> car il dirige le signal vers un autre canal, <strong>mais tout autre répéteur ajouté divisera le débit par 2.</strong></p>
 <p>C’est donc une solution de dernier recours si rien d’autre est possible.</p>
 <p>Nous allons maintenant nous intéressons à l’environnement entourant notre AP et pouvant éventuellement causer des perturbations ou des atténuations sur nos signaux.</p>
 <p>Avant toute chose, il est important de comparer les fréquences utilisées pour la technologie 802.11.</p>

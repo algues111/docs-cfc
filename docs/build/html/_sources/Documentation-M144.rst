@@ -144,7 +144,17 @@ Voici les différents sujets abordés lors de la 3ème semaine de cours sur le m
 Le roaming
 ^^^^^^^^^^^^
 
-Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN. Ces deux AP sont câblés avec le même switch. Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie. Le terminal se connecte désormais presque de manière ininterrompue à AP2. Ce procédé est appelé roaming. L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche. La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.
+Il est possible d’exploiter deux points d’accès (AP1 et AP2) avec des zones de couverture différentes mais le même SSID et le même réseau W-LAN. 
+Ces deux AP sont câblés avec le même switch. 
+Si un terminal actuellement connecté au point d’accès AP1 via le SSID « Edu_WLAN1 » est déplacé en direction du point d’accès AP2, le signal du point d’accès AP1 s’affaiblit soudainement et celui du point d’accès AP2 s’intensifie. 
+Le terminal se connecte désormais presque de manière ininterrompue à AP2. 
+
+Ce procédé est appelé roaming. 
+
+L’utilisateur n’est au courant de rien. Idéalement, AP1 et AP2 (et éventuellement d’autres AP) ont une plage qui se chevauche. 
+La répartition roaming convient aux zones de couverture plus grandes, telles que dans des moyennes et grandes entreprises ou dans des écoles.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/roaming.png
 
 Trame 802.11
 ^^^^^^^^^^^^^^^^
@@ -158,6 +168,36 @@ Afin de pouvoir comprendre de quoi est composé une trame 802.11, il est intére
   - 802.3 : CSMA-CD
   - 802.11 : CSMA-CA   
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/8023trame.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/80211trame.png
+
+
+Explication des différentes trames (non exhaustive):
+
+• Frame Control (FC): Contient à son tour quelques champs de données tels que la version du protocole, les types de trames (déterminer s’il s’agit d’une trame de gestion, une trame de contrôle ou une trame de données. 10 signifie trame de données, 00 = trame de contrôle), détermination des trajets de transmission, bit de protection (p.ex. High-Bit, si seules les données utiles sont cryptées, mais pas le header, comme dans le cas de WEP) etc.
+	
+• Duration/ID-Field: Montre le temps nécessaire pour la transmission de données.
+	
+• Adressfields 1 - 4: Adresses MAC pour émetteur, récepteur, BSS.
+	
+• Sequence Control (SC): Numéros séquentiels des données utiles qui indiquent comment les blocs sont répartis (Interleaving) ou disposés.
+	
+• Champ de données avec les données utiles effectives (« payload »).
+	
+• Somme de contrôle CRC: il s’agit du contrôle de redondance cyclique (Cyclic Redundancy Checksum).
+
+
+.. seealso::
+      https://eitswiss-supports-didactiques.cockpitprofessionnel.ch/gebaeudeinformatik/7mym/lag3
+
+
+
+
+
+
+
+
 Topologies & Environnement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -165,17 +205,32 @@ Différentes topologies existent pour les réseaux sans-fil, ces dernières perm
 
 IBSS :
   
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ibss.png
+
+
+
 BSS :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/bss.png
+
+
 
 ESS :
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/ess.png
+
+
+
 SOHO :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M144/soho.png
+
 
 Il s’agit ici d’un routeur W-LAN usuel. C’est un appareil très performant, qui intègre certains niveaux de fonction et qui se trouve dans pratiquement tous les foyers et/ou petits bureau (small office). Ce routeur W-LAN intègre un switch, un modem Internet (DSL, câble, 4G, 5G), un serveur DHCP, un pare-feu et un point d’accès pour la connexion sans fil. L’un des représentants les plus populaires de cette catégorie est la « Fritzbox ». Le routeur W-LAN est un ESS en lui-même.
 
 Cependant, il est important de notifier que l’usage de répéteur afin d’augmenter la couverture de votre W-LAN est possible.
 
-Mais attention car l’usage d’un seul répéteur permet de garder un débit élevé car il dirige le signal vers un autre canal, mais tout autre répéteur ajouté divisera le débit par 2.
+Mais **attention** car l’usage **d’un seul répéteur** permet de garder un **débit élevé** car il dirige le signal vers un autre canal, **mais tout autre répéteur ajouté divisera le débit par 2.**
 
 C’est donc une solution de dernier recours si rien d’autre est possible.
 
