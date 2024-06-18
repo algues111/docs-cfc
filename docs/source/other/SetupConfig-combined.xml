@@ -10,7 +10,7 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
     </option>
     <option>
       <code>LicenseKey</code>
-      <answer>DC7V-IKWK-UBJO-FOXR</answer>
+      <answer>XXXX-XXXX-XXXX-XXXX</answer>
     </option>
     <option>
       <code>PublicIP</code>
@@ -138,7 +138,7 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
     </option>
     <option>
       <code>AdminPassword</code>
-      <answer>ZYVQciIO1o0kZW5w</answer>
+      <answer></answer>
     </option>
   </tcxinit>
   <extensions>
@@ -147,7 +147,7 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
       <FirstName>Arthur</FirstName>
       <LastName>LE GUENNEC</LastName>
       <EmailAddress>a.leguennec909@proton.me</EmailAddress>
-      <AuthPassword>S6T2N9ppteeV</AuthPassword>
+      <AuthPassword></AuthPassword>
       <AuthID>nSaAq8Dd2b</AuthID>
       <AllowLanOnly>true</AllowLanOnly>
       <RecordCalls>false</RecordCalls>
