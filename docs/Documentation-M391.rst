@@ -365,3 +365,153 @@ Non, pas avec le SBC
 Oui avec Enterprise SIP Cloud
 
 https://documents.swisscom.com/product/filestore/lib/047dea54-3e19-43b0-a36e-9eed5af4f3b8/enterprise_sip_cloud_factsheet-fr.pdf?idxme=pex-search
+
+
+
+
+Jour 2
+===================
+
+
+Mandat 1
+------------------
+
+Recherche quelles sont les différentes possibilités d’installation de ton système de 
+téléphonie (On Premise, Cloud, machine physique, machine virtuelle…). 
+
+Liste les avantages et les contraintes en fonction des différentes possibilités.
+
+.. note::
+    Pour ce mandat, nous utiliserons 3CX.
+
+Il est possible de faire beaucoup de choses avec ce produit.
+
+On premise
+^^^^^^^^^^^^^^^^
+
+Comme nous l'avons vu durant le jour 1, des sociétés telles que Call4Tell proposent des ordinateurs au format NUC avec 3CX préinstallé.
+
+
+Cette solution peut être avantageuse pour les clients n'ayant pas d'hyperviseur ou de serveurs mais souhaitant garder un appareil sur site.
+Cela demande cependant un cout unique de départ important (à partir de 300.-).
+
+Selon les marques, modèles, gammes, il est important d'établir précisément les besoins du client pour lui proposer la solution la plus adéquate.
+
+Cloud / Cloud d'entreprise
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+De nouveau, nous avons exploré cette possibilité lors du jour 1 et de l'installation de 3CX sur le Public Cloud d'OVH.
+
+Cette solution est envisageable pour les entreprises ayant déjà des services hébergés dans le cloud (Azure VMs, Infomaniak, Amazon etc..) ou pour les clients n'ayant ni le souhait ni la place d'avoir d'équipements informatiques sur site.
+Selon les hébergeurs, il est possible de choisir une facturation mensuelle ou par heure, ce choix dépendant exclusivement des besoins du client.
+
+L'entreprise mandatée pourrait aussi très bien proposer d'héberger ces solutions dans son propre cloud et proposer des forfaits avantageux ainsi qu'une gestion centralisée des services proposés au client.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/cloud1.png
+
+
+
+Virtualisation
+^^^^^^^^^^^^^^^^
+
+Puisque 3CX propose une image linux personnalisée, il est tout à fait envisageable de la virtualiser dans un hyperviseur. Cela est même officiellement supporté dans la documentation de 3CX.
+
+Pour les clients disposant d'ores et déjà d'un serveur ayant les fonctionnalités et ressources nécessaires pour une VM de plus.
+Cette solution n'est pas recommandé si le client ne possède pas cette infrastructure, car le coût de départ unique serait bien trop élevé !
+
+
+
+
+
+Conclusion
+^^^^^^^^^^^^^^
+
+Toutes ces solutions permettent aux techniciens d'avoir une approche granulaire de ce dont le client nécessite.
+
+Le plus important reste donc d'être à l'écoute de ce dernier et de lui proposer certains services en fonction.
+
+
+Mandat 2 
+------------
+
+Établir une checklist reprenant les différents thèmes du point précédent afin de pouvoir 
+fixer précisément les besoins du client final (choix des terminaux, gestion de la sécurité, …). 
+
+Etablir également un schéma de l’installation et un inventaire du matériel installé (SN, MAC address, version 
+de firmware, …). Utiliser un système de gestion de mots de passes spécifiques afin de les répertorier
+
+
+De nos jours, la sécurité est un aspect fondamental de toute infrastructure informatique, évoluant tous les jours.
+
+Toutefois, certains principes fondamentaux régissent les règles de la séurité informatique.
+
+
+Menaces pour la VoIP
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Étant un composant non négligeable d'une infrastructure d'entreprise, la VoIp est aussi soumise à des menaces, failles de sécurité et autres...
+
+Voici les 10 menaces principales auxquelles elle doit faire face :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/voip-threats.png
+
+
+
+
+CIA Triad et autres principes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La triad CIA a déjà été évoqué dans des modules précédents.
+
+Elle est composé de 3 principes :
+
+#. La confidentialité : L'information n'est disponible seulement pour les personnes autorisées.
+#. L'intégrité : L'information n'a pas été modifiée / altérée sans autorisation.
+#. La disponibilité : L'information est stockée, accessible et disponible en tout temps.
+
+
+
+A ce triangle se rajoute 4 autres concepts importants :
+
+.. tabs::
+
+    .. tab::
+
+      - L'authentification :  garantir l’identité de l’usager qui envoie le message dans le cadre de la ToIP, cette propriété permet par exemple à un serveur de vérifier qu’il fournit le service à l’usager légitime
+
+
+    .. tab::
+
+      - La non répudiation de l’appel : la non répudiation des données nécessite l’archivage des 
+      données échangées
+      o dans le cadre de la ToIP, cette propriété permet d’associer une communication à une 
+      personne de manière certaine
+
+
+    .. tab::
+
+      - Le non rejeu : éviter de mémoriser puis de réinjecter les données dans le réseau
+      o dans le cadre de la ToIP, cette propriété permet de ne pas pouvoir rejouer des 
+      échanges protocolaires par une personne tierce souhaitant accéder au service
+
+    .. tab::
+
+      - L’anonymat : capacité du système à masquer l’identité de l’usager
+      o dans le cadre de la ToIP, cette propriété peut se traduire par le masquage de 
+      l’identité de l’appelant
+
+
+
+Bonnes pratiques
+^^^^^^^^^^^^^^^^^^^^
+
+Activation de protocoles sécurisés : 
+
+- SIPS (SIP Secure)
+
+- SRTP (Secure RTP)
+
+Schéma de principe communication VoIP sécurisée :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sips-srtp.png
