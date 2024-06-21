@@ -174,9 +174,9 @@ Ce graphique comporte les informations suivantes :
 
 .. tabs::
 
-    .. tab::
+    .. tab:: Invitation SDP
 
-      - Invitation SDP : négocie la teneur des données transférées (audio, vidéo, texte, message, application, etc.), ainsi que le format et le protocole de transport utilisés, et le port RTP.
+        Négocie la teneur des données transférées (audio, vidéo, texte, message, application, etc.), ainsi que le format et le protocole de transport utilisés, et le port RTP.
 
       .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sdp-g711.png
 
@@ -184,16 +184,14 @@ Ce graphique comporte les informations suivantes :
           Le Type-101 spécifié dans les codecs audio correspond aux touches DTMF.
 
 
-    .. tab::
+    .. tab::  Flux RTP 
 
 
-      - Flux RTP : envoie de paquets audio à travers ce protocole, ports aléatoires décidés dans 
+        Envoie de paquets audio à travers ce protocole, ports aléatoires décidés dans 
 
-    .. tab::
+    .. tab:: Contrôle du flux RTP via RTCP
 
-      - Contrôle du flux RTP via RTCP
-        
-      .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rtcp-g711.png
+        .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rtcp-g711.png
 
 
 Documente l’ensemble de tes tests.
@@ -315,7 +313,7 @@ Attention, il faut prendre les scripts bash d'OVH, mais prendre la config XML de
 
 Script bash+xml installation 3cx cloud OVH :abbr:
 
-:download: `source/other/SetupConfig-combined`
+:download:`source/other/SetupConfig-combined`
 
 
 
@@ -324,6 +322,10 @@ Call4Tell
 
 Call4Tell est une entreprise fabricant des ordinateurs au format NUC, dans lesquels 3CX est préinstallé.
 Ils proposent plusieurs gammes de produits en fonction de vos besoins.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/call4tell-products.png
+
 
 NX32
 ^^^^^^^^^^^^^^^^^
@@ -646,6 +648,7 @@ Tarifs Swisscom
 
 
 .. admonition:: Information
+
     Pour essayer de faire un comparatif concret des 2 systèmes, nous allons imaginer un bureau d'études avec 10 utilisateurs finaux.
     Au total, le bureau passe 10 heures au téléphone par moi.
 
@@ -764,7 +767,7 @@ Selon les licences et les providers, un RPS permet notamment :
 
 
 L'utilisation d'un RPS est donc un avantage à la fois pour le technicien et pour le client, car il limite les déplacements et donc les frais qui les entourent !
-C'est un gain de temps considérable.
+C'est un gain de temps considérable.0
 
 Voici une liste non-exhaustives de fournisseurs proposant un serveur RPS.
 
@@ -799,7 +802,235 @@ Choisir SBC ou System en focntion
 
 ATTENTION, CHOISIR TIMEZONE PARIS CAR SUISSE PROBLEMES
 
-Adlocal1$$
+Jour 3
+===============
 
+
+Il est possible d'accéder à la console du linux 3cx via une web console :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx.png
+
+
+Adlocal1$$
+root Pa$$w0rd
 
 commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
+
+accès shell linux 3cx :
+
+apt-get update (mettre a jour la liste des paquets)
+apt-get upgrade (mettre a jour les paquets comportant des upgrades)
+apt-get install <package> (ici ntp et net-tools (déjà installé))
+
+bonne pratique :
+
+sudo adduser arthur
+
+sudo usermod arthur -aG  sudo 
+sudo usermod arthur -aG phonesystem
+
+vérifier l'apartenance aux groupes : groups arthur 
+
+
+sous debian 10 : cd /etc/network/ && sudo nano interfaces
+
+enp2so static
+address 172.16.201.32
+netmask 255.255.255.0 
+gateway 172.16.201.1
+dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
+
+
+sshd_config :
+
+ne pas autoriser l'accès en ssh pour l'user root
+limiter les attemtps failures
+
+
+
+puisque problemes avec le dns, changer le record A / PTR pour pointer vers l'ip local (soit sur le routeur soit sur le serveur dns (ici windows serveur servoce dns))
+
+Après avoir fait cela, nous pouvons sur Windows effacer le cache DNS et ainsi récupérer les nouveaux enregistrements A du serveur DNS local !
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/options-3cx.png
+    
+     : changer le nom des status (traduire en francais)
+
+.. note:: 
+    Sous la V20, les utilisateurs peuvent changer eux-mêmes ces status
+
+
+
+Forcer le 3CX Phone System EN ou HORS heures bureau : plus disponible sur la V20, car plus d'horaires systèmes mais par départements
+
+
+Faire attention aux adresses mails pour le reporting (par défaut, l'addresse de la première extension créée est enregistrée)
+Le mieux est de désactiver la notification de création d'une nouvelle extension.
+
+Activer seulement ce qui est adéquat.
+
+
+Permettre de changer les modèles d'envoi de mails mais attention aux appels de variables systèmes
+
+
+
+Paramètres généraux 
+------------------------
+
+Opérateur 6000 (en général la secrétaire mais par défaut le propriétaire système)
+suppression utiliasteur refusée si défini en tant qu'opérateur
+
+Rajouter les numéros d'urgence : c'est une whitelist.
+
+
+Sécurité 
+---------------
+
+Comme tout appareil en réseau, le 3CX (hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
+
+
+Antipiratage 
+^^^^^^^^^^^^^^
+
+Permet de définir des règles sur le comportement du 3CX en cas d'attaques.
+
+Best practices :
+
+Temps blacklist x100 (8640000) et failed attempts maximum 5 to 3
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/anti-piratage.png
+
+
+
+
+Codes pays autorisés
+^^^^^^^^^^^^^^^^^^^^^^
+
+Afin de limiter les spams, les appels surtaxés etc... Nous pouvons définir une liste précise des pays ou régions autorisées.
+
+Dans notre cas, il est utile de ne seulement autoriser les appels provenants de Suisse
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/codes-pays-autorises.png
+
+.. tip::
+    International Freephone number pour les n° de support 0 0800 internationaux.
+
+
+
+Restrictions de la console 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Comme une console est dispomible à travers la web interface, il est nécessaire d'y restreindre l'accès au maximum pour prévenir les ataques et les intrusions malveillantes.
+
+Best practices :
+
+Autoriser seulement ladresse ip publique du bureau (pour le management offsite)
+
+Mails
+-----------
+
+Options
+----------
+
+
+Sauvegardes 
+----------------
+
+Afin de garantir un RTO optimal, il est nécessaire de sauvegarder notre système de manière fiable et sécurisée.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/backup-folder.png
+
+
+Planifier les sauvegardes avec une rétention d'environ 7 jours
+Choisir ce que nous voulons sauvegarder
+
+.. warning:: 
+    Eviter de backup les enregistrements chez soi car prend de la place. Plutot a faire chez le client.   
+
+
+Mandat 1
+-------------
+
+En présence d’une appliance physique, rechercher les limitations et les possibilités 
+d’extensions du système de téléphonie.
+
+
+Cartes FXO : cartes de ligne analogique (branché sur le port ATA du routeur par exemple)
+Cartes PRI : primaires : 30 canaux ISDN (possibilité de mettre des modules médias EIP)
+Cartes BRI-T : raccordement de base ISDN
+
+Cartes FXS : cartes terminales analogique (a partir de 16, rappatrié sur un panel en plus)
+Cartes DSI : numérique propriétaire Mitel par exemple
+Cartes BR-S 
+Cartes BRI-S
+
+Cartes DSP
+Cartes EIP : Si besoin de plus de ressources
+Cartes TAX : taxation, peu répamndu
+
+Cartes d'extensions pour ventilations, PSU 48V, alimentation redondante.
+
+
+Gestion FAX, seulement sur CPU 2
+
+
+Aujourd'hui, de moins en moins de PBX physiques tels que Mitel, Siemens ou autres sont installés chez le client.
+Ces systèmes restent cependant maintenus bien que nous passons à des solutions virtualisées plus légères, rapides et simples à mettre en place.
+
+
+Chez 3CX, il est toujours possible d'intégrer des postes analogiques, il faudra seulement acheter un ATA à part (ici `Grandstream HT802 <https://www.grandstream.com/products/gateways-and-atas/analog-telephone-adaptors/product/ht802>`_)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/HT802.jpeg
+
+
+
+
+Il existe aussi des appliances intégrant directement des ports FXS, permettant donc une simplicité de déploiement pour les terminaux analogiques. (`NX64 AiO <https://www.call4tel.com/voip-gateways/aio-nx64/>`_)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/AiO.png
+
+
+
+Mandat 2
+-------------
+
+Rechercher si cette fonctionnalité est disponible sur votre système de téléphonie et si 
+elle nécessite une licence particulière. Procéder à l’installation et la configuration de cette 
+fonctionnalité.
+
+
+
+Flexibilité des postes de travail (terminaux en mode enregistrement)
+
+
+Chez 3CX : Hotdesking
+
+Les terminaux sont gérés sur cette interface car non attriubé à une extension spécifique
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hotdesking.png
+
+
+Il faut cependant attribuer les droits de hotdesking aux utilisateurs
+
+
+Dans utilisateurs -> <user> -> options -> onglet "options"
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hotdesking-user.png
+
+
+"*77" pour activer le hotdesking puis le secure pin de l'utilisateur (pin de la messagerie vocale)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/secure-pin-user.png
+
+
+.. admonition:: Cas concret
+
+    En voulant paramétrer un Yealink T46G, nous nou ssommes rendus compte qu'il était déjà enregistré auprès du RSP de Swisscom.
+    Nous avons donc du le supprimer du RPS en question.
+
+    Pour cela nous sommes passés par l'interface Yealink et non Swisscom, pour plus de simplicité et de réactivité.
+    Il faut cependant un compte partenaire Yealink, la MAC address ainsi que le S/N, et un RPS déjà configuré chez Yealink.
+
