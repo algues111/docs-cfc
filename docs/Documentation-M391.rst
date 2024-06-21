@@ -780,7 +780,7 @@ Voici une liste non-exhaustives de fournisseurs proposant un serveur RPS.
 
 Schéma RPS :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rps-schema.jpeg
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rps-schema-yealink.png
 
 
 
@@ -1202,4 +1202,25 @@ Il faut remplacer
 
 Mandat 6
 ----------------
+
+Mandat 7
+-----------
+
+
+Sauvegarde et restauration d'une configuration 3CX
+
+
+Backup SFTP sur Nas Synology DS220+.
+
+Utilisateur spécifique : 3cx
+
+Autorisation seulement sur le dossier partagé en question
+Autorisation seulement pour le protocole SFTP
+Mot de passe fort
+Pas de chiffrement de la config, infra non critique
+
+
+sftp://<ip>/<folder> sur 3cx avec user-mdp
+port par défaut : 22
+backup manuel, successful
 
