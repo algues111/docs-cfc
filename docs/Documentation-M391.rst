@@ -780,7 +780,7 @@ Voici une liste non-exhaustives de fournisseurs proposant un serveur RPS.
 
 Schéma RPS :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/schema-rps.jpeg
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rps-schema.jpeg
 
 
 
@@ -811,8 +811,7 @@ Il est possible d'accéder à la console du linux 3cx via une web console :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx.png
 
 
-Adlocal1$$
-root Pa$$w0rd
+
 
 commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
