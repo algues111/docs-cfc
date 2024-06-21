@@ -982,7 +982,20 @@ Ces systèmes restent cependant maintenus bien que nous passons à des solutions
 
 Chez 3CX, il est toujours possible d'intégrer des postes analogiques, il faudra seulement acheter un ATA à part (ici `Grandstream HT802 <https://www.grandstream.com/products/gateways-and-atas/analog-telephone-adaptors/product/ht802>`_)
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/HT802.jpeg
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/HT802.jpg
+
+
+- Enregistrer MAC address dans la section FXS/DECT de 3CX
+- Attribuer une extension à 1 des ports FXS
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/ht802-extension.png
+
+
+- Enregistrer le fichier de config XML et l'injecter dans l'HT802 via la web interface.
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/ht802-web-provision.png
+
+
 
 
 
@@ -1020,7 +1033,7 @@ Dans utilisateurs -> <user> -> options -> onglet "options"
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hotdesking-user.png
 
 
-"*77" pour activer le hotdesking puis le secure pin de l'utilisateur (pin de la messagerie vocale)
+"*77*200* puis -> XXXX#" pour activer le hotdesking de l'utilisateur (pin de la messagerie vocale)
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/secure-pin-user.png
 
@@ -1032,4 +1045,161 @@ Dans utilisateurs -> <user> -> options -> onglet "options"
 
     Pour cela nous sommes passés par l'interface Yealink et non Swisscom, pour plus de simplicité et de réactivité.
     Il faut cependant un compte partenaire Yealink, la MAC address ainsi que le S/N, et un RPS déjà configuré chez Yealink.
+
+    Après cette étape, nous avons voulu metre à jour le firmware, ce qui ne s'est pas passé comme prévu.
+    Étant donné que le firmware était très ancien, il a fallu passer par plusieurs mises à jours intermédiaires pour y arriver.
+
+    Suite à une mise à jour vers une version un peu plus récente, nous pouvons faire la dernière firmware update depuis le 3CX
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/update-firmware-3cx.png
+ 
+
+
+
+
+Mandat 3
+------------
+
+Afin de reprendre les bases de comment fonctionne un sytème DECT, je vous invite à vous rediriger vers la `section DECT de la documentation M362<https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#dect-digital-enhanced-cordless-telecommunications>`_
+
+
+
+3 types de DECT :
+
+- Système sans fil propriétaire ou non-propriétaire avec connexion de type analogique ou 
+numérique : connexion au moyen de câbles téléphoniques avec 2, 4 ou 6 brins. Cette 
+possibilité permet de gérer 4, 8 voire 12 communications simultanées par base DECT (grâce au codec G726). Cette 
+solution nécessite parfois des licences et du matériel complémentaires (carte d’extensions 
+numériques, carte processeurs DSP, …). Une planification et une installation rigoureuse doit 
+être faite. Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de 
+définir précisément l’emplacement des bases DECT. Des recommandations en ce sens sont 
+généralement fournies par le constructeur. Standalone ou ....
+
+- Système sans fil SIP : connexion au moyen de l’infrastructure informatique du client final. 
+Cette variante nécessite généralement des switches avec alimentation PoE. Il faut donc 
+vérifier que le budget PoE à disposition par switch est suffisant. De plus, certaines solutions 
+doivent se synchroniser au moyen du réseau Ethernet, ce qui **nécessite l’utilisation du 
+protocole PTP (Precision Time Protocol)** mais qui nécessitent des **switchs compatibles et très coûteux**. 
+Certains systèmes requièrent l’installation d’un contrôleur (ou manager DECT) qui sera en 
+lien avec le système de téléphonie d’un côté et, de l’autre, en lien avec toutes les bases 
+DECT. Une planification et une installation rigoureuse doit être faite. 
+Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de définir précisément 
+l’emplacement des bases DECT (pour un site survey).
+Des recommandations en ce sens sont généralement fournies par le constructeur
+
+SIP DECT - Il faut que les antennes se voient pour le roaming et échanges d'informations
+
+2 brins : 2 communications en G711 (64kbit/s)
+          4 communications en G726 (32Kbit/s) 
+
+
+  Les bases DECT sont réparties en deux familles : 
+
+- Monocell (monocellulaire) : Il s’agit d’un système avec une base unique pouvant gérer entre 
+6 à 10 terminaux sans fil. Elle peut être de type propriétaire, non-propriétaire ou SIP. Il est 
+également possible d’augmenter la couverture du signal DECT en utilisant des répéteurs 
+(Repeater). Ces derniers occupent alors chacun une place d’un terminal DECT. Plus nous 
+ajoutons de répéteur, moins il est possible de configurer de terminaux DECT.
+Ex : Base Yealink W70B, Repeater Yealink RT30
+
+- Multicell (multicellulaire) : Il s’agit d’un système avec un contrôleur DECT et plusieurs bases 
+DECT permettant de couvrir une zone beaucoup plus grande. L’utilisateur peut, au moyen de 
+la fonctionnalité Handover, se déplacer de base en base sans interruption du signal DECT et 
+donc, de la communication. Ce système est beaucoup plus complexe à mettre en service et 
+doit respecter toutes les indications fournies par le constructeur. La limite du nombre de 
+terminaux se situe entre 200 et 250. En fonction de l’installation, plusieurs contrôleurs de 
+site peuvent être utilisés en lien avec un ‘’super contrôleur’’. Chaque système ayant ses 
+particularités, il est nécessaire de lire attentivement les recommandations avant de procéder    
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/w90-system.png
+
+
+
+Selon le lien de `compatibilité 3CX <https://www.3cx.fr/sip-phones/>`_, les systèmes DECT compatibles sont les suivants :
+
+- Yealink
+- Snom
+- Gigaset (avec limitations)
+
+
+
+Pour configurer une antenne DECT, cela se passe de la même manière que pour enregistrer un ATA, c'est à dire dans la section "Avancés" -> "FXS/DECT"
+
+Il faut par la suite choisir le modèle et enregistrer l'adresse MAC.
+Dans l'onglet "Extensions" il faut choisir l'utilisateur que l'on veut attribuer au DECT.
+
+
+Analysons désormais le flux SIP et RTP entre les deux terminaux.
+
+Sur la première capture prise depuis le PBX, nous pouvons voir que seul le flux SIP apparaît.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pcap-pbx-dect-to-t46.png
+
+
+
+
+Cela veut donc dire que le flux RTP passe lui en direct du DECT vers le T46G.
+
+
+Nous le voyons très bien ci-desous avec la capture du T46 lui-même :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pcap-t46-dect-to-t46.png
+
+
+Si cependant nous souhaitons que le flux RTP passe par le PBX, il faut activer ce paramètre dans : "Utilisateurs" -> <user> -> Options -> Dépannage -> "Le PBX délivre l'audio"
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pbx-audio.png
+
+
+
+Template personalisé :
+
+.. warning::
+    Ne jamais modifier un template par défaut !
+    Il faut le dupliquer et en créer un nouveau à partir du duplicata.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/custom-template-hotdesking.png
+
+
+Si nous voulons changer l'ordre des codecs chargés par défaut, cela est possible.
+Souvent, il suffit de glisser nos options préférées en premières afin que le système les charge par défaut.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/custom-template-codecs.png
+
+
+Tip Yealink :
+
+Pour afficher l'écran d'un poste yealink sur votre pc, il est possible de le faire via le web avec cette url :
+https://<ip>/screencapture
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-screencapture.png
+
+
+
+Mandat 4
+----------
+
+Les intégrations de systèmes de contacts peuvent être intéressantes pour faciliter la recherche de numéros aux collaborateurs.
+Cela permet aussi de centraliser la gestion du carnet d'adresses.
+
+Chez 3CX, plusieurs intégrations sont possibles :
+
+liste...
+
+
+Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recherches par mois.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/integration-crm.png
+
+Ici, nous utiliserons une template pré-faite disponible avec ce lien de téléchargement :download:`source/other/TelsearchCRM-template.xml`
+
+Il faut remplacer 
+
+
+Mandat 6
+----------------
 

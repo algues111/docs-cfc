@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Crm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Country="CH" Name="TelsearchEvoLinkCRM" Version="1">
+  <Number Prefix="AsIs" MaxLength="[MaxLength]" />
+  <Connection MaxConcurrentRequests="4" />
+  <Parameters />
+  <Authentication Type="No" />
+  <Scenarios>
+    <Scenario Id="" Type="REST">
+      <Request Url="https://tel.search.ch/api/?was=[Number]&amp;key=TELSEARCHAPIKEY" MessagePasses="0" RequestEncoding="UrlEncoded" RequestType="Get" ResponseType="Xml" />
+      <Rules>
+        <Rule Type="Any">entry.id</Rule>
+      </Rules>
+      <Variables>
+        <Variable Name="ContactID" Path="entry.id">
+          <Filter />
+        </Variable>
+        <Variable Name="FirstName" Path="entry.firstname">
+          <Filter />
+        </Variable>
+        <Variable Name="LastName" Path="entry.name">
+          <Filter />
+        </Variable>
+        <Variable Name="CompanyName" Path="entry.title">
+          <Filter />
+        </Variable>
+        <Variable Name="Email" Path="entry.extra">
+          <Filter>
+            <Rule Type="Equals" Ethalon="email">entry.extra.type</Rule>
+          </Filter>
+        </Variable>
+      </Variables>
+      <Outputs Next="" AllowEmpty="false">
+        <Output Type="ContactID" Passes="0" Value="[ContactID]" />
+        <Output Type="FirstName" Passes="0" Value="[FirstName]" />
+        <Output Type="LastName" Passes="0" Value="[LastName]" />
+        <Output Type="CompanyName" Passes="0" Value="[CompanyName]" />
+        <Output Type="Email" Passes="0" Value="[Email]" />
+        <Output Type="PhoneBusiness" Passes="0" Value="[Number]" />
+        <Output Type="ContactUrl" Passes="0" Value="https://www.local.ch/[Number]" />
+		<!-- Si le client prefere afficher telsearch a la place de local, remplacer la ligne "ContactUrl" avec l info ci-dessous -->
+		<!-- <Output Type="ContactUrl" Passes="0" Value="https://tel.search.ch/[Number]" /> -->
+      </Outputs>
+    </Scenario>
+  </Scenarios>
+</Crm>
