@@ -53,16 +53,14 @@ Noyé sous la multitude de services disponibles, il est donc très important en 
 Mandat 2 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet. 
+*Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet. *
 
-Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton
-système de téléphonie. 
+*Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton système de téléphonie ? *
 
-Analyse les besoins en fonction du projet (Débit de données, coûts mensuels,
-IP fixe, support, SLA, etc.). 
+*Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.). *
 
-Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle
-installation ou s’il s’agit d’une installation existante ?
+*Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
+
 
 
 Pour ce mandat, nous explorerons les différentes solutions que nous propose `VTX Telecom <https://www.vtx.ch/>`_.
@@ -104,7 +102,8 @@ Tarifs à la minute ci-dessous :
 Mandat 3 
 ^^^^^^^^^^^^
 
-Reprends l’opérateur choisi précédemment et liste les différentes possibilités d’abonnements pour les services :abbr:`VoIP (Voice over Internet Protocol)`
+*Reprends l’opérateur choisi précédemment et liste les différentes possibilités d’abonnements pour les services* :abbr:`VoIP (Voice over Internet Protocol)`
+
 
 Comme présenté dans le mandat n°2, voici les 3 solutions de téléphonies phares de VTX :
 
@@ -124,7 +123,6 @@ Trunk
 
     Pour tout trunk, les `tarifs à la minute s'appliquent <https://www.vtx.ch/zone1/>`_.
 
-    Si toutefois vous pensez que les collaborateurs appelleront.....
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/illimite-vtx.png
 
@@ -152,19 +150,22 @@ Trunk
 Mandat 4 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark. 
+*Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark. *
 
 .. note::
 
     Pour cette partie du mandat, je vous invite à vous dirigier vers la section `des codecs audio de la Documentation-M362 <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#codecs-audio>`_.
 
-Quelles constatations peux-tu faire en changeant de codec par exemple ? 
 
-Comme expliqué dans le M362, selon le codec utilisé, la taille du payload sera différente dans le paquet RTP.
+*Quelles constatations peux-tu faire en changeant de codec par exemple ?*
+
+Comme expliqué dans le M362, selon le codec utilisé, la taille du payload et donc du paquet sera différente dans le paquet RTP.
+La fréquence d'échantillonnage sera aussi différente, et les informations SDP de même.
 
 
 
-Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.). 
+*Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.). *
+
 
 En écoutant la communication SIP via Wireshark, il est possible de générer un graphique montrant les différentes étapes de la communication, de son établissement jusqu'à sa terminaison :
 
@@ -212,11 +213,11 @@ Mandat 5
 ^^^^^^^^^^^^
 
 
-Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP. 
+*Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP. *
 
-Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ? 
+*Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ? *
 
-A quoi sert cette appliance ?
+*A quoi sert cette appliance ?*
 
 .. note::
     Voir la section `SBC de la Documentation-M362 <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#sbc-session-board-controller>`_.
@@ -228,17 +229,122 @@ Mandat 6
 
 Fais un tableau en listant les principales caractéristiques de ces différentes plateformes Cloud. 
 
-Laquelle te semble la plus adaptée pour l’installation de ton système de téléphonie ? 
+*Laquelle te semble la plus adaptée pour l’installation de ton système de téléphonie ?*
 
-Quelles sont les avantages et inconvénients d’une installation sur une plateforme Cloud par rapport à une installation On Premise (Sécurité, équipements, itinérance, interfaces, etc.) ?
+*Quelles sont les avantages et inconvénients d’une installation sur une plateforme Cloud par rapport à une installation On Premise (Sécurité, équipements, itinérance, interfaces, etc.) ?*
+
+Sécurité
+~~~~~~~~~~~~~~
+
+
+Cloud :
+*************
+
+Sécurité physique gérée par le fournisseur cloud, avec des équipes dédiées. 
+Maintenance et mises à jour des serveurs par le fournisseur.
+
+Risque potentiel d'accès non autorisé aux données par des tiers (selon le niveau de sécurité du fournisseur).
+
+On Premise :
+****************
+
+Contrôle total sur la sécurité et les données.
+
+Nécessite cependant une expertise / maintenance interne rigoureuse et régulière, et des investissements pour maintenir un niveau de sécurité optimal dans le temps.
+
+
+
+Équipements
+~~~~~~~~~~~~~~
+
+Cloud :
+**************
+
+Aucun investissement de départ, l'infrastructure est gérée par le fournisseur.
+Évolutivité facile des ressources selon les besoins, approche granulaire.
+
+On Premise :
+****************
+
+Nécessite des investissements de départ importants en matériel et maintenance. Des coûts sont aussi à prévoir tous les ≈ 5 ans pour mettre à niveau le matériel ou le changer complètement selon les besoins.
+
+Évolutivité plus complexe et coûteuse.
+
+
+Itinérance / Mobilité
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cloud :
+**********
+
+Accès aux données et applications de n'importe où avec une connexion internet, aucune nécessité de VPN pour un drive par exemple.
+Facilite le travail à distance et la collaboration.
+
+On Premise :
+**************
+
+Accès généralement limité au réseau local de l'entreprise.
+Nécessite des configurations supplémentaires pour l'accès à distance (ex. VPN).
+
+
+Interfaces / Intégrations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cloud :
+**********
+
+Selon le fournisseur, les intégrations sont facilitées avec d'autres services cloud, augmentant donc l'interopérabilité.
+Mises à jour automatiques des interfaces et fonctionnalités (dépendant du service et du fournisseur)
+
+On Premise :
+************
+
+Intégrations potentiellement plus complexes avec des systèmes externes
+Contrôle total sur les interfaces et personnalisations
+
+Coûts
+~~~~~~~
+
+Cloud :
+***********
+
+Modèle de coûts prévisible basé sur l'abonnement
+Pas d'investissement initial important en infrastructure
+
+On Premise :
+**************
+
+Coûts initiaux élevés pour l'achat de licences et d'équipements.
+Coûts de maintenance et de mise à jour à long terme.
+
+
+Conclusion
+~~~~~~~~~~~~~~
+
+De nos jours, la majorité des entreprises disposent de services hébergés dans le cloud, ou du moins, sur un site distant.
+Selon les critères du client et certains cas, les services cloud peuvent s'avérer parfait pour limiter les coûts grâce à une approche qui se veut granulaire.
+
+Toutefois, il ne faut pas oublier en tant que technicien les inconvénients de ces systèmes :
+
+- Déploiement plus ou moins technique
+- Migration de services complexe voire impossible entre fournisseurs
+- Risques de pannes sans possibilité d'intervention
+- Risques de sécurité et de confidentialité (attention aux lois, réglementations locales, et criticité des données).
+- Dépendance au fournisseur
+
+Il faut garder à l'esprit que chaque service doit être configuré minutieusement et hébergé chez un fournisseur de confiance.
+Tous les aspects listés plus haut doivent être pris en compte pour le choix de solutions optimales pour les clients.
+
+
+
 
 
 Mandat 7
 ^^^^^^^^^^^^^^
 
-Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle. 
+*Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle. *
 
-Il est aussi possible de procéder à l’installation d’un hyperviseur. Suis les procédures fournies par le fournisseur. Etablis un rapport de cette première installation.
+*Il est aussi possible de procéder à l’installation d’un hyperviseur. Suis les procédures fournies par le fournisseur. Etablis un rapport de cette première installation.*
 
 
 Pour compléter ce mandat, nous louerons un serveur VPS chez `OVH <https://www.ovhcloud.com/fr/vps/>`_, qui propose plusieurs tarifs intéressants pour des petits labs comme celui-ci.
@@ -378,15 +484,23 @@ Jour 2
 Mandat 1
 ------------------
 
-Recherche quelles sont les différentes possibilités d’installation de ton système de 
-téléphonie (On Premise, Cloud, machine physique, machine virtuelle…). 
+*Recherche quelles sont les différentes possibilités d’installation de ton système de téléphonie (On Premise, Cloud, machine physique, machine virtuelle…). *
 
-Liste les avantages et les contraintes en fonction des différentes possibilités.
+*Liste les avantages et les contraintes en fonction des différentes possibilités.*
 
 .. note::
-    Pour ce mandat, nous utiliserons 3CX.
+    Pour ce mandat, nous utiliserons 3CX, car c'est un produit que nous connaissons et utilisons.
 
-Il est possible de faire beaucoup de choses avec ce produit.
+
+
+3CX est une **solution de communications virtuelle** qui permet aux entreprises de gérer leurs appels téléphoniques, leur messagerie instantanée, leur vidéoconférence ainsi que tous les services que pourrait proposer un PBX classique, grâce à différentes installations et forfaits.
+
+Ce système est hébergeable sur différents systèmes d'exploitation, notamment linux et windows, et dans différentes infrastructures (on-premise, cloud, hosted 3cx...), le rendant très flexible selon les demandes.
+
+De plus, un forum utilisateur est accessible, facilitant les petits dépannages et le contact avec le fournisseur ainsi que les autres utilisateurs.
+
+12 millions d'utilisateurs l'utilisent chaque jour, le placant donc sans souci sur le podium des leaders mondiaux de la téléphonie !
+
 
 On premise
 ^^^^^^^^^^^^^^^^
@@ -423,6 +537,7 @@ Pour les clients disposant d'ores et déjà d'un serveur ayant les fonctionnalit
 Cette solution n'est pas recommandé si le client ne possède pas cette infrastructure, car le coût de départ unique serait bien trop élevé !
 
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hyperv.jpeg
 
 
 
@@ -432,6 +547,10 @@ Conclusion
 Toutes ces solutions permettent aux techniciens d'avoir une approche granulaire de ce dont le client nécessite.
 
 Le plus important reste donc d'être à l'écoute de ce dernier et de lui proposer certains services en fonction.
+
+
+
+----------------------
 
 
 Mandat 2 
@@ -452,7 +571,7 @@ Toutefois, certains principes fondamentaux régissent les règles de la séurit�
 Menaces pour la VoIP
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Étant un composant non négligeable d'une infrastructure d'entreprise, la VoIp est aussi soumise à des menaces, failles de sécurité et autres...
+Étant un composant non négligeable d'une infrastructure d'entreprise, la VoIP est aussi soumise à des menaces, failles de sécurité et autres...
 
 Voici les 10 menaces principales auxquelles elle doit faire face :
 
@@ -474,6 +593,7 @@ Elle est composé de 3 principes :
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/cia-triad.png
+
 
 
 
@@ -533,7 +653,7 @@ The secured session between UA1 and UA2 is now established.
 
 Schéma de principe communication VoIP sécurisée :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sips-srtp.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sips-srtp.jpeg
 
 
 
@@ -551,6 +671,14 @@ Le schéma devrait donc comprendre :
 - 
 
 
+Cela peut se présenter comme suit, plus ou moins complété. Aucun schéma n'est parfait, il faut seulement qu'il soit parlant, visuel et assez tecnhique pour comprendre l'infrastructure globale.
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/schema-reseau.png
+
+
+
 
 Inventaire du parc informatique
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -565,13 +693,36 @@ Inventaire du parc informatique
 Gestion des mots de passe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Différents moyens sont possibles pour stocker des mots de passe, que ces derniers soient personnels ou professionnels.
+
+
 
 Bitwarden, proton, keepass, lastpass.....
+
+
+Par exemple, Proton AG met à disposition une `page web destinée à générer des mots de passe aléatoires <https://proton.me/fr/pass/password-generator>`_.
+
+Sur cette même page des conseils et explications sur comment créer de bons mots de passe et ce qui les rend plus ou moins forts.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/protonpass.png
+
+
+Cependant, il y a des pratiques à ABSOLUMENT éviter, telles que :
+
+- Stocker ses mots de passe dans un fichier .txt ou excel, qu'il soit protégé ou non
+- Reprendre le même mot de passe pour chaque client
+- Utiliser des mots de passe de moins de 14 caractères, ne contenant pas de caractères de type : a-A,0-9,$*#
+
 
 
 
 Décommissionnement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Avoir un protocole de décommissionnement rigoureux et clair est important pour ne pas se perdre dans notre inventaire.
+
+
 
 
 
@@ -589,12 +740,17 @@ conception, notamment pour des terminaux spéciaux comme :
 
 
 
+--------------------------
+
+
 Mandat 3
 --------------------
-Recherche les différentes fonctionnalités disponibles sur ton système et fait un 
+*Recherche les différentes fonctionnalités disponibles sur ton système et fait un 
 comparatif avec un autre système de ton choix, comme, par exemple un système hébergé chez un 
-opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ? 
-Quels sont les coûts liés au système choisi ? Quel système te semble être le plus approprié ?
+opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ? *
+
+
+*Quels sont les coûts liés au système choisi ? Quel système te semble être le plus approprié ?*
 
 
 
@@ -629,7 +785,7 @@ Api... système d'hotellerie, CRM, interphonie, alarmes....
 
 Certaines fonctionnalités sont considérées comme "basiques", ce qui veut dire qu'elles sont généralement intégrées par défaut dans les systèmes de téléphonie.
 
-Ce sont par exemple les fonctionnalités en gras dans a liste ci-dessus.
+Ce sont par exemple les fonctionnalités **en gras** dans la liste ci-dessus.
 
 
 3CX vs Swisscom
@@ -687,11 +843,11 @@ Si nous regroupons cela avec la licence 3CX, cela revient à 107,08.- par mois m
 Conclusion
 ******************
 
-Dans ce cas, 3CX pro revient moins cher que Swisscom Hosted Telephony.
+Dans ce cas précis, 3CX pro revient moins cher que Swisscom Hosted Telephony.
 
-Au final, pour comparer réellement deux solutions, il est nécessaire de faire des calculs en fonction du nombre d'utilisateurs, du nombre d'appels simultanés et du temps passé au téléphone au total par mois.
+Au final, pour comparer réellement deux solutions, il est nécessaire de faire des calculs en fonction du nombre d'utilisateurs, du nombre d'appels simultanés et du temps passé au téléphone au total par mois. (cela reste non exhaustif puisque selon les besoins, beaucoup plus de paramètres sont à prendre en compte)
 
-Ce calcul dégrossira une bonne partie des coûts réels par solution proposée.  
+Ce calcul **dégrossira une** bonne partie des coûts réels par solution proposée.  
 
 
 Avantages et inconvénients
@@ -705,7 +861,7 @@ Pour compléter le comparatif
 
 
 
-
+-------------------------------
 
 
 
@@ -800,7 +956,16 @@ Choisir SBC ou System en focntion
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png
 
 
-ATTENTION, CHOISIR TIMEZONE PARIS CAR SUISSE PROBLEMES
+.. important::
+
+    Lors du choix du fuseau horaire, il est important de sélectionner celui de Paris, car choisir celui de Berne est moins fiable et peut causer des problèmes de synchronisation temporelle.
+
+
+
+
+------------------------
+
+
 
 Jour 3
 ===============
@@ -808,44 +973,54 @@ Jour 3
 
 Il est possible d'accéder à la console du linux 3cx via une web console :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx-web.png
 
 
 
 
-commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
+Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
-accès shell linux 3cx :
+Accès shell linux 3cx :
 
-apt-get update (mettre a jour la liste des paquets)
-apt-get upgrade (mettre a jour les paquets comportant des upgrades)
-apt-get install <package> (ici ntp et net-tools (déjà installé))
+:command:`apt-get update` (mettre a jour la liste des paquets)
+:command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
+:command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
 
-bonne pratique :
+Bonne pratique :
 
-sudo adduser arthur
+:command:`sudo adduser arthur`
 
-sudo usermod arthur -aG  sudo 
-sudo usermod arthur -aG phonesystem
+:command:`sudo usermod arthur -aG  sudo` 
+:command:`sudo usermod arthur -aG phonesystem`
 
-vérifier l'apartenance aux groupes : groups arthur 
+Vérifier l'apartenance aux groupes : 
+
+:command:`groups arthur` 
 
 
-sous debian 10 : cd /etc/network/ && sudo nano interfaces
+Commandes pour définir une adresse IP statique ainsi que la gateway et serveurs DNS :
 
-enp2so static
+
+Sous debian 10 : :command:`cd /etc/network/ && sudo nano interfaces`
+
+Modifier les lignes :
+
+`enp2so static
 address 172.16.201.32
 netmask 255.255.255.0 
 gateway 172.16.201.1
-dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
+dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9``
 
 
-sshd_config :
+Sécuriser les connexions SSH :
 
-ne pas autoriser l'accès en ssh pour l'user root
-limiter les attemtps failures
+:file:`sshd_config` :
 
+Ne pas autoriser l'accès en ssh pour l'user root
+Limiter les attempts failures
 
+.. admonition:: Liens utiles
+    Pour connaître plus de bonnes pratiques quant au service SSH, je vous invite à regarder la page d'`IT Connect <it-connect.fr/chapitres/bonnes-pratiques-de-configuration-ssh/>`_.
 
 puisque problemes avec le dns, changer le record A / PTR pour pointer vers l'ip local (soit sur le routeur soit sur le serveur dns (ici windows serveur servoce dns))
 
@@ -1025,17 +1200,27 @@ Les terminaux sont gérés sur cette interface car non attriubé à une extensio
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hotdesking.png
 
 
+
+
+
 Il faut cependant attribuer les droits de hotdesking aux utilisateurs
 
 
-Dans utilisateurs -> <user> -> options -> onglet "options"
+Dans :menuselection:`Utilisateurs  --> <user> --> Options --> onglet "options"`.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/hotdesking-user.png
 
 
-"*77*200* puis -> XXXX#" pour activer le hotdesking de l'utilisateur (pin de la messagerie vocale)
+
+
+
+
+"*77*200* puis -> XXXX#" (pin de la messagerie vocale) pour activer le hotdesking de l'utilisateur.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/secure-pin-user.png
+
+
+
 
 
 .. admonition:: Cas concret
@@ -1060,20 +1245,24 @@ Dans utilisateurs -> <user> -> options -> onglet "options"
 Mandat 3
 ------------
 
-Afin de reprendre les bases de comment fonctionne un sytème DECT, je vous invite à vous rediriger vers la `section DECT de la documentation M362<https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#dect-digital-enhanced-cordless-telecommunications>`_
+Afin de reprendre les bases de comment fonctionne un sytème DECT, je vous invite à vous rediriger vers la `section DECT de la documentation M362 <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#dect-digital-enhanced-cordless-telecommunications>`_.
 
 
 
 3 types de DECT :
 
-- Système sans fil propriétaire ou non-propriétaire avec connexion de type analogique ou 
-numérique : connexion au moyen de câbles téléphoniques avec 2, 4 ou 6 brins. Cette 
-possibilité permet de gérer 4, 8 voire 12 communications simultanées par base DECT (grâce au codec G726). Cette 
-solution nécessite parfois des licences et du matériel complémentaires (carte d’extensions 
-numériques, carte processeurs DSP, …). Une planification et une installation rigoureuse doit 
-être faite. Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de 
-définir précisément l’emplacement des bases DECT. Des recommandations en ce sens sont 
-généralement fournies par le constructeur. Standalone ou ....
+- Système sans fil propriétaire ou non-propriétaire avec connexion de type analogique ou numérique : 
+
+Connexion au moyen de **câbles téléphoniques avec 2, 4 ou 6 brins.** 
+
+Cette possibilité permet de gérer **4, 8 voire 12 communications simultanées** par base DECT (grâce au codec G726). 
+
+Cette solution nécessite parfois des licences et du matériel complémentaires (carte d’extensions 
+numériques, carte processeurs DSP, …). 
+Une planification et une installation rigoureuse doit être faite. 
+
+Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de définir précisément l’emplacement des bases DECT. 
+Des recommandations en ce sens sont généralement fournies par le constructeur. Standalone ou ....
 
 - Système sans fil SIP : connexion au moyen de l’infrastructure informatique du client final. 
 Cette variante nécessite généralement des switches avec alimentation PoE. Il faut donc 
@@ -1170,12 +1359,16 @@ Souvent, il suffit de glisser nos options préférées en premières afin que le
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/custom-template-codecs.png
 
 
-Tip Yealink :
 
-Pour afficher l'écran d'un poste yealink sur votre pc, il est possible de le faire via le web avec cette url :
-https://<ip>/screencapture
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-screencapture.png
+
+
+.. tip::
+    Tip Yealink ; pour afficher l'écran d'un poste yealink sur votre pc, il est possible de le faire via le web avec cette url : `https://<ip>/screencapture`
+
+
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-screencapture.png
 
 
 
