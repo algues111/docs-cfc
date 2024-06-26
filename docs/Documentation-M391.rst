@@ -1004,9 +1004,10 @@ Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
 Accès shell linux 3cx :
 
-| :command:`apt-get update` (mettre a jour la liste des paquets)
-| :command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
-| :command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
+.. code-block:: bash
+    apt-get update #(mettre a jour la liste des paquets)
+    apt-get upgrade #(mettre a jour les paquets comportant des upgrades)
+    apt-get install <package> #(ici ntp et net-tools (déjà installé))
 
 Bonne pratique :
 
@@ -1018,6 +1019,8 @@ Vérifier l'apartenance aux groupes :
 
 :command:`groups arthur` 
 
+
+<kbd>cmd + shift + p</kbd>
 
 Commandes pour définir une adresse IP statique ainsi que la gateway et serveurs DNS :
 
