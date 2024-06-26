@@ -1061,10 +1061,7 @@ Après avoir fait cela, nous pouvons sur Windows effacer le cache DNS et ainsi r
 Forcer le 3CX Phone System EN ou HORS heures bureau : plus disponible sur la V20, car plus d'horaires systèmes mais par départements
 
 
-Faire attention aux adresses mails pour le reporting (par défaut, l'addresse de la première extension créée est enregistrée)
-Le mieux est de désactiver la notification de création d'une nouvelle extension.
 
-Activer seulement ce qui est adéquat.
 
 
 Permettre de changer les modèles d'envoi de mails mais attention aux appels de variables systèmes
@@ -1083,7 +1080,7 @@ Rajouter les numéros d'urgence : c'est une whitelist.
 Sécurité 
 ---------------
 
-Comme tout appareil en réseau, le 3CX (hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
+Comme tout appareil en réseau, le 3CX (ici hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
 
 
 Antipiratage 
@@ -1126,6 +1123,23 @@ Autoriser seulement ladresse ip publique du bureau (pour le management offsite)
 
 Mails
 -----------
+
+Dans les paramètres généraux de 3CX, il est possible de configurer des alertes et des notifications par mail.
+
+Il suffit de rentrer les adresses de votre choix séparées par des virgules (",").
+
+Ensuite, plusieurs options s'offrent à vous concernant les raisons pour lesquelles vous voulez être notifié par mail.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/email-3cx.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/email2-3cx.png
+
+
+Faire attention aux adresses mails pour le reporting (par défaut, l'addresse de la première extension créée est enregistrée)
+Le mieux est de désactiver la notification de création d'une nouvelle extension.
+
+Activer seulement ce qui est adéquat.
+
 
 Options
 ----------
