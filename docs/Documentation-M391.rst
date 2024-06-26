@@ -1163,8 +1163,16 @@ Choisir ce que nous voulons sauvegarder
 Mandat 1
 -------------
 
-En présence d’une appliance physique, rechercher les limitations et les possibilités 
-d’extensions du système de téléphonie.
+*En présence d’une appliance physique, rechercher les limitations et les possibilités 
+d’extensions du système de téléphonie.*
+
+
+.. note::
+    Pour ce mandat et les prochains exemples, nous prendrons le mitel 470 ainsi que les différents modules / cartes ci-dessous
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/modules-and-470.png
 
 
 Cartes FXO : cartes de ligne analogique (branché sur le port ATA du routeur par exemple)
@@ -1176,7 +1184,7 @@ Cartes DSI : numérique propriétaire Mitel par exemple
 Cartes BR-S 
 Cartes BRI-S
 
-Cartes DSP
+Cartes DSP :
 Cartes EIP : Si besoin de plus de ressources
 Cartes TAX : taxation, peu répamndu
 
@@ -1423,6 +1431,9 @@ Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recher
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/integration-crm.png
 
+
+
+
 Ici, nous utiliserons une template pré-faite disponible avec ce lien de téléchargement :download:`source/other/TelsearchCRM-template.xml`
 
 Il faut remplacer 
@@ -1430,6 +1441,19 @@ Il faut remplacer
 
 Mandat 6
 ----------------
+
+*Réaliser une documentation complète de votre système de téléphonie.*
+
+*Profitez de mettre à jour vos différents documents et schémas établis dès le premier jour de cours.*
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/3cx-doc.drawio.png
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/mandat6.drawio.png
+
+
 
 Mandat 7
 -----------
@@ -1452,3 +1476,4 @@ sftp://<ip>/<folder> sur 3cx avec user-mdp
 port par défaut : 22
 backup manuel, successful
 
+7 backups à stocker, 1 faite tous les jours à 3:00 du matin
