@@ -1004,10 +1004,9 @@ Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
 Accès shell linux 3cx :
 
-.. code-block:: bash
-    apt-get update #(mettre a jour la liste des paquets)
-    apt-get upgrade #(mettre a jour les paquets comportant des upgrades)
-    apt-get install <package> #(ici ntp et net-tools (déjà installé))
+| :command:`apt-get update` (mettre a jour la liste des paquets)
+| :command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
+| :command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
 
 Bonne pratique :
 
@@ -1029,11 +1028,11 @@ Sous debian 10 : :command:`cd /etc/network/ && sudo nano interfaces`
 
 Modifier les lignes :
 
-    enp2so static
-    address 172.16.201.32
-    netmask 255.255.255.0 
-    gateway 172.16.201.1
-    dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
+| enp2so static
+| address 172.16.201.32
+| netmask 255.255.255.0 
+| gateway 172.16.201.1
+| dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
 
 
 Sécuriser les connexions SSH :
@@ -1440,6 +1439,39 @@ Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recher
 Ici, nous utiliserons une template pré-faite disponible avec ce lien de téléchargement :download:`source/other/TelsearchCRM-template.xml`
 
 Il faut remplacer 
+
+Mandat 5
+-------------
+
+Ce mandat traite de la disponibilité des données et de l'infrastructure.
+
+Nous verrons donc quelles sont les méthodes optimales et celles le plus fréquemment utilisées en entreprise.
+
+
+Dans l'idéal, pour une redondance conceptuellement optimale, il faudrait que toute l'infrastructure réseau soit maillée.
+
+Toutefois, vous vous douterez que peu d'entreprises disposent de ce type d'infrastructure étant donné les coûts intrinsèques élevés !
+
+Il est donc primordial de définir une échelle de priorité, de criticité pour chaque service, appliance dont nous disposons.
+
+
+
+La règle des 3-2-1 :
+
+3 sauvegardes, sur 2 supports différents, et une off-site.
+
+Cette règle se doit idéalement d'être respectée pour assurer une résilience des données, ainsi qu'un RTO et RPO optimals. 
+
+
+
+Chez 3CX, un système HA est proposé. Cependant dans la pratique, le failover n'est pas opérationnel.
+Typiquemment, lorsque le slave prend la relève du master, et qu'après un certain temps le master est de nouveau up, le slave ne reprend pas son rôle initial.
+
+Cela cause donc évidemment des conflits dans l'infrastructure téléphonique mais aussi réseau.
+
+
+
+
 
 
 Mandat 6
