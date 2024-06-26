@@ -884,10 +884,10 @@ Pour compléter le comparatif
 Mandat 4 A TESTER DERNIER JOUR
 ----------------------------------
 
-Recherche les différentes possibilités d’interaction de ton système avec des systèmes tiers 
+*Recherche les différentes possibilités d’interaction de ton système avec des systèmes tiers 
 et recherche également les caractéristiques des paramètres de ton système, s’ils sont disponibles.
 Réalise également une intégration d’un système tiers (Annuaire, CRM, …) avec ton serveur de 
-communication et test le bon fonctionnement de cette intégration
+communication et test le bon fonctionnement de cette intégration.*
 
 
 Aujourd'hui, de plus en plus de logiciels proposent des APIs ou des middlewares permettant une intégration facilitée avec d'autres softwares.
@@ -901,10 +901,8 @@ Ci-desous quelques exemples de services ou softwares s'intégrant avec 3CX.
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-integrations.jpeg
 
 
-- Gestion des utilisateurs internes (extensions) et intégration de calendriers et de contacts 
-avec Microsoft, Google, …
-- Interaction avec des outils de CRM, par exemple, Salesforce, Zendesk, Freshdesk, Bitrix, 
-Odoo, …
+- Gestion des utilisateurs internes (extensions) et intégration de calendriers et de contacts avec Microsoft, Google, …
+- Interaction avec des outils de CRM, par exemple, Salesforce, Zendesk, Freshdesk, Bitrix, Odoo, …
 - Interaction avec des outils hôteliers comme Fidelio, Mitel, …
 - Interaction avec Teams
 - Interaction avec des systèmes de messagerie instantanée comme WhatsApp, services SMS, …
@@ -948,6 +946,14 @@ Voici une liste non-exhaustives de fournisseurs proposant un serveur RPS.
 - `Yealink : <https://dm.yealink.com>`_
 - `Snom : <https://sraps.snom.com/>`_
 - `Fanvil : <https://fanvil.com/products/fdms/20220322/7307.html>`_
+
+
+Chez Yealink, il se présente comme suit :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-rps-server.jpg
+
+
+
 
 
 Schéma RPS :
@@ -998,16 +1004,15 @@ Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
 Accès shell linux 3cx :
 
-:command:`apt-get update` (mettre a jour la liste des paquets)
-:command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
-:command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
+| :command:`apt-get update` (mettre a jour la liste des paquets)
+| :command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
+| :command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
 
 Bonne pratique :
 
-:command:`sudo adduser arthur`
-
-:command:`sudo usermod arthur -aG  sudo` 
-:command:`sudo usermod arthur -aG phonesystem`
+| :command:`sudo adduser arthur`
+| :command:`sudo usermod arthur -aG  sudo` 
+| :command:`sudo usermod arthur -aG phonesystem`
 
 Vérifier l'apartenance aux groupes : 
 
@@ -1021,11 +1026,11 @@ Sous debian 10 : :command:`cd /etc/network/ && sudo nano interfaces`
 
 Modifier les lignes :
 
-`enp2so static
-address 172.16.201.32
-netmask 255.255.255.0 
-gateway 172.16.201.1
-dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9``
+    enp2so static
+    address 172.16.201.32
+    netmask 255.255.255.0 
+    gateway 172.16.201.1
+    dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
 
 
 Sécuriser les connexions SSH :
