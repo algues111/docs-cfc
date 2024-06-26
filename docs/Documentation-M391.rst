@@ -53,11 +53,11 @@ Noyé sous la multitude de services disponibles, il est donc très important en 
 Mandat 2 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet. *
+*Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet.* 
 
-*Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton système de téléphonie ? *
+*Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton système de téléphonie ?* 
 
-*Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.). *
+*Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.).* 
 
 *Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
 
@@ -150,7 +150,7 @@ Trunk
 Mandat 4 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark. *
+*Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark.*
 
 .. note::
 
@@ -164,7 +164,7 @@ La fréquence d'échantillonnage sera aussi différente, et les informations SDP
 
 
 
-*Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.). *
+*Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.).*
 
 
 En écoutant la communication SIP via Wireshark, il est possible de générer un graphique montrant les différentes étapes de la communication, de son établissement jusqu'à sa terminaison :
@@ -206,16 +206,20 @@ Nous pouvons le voir ci-dessous dans le graphique :
 
 
 
-Configure des téléphones de manière simple en utilisant les informations fournies par l’enseignant.
+
+*Configure des téléphones de manière simple en utilisant les informations fournies par l’enseignant.*
+
+
+Pour cette partie, je vous invite à vous dirigier vers l'`exercice 1 du module M362 <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#exercice-1>`_ dans lequel la configuration simple d'un terminal est faite.
 
 
 Mandat 5 
 ^^^^^^^^^^^^
 
 
-*Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP. *
+*Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP.*
 
-*Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ? *
+*Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ?*
 
 *A quoi sert cette appliance ?*
 
@@ -342,7 +346,7 @@ Tous les aspects listés plus haut doivent être pris en compte pour le choix de
 Mandat 7
 ^^^^^^^^^^^^^^
 
-*Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle. *
+*Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle.*
 
 *Il est aussi possible de procéder à l’installation d’un hyperviseur. Suis les procédures fournies par le fournisseur. Etablis un rapport de cette première installation.*
 
@@ -430,7 +434,7 @@ Call4Tell est une entreprise fabricant des ordinateurs au format NUC, dans lesqu
 Ils proposent plusieurs gammes de produits en fonction de vos besoins.
 
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/call4tell-products.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/call4tel-products.png
 
 
 NX32
@@ -464,15 +468,16 @@ Question Bonus du jour :
 
 
 
-Est-il possible d'avoir un trunk SIP Swisscom sur un 3CX installé dans le cloud ?
+*Est-il possible d'avoir un trunk SIP Swisscom sur un 3CX installé dans le cloud ?*
 
-réponse :
+Réponse :
 
-Non, pas avec le SBC
+Non, selon les documents fournis par Swisscom concernant leurs abonnements SIP Trunks, il n'est officiellement pas possible de les utiliser dans un environnement cloud.
+| Il est cependant techniquement possible de le faire si nous utilisons une liaison VPN entre le site raccordé Swisscom et l'environnement cloud. Mais cela représente plusieurs inconvénients et n'est pas le plus simple à réaliser.
 
-Oui avec Enterprise SIP Cloud
 
-https://documents.swisscom.com/product/filestore/lib/047dea54-3e19-43b0-a36e-9eed5af4f3b8/enterprise_sip_cloud_factsheet-fr.pdf?idxme=pex-search
+Mais Swisscom propose des forfaits `Enterprise SIP cloud <https://documents.swisscom.com/product/filestore/lib/047dea54-3e19-43b0-a36e-9eed5af4f3b8/enterprise_sip_cloud_factsheet-fr.pdf?idxme=pex-search>`_ pour ce genre de cas spécifiques.
+
 
 
 
@@ -484,7 +489,7 @@ Jour 2
 Mandat 1
 ------------------
 
-*Recherche quelles sont les différentes possibilités d’installation de ton système de téléphonie (On Premise, Cloud, machine physique, machine virtuelle…). *
+*Recherche quelles sont les différentes possibilités d’installation de ton système de téléphonie (On Premise, Cloud, machine physique, machine virtuelle…).*
 
 *Liste les avantages et les contraintes en fonction des différentes possibilités.*
 
@@ -556,11 +561,9 @@ Le plus important reste donc d'être à l'écoute de ce dernier et de lui propos
 Mandat 2 
 ------------
 
-Établir une checklist reprenant les différents thèmes du point précédent afin de pouvoir 
-fixer précisément les besoins du client final (choix des terminaux, gestion de la sécurité, …). 
+*Établir une checklist reprenant les différents thèmes du point précédent afin de pouvoir fixer précisément les besoins du client final (choix des terminaux, gestion de la sécurité, …).*
 
-Etablir également un schéma de l’installation et un inventaire du matériel installé (SN, MAC address, version 
-de firmware, …). Utiliser un système de gestion de mots de passes spécifiques afin de les répertorier
+*Etablir également un schéma de l’installation et un inventaire du matériel installé (SN, MAC address, version de firmware, …). Utiliser un système de gestion de mots de passes spécifiques afin de les répertorier*
 
 
 De nos jours, la sécurité est un aspect fondamental de toute infrastructure informatique, évoluant tous les jours.
@@ -640,12 +643,12 @@ Activation de protocoles sécurisés :
 
 - SIPS (SIP Secure) : utilise TLS
 
-If a SIP User Agent, UA1, wants to establish a secure SIP session with UA2:
+Si un agent utilisateur SIP, UA1, souhaite établir une session SIP sécurisée avec UA2 :
 
-UA1 contacts proxy server1 requesting a TLS session along with a session invitation for UA2. The proxy server provides a public certificate and UA1 validates it. UA1 and proxy server1 exchange session keys to encrypt/decrypt data for that particular session.
-Proxy server1 forwards the session invitation to the next proxy server using a TLS session or IPSec mechanism.
-UA1 and proxy server2 authenticate over TLS. The same procedure is repeated till the last hop ensuring SIP over TLS is used end-to-end.
-The secured session between UA1 and UA2 is now established.
+UA1 contacte le serveur proxy1 pour demander une session TLS avec une invitation de session pour UA2. Le serveur mandataire fournit un certificat public que UA1 valide. L'UA1 et le serveur mandataire 1 échangent les clés de session pour chiffrer/déchiffrer les données pour cette session particulière.
+Le serveur mandataire 1 transmet l'invitation de session au serveur mandataire suivant en utilisant une session TLS ou un mécanisme IPSec.
+UA1 et le serveur mandataire 2 s'authentifient par TLS. La même procédure est répétée jusqu'au dernier saut, en s'assurant que le protocole SIP sur TLS est utilisé de bout en bout.
+La session sécurisée entre UA1 et UA2 est maintenant établie.
 
 
 - SRTP (Secure RTP)
@@ -654,6 +657,19 @@ The secured session between UA1 and UA2 is now established.
 Schéma de principe communication VoIP sécurisée :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sips-srtp.jpeg
+
+
+.. tip::
+
+    La meilleure chose à faire est d'activer les 2 protocoles sécurisés afin de maximiser la confidentialité des données.
+
+    Car si nous activons seulement SIPS, seule l'initiation de l'appel sera chiffrée, laissant le trafic RTP, et donc la voix, en clair sur le réseau.
+
+    Si nous faisons l'inverse, seul le trafic RTP sera chiffré, mais les informations de l'initiateur et du récepteur de l'appel seront en claires.
+
+
+.. seealso::
+    Dans la documentation 3CX, tout un `guide sur l'activation de SIPS et de SRTP <https://www.3cx.com/docs/secure-sip/>`_ est disponible.
 
 
 
@@ -697,7 +713,7 @@ Différents moyens sont possibles pour stocker des mots de passe, que ces dernie
 
 
 
-Bitwarden, proton, keepass, lastpass.....
+Bitwarden, proton, keepass, lastpass sont des logiciels dédiés à cette fonction.
 
 
 Par exemple, Proton AG met à disposition une `page web destinée à générer des mots de passe aléatoires <https://proton.me/fr/pass/password-generator>`_.
@@ -747,7 +763,7 @@ Mandat 3
 --------------------
 *Recherche les différentes fonctionnalités disponibles sur ton système et fait un 
 comparatif avec un autre système de ton choix, comme, par exemple un système hébergé chez un 
-opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ? *
+opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ?*
 
 
 *Quels sont les coûts liés au système choisi ? Quel système te semble être le plus approprié ?*
@@ -810,22 +826,22 @@ Tarifs Swisscom
 
     1 appel sur 2 est émetteur donc cela revient à 5 heures facturées.
 
-SBC hosted telephony :
+**SBC hosted telephony :**
 
-Appels standards Suisse mobiles et fixes illimité : 22.-/mois par utilisateur
-Apels standards Suisse mobiles et fixes à la minute : 12.-/ mois par utilisateur + 0,08ct la minute pour mobiles / 0,30 ct la minute pour fixes
+| Appels standards Suisse mobiles et fixes illimité : 22.-/mois par utilisateur
+| Appels standards Suisse mobiles et fixes à la minute : 12.-/ mois par utilisateur + 0,08ct la minute pour mobiles / 0,30 ct la minute pour fixes
 
 220.- par mois pour le forfait illimité.
 
 144.- par mois au moins cher. 
 
 
-3CX Pro :
+**3CX Pro :**
 
 Pour 10 utilisateurs, 205.- sont facturés par an. ce qui revient à 1,708.- par utilisateur par mois.
 
-Cependant, il faut un trunk pour que les utilisateurs puissent appeler des numéros externes.
-Pour cela, nous allons choisir un trunk avec 2 canaux, ce qui est suffisant pour une entreprise de 10 personnes.
+| Cependant, il faut un trunk pour que les utilisateurs puissent appeler des numéros externes.
+| Pour cela, nous allons choisir un trunk avec 2 canaux, ce qui est suffisant pour une entreprise de 10 personnes.
 
 15chf par mois pour 10 numeros
 
