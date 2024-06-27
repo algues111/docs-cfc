@@ -1575,6 +1575,7 @@ Excellent ! Après avoir provisioné le téléphone, nous le voyons en ligne dan
     Si toutefois vous souhaitez quand même accéder à l'interface web-admin de votre téléphone provisioné, les credentials sont les suivants :
 
     user : **admin**
+    
     password : **<sip user password>**
 
 
