@@ -1510,5 +1510,134 @@ Pas de chiffrement de la config, infra non critique
 sftp://<ip>/<folder> sur 3cx avec user-mdp
 port par défaut : 22
 backup manuel, successful
-
+  
 7 backups à stocker, 1 faite tous les jours à 3:00 du matin
+
+
+
+Jour 4
+==========
+
+
+Ce jour est consacré à la découverte de la plateforme peoplefone.
+
+Nous diposons de 45.- de crédit ainsi que des services gratuits pendant 30 jours (phase de test)
+
+Lorsque nous nous connectons au compte que l'on nous a créé, nous débarquons tout d'abord sur la page "home" de peoplefone.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-home.png
+
+
+
+Avant de commencer nos tests des différents services disponibles, nous allons commander une licence HOSTED avec 2 options (IVRx2 + Softphonex2)
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-hosted.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-hosted2.png
+
+.. warning::
+
+    Avant d'ajouter les produits dans le panier, n'oubliez pas de cocher la case pour les 30 jours d'essais gratuits. 
+    
+    Dans le cas contraire, vous serez débité du montant du.
+
+Suite à votre petite commande, vous verrez désormais votre forfait hosted dans la rubrique "abonnements" de l'interface peoplefone.
+
+Cliquer dessus vous permettra de voir les détails !
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-subscription-hosted.png
+
+
+
+Le bloc de numéros faisant partie intégrante des prérequis d'une infrastructure téléphonique, nous allons en commander un de 10.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers2.png
+
+
+
+
+
+
+
+
+
+
+Excellent ! Après avoir provisioné le téléphone, nous le voyons en ligne dans notre interface de gestion des lignes/utilisateurs :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-tuile-user1-provisioned.png
+
+
+.. note::
+    Si toutefois vous souhaitez quand même accéder à l'interface web-admin de votre téléphone provisioné, les credentials sont les suivants :
+
+    user : **admin**
+    password : **<sip user password>**
+
+
+.. seealso::
+    La documentation de leur système hosted est accessible depuis ce `lien <https://support.peoplefone.com/en-che/peoplefone-products/peoplefone-hosted-vpbx-functions/>`_. 
+
+
+
+
+Comme mentionné plus haut, peoplefone propose une solution de softphone.
+| Pour cela, il faut bien évidemment commander des licences.
+
+Dans l'onglet softphone, vous pouvez voir le nombre de licence qu'il vous reste à attribuer ainsi que le nombre de licences total.
+
+Ici, nous allons configurer la 1ère licence pour l'User 2.
+
+Il suffit de renseigner l'adresse mail de l'utilisateur, et ce dernier recevra un mail lui demandant de réinitialiser le mot de passe.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-softphone-mail.png
+
+
+
+A la suite de la définition du mot de passe utilisateur, vous pouvez vous connecter sur le `portail d'authentification du softphone <https://softphone.peoplefone.com/>`_
+
+Si l'autentification réussit, vous serez redirigez vers la page du softphone avec une interface claire et épurée.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-softphone-web.png
+
+
+.. seealso::
+    Une "application" est aussi disponible via l'icône "Télécharger". Cela créera un raccourci web que vous pouvez épingler à votre barre des tâches.
+
+
+
+Ajout d'appareils pour le peoplefone HOSTED :
+
+
+
+Puisque nous avons commandé 2 licences IVR, nous allons en configurer un.
+
+Dans l'onglet "Téléphonie VoIP", une section IVR est disponible, il suffit de cliquer dessus pour accéder à l'interface.
+
+Vous vous retrouverez donc sur cette page où vous pouvez "Ajouter un IVR", "Ajouter une annonce" ou modifier un IVR déjà installé.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-menu.png
+
+
+
+
+Ici, nous configurons un IVR très simple, avec une annonce text-to-speech enregistrée en format .wav, ainsi que la touche DTMF 0 ayant pour destination l'extension 200.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config2s.png
+
+
+Numero pour tester son clip et différentes options (rappel, enregistrement...):
+
+0 800 820 300
+
+.. important::
+
+    Chose très importante à faire -> définir les numéros d'urgence dans paramètres -> général
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/urgences-3cx.png
