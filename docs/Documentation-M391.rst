@@ -1559,8 +1559,11 @@ Le bloc de numéros faisant partie intégrante des prérequis d'une infrastructu
 
 
 
+Pour provisioner un terminal dans le PBX virtuel HOSTED de Peoplefone, il faut enregistrer l'appareil et ensuite rentrer le lien de provisioning.
 
+Il n'y a donc quasiment aucune configuration manuelle à effectuer, ce qui rend le déploiement simple et efficace.
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-device-registering-hosted.png
 
 
 
@@ -1575,7 +1578,7 @@ Excellent ! Après avoir provisioné le téléphone, nous le voyons en ligne dan
     Si toutefois vous souhaitez quand même accéder à l'interface web-admin de votre téléphone provisioné, les credentials sont les suivants :
 
     user : **admin**
-    
+
     password : **<sip user password>**
 
 
@@ -1642,3 +1645,141 @@ Numero pour tester son clip et différentes options (rappel, enregistrement...):
     Chose très importante à faire -> définir les numéros d'urgence dans paramètres -> général
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/urgences-3cx.png
+
+
+
+-----------------
+
+Jour 5
+=========
+
+SBC + Call Flow à tester interconnexion 2 pbx locaux
+
+
+Bridge
+-------------
+
+Chez 3CX, il est possible d'interconnecter plusieurs PBX entre eux à l'aide de "ponts", ou "bridges" en abglais.
+
+Pour cela, plusieurs étapes sont à suivre avec quelques détails importants à ne pas occulter !
+
+| Premièrement, il faut définir quel PBX sera maître ou esclave.
+| Après avoir choisi, vous pouvez créer le pont sur chacun des PBX via la section "Trunks SIP", avec la tuile "+ Ajouter un pont"
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-menu-pont.png
+
+
+Lorsque vous cliquez sur cette dernière, une interface de configuration s'affiche, vous laissez le choix de la manière dont vous paramtérez votre système.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-conf.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-conf2.png
+
+
+Toutefois, certains paramètres spécifiques sont recommandés pour une interconnexion optimale et sécurisée :
+
+- Le mot de passe partagé : doit être le même à la fois chez le maître et l'esclave
+- Le préfixe de règle sortante : utilisé par la suite lors du paramétrage de la règle sortante du pont
+- La connexion tunnel : utilise le port de management 5090 (TCP/UDP)
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-presence.png
+
+Ce menu permet de définir ce que nous voulons partager au PBX distant et si nous voulons recevoir ses informations.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-avance.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-avance2.png
+
+
+.. seealso::
+    Lien vers la `documentation officielle 3CX <https://www.3cx.com/docs/manual/connecting-pbx-bridges/>`_.
+
+
+
+SBC
+--------
+
+
+Mettre en place un SBC n'est pas plus difficile que de mettre en place un pont.
+
+Il faut seulement avoir une appliance avec une installation spécifique au SBC, et enregistrer ce dernier dans l'interface du PBX.
+
+Pour ce faire, il suffit tout d'abord de se rendre de nouveau dans le section "Trunks SIP", et de cliquer sur la tuile "+ Ajouter un SBC".
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-menu-pont.png
+
+
+Après cela, vous débarquerez sur l'interface suivante.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-sbc-conf.png
+
+
+
+
+Sur celle-ci, vous trouverez des informations nécessaires à l'interconexion des 2 appliances, notamment :
+
+- L'URL de provisioning (ici le FQDN du PBX avec le port 5001 https)
+- La clé ID d'authentification (demandée lors de l'installation du SBC)
+
+En plus de ces informations, il vous sera demandé de donner un nom au SBC, ainsi que de créer un mot de passe.
+
+
+La prochaine étape consiste donc à finaliser l'installation du SBC en renseignant l'URL de provisioning présente dans le PBX ainsi que la clé ID d'autentification.
+
+Le PBX vérifiera les informations et autorisera ensuite le SBC à se connecter.
+
+Mission accomplie, vous avez configuré avec succès le SBC dans 3CX !
+
+
+
+La dernière étape sera maintenant de configurer un terminal derrière le SBC.
+
+Il faudra donc créer un utilisateur ou en prendre un existant, aller dans la section "Téléconfiguration téléphone", et enregistrer le terminal souhaité.
+
+Toutefois, une petite spécificité se glisse dans la configuration étant donné qu'il faut choisir la méthode de provisioning via SBC, et sélectionner l'IP de ce dernier.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-sbc-phone-conf.png
+
+
+
+Après cela, classique, il suffira de renseigner l'URL de provisioning dans l'interface web du téléphone.
+
+Le tour est joué, vous pouvez dès maintenant utiliser votre nouveau terminal connecté derrière votre SBC !
+
+
+
+
+Comparaison V18 V20
+-----------------------
+
+
+Dans la V20, plus de règles entrantes, tout se fait dans la gestion des utilisateurs, groupes d'appels, départements...
+
+Pour les extensions utilisateurs, les adresses mail doivent être uniques.
+
+CLIP sortants dans l'utilisateur -> Général
+Numéro SDA assignée dans l'utilisateur -> Général
+
+Gestion des départements en fonction des besoins de l'entreprise (RH, Finances, Succursales...)
+Création d'un département "Default", à l'installation de 3CX.
+Gestion des heures de bureau désormais uniquement PAR DÉPARTEMENT.
+Disparition du basculement manuel jour nuit, c'est fait désormais par département.
+
+Configuration du téléphone : dans les options, décocher la case "permettre à 3CX de provisioner de manière sécurisée et automatique les terminaux IP dans les serveurs distants."
+Cela les inscrit dans le RPS de 3CX sur lequel vous n'avez aucun accès
+
+Module BLF : première touche = total de touche du terminal moins 1 fois 3. 
+
+.. warning::
+
+    La version Windows de 3CX ne sera disponible qu'avec l'abonnement ENT ou PRO avec la V20
+
+Dans "Voix et Chat" -> pour FXS et DECT, trunks, ponts, SBC, intégrations whatsapp facebook...
+
+Hotdesking directement dans la section "Téléphones"
+
+
+
