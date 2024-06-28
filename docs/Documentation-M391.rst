@@ -1374,6 +1374,9 @@ Pour configurer une antenne DECT, cela se passe de la même manière que pour en
 Il faut par la suite choisir le modèle et enregistrer l'adresse MAC.
 Dans l'onglet "Extensions" il faut choisir l'utilisateur que l'on veut attribuer au DECT.
 
+Préférences système
+***********************
+
 Chez le DECT Yealink W73P, voici quelques paramètres à activer/désactiver pour le confort de l'utilisateur :
 
 
@@ -1384,6 +1387,9 @@ Chez le DECT Yealink W73P, voici quelques paramètres à activer/désactiver pou
 - Désactiver la réponse automatique (décroche lorsque le DECT sort de sa base)
 - Paramétrer le DECT en francais (par défaut en anglais)
 
+
+Analye Wireshark DECT-to-T46G
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Analysons désormais le flux SIP et RTP entre les deux terminaux.
 
@@ -1397,7 +1403,7 @@ Sur la première capture prise depuis le PBX, nous pouvons voir que seul le flux
 Cela veut donc dire que le flux RTP passe lui en direct du DECT vers le T46G.
 
 
-Nous le voyons très bien ci-desous avec la capture du T46 lui-même :
+Nous le voyons très bien ci-desous avec la capture du T46G lui-même :
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pcap-t46-dect-to-t46.png
@@ -1409,7 +1415,13 @@ Si cependant nous souhaitons que le flux RTP passe par le PBX, il faut activer c
 
 
 
-Template personalisé :
+Template personalisé
+^^^^^^^^^^^^^^^^^^^^^^
+
+Chez 3CX, il est possible de créer ou modifier des templates déjà existants pour qu'ils nous correspondent plus.
+
+Par exemple, nous pouvons désactiver toutes les langues sauf le francais, ou rajouter des touches de ligne etc...
+
 
 .. warning::
     Ne jamais modifier un template par défaut !
@@ -1440,6 +1452,9 @@ templatetype :
 
 Template supported : non officiel mais supporté
 Template preferred : officiel et supporté
+
+Pour mettre des touches de ligne dans 3CX, il faut impérativement modifier un template et l'injecter par la suite.
+
 
 Mandat 4
 ----------
@@ -1815,9 +1830,14 @@ Hotdesking directement dans la section "Téléphones"
 .. admonition:: Cas concret
 
     Après de multiples tests effectués sur un NX96 de Call4Tel, des déconnexions réseau intempestives ont fait surface.
-    Coupure de l'accès à la web interface, coupure de la session ssh, impossibilité d'injecter une backup, erreurs de connectivité directe (ping)...
+    Coupure de l'accès à la web interface, coupure de la session ssh, impossibilité d'injecter une backup, erreurs de connectivité directe (ping), coupure du pont et du SBC..
 
     Malgré des tentatives de redémarrage et de réinstallation, l'appliance ne s'est pas résolu à fonctionner de nouveau correctement.
     Les journaux systèmes (journalctl) n'indiquaient aucune erreur quelle qu'elle soit.
 
-    Nous soupconnons donc un défaut physique de la carte réseau ou du micro-controleur la gérant.
+    Nous soupconnions donc un défaut physique de la carte réseau, cependant, il s'avérait qu'une antenne Wi-Fi Unifi avait la même adresse IP que le PBX.
+
+    Ce conflit étant à l'origine des problèmes susmentionnés, nous avons débranché l'antenne et supprimé l'adresse 172.16.201.37 de la plage DHCP.
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/unifi-coupable.jpg
+    *Voici la coupable !!!!*
