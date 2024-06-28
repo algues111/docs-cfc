@@ -103,6 +103,11 @@ Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 
 Choisissez ce que vous préférez en fonction de vos habitudes d'installation de distributions Linux.
 
+Toutefois, il est conseillé de choisir une installation sur une partition de type LVM.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-installation-lvm.jpg
+
+
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-linux.png
     :align: center
     :height: 470px
@@ -111,6 +116,9 @@ Choisissez ce que vous préférez en fonction de vos habitudes d'installation de
 :raw-m2r:`<br>`
 
 *Attendre que l'installation s'effectue et choisir les options correspondantes à vos besoins (FQDN...)*
+
+
+
 
 ----
 

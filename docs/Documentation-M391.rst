@@ -989,6 +989,7 @@ Choisir SBC ou System en focntion
 
 
 
+
 Jour 3
 ===============
 
@@ -998,7 +999,8 @@ Il est possible d'accéder à la console du linux 3cx via une web console :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx-web.png
 
 
-
+.. seealso::
+    Voir la sécurisation de l'accès à la console 3CX `ici <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M391.html#restrictions-de-la-console>`_.
 
 Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
@@ -1033,6 +1035,10 @@ Modifier les lignes :
 | netmask 255.255.255.0 
 | gateway 172.16.201.1
 | dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/interfaces-debian.jpg
 
 
 Sécuriser les connexions SSH :
@@ -1122,6 +1128,10 @@ Comme une console est dispomible à travers la web interface, il est nécessaire
 Best practices :
 
 Autoriser seulement ladresse ip publique du bureau (pour le management offsite)
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-restrictions.png
+
+
 
 Mails
 -----------
@@ -1356,12 +1366,23 @@ Selon le lien de `compatibilité 3CX <https://www.3cx.fr/sip-phones/>`_, les sys
 - Snom
 - Gigaset (avec limitations)
 
-
+Configuration DECT
+^^^^^^^^^^^^^^^^^^^^
 
 Pour configurer une antenne DECT, cela se passe de la même manière que pour enregistrer un ATA, c'est à dire dans la section "Avancés" -> "FXS/DECT"
 
 Il faut par la suite choisir le modèle et enregistrer l'adresse MAC.
 Dans l'onglet "Extensions" il faut choisir l'utilisateur que l'on veut attribuer au DECT.
+
+Chez le DECT Yealink W73P, voici quelques paramètres à activer/désactiver pour le confort de l'utilisateur :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/dect-preferences.png
+
+
+- Désactiver la tonalité des touches (son émis lorsque pression sur une touche)
+- Désactiver la réponse automatique (décroche lorsque le DECT sort de sa base)
+- Paramétrer le DECT en francais (par défaut en anglais)
 
 
 Analysons désormais le flux SIP et RTP entre les deux terminaux.
@@ -1415,7 +1436,10 @@ Souvent, il suffit de glisser nos options préférées en premières afin que le
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-screencapture.png
 
+templatetype :
 
+Template supported : non officiel mais supporté
+Template preferred : officiel et supporté
 
 Mandat 4
 ----------
@@ -1521,9 +1545,15 @@ Jour 4
 
 Ce jour est consacré à la découverte de la plateforme peoplefone.
 
-Nous diposons de 45.- de crédit ainsi que des services gratuits pendant 30 jours (phase de test)
+Nous diposons de 45.- de crédit gracieusement offerts ainsi que des services gratuits pendant 30 jours (phase de test)
 
-Lorsque nous nous connectons au compte que l'on nous a créé, nous débarquons tout d'abord sur la page "home" de peoplefone.
+
+Pour tester tout cela, accédons donc à cette fameuse `plateforme <https://portal.peoplefone.ch/home>`_ !
+
+
+| Lorsque nous nous connectons au compte que l'on nous a créé, nous débarquons tout d'abord sur la page "home" de peoplefone.
+| Nous y trouvons des informations générales, telles que les coordonnées de notre partenaire, les news de peoplefone ainsi que l'état de leurs systèmes.
+
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-home.png
 
@@ -1782,4 +1812,12 @@ Dans "Voix et Chat" -> pour FXS et DECT, trunks, ponts, SBC, intégrations whats
 Hotdesking directement dans la section "Téléphones"
 
 
+.. admonition:: Cas concret
 
+    Après de multiples tests effectués sur un NX96 de Call4Tel, des déconnexions réseau intempestives ont fait surface.
+    Coupure de l'accès à la web interface, coupure de la session ssh, impossibilité d'injecter une backup, erreurs de connectivité directe (ping)...
+
+    Malgré des tentatives de redémarrage et de réinstallation, l'appliance ne s'est pas résolu à fonctionner de nouveau correctement.
+    Les journaux systèmes (journalctl) n'indiquaient aucune erreur quelle qu'elle soit.
+
+    Nous soupconnons donc un défaut physique de la carte réseau ou du micro-controleur la gérant.
