@@ -1545,7 +1545,7 @@ Nous verrons donc quelles sont les méthodes optimales et celles le plus fréque
 Dans l'idéal, pour une redondance conceptuellement optimale, il faudrait que toute l'infrastructure réseau soit maillée comme nous le voyons dans le schéma ci-dessous :
 
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha3.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/ha3.png
 
 
 Toutefois, vous vous douterez que peu d'entreprises disposent de ce type d'infrastructure étant donné les coûts intrinsèques élevés !
@@ -1556,7 +1556,7 @@ Il est donc primordial de définir une échelle de priorité, de criticité pour
 
 La règle des 3-2-1 :
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/321.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/321.png
 
 
 3 sauvegardes, sur 2 supports différents, et une off-site.
@@ -1567,7 +1567,7 @@ Cette dernière se doit idéalement d'être respectée pour assurer une résilie
 
 Différents niveaux de redondance existent donc, ces derniers dépendant des besoins et des exigences de l'infrastructure. Voici quelques exemples : 
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha2.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/ha2.png
 
 
 
@@ -1578,7 +1578,7 @@ Typiquemment, lorsque le slave prend la relève du master, et qu'après un certa
 Cela cause donc évidemment des conflits dans l'infrastructure téléphonique mais aussi réseau.
 
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/ha.png
 
 
 
