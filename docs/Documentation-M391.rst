@@ -1597,9 +1597,9 @@ Voici 2 schémas, avec respectivement l'infrastructure téléphonique 3CX et le 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/3cx-doc.drawio.png
 
 
+:raw-m2r:`<br>`
 
-
-
+:raw-m2r:`<br>`
 
 
 
