@@ -58,6 +58,22 @@ Différents types d'installation
    :align: right
    :height: 32px
 
+
+
+.. warning::
+   Sous la V20, vous ne pouvez plus installer 3CX depuis seulement un code de licence. Vous devez soit :
+
+   - Restaurer 3CX à partir d'une backup.
+   - Installer 3CX à partir d'un fichier de configuration XML.
+
+
+   .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/installv20.png
+
+
+
+   Voici le `lien <https://www.3cx.fr/docs/manuel/installation-debian-linux-ipbx/>`_ vers la documentation officielle d'installation sous Linux.
+
+
 Linux
 ~~~~~~~~~~~~~~
 
@@ -85,13 +101,14 @@ Passez en revue les spécifications matérielles suggérées afin d'allouer du t
    Ne configurez pas de réseau virtuel, d'interface VPN ou d'option TeamViewer VPN sur l'hôte 3CX.
 
 
-Pour les autres prérequis liés à la virtualisation, au réseau etc... Je vous invite à vous référer à leur documentation complète disponible avec le lien ci-dessous :
+Pour les autres prérequis liés à la virtualisation, au réseau etc... Je vous invite à vous référer à leur `documentation complète <https://www.3cx.fr/docs/manuel/installation-debian-linux-ipbx/>`_.
 
-**https://www.3cx.fr/docs/manuel/installation-debian-linux-ipbx/**
 
-Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 
-**https://downloads-global.3cx.com/downloads/debian10iso/debian-amd64-netinst-3cx.iso**
+.. seealso::
+   Lien pour le `téléchargement de l'iso linux <https://downloads-global.3cx.com/downloads/debian10iso/debian-amd64-netinst-3cx.iso>`_ de 3CX V18.
+
+
 
 .. image:: https://lh7-us.googleusercontent.com/dnv4yC4v_g33UFLJcYGuXi3QmSsWkMeu_Iir9wF8EmmyCZTKqkXkgFiIYQfmL_WMYjxXJoSGsAFnsz2kkg3GRqR_GmU9pxCSW8YbKFS63S5mnrrJkDrqopNUzxvNp9oaYDly7gzf0vpt7Ug
    :align: center
@@ -101,9 +118,12 @@ Voici aussi le lien pour le téléchargement de l'iso linux de 3CX :
 
 *Premier lancement de l'iso de 3CX*
 
+
+Choisir SBC ou System en fonction du type d'appliance voulu (ici System).
+
 Choisissez ce que vous préférez en fonction de vos habitudes d'installation de distributions Linux.
 
-Toutefois, il est conseillé de choisir une installation sur une partition de type LVM.
+Toutefois, il est conseillé de choisir une installation sur une partition de type LVM pour une gestion plus simple de l'évolutivité du volume et des snapshots.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-installation-lvm.jpg
 
@@ -115,9 +135,19 @@ Toutefois, il est conseillé de choisir une installation sur une partition de ty
 
 :raw-m2r:`<br>`
 
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png
+
+
+.. important::
+
+    Lors du choix du fuseau horaire, il est important de sélectionner celui de Paris, car choisir celui de Berne est moins fiable et peut causer des problèmes de synchronisation temporelle.
+
+
+
 *Attendre que l'installation s'effectue et choisir les options correspondantes à vos besoins (FQDN...)*
-
-
 
 
 ----

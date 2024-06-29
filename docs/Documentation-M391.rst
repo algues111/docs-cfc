@@ -7,7 +7,7 @@ Module 391 : PBX Virtualisé
 Jour 1
 ========
 
-Ce jour est destiné à introduire la matière que nous verrons lors des prochains cours du module M291.
+Ce jour est destiné à introduire la matière que nous verrons lors des prochains cours du module M391.
 
 Voici le fichier d'introduction téléchargeable ci-dessous :
 
@@ -463,11 +463,21 @@ Voici ses caractéristiques :
     - Warranty: 1 year
 
 
+.. warning::
+
+    De gauche à droite : interface 2 puis interface 1 ; l'ordre est "inversé".
+
+
+
 Web Interface
 ^^^^^^^^^^^^^^^^^^^^
 
 
 En plus de 3CX, Call4Tell fournit une interface web administrative permettant de configurer plusieurs paramètres de l'appareil.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/Call4Tel-web.png
+
 
 
 Question Bonus du jour :
@@ -722,6 +732,9 @@ Différents moyens sont possibles pour stocker des mots de passe, que ces dernie
 
 Bitwarden, proton, keepass, lastpass sont des logiciels dédiés à cette fonction.
 
+.. seealso::
+    `Biwarden <https://bitwarden.com/fr-fr/help/install-on-premise-linux/>`_ est même hébergeable en local sous un environnement Linux, le rendant flexible et coopérant avec les personnes exigentes en termes de confidentialité des données !
+
 
 Par exemple, Proton AG met à disposition une `page web destinée à générer des mots de passe aléatoires <https://proton.me/fr/pass/password-generator>`_.
 
@@ -756,10 +769,13 @@ Exigences de matériel
 En plus des exigences de sécurité, il peut également avoir des exigences liées au matériel et à sa 
 conception, notamment pour des terminaux spéciaux comme :
 
-- **Les terminaux ATEX** : prévenir des explosions en garantissant que les équipements utilisés dans les environnements dangereux sont conçus et construits de manière à minimiser les risques
+- **Les terminaux ATEX** : prévenir des explosions en garantissant que les équipements utilisés dans les environnements dangereux sont conçus et construits de manière à minimiser les risques.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/atex.jpg
 
 
-- **Les terminaux antibactériens** : le but du matériau utilisé est d’empêcher le développement et la prolifération des bactéries. Ce genre de terminaux peut être utilisé dans les hôtels ou les hôpitaux
+
+- **Les terminaux antibactériens** : le but du matériau utilisé est d’empêcher le développement et la prolifération des bactéries. Ce genre de terminaux peut être utilisé dans les hôtels ou les hôpitaux.
 
 
 
@@ -888,7 +904,7 @@ Pour compléter le comparatif
 
 
 
-Mandat 4 A TESTER DERNIER JOUR
+Mandat 4
 ----------------------------------
 
 *Recherche les différentes possibilités d’interaction de ton système avec des systèmes tiers 
@@ -913,15 +929,18 @@ Ci-desous quelques exemples de services ou softwares s'intégrant avec 3CX.
 - Interaction avec des outils hôteliers comme Fidelio, Mitel, …
 - Interaction avec Teams
 - Interaction avec des systèmes de messagerie instantanée comme WhatsApp, services SMS, …
-
-greffer chat 3cx dans un site web et meem faire des appels audio/video
-
+- Greffer un chat 3cx dans un site web et aussi faire des appels audio/video pour du support par exemple.
 - Interaction avec les réseaux sociaux comme Facebook, …
-- Interaction avec des systèmes de taxation comme Easytax, …
-
-existe quasi plus, pour dispatcher les couts des forfaits telephonques par secteur departement
-
+- Interaction avec des systèmes de taxation comme Easytax, … (existe quasiment plus, utile pour dispatcher les coûts des forfaits telephoniques par secteur / département)
 - Interaction avec des systèmes d’alarmes ou d’appel malade, comme Siemens, Tyco, GETS, …
+
+
+
+Durant le jour 5, nous avons intégrer l'annuaire `Telsearch <https://search.ch/tel/>`_ dans notre infrastructure 3CX.
+| Néanmoins, le temps nous à manquer pour la tester complètement à cause du contretemps que nous avons rencontré.
+
+
+.. image:: https://imgs.search.brave.com/-3JOMIctzhcRMLqVlNre1Hke0L3IsQpSgHWslYuMDUA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWFy/Y2guY2gvbGliL2lt/YWdlcy9zZWFyY2gt/bG9nby1wcmludC5z/dmc_Yz0zNzBjNDE0/Yzcx
 
 
 
@@ -967,27 +986,6 @@ Schéma RPS :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rps-schema-yealink.png
 
-
-
-172.16.101.2
-
-attention Call4tell interfaces Ethernet inversées !!
-
-De gauche à droite : interface 2 puis interface 1 (contre-intuitif) pour le nx32 seulement
-
-Setup classique de montage de volume linux à faire lors de l'installation
-
-capture d'écran pour LVM
-
-Choisir SBC ou System en focntion
-
-
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M362/3cx-CLI.png
-
-
-.. important::
-
-    Lors du choix du fuseau horaire, il est important de sélectionner celui de Paris, car choisir celui de Berne est moins fiable et peut causer des problèmes de synchronisation temporelle.
 
 
 
@@ -1276,8 +1274,10 @@ Dans :menuselection:`Utilisateurs  --> <user> --> Options --> onglet "options"`.
 
 
 
+| "*77*200* puis -> XXXX#" (pin de la messagerie vocale) pour activer le hotdesking de l'utilisateur.
 
-"*77*200* puis -> XXXX#" (pin de la messagerie vocale) pour activer le hotdesking de l'utilisateur.
+
+
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/secure-pin-user.png
 
@@ -1327,16 +1327,13 @@ Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de 
 Des recommandations en ce sens sont généralement fournies par le constructeur. Standalone ou ....
 
 - Système sans fil SIP : connexion au moyen de l’infrastructure informatique du client final. 
-Cette variante nécessite généralement des switches avec alimentation PoE. Il faut donc 
-vérifier que le budget PoE à disposition par switch est suffisant. De plus, certaines solutions 
-doivent se synchroniser au moyen du réseau Ethernet, ce qui **nécessite l’utilisation du 
-protocole PTP (Precision Time Protocol)** mais qui nécessitent des **switchs compatibles et très coûteux**. 
-Certains systèmes requièrent l’installation d’un contrôleur (ou manager DECT) qui sera en 
-lien avec le système de téléphonie d’un côté et, de l’autre, en lien avec toutes les bases 
-DECT. Une planification et une installation rigoureuse doit être faite. 
-Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de définir précisément 
-l’emplacement des bases DECT (pour un site survey).
-Des recommandations en ce sens sont généralement fournies par le constructeur
+Cette variante nécessite généralement des switches avec **alimentation PoE.** 
+| Il faut donc vérifier que le **budget PoE** à disposition par switch est **suffisant**. 
+| De plus, certaines solutions doivent se synchroniser au moyen du réseau Ethernet, ce qui **nécessite l’utilisation du protocole PTP (Precision Time Protocol)** mais qui nécessitent des **switchs compatibles et très coûteux**. 
+| Certains systèmes requièrent l’installation d’un contrôleur (ou manager DECT) qui sera en lien avec le système de téléphonie d’un côté et, de l’autre, en lien avec toutes les bases DECT. 
+| Une planification et une installation rigoureuse doit être faite. 
+| Les fournisseurs mettent parfois à disposition un kit de mesures qui permet de définir précisément l’emplacement des bases DECT (pour un site survey).
+
 
 SIP DECT - Il faut que les antennes se voient pour le roaming et échanges d'informations
 
@@ -1346,24 +1343,31 @@ SIP DECT - Il faut que les antennes se voient pour le roaming et échanges d'inf
 
   Les bases DECT sont réparties en deux familles : 
 
-- Monocell (monocellulaire) : Il s’agit d’un système avec une base unique pouvant gérer entre 
-6 à 10 terminaux sans fil. Elle peut être de type propriétaire, non-propriétaire ou SIP. Il est 
-également possible d’augmenter la couverture du signal DECT en utilisant des répéteurs 
-(Repeater). Ces derniers occupent alors chacun une place d’un terminal DECT. Plus nous 
-ajoutons de répéteur, moins il est possible de configurer de terminaux DECT.
+- Monocell (monocellulaire) : 
+
+Il s’agit d’un système avec une base unique pouvant gérer entre **6 à 10 terminaux sans fil**. 
+| Elle peut être de type propriétaire, non-propriétaire ou SIP. 
+| Il est également possible **d’augmenter la couverture du signal DECT** en utilisant des **répéteurs (Repeater)**. 
+| Ces derniers occupent alors chacun une place d’un terminal DECT. 
+
+Cependant attention car, plus nous ajoutons de répéteur, moins il est possible de configurer de terminaux DECT.
+
 Ex : Base Yealink W70B, Repeater Yealink RT30
 
-- Multicell (multicellulaire) : Il s’agit d’un système avec un contrôleur DECT et plusieurs bases 
-DECT permettant de couvrir une zone beaucoup plus grande. L’utilisateur peut, au moyen de 
-la fonctionnalité Handover, se déplacer de base en base sans interruption du signal DECT et 
-donc, de la communication. Ce système est beaucoup plus complexe à mettre en service et 
-doit respecter toutes les indications fournies par le constructeur. La limite du nombre de 
-terminaux se situe entre 200 et 250. En fonction de l’installation, plusieurs contrôleurs de 
-site peuvent être utilisés en lien avec un ‘’super contrôleur’’. Chaque système ayant ses 
-particularités, il est nécessaire de lire attentivement les recommandations avant de procéder    
+- Multicell (multicellulaire) : 
+
+Il s’agit d’un système avec **un contrôleur DECT** et **plusieurs bases DECT** permettant de **couvrir une zone beaucoup plus grande**. 
+| L’utilisateur peut, au moyen de la fonctionnalité Handover, se déplacer de base en base sans interruption du signal DECT et donc, de la communication. 
+| Ce système est **beaucoup plus complexe à mettre en service** et doit **respecter toutes les indications fournies par le constructeur.**
+| La limite du **nombre de terminaux se situe entre 200 et 250.** 
+| En fonction de l’installation, plusieurs contrôleurs de site peuvent être utilisés en lien avec un **"super contrôleur".**
+
+Chaque système ayant ses particularités, il est **nécessaire de lire attentivement les recommandations** avant de procéder à la planification et l'installation du système.
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/w90-system.png
+
+
 
 
 
@@ -1388,6 +1392,8 @@ Chez le DECT Yealink W73P, voici quelques paramètres à activer/désactiver pou
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/dect-preferences.png
+
+
 
 
 - Désactiver la tonalité des touches (son émis lorsque pression sur une touche)
@@ -1416,13 +1422,15 @@ Nous le voyons très bien ci-desous avec la capture du T46G lui-même :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pcap-t46-dect-to-t46.png
 
 
-Si cependant nous souhaitons que le flux RTP passe par le PBX, il faut activer ce paramètre dans : "Utilisateurs" -> <user> -> Options -> Dépannage -> "Le PBX délivre l'audio"
+Si cependant nous souhaitons que le flux RTP passe par le PBX, il faut activer ce paramètre dans : 
+
+"Utilisateurs" -> <user> -> Options -> Dépannage -> "Le PBX délivre l'audio"
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pbx-audio.png
 
 
 
-Template personalisé
+Template personnalisé
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Chez 3CX, il est possible de créer ou modifier des templates déjà existants pour qu'ils nous correspondent plus.
@@ -1432,7 +1440,7 @@ Par exemple, nous pouvons désactiver toutes les langues sauf le francais, ou ra
 
 .. warning::
     Ne jamais modifier un template par défaut !
-    Il faut le dupliquer et en créer un nouveau à partir du duplicata.
+    Il faut le dupliquer et en créer un nouveau à partir du duplicata, car si une MàJ est faite, elle réécrira sur le template par défaut.
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/custom-template-hotdesking.png
@@ -1685,12 +1693,15 @@ Ici, nous configurons un IVR très simple, avec une annonce text-to-speech enreg
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config.png
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config2s.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config2.png
 
 
-Numero pour tester son clip et différentes options (rappel, enregistrement...):
+.. tip::
 
-0 800 820 300
+    Numero pour tester son clip et différentes options (rappel, enregistrement...):
+
+    0 800 820 300
+
 
 .. important::
 
@@ -1757,6 +1768,15 @@ SBC
 Mettre en place un SBC n'est pas plus difficile que de mettre en place un pont.
 
 Il faut seulement avoir une appliance avec une installation spécifique au SBC, et enregistrer ce dernier dans l'interface du PBX.
+
+.. seealso::
+    `Lien <https://www.3cx.fr/docs/installation-sbc/>`_ vers la documentation officielle d'installation du SBC 3CX.
+
+    Pour les infrastructures avec moins de 10 téléphones, 3CX vous suggère d'utiliser des terminaux intégrant directement la capacité SBC.
+
+    Cependant, attention pour les terminaux Yealink, car si vous utilisez la fonctionnalité SBC intégrée, vous ne serez plus en mesure de le gérer dans votre RPS Yealink.
+
+
 
 Pour ce faire, il suffit tout d'abord de se rendre de nouveau dans le section "Trunks SIP", et de cliquer sur la tuile "+ Ajouter un SBC".
 
@@ -1848,3 +1868,10 @@ Hotdesking directement dans la section "Téléphones"
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/unifi-coupable.jpg
     *Voici la coupable !!!!*
+
+
+
+3CX Installation
+=======================
+
+L'installation de 3CX ayant déjà été documentée dans le module M362, je vous invite à vous y rendre via `ce lien <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#differents-types-d-installation>`_.
