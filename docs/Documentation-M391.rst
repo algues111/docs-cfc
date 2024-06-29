@@ -53,11 +53,11 @@ Noyé sous la multitude de services disponibles, il est donc très important en 
 Mandat 2 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet. *
+*Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet.* 
 
-*Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton système de téléphonie ? *
+*Est-ce que des abonnements spécifiques sont nécessaires pour l’installation de ton système de téléphonie ?* 
 
-*Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.). *
+*Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.).* 
 
 *Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
 
@@ -150,7 +150,7 @@ Trunk
 Mandat 4 (a completer)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark. *
+*Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark.*
 
 .. note::
 
@@ -164,7 +164,7 @@ La fréquence d'échantillonnage sera aussi différente, et les informations SDP
 
 
 
-*Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.). *
+*Enregistre une trace d’un appel SIP et recherche les différents protocoles utilisés (SIP, SDP, RTP, RSTP, type de codecs, etc.).*
 
 
 En écoutant la communication SIP via Wireshark, il est possible de générer un graphique montrant les différentes étapes de la communication, de son établissement jusqu'à sa terminaison :
@@ -206,16 +206,20 @@ Nous pouvons le voir ci-dessous dans le graphique :
 
 
 
-Configure des téléphones de manière simple en utilisant les informations fournies par l’enseignant.
+
+*Configure des téléphones de manière simple en utilisant les informations fournies par l’enseignant.*
+
+
+Pour cette partie, je vous invite à vous dirigier vers l'`exercice 1 du module M362 <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M362.html#exercice-1>`_ dans lequel la configuration simple d'un terminal est faite.
 
 
 Mandat 5 
 ^^^^^^^^^^^^
 
 
-*Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP. *
+*Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP.*
 
-*Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ? *
+*Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ?*
 
 *A quoi sert cette appliance ?*
 
@@ -342,7 +346,7 @@ Tous les aspects listés plus haut doivent être pris en compte pour le choix de
 Mandat 7
 ^^^^^^^^^^^^^^
 
-*Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle. *
+*Choisis un des fournisseurs proposés, crée un compte sur la plateforme Cloud et procède à l’installation de ta première machine virtuelle.*
 
 *Il est aussi possible de procéder à l’installation d’un hyperviseur. Suis les procédures fournies par le fournisseur. Etablis un rapport de cette première installation.*
 
@@ -437,7 +441,7 @@ Call4Tell est une entreprise fabricant des ordinateurs au format NUC, dans lesqu
 Ils proposent plusieurs gammes de produits en fonction de vos besoins.
 
 
-.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/call4tell-products.png
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/call4tel-products.png
 
 
 NX32
@@ -471,15 +475,16 @@ Question Bonus du jour :
 
 
 
-Est-il possible d'avoir un trunk SIP Swisscom sur un 3CX installé dans le cloud ?
+*Est-il possible d'avoir un trunk SIP Swisscom sur un 3CX installé dans le cloud ?*
 
-réponse :
+Réponse :
 
-Non, pas avec le SBC
+Non, selon les documents fournis par Swisscom concernant leurs abonnements SIP Trunks, il n'est officiellement pas possible de les utiliser dans un environnement cloud.
+| Il est cependant techniquement possible de le faire si nous utilisons une liaison VPN entre le site raccordé Swisscom et l'environnement cloud. Mais cela représente plusieurs inconvénients et n'est pas le plus simple à réaliser.
 
-Oui avec Enterprise SIP Cloud
 
-https://documents.swisscom.com/product/filestore/lib/047dea54-3e19-43b0-a36e-9eed5af4f3b8/enterprise_sip_cloud_factsheet-fr.pdf?idxme=pex-search
+Mais Swisscom propose des forfaits `Enterprise SIP cloud <https://documents.swisscom.com/product/filestore/lib/047dea54-3e19-43b0-a36e-9eed5af4f3b8/enterprise_sip_cloud_factsheet-fr.pdf?idxme=pex-search>`_ pour ce genre de cas spécifiques.
+
 
 
 
@@ -491,7 +496,7 @@ Jour 2
 Mandat 1
 ------------------
 
-*Recherche quelles sont les différentes possibilités d’installation de ton système de téléphonie (On Premise, Cloud, machine physique, machine virtuelle…). *
+*Recherche quelles sont les différentes possibilités d’installation de ton système de téléphonie (On Premise, Cloud, machine physique, machine virtuelle…).*
 
 *Liste les avantages et les contraintes en fonction des différentes possibilités.*
 
@@ -563,11 +568,9 @@ Le plus important reste donc d'être à l'écoute de ce dernier et de lui propos
 Mandat 2 
 ------------
 
-Établir une checklist reprenant les différents thèmes du point précédent afin de pouvoir 
-fixer précisément les besoins du client final (choix des terminaux, gestion de la sécurité, …). 
+*Établir une checklist reprenant les différents thèmes du point précédent afin de pouvoir fixer précisément les besoins du client final (choix des terminaux, gestion de la sécurité, …).*
 
-Etablir également un schéma de l’installation et un inventaire du matériel installé (SN, MAC address, version 
-de firmware, …). Utiliser un système de gestion de mots de passes spécifiques afin de les répertorier
+*Etablir également un schéma de l’installation et un inventaire du matériel installé (SN, MAC address, version de firmware, …). Utiliser un système de gestion de mots de passes spécifiques afin de les répertorier*
 
 
 De nos jours, la sécurité est un aspect fondamental de toute infrastructure informatique, évoluant tous les jours.
@@ -647,12 +650,12 @@ Activation de protocoles sécurisés :
 
 - SIPS (SIP Secure) : utilise TLS
 
-If a SIP User Agent, UA1, wants to establish a secure SIP session with UA2:
+Si un agent utilisateur SIP, UA1, souhaite établir une session SIP sécurisée avec UA2 :
 
-UA1 contacts proxy server1 requesting a TLS session along with a session invitation for UA2. The proxy server provides a public certificate and UA1 validates it. UA1 and proxy server1 exchange session keys to encrypt/decrypt data for that particular session.
-Proxy server1 forwards the session invitation to the next proxy server using a TLS session or IPSec mechanism.
-UA1 and proxy server2 authenticate over TLS. The same procedure is repeated till the last hop ensuring SIP over TLS is used end-to-end.
-The secured session between UA1 and UA2 is now established.
+UA1 contacte le serveur proxy1 pour demander une session TLS avec une invitation de session pour UA2. Le serveur mandataire fournit un certificat public que UA1 valide. L'UA1 et le serveur mandataire 1 échangent les clés de session pour chiffrer/déchiffrer les données pour cette session particulière.
+Le serveur mandataire 1 transmet l'invitation de session au serveur mandataire suivant en utilisant une session TLS ou un mécanisme IPSec.
+UA1 et le serveur mandataire 2 s'authentifient par TLS. La même procédure est répétée jusqu'au dernier saut, en s'assurant que le protocole SIP sur TLS est utilisé de bout en bout.
+La session sécurisée entre UA1 et UA2 est maintenant établie.
 
 
 - SRTP (Secure RTP)
@@ -661,6 +664,19 @@ The secured session between UA1 and UA2 is now established.
 Schéma de principe communication VoIP sécurisée :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/sips-srtp.jpeg
+
+
+.. tip::
+
+    La meilleure chose à faire est d'activer les 2 protocoles sécurisés afin de maximiser la confidentialité des données.
+
+    Car si nous activons seulement SIPS, seule l'initiation de l'appel sera chiffrée, laissant le trafic RTP, et donc la voix, en clair sur le réseau.
+
+    Si nous faisons l'inverse, seul le trafic RTP sera chiffré, mais les informations de l'initiateur et du récepteur de l'appel seront en claires.
+
+
+.. seealso::
+    Dans la documentation 3CX, tout un `guide sur l'activation de SIPS et de SRTP <https://www.3cx.com/docs/secure-sip/>`_ est disponible.
 
 
 
@@ -704,7 +720,7 @@ Différents moyens sont possibles pour stocker des mots de passe, que ces dernie
 
 
 
-Bitwarden, proton, keepass, lastpass.....
+Bitwarden, proton, keepass, lastpass sont des logiciels dédiés à cette fonction.
 
 
 Par exemple, Proton AG met à disposition une `page web destinée à générer des mots de passe aléatoires <https://proton.me/fr/pass/password-generator>`_.
@@ -754,7 +770,7 @@ Mandat 3
 --------------------
 *Recherche les différentes fonctionnalités disponibles sur ton système et fait un 
 comparatif avec un autre système de ton choix, comme, par exemple un système hébergé chez un 
-opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ? *
+opérateur ou un fournisseur. Quels sont les avantages et les inconvénients des systèmes proposés ?*
 
 
 *Quels sont les coûts liés au système choisi ? Quel système te semble être le plus approprié ?*
@@ -817,22 +833,22 @@ Tarifs Swisscom
 
     1 appel sur 2 est émetteur donc cela revient à 5 heures facturées.
 
-SBC hosted telephony :
+**SBC hosted telephony :**
 
-Appels standards Suisse mobiles et fixes illimité : 22.-/mois par utilisateur
-Apels standards Suisse mobiles et fixes à la minute : 12.-/ mois par utilisateur + 0,08ct la minute pour mobiles / 0,30 ct la minute pour fixes
+| Appels standards Suisse mobiles et fixes illimité : 22.-/mois par utilisateur
+| Appels standards Suisse mobiles et fixes à la minute : 12.-/ mois par utilisateur + 0,08ct la minute pour mobiles / 0,30 ct la minute pour fixes
 
 220.- par mois pour le forfait illimité.
 
 144.- par mois au moins cher. 
 
 
-3CX Pro :
+**3CX Pro :**
 
 Pour 10 utilisateurs, 205.- sont facturés par an. ce qui revient à 1,708.- par utilisateur par mois.
 
-Cependant, il faut un trunk pour que les utilisateurs puissent appeler des numéros externes.
-Pour cela, nous allons choisir un trunk avec 2 canaux, ce qui est suffisant pour une entreprise de 10 personnes.
+| Cependant, il faut un trunk pour que les utilisateurs puissent appeler des numéros externes.
+| Pour cela, nous allons choisir un trunk avec 2 canaux, ce qui est suffisant pour une entreprise de 10 personnes.
 
 15chf par mois pour 10 numeros
 
@@ -875,10 +891,10 @@ Pour compléter le comparatif
 Mandat 4 A TESTER DERNIER JOUR
 ----------------------------------
 
-Recherche les différentes possibilités d’interaction de ton système avec des systèmes tiers 
+*Recherche les différentes possibilités d’interaction de ton système avec des systèmes tiers 
 et recherche également les caractéristiques des paramètres de ton système, s’ils sont disponibles.
 Réalise également une intégration d’un système tiers (Annuaire, CRM, …) avec ton serveur de 
-communication et test le bon fonctionnement de cette intégration
+communication et test le bon fonctionnement de cette intégration.*
 
 
 Aujourd'hui, de plus en plus de logiciels proposent des APIs ou des middlewares permettant une intégration facilitée avec d'autres softwares.
@@ -892,10 +908,8 @@ Ci-desous quelques exemples de services ou softwares s'intégrant avec 3CX.
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-integrations.jpeg
 
 
-- Gestion des utilisateurs internes (extensions) et intégration de calendriers et de contacts 
-avec Microsoft, Google, …
-- Interaction avec des outils de CRM, par exemple, Salesforce, Zendesk, Freshdesk, Bitrix, 
-Odoo, …
+- Gestion des utilisateurs internes (extensions) et intégration de calendriers et de contacts avec Microsoft, Google, …
+- Interaction avec des outils de CRM, par exemple, Salesforce, Zendesk, Freshdesk, Bitrix, Odoo, …
 - Interaction avec des outils hôteliers comme Fidelio, Mitel, …
 - Interaction avec Teams
 - Interaction avec des systèmes de messagerie instantanée comme WhatsApp, services SMS, …
@@ -941,6 +955,14 @@ Voici une liste non-exhaustives de fournisseurs proposant un serveur RPS.
 - `Fanvil : <https://fanvil.com/products/fdms/20220322/7307.html>`_
 
 
+Chez Yealink, il se présente comme suit :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-rps-server.jpg
+
+
+
+
+
 Schéma RPS :
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/rps-schema-yealink.png
@@ -974,6 +996,7 @@ Choisir SBC ou System en focntion
 
 
 
+
 Jour 3
 ===============
 
@@ -983,27 +1006,29 @@ Il est possible d'accéder à la console du linux 3cx via une web console :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-3cx-web.png
 
 
-
+.. seealso::
+    Voir la sécurisation de l'accès à la console 3CX `ici <https://docs-cfc.readthedocs.io/fr/latest/Documentation-M391.html#restrictions-de-la-console>`_.
 
 Commencer extensions a partir de 200 car numero durgences dans la 1ère centaine
 
 Accès shell linux 3cx :
 
-:command:`apt-get update` (mettre a jour la liste des paquets)
-:command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
-:command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
+| :command:`apt-get update` (mettre a jour la liste des paquets)
+| :command:`apt-get upgrade` (mettre a jour les paquets comportant des upgrades)
+| :command:`apt-get install <package>` (ici ntp et net-tools (déjà installé))
 
 Bonne pratique :
 
-:command:`sudo adduser arthur`
-
-:command:`sudo usermod arthur -aG  sudo` 
-:command:`sudo usermod arthur -aG phonesystem`
+| :command:`sudo adduser arthur`
+| :command:`sudo usermod arthur -aG  sudo` 
+| :command:`sudo usermod arthur -aG phonesystem`
 
 Vérifier l'apartenance aux groupes : 
 
 :command:`groups arthur` 
 
+
+<kbd>cmd + shift + p</kbd>
 
 Commandes pour définir une adresse IP statique ainsi que la gateway et serveurs DNS :
 
@@ -1012,11 +1037,15 @@ Sous debian 10 : :command:`cd /etc/network/ && sudo nano interfaces`
 
 Modifier les lignes :
 
-`enp2so static
-address 172.16.201.32
-netmask 255.255.255.0 
-gateway 172.16.201.1
-dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9``
+| enp2so static
+| address 172.16.201.32
+| netmask 255.255.255.0 
+| gateway 172.16.201.1
+| dns-nameservers 172.16.201.1 1.1.1.1 1.0.0.1 9.9.9.9
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/interfaces-debian.jpg
 
 
 Sécuriser les connexions SSH :
@@ -1047,10 +1076,7 @@ Après avoir fait cela, nous pouvons sur Windows effacer le cache DNS et ainsi r
 Forcer le 3CX Phone System EN ou HORS heures bureau : plus disponible sur la V20, car plus d'horaires systèmes mais par départements
 
 
-Faire attention aux adresses mails pour le reporting (par défaut, l'addresse de la première extension créée est enregistrée)
-Le mieux est de désactiver la notification de création d'une nouvelle extension.
 
-Activer seulement ce qui est adéquat.
 
 
 Permettre de changer les modèles d'envoi de mails mais attention aux appels de variables systèmes
@@ -1069,7 +1095,7 @@ Rajouter les numéros d'urgence : c'est une whitelist.
 Sécurité 
 ---------------
 
-Comme tout appareil en réseau, le 3CX (hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
+Comme tout appareil en réseau, le 3CX (ici hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
 
 
 Antipiratage 
@@ -1110,8 +1136,29 @@ Best practices :
 
 Autoriser seulement ladresse ip publique du bureau (pour le management offsite)
 
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/console-restrictions.png
+
+
+
 Mails
 -----------
+
+Dans les paramètres généraux de 3CX, il est possible de configurer des alertes et des notifications par mail.
+
+Il suffit de rentrer les adresses de votre choix séparées par des virgules (",").
+
+Ensuite, plusieurs options s'offrent à vous concernant les raisons pour lesquelles vous voulez être notifié par mail.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/email-3cx.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/email2-3cx.png
+
+
+Faire attention aux adresses mails pour le reporting (par défaut, l'addresse de la première extension créée est enregistrée)
+Le mieux est de désactiver la notification de création d'une nouvelle extension.
+
+Activer seulement ce qui est adéquat.
+
 
 Options
 ----------
@@ -1135,8 +1182,16 @@ Choisir ce que nous voulons sauvegarder
 Mandat 1
 -------------
 
-En présence d’une appliance physique, rechercher les limitations et les possibilités 
-d’extensions du système de téléphonie.
+*En présence d’une appliance physique, rechercher les limitations et les possibilités 
+d’extensions du système de téléphonie.*
+
+
+.. note::
+    Pour ce mandat et les prochains exemples, nous prendrons le mitel 470 ainsi que les différents modules / cartes ci-dessous
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/modules-and-470.png
 
 
 Cartes FXO : cartes de ligne analogique (branché sur le port ATA du routeur par exemple)
@@ -1148,7 +1203,7 @@ Cartes DSI : numérique propriétaire Mitel par exemple
 Cartes BR-S 
 Cartes BRI-S
 
-Cartes DSP
+Cartes DSP :
 Cartes EIP : Si besoin de plus de ressources
 Cartes TAX : taxation, peu répamndu
 
@@ -1318,13 +1373,30 @@ Selon le lien de `compatibilité 3CX <https://www.3cx.fr/sip-phones/>`_, les sys
 - Snom
 - Gigaset (avec limitations)
 
-
+Configuration DECT
+^^^^^^^^^^^^^^^^^^^^
 
 Pour configurer une antenne DECT, cela se passe de la même manière que pour enregistrer un ATA, c'est à dire dans la section "Avancés" -> "FXS/DECT"
 
 Il faut par la suite choisir le modèle et enregistrer l'adresse MAC.
 Dans l'onglet "Extensions" il faut choisir l'utilisateur que l'on veut attribuer au DECT.
 
+Préférences système
+***********************
+
+Chez le DECT Yealink W73P, voici quelques paramètres à activer/désactiver pour le confort de l'utilisateur :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/dect-preferences.png
+
+
+- Désactiver la tonalité des touches (son émis lorsque pression sur une touche)
+- Désactiver la réponse automatique (décroche lorsque le DECT sort de sa base)
+- Paramétrer le DECT en francais (par défaut en anglais)
+
+
+Analye Wireshark DECT-to-T46G
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Analysons désormais le flux SIP et RTP entre les deux terminaux.
 
@@ -1338,7 +1410,7 @@ Sur la première capture prise depuis le PBX, nous pouvons voir que seul le flux
 Cela veut donc dire que le flux RTP passe lui en direct du DECT vers le T46G.
 
 
-Nous le voyons très bien ci-desous avec la capture du T46 lui-même :
+Nous le voyons très bien ci-desous avec la capture du T46G lui-même :
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/pcap-t46-dect-to-t46.png
@@ -1350,7 +1422,13 @@ Si cependant nous souhaitons que le flux RTP passe par le PBX, il faut activer c
 
 
 
-Template personalisé :
+Template personalisé
+^^^^^^^^^^^^^^^^^^^^^^
+
+Chez 3CX, il est possible de créer ou modifier des templates déjà existants pour qu'ils nous correspondent plus.
+
+Par exemple, nous pouvons désactiver toutes les langues sauf le francais, ou rajouter des touches de ligne etc...
+
 
 .. warning::
     Ne jamais modifier un template par défaut !
@@ -1377,6 +1455,12 @@ Souvent, il suffit de glisser nos options préférées en premières afin que le
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/yealink-screencapture.png
 
+templatetype :
+
+Template supported : non officiel mais supporté
+Template preferred : officiel et supporté
+
+Pour mettre des touches de ligne dans 3CX, il faut impérativement modifier un template et l'injecter par la suite.
 
 
 Mandat 4
@@ -1395,13 +1479,62 @@ Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recher
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/integration-crm.png
 
+
+
+
 Ici, nous utiliserons une template pré-faite disponible avec ce lien de téléchargement :download:`source/other/TelsearchCRM-template.xml`
 
 Il faut remplacer 
 
+Mandat 5
+-------------
+
+Ce mandat traite de la disponibilité des données et de l'infrastructure.
+
+Nous verrons donc quelles sont les méthodes optimales et celles le plus fréquemment utilisées en entreprise.
+
+
+Dans l'idéal, pour une redondance conceptuellement optimale, il faudrait que toute l'infrastructure réseau soit maillée.
+
+Toutefois, vous vous douterez que peu d'entreprises disposent de ce type d'infrastructure étant donné les coûts intrinsèques élevés !
+
+Il est donc primordial de définir une échelle de priorité, de criticité pour chaque service, appliance dont nous disposons.
+
+
+
+La règle des 3-2-1 :
+
+3 sauvegardes, sur 2 supports différents, et une off-site.
+
+Cette règle se doit idéalement d'être respectée pour assurer une résilience des données, ainsi qu'un RTO et RPO optimals. 
+
+
+
+Chez 3CX, un système HA est proposé. Cependant dans la pratique, le failover n'est pas opérationnel.
+Typiquemment, lorsque le slave prend la relève du master, et qu'après un certain temps le master est de nouveau up, le slave ne reprend pas son rôle initial.
+
+Cela cause donc évidemment des conflits dans l'infrastructure téléphonique mais aussi réseau.
+
+
+
+
+
 
 Mandat 6
 ----------------
+
+*Réaliser une documentation complète de votre système de téléphonie.*
+
+*Profitez de mettre à jour vos différents documents et schémas établis dès le premier jour de cours.*
+
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/3cx-doc.drawio.png
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/mandat6.drawio.png
+
+
 
 Mandat 7
 -----------
@@ -1423,4 +1556,295 @@ Pas de chiffrement de la config, infra non critique
 sftp://<ip>/<folder> sur 3cx avec user-mdp
 port par défaut : 22
 backup manuel, successful
+  
+7 backups à stocker, 1 faite tous les jours à 3:00 du matin
 
+
+
+Jour 4
+==========
+
+
+Ce jour est consacré à la découverte de la plateforme peoplefone.
+
+Nous diposons de 45.- de crédit gracieusement offerts ainsi que des services gratuits pendant 30 jours (phase de test)
+
+
+Pour tester tout cela, accédons donc à cette fameuse `plateforme <https://portal.peoplefone.ch/home>`_ !
+
+
+| Lorsque nous nous connectons au compte que l'on nous a créé, nous débarquons tout d'abord sur la page "home" de peoplefone.
+| Nous y trouvons des informations générales, telles que les coordonnées de notre partenaire, les news de peoplefone ainsi que l'état de leurs systèmes.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-home.png
+
+
+
+Avant de commencer nos tests des différents services disponibles, nous allons commander une licence HOSTED avec 2 options (IVRx2 + Softphonex2)
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-hosted.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-hosted2.png
+
+.. warning::
+
+    Avant d'ajouter les produits dans le panier, n'oubliez pas de cocher la case pour les 30 jours d'essais gratuits. 
+    
+    Dans le cas contraire, vous serez débité du montant du.
+
+Suite à votre petite commande, vous verrez désormais votre forfait hosted dans la rubrique "abonnements" de l'interface peoplefone.
+
+Cliquer dessus vous permettra de voir les détails !
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-subscription-hosted.png
+
+
+
+Le bloc de numéros faisant partie intégrante des prérequis d'une infrastructure téléphonique, nous allons en commander un de 10.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers2.png
+
+
+
+
+Pour provisioner un terminal dans le PBX virtuel HOSTED de Peoplefone, il faut enregistrer l'appareil et ensuite rentrer le lien de provisioning.
+
+Il n'y a donc quasiment aucune configuration manuelle à effectuer, ce qui rend le déploiement simple et efficace.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-device-registering-hosted.png
+
+
+
+
+Excellent ! Après avoir provisioné le téléphone, nous le voyons en ligne dans notre interface de gestion des lignes/utilisateurs :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-tuile-user1-provisioned.png
+
+
+.. note::
+    Si toutefois vous souhaitez quand même accéder à l'interface web-admin de votre téléphone provisioné, les credentials sont les suivants :
+
+    user : **admin**
+
+    password : **<sip user password>**
+
+
+.. seealso::
+    La documentation de leur système hosted est accessible depuis ce `lien <https://support.peoplefone.com/en-che/peoplefone-products/peoplefone-hosted-vpbx-functions/>`_. 
+
+
+
+
+Comme mentionné plus haut, peoplefone propose une solution de softphone.
+| Pour cela, il faut bien évidemment commander des licences.
+
+Dans l'onglet softphone, vous pouvez voir le nombre de licence qu'il vous reste à attribuer ainsi que le nombre de licences total.
+
+Ici, nous allons configurer la 1ère licence pour l'User 2.
+
+Il suffit de renseigner l'adresse mail de l'utilisateur, et ce dernier recevra un mail lui demandant de réinitialiser le mot de passe.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-softphone-mail.png
+
+
+
+A la suite de la définition du mot de passe utilisateur, vous pouvez vous connecter sur le `portail d'authentification du softphone <https://softphone.peoplefone.com/>`_
+
+Si l'autentification réussit, vous serez redirigez vers la page du softphone avec une interface claire et épurée.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-softphone-web.png
+
+
+.. seealso::
+    Une "application" est aussi disponible via l'icône "Télécharger". Cela créera un raccourci web que vous pouvez épingler à votre barre des tâches.
+
+
+
+Ajout d'appareils pour le peoplefone HOSTED :
+
+
+
+Puisque nous avons commandé 2 licences IVR, nous allons en configurer un.
+
+Dans l'onglet "Téléphonie VoIP", une section IVR est disponible, il suffit de cliquer dessus pour accéder à l'interface.
+
+Vous vous retrouverez donc sur cette page où vous pouvez "Ajouter un IVR", "Ajouter une annonce" ou modifier un IVR déjà installé.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-menu.png
+
+
+
+
+Ici, nous configurons un IVR très simple, avec une annonce text-to-speech enregistrée en format .wav, ainsi que la touche DTMF 0 ayant pour destination l'extension 200.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-ivr-config2s.png
+
+
+Numero pour tester son clip et différentes options (rappel, enregistrement...):
+
+0 800 820 300
+
+.. important::
+
+    Chose très importante à faire -> définir les numéros d'urgence dans paramètres -> général
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/urgences-3cx.png
+
+
+
+-----------------
+
+Jour 5
+=========
+
+SBC + Call Flow à tester interconnexion 2 pbx locaux
+
+
+Bridge
+-------------
+
+Chez 3CX, il est possible d'interconnecter plusieurs PBX entre eux à l'aide de "ponts", ou "bridges" en abglais.
+
+Pour cela, plusieurs étapes sont à suivre avec quelques détails importants à ne pas occulter !
+
+| Premièrement, il faut définir quel PBX sera maître ou esclave.
+| Après avoir choisi, vous pouvez créer le pont sur chacun des PBX via la section "Trunks SIP", avec la tuile "+ Ajouter un pont"
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-menu-pont.png
+
+
+Lorsque vous cliquez sur cette dernière, une interface de configuration s'affiche, vous laissez le choix de la manière dont vous paramtérez votre système.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-conf.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-conf2.png
+
+
+Toutefois, certains paramètres spécifiques sont recommandés pour une interconnexion optimale et sécurisée :
+
+- Le mot de passe partagé : doit être le même à la fois chez le maître et l'esclave
+- Le préfixe de règle sortante : utilisé par la suite lors du paramétrage de la règle sortante du pont
+- La connexion tunnel : utilise le port de management 5090 (TCP/UDP)
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-presence.png
+
+Ce menu permet de définir ce que nous voulons partager au PBX distant et si nous voulons recevoir ses informations.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-avance.png
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-pont-avance2.png
+
+
+.. seealso::
+    Lien vers la `documentation officielle 3CX <https://www.3cx.com/docs/manual/connecting-pbx-bridges/>`_.
+
+
+
+SBC
+--------
+
+
+Mettre en place un SBC n'est pas plus difficile que de mettre en place un pont.
+
+Il faut seulement avoir une appliance avec une installation spécifique au SBC, et enregistrer ce dernier dans l'interface du PBX.
+
+Pour ce faire, il suffit tout d'abord de se rendre de nouveau dans le section "Trunks SIP", et de cliquer sur la tuile "+ Ajouter un SBC".
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-menu-pont.png
+
+
+Après cela, vous débarquerez sur l'interface suivante.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-sbc-conf.png
+
+
+
+
+Sur celle-ci, vous trouverez des informations nécessaires à l'interconexion des 2 appliances, notamment :
+
+- L'URL de provisioning (ici le FQDN du PBX avec le port 5001 https)
+- La clé ID d'authentification (demandée lors de l'installation du SBC)
+
+En plus de ces informations, il vous sera demandé de donner un nom au SBC, ainsi que de créer un mot de passe.
+
+
+La prochaine étape consiste donc à finaliser l'installation du SBC en renseignant l'URL de provisioning présente dans le PBX ainsi que la clé ID d'autentification.
+
+Le PBX vérifiera les informations et autorisera ensuite le SBC à se connecter.
+
+Mission accomplie, vous avez configuré avec succès le SBC dans 3CX !
+
+
+
+La dernière étape sera maintenant de configurer un terminal derrière le SBC.
+
+Il faudra donc créer un utilisateur ou en prendre un existant, aller dans la section "Téléconfiguration téléphone", et enregistrer le terminal souhaité.
+
+Toutefois, une petite spécificité se glisse dans la configuration étant donné qu'il faut choisir la méthode de provisioning via SBC, et sélectionner l'IP de ce dernier.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/3cx-sbc-phone-conf.png
+
+
+
+Après cela, classique, il suffira de renseigner l'URL de provisioning dans l'interface web du téléphone.
+
+Le tour est joué, vous pouvez dès maintenant utiliser votre nouveau terminal connecté derrière votre SBC !
+
+
+
+
+Comparaison V18 V20
+-----------------------
+
+
+Dans la V20, plus de règles entrantes, tout se fait dans la gestion des utilisateurs, groupes d'appels, départements...
+
+Pour les extensions utilisateurs, les adresses mail doivent être uniques.
+
+CLIP sortants dans l'utilisateur -> Général
+Numéro SDA assignée dans l'utilisateur -> Général
+
+Gestion des départements en fonction des besoins de l'entreprise (RH, Finances, Succursales...)
+Création d'un département "Default", à l'installation de 3CX.
+Gestion des heures de bureau désormais uniquement PAR DÉPARTEMENT.
+Disparition du basculement manuel jour nuit, c'est fait désormais par département.
+
+Configuration du téléphone : dans les options, décocher la case "permettre à 3CX de provisioner de manière sécurisée et automatique les terminaux IP dans les serveurs distants."
+Cela les inscrit dans le RPS de 3CX sur lequel vous n'avez aucun accès
+
+Module BLF : première touche = total de touche du terminal moins 1 fois 3. 
+
+.. warning::
+
+    La version Windows de 3CX ne sera disponible qu'avec l'abonnement ENT ou PRO avec la V20
+
+Dans "Voix et Chat" -> pour FXS et DECT, trunks, ponts, SBC, intégrations whatsapp facebook...
+
+Hotdesking directement dans la section "Téléphones"
+
+
+.. admonition:: Cas concret
+
+    Après de multiples tests effectués sur un NX96 de Call4Tel, des déconnexions réseau intempestives ont fait surface.
+    Coupure de l'accès à la web interface, coupure de la session ssh, impossibilité d'injecter une backup, erreurs de connectivité directe (ping), coupure du pont et du SBC..
+
+    Malgré des tentatives de redémarrage et de réinstallation, l'appliance ne s'est pas résolu à fonctionner de nouveau correctement.
+    Les journaux systèmes (journalctl) n'indiquaient aucune erreur quelle qu'elle soit.
+
+    Nous soupconnions donc un défaut physique de la carte réseau, cependant, il s'avérait qu'une antenne Wi-Fi Unifi avait la même adresse IP que le PBX.
+
+    Ce conflit étant à l'origine des problèmes susmentionnés, nous avons débranché l'antenne et supprimé l'adresse 172.16.201.37 de la plage DHCP.
+
+    .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/unifi-coupable.jpg
+    *Voici la coupable !!!!*
