@@ -50,7 +50,7 @@ Voici quelques exemples qui ressortent le plus souvent :
 Noyé sous la multitude de services disponibles, il est donc très important en tant que technicien conseiller de proposer une solution que nous connaissons, dont la qualité/fiabilité est certaine, et surtout qui est adaptée aux besoins du client !
 
 
-Mandat 2 (a completer)
+Mandat 2 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Prends un opérateur au choix et liste les différentes possibilités d’abonnements pour l’accès à Internet.* 
@@ -100,7 +100,16 @@ Tarifs à la minute ci-dessous :
 
 *Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
 
-Selon les équipements déjà présents sur site, leur état, modèle, et date de fin de support, 
+
+De manière général, si le client possède déjà depuis longtemps une infrastructure téléphoniaue comprenant une appliance PBX traditonnelle ainsi que des terminaux analogiques ou ISDN, il est préférable de lui proposer des alternatives IP, car il sera forcer à migrer forcer dans les années à venir.
+Il vaut donc mieux anticiper la vague avant de se la prendre de plein fouet. 
+
+Concernant VTX, je conseillerais leurs services si le client souhaite prendre l'abonnement Internet ainsi que leurs forfaits téléphoniaues, ces derniers revenant 2x moins cher sous cette condition.
+
+
+Néanmoins, il est extremement difficile de répondre à cette question entièrement, puisqu'en tant que technicien nous nous devons de faire du sur mesure pour le client, afin qu'il ait ce dont il a besoin.
+
+
 
 
 Mandat 3 
@@ -151,7 +160,7 @@ Trunk
 
       En naviguant dans ce profil, nous voyons que nous l'avons configuré pour que :
 
-Mandat 4 (a completer)
+Mandat 4
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Lors d’un exercice avec appel VoIP, essaie d’identifier les différents protocoles et codecs énoncés ci-dessous au moyen de l’analyseur Wireshark.*
@@ -223,6 +232,9 @@ Mandat 5
 
 *Reprends l’opérateur choisi précédemment et liste les différentes variantes possibles pour les interconnexions VoIP.*
 
+Je vous propose de retourner au mandat 3, dans lequel la question a déjà été traitée. 
+
+
 *Pour quelles variantes aura-t-on besoin d’une appliance de type SBC ?*
 
 *A quoi sert cette appliance ?*
@@ -235,7 +247,15 @@ Mandat 6
 ^^^^^^^^^^^^
 
 
-Fais un tableau en listant les principales caractéristiques de ces différentes plateformes Cloud. 
+*Fais un tableau en listant les principales caractéristiques de ces différentes plateformes Cloud.*
+
+Voici un tableau comparatif comparant divers services de providers cloud.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/comparatif-cloud.png
+
+
+
 
 *Laquelle te semble la plus adaptée pour l’installation de ton système de téléphonie ?*
 
@@ -420,21 +440,21 @@ Chez OVH, lorsque vous installez une vm public cloud, il est impératif de crée
 
 De son côté, OVH s'assure d'injecter un certificat privé dans la VM.
 
-Vous n'avez donc qu' àlui fournir votre certificat public pour créer cette base d'authentification;
+Vous n'avez donc qu'à lui fournir votre certificat public pour créer cette base d'authentification;
+
+.. seealso::
+
+    `Clé SSH RSA tuto public cloud OVH <https://help.ovhcloud.com/csm/fr-public-cloud-compute-getting-started?id=kb_article_view&sysparm_article=KB0051011#etape-1-creer-des-cles-ssh%2F>`_
 
 
-Clé SSH RSA tuto public cloud OVH 
+    `Installation 3CX OVH Public cloud <https://help.ovhcloud.com/csm/en-gb-voip-3cx-public-cloud-automatic-deployment?id=kb_article_view&sysparm_article=KB0059072>`_ 
 
-https://help.ovhcloud.com/csm/fr-public-cloud-compute-getting-started?id=kb_article_view&sysparm_article=KB0051011#etape-1-creer-des-cles-ssh%2F
 
-Installation 3CX OVH Public cloud :abbr:
-https://help.ovhcloud.com/csm/en-gb-voip-3cx-public-cloud-automatic-deployment?id=kb_article_view&sysparm_article=KB0059072
+Attention, il faut cependant prendre les scripts bash d'OVH, mais prendre la config XML de 3CX via ce lien : https://install.3cx.com/?license=AAAA-BBBB-CCCC-DDDD
 
-Attention, il faut prendre les scripts bash d'OVH, mais prendre la config XML de 3CX via ce lien : https://install.3cx.com/?license=AAAA-BBBB-CCCC-DDDD
+Exemple du script bash+xml installation 3cx cloud OVH :
 
-Script bash+xml installation 3cx cloud OVH :abbr:
-
-:download:`source/other/SetupConfig-combined`
+:download:`source/other/SetupConfig-combined.xml`
 
 
 
@@ -1493,7 +1513,8 @@ Cela permet aussi de centraliser la gestion du carnet d'adresses.
 
 Chez 3CX, plusieurs intégrations sont possibles :
 
-liste...
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/crm.png
+
 
 
 Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recherches par mois.
@@ -1506,7 +1527,7 @@ Ici nous nous intéresserons à telsearch, qui est gratuit jusqu'à 1'000 recher
 
 Ici, nous utiliserons une template pré-faite disponible avec ce lien de téléchargement :download:`source/other/TelsearchCRM-template.xml`
 
-Il faut remplacer 
+
 
 Mandat 5
 -------------
@@ -1516,7 +1537,11 @@ Ce mandat traite de la disponibilité des données et de l'infrastructure.
 Nous verrons donc quelles sont les méthodes optimales et celles le plus fréquemment utilisées en entreprise.
 
 
-Dans l'idéal, pour une redondance conceptuellement optimale, il faudrait que toute l'infrastructure réseau soit maillée.
+Dans l'idéal, pour une redondance conceptuellement optimale, il faudrait que toute l'infrastructure réseau soit maillée comme nous le voyons dans le schéma ci-dessous :
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha3.png
+
 
 Toutefois, vous vous douterez que peu d'entreprises disposent de ce type d'infrastructure étant donné les coûts intrinsèques élevés !
 
@@ -1526,9 +1551,19 @@ Il est donc primordial de définir une échelle de priorité, de criticité pour
 
 La règle des 3-2-1 :
 
-3 sauvegardes, sur 2 supports différents, et une off-site.
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/321.png
 
-Cette règle se doit idéalement d'être respectée pour assurer une résilience des données, ainsi qu'un RTO et RPO optimals. 
+
+3 sauvegardes, sur 2 supports différents, et une off-site.
+| Quant à lui, le schéma de principe ci-dessus est plus précis et pousse plus loin la règle.
+
+Cette dernière se doit idéalement d'être respectée pour assurer une résilience des données, ainsi qu'un RTO et RPO optimals. 
+
+
+Différents niveaux de redondance existent donc, ces derniers dépendant des besoins et des exigences de l'infrastructure. Voici quelques exemples : 
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha2.png
+
 
 
 
@@ -1536,6 +1571,9 @@ Chez 3CX, un système HA est proposé. Cependant dans la pratique, le failover n
 Typiquemment, lorsque le slave prend la relève du master, et qu'après un certain temps le master est de nouveau up, le slave ne reprend pas son rôle initial.
 
 Cela cause donc évidemment des conflits dans l'infrastructure téléphonique mais aussi réseau.
+
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/m391/ha.png
 
 
 
@@ -1549,13 +1587,19 @@ Mandat 6
 
 *Profitez de mettre à jour vos différents documents et schémas établis dès le premier jour de cours.*
 
-
+Voici 2 schémas, avec respectivement l'infrastructure téléphonique 3CX et le réseau de lab que nous avons utilisé.
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/3cx-doc.drawio.png
 
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/other/mandat6.drawio.png
 
+
+.. note::
+
+    Dans un environnement d'entreprise, une documentation plus complète est nécessaire, avec des schémas de flux de backups, de services hébergés ou virtualisés, des tableaux de concept IP / VLANS et j'en passe.
+
+    Ici, l'idée était de combiner l'essentiel de notre infrastructure de labo afin de s'y retrouver facilemenet et de comprendre la globalité de la configuration.
 
 
 Mandat 7
@@ -1632,6 +1676,16 @@ Cliquer dessus vous permettra de voir les détails !
 
 Le bloc de numéros faisant partie intégrante des prérequis d'une infrastructure téléphonique, nous allons en commander un de 10.
 
+Nous avons le choix entre plusieurs options :
+
+- Standards Suisse (au format +41 xx xxx xx xx)
+- Suisse au format +41 58 xxx xx xx
+- N° internationaux (contact avec le service client)
+- Portage de n°
+
+
+
+
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers.png
 
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/peoplefone-buy-numbers2.png
@@ -1639,7 +1693,8 @@ Le bloc de numéros faisant partie intégrante des prérequis d'une infrastructu
 
 
 
-Pour provisioner un terminal dans le PBX virtuel HOSTED de Peoplefone, il faut enregistrer l'appareil et ensuite rentrer le lien de provisioning.
+
+| Pour provisioner un terminal dans le PBX virtuel HOSTED de Peoplefone, il faut enregistrer l'appareil et ensuite rentrer le lien de provisioning.
 
 Il n'y a donc quasiment aucune configuration manuelle à effectuer, ce qui rend le déploiement simple et efficace.
 
@@ -1681,7 +1736,7 @@ Il suffit de renseigner l'adresse mail de l'utilisateur, et ce dernier recevra u
 
 
 
-A la suite de la définition du mot de passe utilisateur, vous pouvez vous connecter sur le `portail d'authentification du softphone <https://softphone.peoplefone.com/>`_
+| A la suite de la définition du mot de passe utilisateur, vous pouvez vous connecter sur le `portail d'authentification du softphone <https://softphone.peoplefone.com/>`_
 
 Si l'autentification réussit, vous serez redirigez vers la page du softphone avec une interface claire et épurée.
 
@@ -1725,6 +1780,8 @@ Ici, nous configurons un IVR très simple, avec une annonce text-to-speech enreg
 
 .. important::
 
+    Pour finir ce jour, dernière astuce pour le système 3CX.
+    
     Chose très importante à faire -> définir les numéros d'urgence dans paramètres -> général
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/urgences-3cx.png
