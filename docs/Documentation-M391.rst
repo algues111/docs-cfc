@@ -408,6 +408,13 @@ Pour la solution de PBX virtuel, nous installerons une instance 3CX avec une lic
 
 
 
+Chez OVH, lorsque vous installez une vm public cloud, il est impératif de créer une authentification SSH basé sur des certificats.
+
+De son côté, OVH s'assure d'injecter un certificat privé dans la VM.
+
+Vous n'avez donc qu' àlui fournir votre certificat public pour créer cette base d'authentification;
+
+
 Clé SSH RSA tuto public cloud OVH 
 
 https://help.ovhcloud.com/csm/fr-public-cloud-compute-getting-started?id=kb_article_view&sysparm_article=KB0051011#etape-1-creer-des-cles-ssh%2F
