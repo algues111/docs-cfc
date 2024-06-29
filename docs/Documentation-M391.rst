@@ -1899,7 +1899,18 @@ Pour exemple, prenons la template du jour 5.
 #. Si l'extension est disponible, alors :
 
     a. Le système vérifie les horaires
-        b. Si c'est un jour spécial (férié, etc...)
+        1. Si c'est un jour spécial, férie etc... (Transfert vers l'extension 9902)
+        2. Si c'est un jour ouvré
+            Dans ce cas, l'appelant atteint un IVR avce les 3 options suivantes
+                1. Réception (Transfert vers l'extension 6700)
+                2. Ventes (Transfert vers l'extension 6709)
+                3. Timeout or Invalid option (Transfert vers l'extension 6700)
+
+
+        3. Si c'est les horaires sont "hors bureau" (Transfert vers l'extension 9901)
+
+#. Si la personne est absente [Transfert vers l'extension 6012]
+#. A la fin, l'appel est terminé
           
 
 
