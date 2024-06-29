@@ -1891,10 +1891,26 @@ Pour exemple, prenons la template du jour 5.
 
 
 
-Cette dernière, relativement simple se comporte de la manière suivante :
+
+| Cette dernière, relativement simple se comporte de la manière suivante :
+
+
+#. Le système vérifie le status de l'extension 0001.
+#. Si l'extension est disponible, alors :
+
+    a. Le système vérifie les horaires
+        b. Si c'est un jour spécial (férié, etc...)
+          
+
+
+.. note::
+    Si plusieurs options sont présentes dans la même condition, il faut les lire de gauche à droite.
 
 
 
+
+.. note::
+    Dans 3CX, vous ne verrez le call flow seulement dans l'interface lui étant dédiée, mais nul part d'autre.
 
 
 
