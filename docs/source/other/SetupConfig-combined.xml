@@ -70,7 +70,7 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
     </option>
     <option>
       <code>AdminEmail</code>
-      <answer>a.leguennec909@proton.me</answer>
+      <answer>a@a.ch</answer>
     </option>
     <option>
       <code>MailServerType</code>
@@ -90,15 +90,15 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
     </option>
     <option>
       <code>OperatorFirstName</code>
-      <answer>Arthur</answer>
+      <answer>john</answer>
     </option>
     <option>
       <code>OperatorLastName</code>
-      <answer>LE GUENNEC</answer>
+      <answer>john</answer>
     </option>
     <option>
       <code>OperatorEmail</code>
-      <answer>a.leguennec909@proton.me</answer>
+      <answer>a@a.ch</answer>
     </option>
     <option>
       <code>OperatorVoicemail</code>
@@ -110,15 +110,15 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
     </option>
     <option>
       <code>LicenseContactName</code>
-      <answer>Arthur LE GUENNEC</answer>
+      <answer>john</answer>
     </option>
     <option>
       <code>LicenseCompanyName</code>
-      <answer>Arthur LE GUENNEC</answer>
+      <answer>john</answer>
     </option>
     <option>
       <code>LicenseEmail</code>
-      <answer>a.leguennec909@proton.me</answer>
+      <answer>a@a.ch</answer>
     </option>
     <option>
       <code>LicensePhone</code>
@@ -144,9 +144,9 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
   <extensions>
     <extension>
       <Number>100</Number>
-      <FirstName>Arthur</FirstName>
-      <LastName>LE GUENNEC</LastName>
-      <EmailAddress>a.leguennec909@proton.me</EmailAddress>
+      <FirstName>john</FirstName>
+      <LastName>john</LastName>
+      <EmailAddress>a@a.ch</EmailAddress>
       <AuthPassword></AuthPassword>
       <AuthID>nSaAq8Dd2b</AuthID>
       <AllowLanOnly>true</AllowLanOnly>
@@ -184,13 +184,13 @@ cat > /etc/3cxpbx/setupconfig.xml << "<EOF>"
   </extensions>
   <mcwizard>
     <ExtensionLength>3</ExtensionLength>
-    <AdminEmail>a.leguennec909@proton.me</AdminEmail>
+    <AdminEmail>a@a.ch</AdminEmail>
     <SmtpEnableSsl>false</SmtpEnableSsl>
     <OperatorExtension>100</OperatorExtension>
     <VoicemailExtension>999</VoicemailExtension>
-    <LicenseContactName>Arthur LE GUENNEC</LicenseContactName>
-    <LicenseCompanyName>Arthur LE GUENNEC</LicenseCompanyName>
-    <LicensEmail>a.leguennec909@proton.me</LicensEmail>
+    <LicenseContactName>john</LicenseContactName>
+    <LicenseCompanyName>john</LicenseCompanyName>
+    <LicensEmail>a@a.ch</LicensEmail>
     <LicensePhone>+1 555 01234</LicensePhone>
     <LicenseCountry>41</LicenseCountry>
     <TimezoneId>58</TimezoneId>

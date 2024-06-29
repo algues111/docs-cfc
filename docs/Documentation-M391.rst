@@ -59,7 +59,7 @@ Mandat 2 (a completer)
 
 *Analyse les besoins en fonction du projet (Débit de données, coûts mensuels, IP fixe, support, SLA, etc.).* 
 
-*Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
+
 
 
 
@@ -97,6 +97,10 @@ Tarifs à la minute ci-dessous :
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/forfait-min.png
 
 
+
+*Quelles propositions peux-tu faire au client s’il s’agit d’une nouvelle installation ou s’il s’agit d’une installation existante ?*
+
+Selon les équipements déjà présents sur site, leur état, modèle, et date de fin de support, 
 
 
 Mandat 3 
@@ -501,6 +505,11 @@ Mais Swisscom propose des forfaits `Enterprise SIP cloud <https://documents.swis
 
 Jour 2
 ===================
+
+
+Voici le fichier pdf du jour 2 téléchargeable ci-dessous :
+
+:download:`source/other/Module_391_Jour_2_FR.pdf`
 
 
 Mandat 1
@@ -998,6 +1007,11 @@ Schéma RPS :
 Jour 3
 ===============
 
+Voici le fichier pdf du jour 3 téléchargeable ci-dessous :
+
+:download:`source/other/Module_391_Jour_3_FR.pdf`
+
+
 
 Il est possible d'accéder à la console du linux 3cx via une web console :
 
@@ -1056,7 +1070,7 @@ Limiter les attempts failures
 .. admonition:: Liens utiles
     Pour connaître plus de bonnes pratiques quant au service SSH, je vous invite à regarder la page d'`IT Connect <it-connect.fr/chapitres/bonnes-pratiques-de-configuration-ssh/>`_.
 
-puisque problemes avec le dns, changer le record A / PTR pour pointer vers l'ip local (soit sur le routeur soit sur le serveur dns (ici windows serveur servoce dns))
+Puisque problemes avec le dns, changer le record A / PTR pour pointer vers l'ip local (soit sur le routeur soit sur le serveur dns (ici windows serveur servoce dns))
 
 Après avoir fait cela, nous pouvons sur Windows effacer le cache DNS et ainsi récupérer les nouveaux enregistrements A du serveur DNS local !
 
@@ -1573,7 +1587,13 @@ Jour 4
 ==========
 
 
+
 Ce jour est consacré à la découverte de la plateforme peoplefone.
+
+Voici le fichier pdf du jour 4 téléchargeable ci-dessous :
+
+:download:`source/other/Module_391_Jour_4_FR.pdf`
+
 
 Nous diposons de 45.- de crédit gracieusement offerts ainsi que des services gratuits pendant 30 jours (phase de test)
 
@@ -1716,7 +1736,18 @@ Ici, nous configurons un IVR très simple, avec une annonce text-to-speech enreg
 Jour 5
 =========
 
-SBC + Call Flow à tester interconnexion 2 pbx locaux
+Ce jour est dédié à la libre découverte de fonctionnalités des systèmes de téléphonie étudiés précédemment.
+
+Voici le fichier pdf du jour 5 téléchargeable ci-dessous :
+
+:download:`source/other/Module_391_Jour_5_FR.pdf`
+
+
+Liste de choses à tester :
+
+- SBC 
+- Call Flow
+- Interconnexion 2 pbx locaux (bridge)
 
 
 Bridge
@@ -1820,6 +1851,49 @@ Toutefois, une petite spécificité se glisse dans la configuration étant donn�
 Après cela, classique, il suffira de renseigner l'URL de provisioning dans l'interface web du téléphone.
 
 Le tour est joué, vous pouvez dès maintenant utiliser votre nouveau terminal connecté derrière votre SBC !
+
+
+3CX Call Flow
+--------------------
+
+
+Dans la section "Avancés" du menu 3CX, l'onglet Call Flow est disponible.
+
+A partir de là, il est possible d'injecter un fichier de call flow créer dans l'application 3CX Call Flow Designer.
+
+Téléchargement
+^^^^^^^^^^^^^^^^
+
+
+.. seealso::
+    Cette application est téléchargeable depuis ce `lien <https://www.3cx.fr/pabx/call-flow-designer/>`_.
+
+
+Après avoir téléchargé et installé le logiciel en question, des templates de call flow sont disponibles dans les fichiers de l'application : :file:`C:\Users\<user>\Documents\3CX Call Flow Designer Demos`
+
+
+
+Lancement
+^^^^^^^^^^^^^
+
+Lorsque vous lancez le logiciel, vous débarquez premièrement sur cette interface :
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/cfd.png
+
+
+
+| Elle peut paraître relativement austère ou rudimentaire, mais elle ne paie pas de mine car énormément de possibilités s'offrent à nous !
+
+
+Pour exemple, prenons la template du jour 5.
+
+.. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/cfd-template.png
+
+
+
+Cette dernière, relativement simple se comporte de la manière suivante :
+
+
 
 
 
