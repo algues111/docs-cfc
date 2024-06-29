@@ -259,6 +259,11 @@ Voici un tableau comparatif comparant divers services de providers cloud.
 
 *Laquelle te semble la plus adaptée pour l’installation de ton système de téléphonie ?*
 
+Il n'y a pas photo, Infomaniak est clairement moins cher sur tous les points. De plus, la société est Suisse !
+| Privilégier le local, quand on peut, c'est mieux !
+
+
+
 *Quelles sont les avantages et inconvénients d’une installation sur une plateforme Cloud par rapport à une installation On Premise (Sécurité, équipements, itinérance, interfaces, etc.) ?*
 
 Sécurité
