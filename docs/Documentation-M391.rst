@@ -2024,6 +2024,8 @@ Dans "Voix et Chat" -> pour FXS et DECT, trunks, ponts, SBC, intégrations whats
 
 Hotdesking directement dans la section "Téléphones"
 
+Liste d'attentes : les listes d'attentes remplacent la méthode d'utilisation des groupes d'appels. Ces derniers n'étant plus adéquat notamment concernant les appels manqués (si un appel est effectué sur le groupe d'appel et que seul un utilisateur a repondu, il sera marqué comme "appel en absence" pour les autres utilisateurs.)
+
 
 .. admonition:: Cas concret
 
