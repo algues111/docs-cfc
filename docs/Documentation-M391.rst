@@ -1865,6 +1865,9 @@ Ce menu permet de définir ce que nous voulons partager au PBX distant et si nou
 SBC
 --------
 
+Le 3CX Session Border Controller (SBC) 3CX est un service logiciel qui s'installe sur votre réseau local pour permettre une connexion facile des téléphone IP à une instance 3CX sur le cloud, hébergée sur votre propre cloud ou par 3CX.
+
+Il permet aussi notamment de faire transiter les appels locaux entre les postes afin d'économiser de la bande passante !
 
 Mettre en place un SBC n'est pas plus difficile que de mettre en place un pont.
 
