@@ -1134,6 +1134,11 @@ Sécurité
 
 Comme tout appareil en réseau, le 3CX (ici hébergé par le NX96) a besoin de sécurité, que nous parametrons via la section "Scéurité" dans l'interface web admin de la V18.
 
+Pare-feu
+^^^^^^^^^^^^^^
+
+Il est possible de tester les ports nécessaires au fonctionnement de 3CX en lancant un scan de pare-feu.
+Ce dernier testera un par un les ports en question et retournera en fonction si ces derniers sont bloqués par le réseau ou pas.
 
 Antipiratage 
 ^^^^^^^^^^^^^^
@@ -1147,7 +1152,9 @@ Temps blacklist x100 (8640000) et failed attempts maximum 5 to 3
 .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/anti-piratage.png
 
 
+.. warning::
 
+    Si vous avez un réseau instable, et que vous essayez à maintes reprises de provisionner un téléphone. Il y a des chances que son IP soit blacklistée.
 
 Codes pays autorisés
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -2039,6 +2046,36 @@ Hotdesking directement dans la section "Téléphones"
 
     .. image:: https://raw.githubusercontent.com/algues111/docs-cfc/main/docs/source/images/M391/unifi-coupable.jpg
     *Voici la coupable !!!!*
+
+
+
+Fonctionnalités 3CX V20
+--------------------------------------
+
+
+Touche de renvoi d'appel
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Il n'y a pas de touche de renvoi d'appel configurable dans 3CX.
+Toutes les méthodes incluant *70, *62** etc etc... sont désactivées nativement des téléphones provisionnés 3CX
+
+Un workaround est cependant possible en modifiant les status et en définissant des transferts immédiats lorsque ceux-ci sont activés.
+
+.. note::
+   
+   Des touches de changement de status sont cependant disponibles dans la configuration des touches BLF du téléphone IP.
+
+
+
+IP Dynamique / Statique
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Afin d'éviter tout problème de DNS et de STUN, il est nécessaire de configurer votre 3CX de la manière suivante :
+
+- Si vous possédez une IP publique statique que votre ISP vous fournit : Définir IP Statique dans la configuration du PBX.
+- SI vous ne possédez pas d'IP publique statique : Définir IP Dynamique dans la configuration du PBX.
+
 
 
 
