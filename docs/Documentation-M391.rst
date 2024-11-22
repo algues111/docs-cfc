@@ -1872,6 +1872,9 @@ Ce menu permet de définir ce que nous voulons partager au PBX distant et si nou
 SBC
 --------
 
+Le 3CX Session Border Controller (SBC) 3CX est un service logiciel qui s'installe sur votre réseau local pour permettre une connexion facile des téléphone IP à une instance 3CX sur le cloud, hébergée sur votre propre cloud ou par 3CX.
+
+Il permet aussi notamment de faire transiter les appels locaux entre les postes afin d'économiser de la bande passante !
 
 Mettre en place un SBC n'est pas plus difficile que de mettre en place un pont.
 
@@ -2031,6 +2034,11 @@ Dans "Voix et Chat" -> pour FXS et DECT, trunks, ponts, SBC, intégrations whats
 
 Hotdesking directement dans la section "Téléphones"
 
+Liste d'attentes : les listes d'attentes remplacent la méthode d'utilisation des groupes d'appels. Ces derniers n'étant plus adéquat notamment concernant les appels manqués (si un appel est effectué sur le groupe d'appel et que seul un utilisateur a repondu, il sera marqué comme "appel en absence" pour les autres utilisateurs.)
+
+.. warning::
+
+    Gérer les appels par file d'attente supprime la fonction de double appel !!!!
 
 .. admonition:: Cas concret
 
